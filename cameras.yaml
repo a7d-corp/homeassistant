@@ -1,9 +1,9 @@
 - platform: generic
   name: Kitchen Overview
-  still_image_url: http://10.101.0.45/picture/1/current/?_username=admin&_signature=ccb93993ba52c2cf640899675c13fe2b240169e8
+  still_image_url: !secret kitchen_cam1_url
 - platform: generic
   name: Nugget Flap
-  still_image_url: http://10.101.0.45/picture/2/current/?_username=admin&_signature=76ff1ef3253ca2607454426119cee6e45dae7515
+  still_image_url: !secret kitchen_cam2_url
 - platform: uvc
   nvr: 10.101.0.50
   key: !secret nvr_key
