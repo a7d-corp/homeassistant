@@ -9,7 +9,6 @@ tts
 # secrets
 device_trackers.yaml
 fitbit.conf
-known_devices.yaml
 phue.conf
 plex.conf
 secrets.yaml
