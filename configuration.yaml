@@ -10,19 +10,31 @@ homeassistant:
 
 # Enables the frontend
 frontend:
- themes:
-   beach:
-     dark-primary-color: "#88d8b0"
-     primary-color: "#ff6f69"
-     light-primary-color: "#ffcc5c"
-     paper-toggle-button-checked-ink-color: "#ff6f69"
-     paper-toggle-button-checked-button-color: "#88d8b0"
-     paper-toggle-button-checked-bar-color: "#ffcc5c"
-     paper-slider-knob-color: "#88d8b0"
-     paper-slider-knob-start-color: "#88d8b0"
-     paper-slider-pin-color: "#88d8b0"
-     paper-slider-active-color: "#88d8b0"
-     paper-slider-secondary-color: "#ffeead"
+  themes:
+    beach:
+      dark-primary-color: "#88d8b0"
+      primary-color: "#ff6f69"
+      light-primary-color: "#ffcc5c"
+      paper-toggle-button-checked-ink-color: "#ff6f69"
+      paper-toggle-button-checked-button-color: "#88d8b0"
+      paper-toggle-button-checked-bar-color: "#ffcc5c"
+      paper-slider-knob-color: "#88d8b0"
+      paper-slider-knob-start-color: "#88d8b0"
+      paper-slider-pin-color: "#88d8b0"
+      paper-slider-active-color: "#88d8b0"
+      paper-slider-secondary-color: "#ffeead"
+    greens:
+      dark-primary-color: "#009688"
+      primary-color: "#009688"
+      light-primary-color: "#009688"
+      paper-toggle-button-checked-ink-color: "#009688"
+      paper-toggle-button-checked-button-color: "#009688"
+      paper-toggle-button-checked-bar-color: "#99d5cf"
+      paper-slider-knob-color: "#66c0b7"
+      paper-slider-knob-start-color: "#32ab9f"
+      paper-slider-pin-color: "#66c0b7"
+      paper-slider-active-color: "#009688"
+      paper-slider-secondary-color: "#009688"
 
 zone:
   name: Home
@@ -69,6 +81,16 @@ notify:
   - platform: pushbullet
     name: Simon's Pushbullet Notifier
     api_key: !secret pushbullet_key
+
+emulated_hue:
+  host_ip: 10.101.0.50
+  listen_port: 8300
+  advertise_ip: 10.101.0.50
+  advertise_port: 1901
+  upnp_bind_multicast: false
+  expose_by_default: true
+  exposed_domains:
+    - input_boolean
 
 media_player: !include media_players.yaml
 light: !include lights.yaml
