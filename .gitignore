@@ -4,6 +4,7 @@ tts
 .HA_VERSION
 *.log
 *.db
+*~
 
 # secrets
 device_trackers.yaml
