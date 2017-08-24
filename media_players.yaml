@@ -5,6 +5,7 @@
 - platform: plex
   show_all_controls: true
   use_custom_entity_ids: true
+  entity_namespace: 'plex'
 - platform: kodi
   host: 10.101.0.30
 - platform: sonos
