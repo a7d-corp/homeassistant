@@ -3,8 +3,10 @@
   monitored_conditions:
     - symbol
 - platform: plex
-  host: 10.101.0.40
-  server: Concord
+  host: 10.101.0.50
+  port: 32400
+  username: !secret local_plex_username
+  password: !secret local_plex_password
 - platform: command_line
   command: curl -s http://10.101.0.47:5000/api/envirophat/weather/temperature
   name: Loft temperature
