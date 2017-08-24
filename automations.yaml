@@ -9,7 +9,7 @@
     state: 'on'
   action:
     - delay: '00:{{ (range(10, 50)|random|int) }}:00'
-    - service: notify.pushbullet_notifier
+    - service: notify.simons_pushbullet_notifier
       data:
         message: Away mode starting
         target: device/Houston
@@ -18,7 +18,7 @@
     - delay: '00:{{ (range(2, 5)|random|int) }}:00'
     - service: scene.turn_on
       entity_id: scene.lounge_away_mode_on
-    - service: notify.pushbullet_notifier
+    - service: notify.simons_pushbullet_notifier
       data:
         message: Away mode active
         target: device/Houston
@@ -33,7 +33,7 @@
     state: 'on'
   action:
     - delay: '00:{{ (range(25, 55)|random|int) }}:00'
-    - service: notify.pushbullet_notifier
+    - service: notify.simons_pushbullet_notifier
       data:
         message: Away mode stopping
         target: device/Houston
@@ -42,7 +42,7 @@
     - delay: '00:{{ (range(1, 4)|random|int) }}:00'
     - service: scene.turn_on
       entity_id: scene.kitchen_away_mode_off
-    - service: notify.pushbullet_notifier
+    - service: notify.simons_pushbullet_notifier
       data:
         message: Away mode deactivated
         target: device/Houston
