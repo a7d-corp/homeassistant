@@ -55,7 +55,8 @@ tts:
 
 input_boolean:
   holiday_mode:
-    initial: off
+    # default to on incase HA gets restarted whilst we're away
+    initial: on
     icon: 'mdi:beach'
 
 updater:
