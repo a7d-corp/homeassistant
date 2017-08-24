@@ -1,5 +1,5 @@
-new_default_view:
-#default_view:
+#new_default_view:
+default_view:
   name: Home
   view: yes    
   entities:
