@@ -1,0 +1,89 @@
+- platform: yr
+  name: Weather
+  monitored_conditions:
+    - symbol
+- platform: plex
+  host: 10.101.0.40
+  server: Concord
+- platform: command_line
+  command: curl -s http://10.101.0.47:5000/api/envirophat/weather/temperature
+  name: Loft temperature
+  unit_of_measurement: "C"
+- platform: command_line
+  command: curl -s http://10.101.0.47:5000/api/envirophat/light/light
+  name: Loft light status
+- platform: wunderground
+  api_key: !secret wunderground_key
+  monitored_conditions:
+    - alerts
+    - feelslike_c
+    - precip_today_metric
+    - pressure_mb
+    - relative_humidity
+    - temp_c
+    - temp_high_1d_c
+    - temp_low_1d_c
+    - wind_mph
+    - wind_string
+- platform: google_travel_time
+  name: Home > Work (Simon)
+  api_key: !secret google_maps_api_key
+  origin: zone.home
+  destination: zone.simon_work
+  options:
+    departure_time: now
+    units: imperial
+- platform: google_travel_time
+  name: Work > Home (Simon
+  api_key: !secret google_maps_api_key
+  origin: zone.simon_work
+  destination: zone.home
+  options:
+    departure_time: now
+    units: imperial
+- platform: google_travel_time
+  name: Home > Work (Nikki)
+  api_key: !secret google_maps_api_key
+  origin: zone.home
+  destination: zone.nikki_work
+  options:
+    departure_time: now
+    units: imperial
+- platform: google_travel_time
+  name: Work > Home (Nikki)
+  api_key: !secret google_maps_api_key
+  origin: zone.nikki_work
+  destination: zone.home
+  options:
+    departure_time: now
+    units: imperial
+- platform: london_underground
+  line:
+    - Bakerloo
+    - Central
+    - Circle
+    - District
+    - DLR
+    - Hammersmith & City
+    - Jubilee
+    - Metropolitan
+    - Northern
+    - Piccadilly
+    - Victoria
+    - Waterloo & City
+- platform: cert_expiry
+  name: Home Assistant
+  host: !secret base_url
+- platform: cert_expiry
+  name: Unifi NVR
+  host: !secret nvr_url
+- platform: cert_expiry
+  name: Plex
+  host: !secret plex_url
+- platform: fitbit
+  monitored_resources:
+    - "activities/steps"
+    - "devices/battery"
+- platform: time_date
+  display_options:
+    - time

@@ -1,0 +1,19 @@
+- platform: cast
+  host: 10.101.0.179
+- platform: cast
+  host: 10.101.0.136
+- platform: plex
+  show_all_controls: true
+  use_custom_entity_ids: true
+- platform: kodi
+  host: 10.101.0.30
+- platform: sonos
+  hosts:
+    - 10.101.0.155
+    - 10.101.0.193
+- platform: samsungtv
+  host: 10.101.0.146
+- platform: denonavr
+  host: 10.101.0.230
+  name: Denon AVRX2100W
+  show_all_sources: true

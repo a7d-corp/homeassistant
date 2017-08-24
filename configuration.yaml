@@ -1,0 +1,80 @@
+homeassistant:
+  name: Room101
+  latitude: !secret home_lat
+  longitude: !secret home_long
+  elevation: 35
+  unit_system: metric
+  temperature_unit: C
+  time_zone: Europe/London
+  customize: !include customise.yaml
+
+# Enables the frontend
+frontend:
+ themes:
+   beach:
+     dark-primary-color: "#88d8b0"
+     primary-color: "#ff6f69"
+     light-primary-color: "#ffcc5c"
+     paper-toggle-button-checked-ink-color: "#ff6f69"
+     paper-toggle-button-checked-button-color: "#88d8b0"
+     paper-toggle-button-checked-bar-color: "#ffcc5c"
+     paper-slider-knob-color: "#88d8b0"
+     paper-slider-knob-start-color: "#88d8b0"
+     paper-slider-pin-color: "#88d8b0"
+     paper-slider-active-color: "#88d8b0"
+     paper-slider-secondary-color: "#ffeead"
+
+zone:
+  name: Home
+  latitude: !secret home_lat
+  longitude: !secret home_long
+  icon: mdi:home
+
+zone 2:
+  name: Simon (Work)
+  latitude: !secret simon_work_lat
+  longitude: !secret simon_work_long
+  icon: mdi:laptop
+
+zone 3:
+  name: Nikki (Work)
+  latitude: !secret nikki_work_lat
+  longitude: !secret nikki_work_long
+  icon: mdi:laptop
+
+# Enables configuration UI
+config:
+
+http:
+  api_password: !secret http_password
+  base_url: !secret base_url
+  use_x_forwarded_for: true
+
+tts:
+  platform: google
+
+input_boolean:
+  holiday_mode:
+    initial: off
+    icon: 'mdi:beach'
+
+updater:
+conversation:
+history:
+logbook:
+sun:
+
+notify:
+  - platform: pushbullet
+    name: Simon's Pushbullet Notifier
+    api_key: !secret pushbullet_key
+
+media_player: !include media_players.yaml
+light: !include lights.yaml
+device_tracker: !include device_trackers.yaml
+camera: !include cameras.yaml
+sensor: !include sensors.yaml
+switch: !include switches.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+scene: !include scenes.yaml
