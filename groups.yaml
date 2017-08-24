@@ -28,6 +28,7 @@ media_view:
     - group.media_devices
     - group.audio_players
     - group.streaming_devices
+    - group.plex_devices
 
 security_view:
   name: Security
@@ -49,6 +50,7 @@ automations:
   name: Automations
   view: yes
   entities:
+    - group.holiday_toggle
     - group.holiday_automation
     - group.holiday_scenes
 
@@ -64,6 +66,12 @@ media_devices:
   entities:
     - media_player.samsung_tv_remote
     - media_player.denon_avrx2100w
+
+plex_devices:
+  name: Plex
+  entities:
+    - media_player.plex_6ckun1j8g0we34orzv4n9v7l
+    - sensor.plex_2
 
 audio_players:
   name: Audio Devices
