@@ -1,0 +1,8 @@
+- platform: unifi
+  username: admin
+  password: !secret unifi_pass
+  host: !secret unifi_host
+  port: !secret unifi_port
+  verify_ssl: false
+  site_id: !secret unifi_site
+  track_new_devices: false
