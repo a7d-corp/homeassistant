@@ -1,4 +1,4 @@
-sonos_kitchen_radio_1
+sonos_kitchen_radio_1:
   sequence:
   - alias: "Play Radio 1 (Kitchen)"
     service: media_player.kitchen.play_media
