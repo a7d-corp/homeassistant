@@ -11,18 +11,6 @@ homeassistant:
 # Enables the frontend
 frontend:
   themes:
-    beach:
-      dark-primary-color: "#88d8b0"
-      primary-color: "#ff6f69"
-      light-primary-color: "#ffcc5c"
-      paper-toggle-button-checked-ink-color: "#ff6f69"
-      paper-toggle-button-checked-button-color: "#88d8b0"
-      paper-toggle-button-checked-bar-color: "#ffcc5c"
-      paper-slider-knob-color: "#88d8b0"
-      paper-slider-knob-start-color: "#88d8b0"
-      paper-slider-pin-color: "#88d8b0"
-      paper-slider-active-color: "#88d8b0"
-      paper-slider-secondary-color: "#ffeead"
     greens:
       dark-primary-color: "#009688"
       primary-color: "#009688"
@@ -83,9 +71,9 @@ notify:
     api_key: !secret pushbullet_key
 
 emulated_hue:
-  host_ip: 10.101.0.50
+  host_ip: 10.101.0.45
   listen_port: 8300
-  advertise_ip: 10.101.0.50
+  advertise_ip: 10.101.0.45
   advertise_port: 1901
   upnp_bind_multicast: false
   expose_by_default: true
