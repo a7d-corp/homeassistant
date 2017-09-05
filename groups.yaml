@@ -71,7 +71,7 @@ plex_devices:
   name: Plex
   entities:
     - media_player.plex_6ckun1j8g0we34orzv4n9v7l
-    - sensor.plex_2
+    - sensor.plex
 
 audio_players:
   name: Audio Devices
@@ -157,9 +157,9 @@ london_underground:
 certificate_expiries:
   name: SSL cert renewals
   entities:
-    - sensor.home_assistant
-    - sensor.unifi_nvr
-    - sensor.plex
+    - sensor.home_assistant_ssl
+    - sensor.unifi_nvr_ssl
+    - sensor.plex_ssl
 
 fitbit_stats:
   name: Simon's Fitbit Stats

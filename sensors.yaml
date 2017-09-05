@@ -74,13 +74,13 @@
     - Victoria
     - Waterloo & City
 - platform: cert_expiry
-  name: Home Assistant
+  name: Home Assistant SSL
   host: !secret base_url
 - platform: cert_expiry
-  name: Unifi NVR
+  name: Unifi NVR SSL
   host: !secret nvr_url
 - platform: cert_expiry
-  name: Plex
+  name: Plex SSL
   host: !secret plex_url
 - platform: fitbit
   monitored_resources:
