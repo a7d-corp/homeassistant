@@ -89,3 +89,4 @@ switch: !include switches.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 scene: !include scenes.yaml
+script: !include_dir_merge_named scripts/

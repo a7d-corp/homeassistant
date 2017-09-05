@@ -1,0 +1,8 @@
+sonos_kitchen_radio_1
+  sequence:
+  - alias: "Play Radio 1 (Kitchen)"
+    service: media_player.kitchen.play_media
+    data:
+      media_content_id: bbc_radio_one.m3u8
+      media_content_type: music
+      volume_level: 0.1
