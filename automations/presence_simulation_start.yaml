@@ -1,0 +1,24 @@
+- alias: 'Presence simulation started'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:45:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.holiday_mode
+    state: 'on'
+  action:
+    - delay: '00:{{ (range(20, 59)|random|int) }}:00'
+    - service: notify.simons_pushbullet_notifier
+      data:
+        message: Away mode starting
+        target: device/Houston
+    - service: scene.turn_on
+      entity_id: scene.kitchen_away_mode_on
+    - delay: '00:{{ (range(2, 5)|random|int) }}:00'
+    - service: scene.turn_on
+      entity_id: scene.lounge_away_mode_on
+    - service: notify.simons_pushbullet_notifier
+      data:
+        message: Away mode active
+        target: device/Houston

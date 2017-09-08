@@ -53,11 +53,8 @@ http:
 tts:
   platform: google
 
-input_boolean:
-  holiday_mode:
-    # default to on incase HA gets restarted whilst we're away
-    initial: on
-    icon: 'mdi:beach'
+input_boolean: !include inputs/boolean.yaml
+input_slider: !include inputs/sliders.yaml
 
 updater:
 conversation:
@@ -87,6 +84,7 @@ camera: !include cameras.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 group: !include groups.yaml
-automation: !include automations.yaml
+#automation: !include automations.yaml
+automation: !include_dir_merge_list automations
 scene: !include scenes.yaml
 script: !include_dir_merge_named scripts

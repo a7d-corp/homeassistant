@@ -1,0 +1,24 @@
+- alias: "Kodi - Stopped"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      from: 'playing'
+      to: 'idle'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      - condition: state
+        entity_id: input_boolean.lounge_media_dim_enable
+        state: 'on'
+      - condition: state
+        entity_id: group.lounge_hues
+        state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: group.lounge_hues
+    data_template:
+      brightness_pct: '100'
+      transition: '3'

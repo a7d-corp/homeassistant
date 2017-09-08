@@ -1,0 +1,29 @@
+- alias: 'Presence simulation stopped'
+  trigger:
+    platform: time
+    at: '22:00:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.holiday_mode
+    state: 'on'
+  action:
+    - delay: '00:{{ (range(25, 55)|random|int) }}:00'
+    - service: notify.simons_pushbullet_notifier
+      data:
+        message: Away mode stopping
+        target: device/Houston
+    - service: scene.turn_on
+      entity_id: scene.lounge_away_mode_off
+    - delay: '00:{{ (range(1, 4)|random|int) }}:00'
+    - service: scene.turn_on
+      entity_id: scene.kitchen_away_mode_off
+    - delay: '00:00:{{ (range(30, 59)|random|int) }}'
+    - service: switch.turn_on
+      entity_id: switch.energenie_one
+    - delay: '00:{{ (range(5, 10)|random|int) }}:00'
+    - service: switch.turn_off
+      entity_id: switch.energenie_one
+    - service: notify.simons_pushbullet_notifier
+      data:
+        message: Away mode deactivated
+        target: device/Houston

@@ -87,6 +87,12 @@ lounge_lights:
     - switch.energenie_one
     - switch.energenie_two
 
+lounge_hues:
+  name: Lounge Hues
+  entities:
+    - light.standard_lamp_left
+    - light.standard_lamp_right
+
 kitchen_lights:
   name: Kitchen Lights
   entities:
@@ -184,3 +190,9 @@ holiday_scenes:
     - scene.kitchen_away_mode_off
     - scene.lounge_away_mode_on
     - scene.lounge_away_mode_off
+
+kodi_living_room_lights:
+  name: Lounge media dimming
+  entities:
+    - input_boolean.lounge_media_dim_enable
+    - input_slider.kodi_dimmer_slider

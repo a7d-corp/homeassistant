@@ -1,0 +1,5 @@
+kodi_dimmer_slider:
+  name: "Dim level"
+  min: 0
+  max: 40
+  step: 5

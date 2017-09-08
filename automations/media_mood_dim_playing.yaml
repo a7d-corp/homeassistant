@@ -1,0 +1,25 @@
+- alias: "Kodi - Playing"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      to: 'playing'
+      for:
+        seconds: 2
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      - condition: state
+        entity_id: input_boolean.lounge_media_dim_enable
+        state: 'on'
+      - condition: state
+        entity_id: group.lounge_hues
+        state: 'on'
+  action:
+    service: light.turn_on
+    data_template:
+      entity_id: group.lounge_hues
+      brightness_pct: '{{ states.input_slider.kodi_dimmer_slider.state | int }}'
+      transition: '2'

@@ -1,0 +1,5 @@
+holiday_mode:
+  initial: on
+  icon: 'mdi:beach'
+lounge_media_dim_enable:
+  name: Enable dimming
