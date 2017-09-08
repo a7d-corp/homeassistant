@@ -29,6 +29,7 @@ media_view:
     - group.audio_players
     - group.streaming_devices
     - group.plex_devices
+    - group.kodi_living_room_lights
 
 security_view:
   name: Security
@@ -53,6 +54,7 @@ automations:
     - group.holiday_toggle
     - group.holiday_automation
     - group.holiday_scenes
+    - group.kodi_living_room_lights
 
 streaming_devices:
   name: Media Streaming
