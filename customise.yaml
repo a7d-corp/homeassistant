@@ -1,2 +1,21 @@
 group.kodi_living_room_lights:
   icon: mdi:movie
+group.lounge_lights:
+  icon: mdi:lightbulb
+  assumed_state: false
+group.kitchen_lights:
+  icon: mdi:lightbulb
+group.energenie_switches:
+  icon: mdi:lightbulb
+switch.energenie_one:
+  icon: mdi:lightbulb
+  assumed_state: false
+switch.energenie_two:
+  icon: mdi:lightbulb
+  assumed_state: false
+switch.flux_adjustment:
+  icon: mdi:weather-night
+input_boolean.lounge_media_dim_enable:
+  icon: none
+input_slider.kodi_dimmer_slider:
+  icon: mdi:brightness-6
