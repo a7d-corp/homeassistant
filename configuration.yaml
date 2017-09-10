@@ -62,11 +62,6 @@ history:
 logbook:
 sun:
 
-notify:
-  - platform: pushbullet
-    name: Simon's Pushbullet Notifier
-    api_key: !secret pushbullet_key
-
 emulated_hue:
   host_ip: 10.101.0.45
   listen_port: 8300
@@ -77,6 +72,7 @@ emulated_hue:
   exposed_domains:
     - input_boolean
 
+notify: !include_dir_merge_list notify
 media_player: !include media_players.yaml
 light: !include lights.yaml
 device_tracker: !include device_trackers.yaml
@@ -84,7 +80,6 @@ camera: !include cameras.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 group: !include groups.yaml
-#automation: !include automations.yaml
 automation: !include_dir_merge_list automations
 scene: !include scenes.yaml
 script: !include_dir_merge_named scripts

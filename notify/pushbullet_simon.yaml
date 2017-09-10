@@ -1,0 +1,3 @@
+- platform: pushbullet
+  name: Simon's Pushbullet Notifier
+  api_key: !secret pushbullet_key
