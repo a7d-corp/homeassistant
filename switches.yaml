@@ -3,18 +3,15 @@
     energenie_one:
       command_on: curl -s http://10.101.0.20:5000/api/energenie/1/1
       command_off: curl -s http://10.101.0.20:5000/api/energenie/1/0
-#      command_state: curl -s http://10.101.0.20:5000/api/energenie/status/1
       friendly_name: Drinks Cabinet
     energenie_two:
       command_on: curl -s http://10.101.0.20:5000/api/energenie/2/1
       command_off: curl -s http://10.101.0.20:5000/api/energenie/2/0
-#      command_state: curl -s http://10.101.0.20:5000/api/energenie/status/2
       friendly_name: Garden Room
-#    energenie_three:
-#      command_on: curl -s http://10.101.0.20:5000/api/energenie/3/1
-#      command_off: curl -s http://10.101.0.20:5000/api/energenie/3/0
-#      command_state: curl -s http://10.101.0.20:5000/api/energenie/status/3
-#      friendly_name: Energenie 3
+    energenie_three:
+      command_on: curl -s http://10.101.0.20:5000/api/energenie/3/1
+      command_off: curl -s http://10.101.0.20:5000/api/energenie/3/0
+      friendly_name: Firefly Lights
 
 - platform: flux
   lights:

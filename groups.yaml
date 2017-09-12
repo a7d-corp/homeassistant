@@ -88,6 +88,7 @@ lounge_lights:
     - light.standard_lamp_right
     - switch.energenie_one
     - switch.energenie_two
+    - switch.energenie_three
 
 lounge_hues:
   name: Lounge Hues
@@ -118,6 +119,7 @@ energenie_switches:
   entities:
     - switch.energenie_one
     - switch.energenie_two
+    - switch.energenie_three
 
 lighting_tools:
   name: Lighting Control
