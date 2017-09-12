@@ -1,20 +1,20 @@
 - platform: cast
-  host: 10.101.0.179
+  host: !secret ip_ccast_1
 - platform: cast
-  host: 10.101.0.136
+  host: !secret ip_ccast_2
 - platform: plex
   show_all_controls: true
   use_custom_entity_ids: true
   entity_namespace: 'plex'
 - platform: kodi
-  host: 10.101.0.30
+  host: !secret ip_kodi
 - platform: sonos
   hosts:
-    - 10.101.0.155
-    - 10.101.0.193
+    - !secret ip_sonos_kitchen
+    - !secret ip_sonos_lounge
 - platform: samsungtv
-  host: 10.101.0.146
+  host: !secret ip_samsung
 - platform: denonavr
-  host: 10.101.0.230
+  host: !secret ip_denon
   name: Denon AVRX2100W
   show_all_sources: true
