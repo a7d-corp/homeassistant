@@ -46,6 +46,7 @@ lighting_view:
     - group.all_lights
     - group.energenie_switches
     - group.lighting_tools
+    - group.loft_lighting
 
 automations:
   name: Automations
@@ -200,3 +201,9 @@ kodi_living_room_lights:
   entities:
     - input_boolean.lounge_media_dim_enable
     - input_slider.kodi_dimmer_slider
+
+loft_lighting:
+  name: Loft Lighting
+  entities:
+    - switch.loft_lighting
+    - sensor.loft_light_status

@@ -22,3 +22,5 @@ input_boolean.lounge_media_dim_enable:
   icon: none
 input_slider.kodi_dimmer_slider:
   icon: mdi:brightness-6
+switch.loft_lighting:
+  icon: mdi:lightbulb

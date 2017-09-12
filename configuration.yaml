@@ -74,6 +74,9 @@ emulated_hue:
 
 mqtt:
   broker: !secret ip_mqtt_broker
+  port: 1883
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
 
 notify: !include_dir_merge_list notify
 media_player: !include media_players.yaml
