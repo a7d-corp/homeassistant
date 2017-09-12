@@ -1,5 +1,5 @@
 holiday_mode:
-  initial: on
+  initial: off
   icon: 'mdi:beach'
 lounge_media_dim_enable:
   name: Enable dimming
