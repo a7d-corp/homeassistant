@@ -18,6 +18,6 @@
   action:
     service: light.turn_on
     entity_id: group.lounge_hues
-    data_template:  
+    data:
       brightness_pct: '50'
       transition: '3'
