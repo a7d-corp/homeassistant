@@ -1,0 +1,27 @@
+- alias: 'Turn off Radio 1 in the morning'
+  trigger:
+    - platform: time
+      at: '08:00:00'
+    - platform: state
+      entity_id: device_tracker.simon
+      from: 'home'
+      to: 'not_home'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: media_player.kitchen
+        state: playing
+      - condition: time
+        after: '06:15:01'
+        before: '07:59:59'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+  action:
+    - service: media_player.pause
+      entity_id: media_player.kitchen

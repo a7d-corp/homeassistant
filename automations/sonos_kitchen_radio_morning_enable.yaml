@@ -1,0 +1,26 @@
+- alias: 'Turn on Radio 1 in the morning'
+  trigger:
+    - platform: time
+      at: '06:15:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.simon
+        state: home
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+  action:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.kitchen
+        volume_level: 0.1
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.kitchen
+        source: 'BBC Radio 1'
