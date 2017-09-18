@@ -31,11 +31,11 @@ media_view:
     - group.plex_devices
     - group.kodi_living_room_lights
 
-security_view:
-  name: Security
-  view: yes
-  entities:
-    - group.kitchen_cameras
+#security_view:
+#  name: Security
+#  view: yes
+#  entities:
+#    - group.kitchen_cameras
 
 lighting_view:
   name: Lighting
@@ -207,3 +207,11 @@ loft_lighting:
   entities:
     - switch.loft_lighting
     - sensor.loft_light_status
+
+automation_all_lights:
+  name: All lights (automation only)
+  entities:
+    - group.lounge_lights
+    - group.energenie_switches
+    - group.kitchen_lights
+    - switch.loft_lighting
