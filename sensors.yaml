@@ -82,6 +82,12 @@
 - platform: cert_expiry
   name: Plex SSL
   host: !secret plex_url
+- platform: cert_expiry
+  name: AWX SSL
+  host: !secret awx_url
+- platform: cert_expiry
+  name: GOGs SSL
+  host: !secret gogs_url
 - platform: fitbit
   clock_format: 24H
   monitored_resources:
@@ -96,3 +102,6 @@
 - platform: time_date
   display_options:
     - time
+#- platform: command_line
+#  command: curl -sk https://api.travis-ci.org/repos/analbeard/homeassistant/builds | jq '.[0] | .started_at' | sed 's/[TZ]/ /g'
+#  name: Last Travis build of analbeard/home-assistant
