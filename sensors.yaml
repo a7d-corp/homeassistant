@@ -80,6 +80,9 @@
   name: Unifi NVR SSL
   host: !secret nvr_url
 - platform: cert_expiry
+  name: Unifi SSL
+  host: !secret unifi_host
+- platform: cert_expiry
   name: Plex SSL
   host: !secret plex_url
 - platform: cert_expiry
@@ -88,6 +91,18 @@
 - platform: cert_expiry
   name: GOGs SSL
   host: !secret gogs_url
+- platform: cert_expiry
+  name: Docker Registry SSL
+  host: !secret registry_url
+- platform: cert_expiry
+  name: Kibana SSL
+  host: !secret kibana_url
+- platform: cert_expiry
+  name: Flood SSL
+  host: !secret flood_url
+- platform: cert_expiry
+  name: Grafana SSL
+  host: !secret grafana_url
 - platform: fitbit
   clock_format: 24H
   monitored_resources:
