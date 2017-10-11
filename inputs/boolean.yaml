@@ -3,3 +3,4 @@ holiday_mode:
   icon: 'mdi:beach'
 lounge_media_dim_enable:
   name: Enable dimming
+  icon: 'mdi:checkbox-marked-outline'
