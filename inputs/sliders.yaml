@@ -1,5 +1,9 @@
 kodi_dimmer_slider:
   name: "Kodi dim level"
+  initial: 20
   min: 0
   max: 40
-  step: 5
+  step: 2
+  mode: slider
+  unit_of_measurement: '%'
+  icon: 'mdi:toggle-switch'

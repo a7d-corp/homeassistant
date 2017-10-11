@@ -210,7 +210,7 @@ kodi_living_room_lights:
   name: Lounge media dimming
   entities:
     - input_boolean.lounge_media_dim_enable
-    - input_slider.kodi_dimmer_slider
+    - input_number.kodi_dimmer_slider
 
 loft_lighting:
   name: Loft Lighting
