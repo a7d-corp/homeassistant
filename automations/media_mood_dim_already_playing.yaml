@@ -11,5 +11,5 @@
     service: light.turn_on
     data:
       entity_id: group.lounge_hues
-      brightness_pct: '{{ states.input_slider.kodi_dimmer_slider.state | int }}'
+      brightness_pct: '{{ states.input_number.kodi_dimmer_slider.state | int }}'
       transition: '2'
