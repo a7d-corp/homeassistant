@@ -117,6 +117,5 @@
 - platform: time_date
   display_options:
     - time
-#- platform: command_line
-#  command: curl -sk https://api.travis-ci.org/repos/analbeard/homeassistant/builds | jq '.[0] | .started_at' | sed 's/[TZ]/ /g'
-#  name: Last Travis build of analbeard/home-assistant
+- platform: travisci
+  api_key: !secret github_ha_token
