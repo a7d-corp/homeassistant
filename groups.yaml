@@ -15,6 +15,7 @@ default_view:
     - sensor.loft_temperature
     - sensor.yr_symbol
     - group.holiday_toggle
+    - group.travis_builds
 
 holiday_toggle:
   name: Holiday Mode
@@ -117,6 +118,12 @@ kitchen_cameras:
 #    - camera.nugget_flap
     - camera.salla_centre
     - camera.sallatunturi
+    - camera.salla_crossroads
+    - camera.salla_highway
+    - camera.sallatunturi_2
+    - camera.sallatunturi_north_east
+    - camera.sallatunturi_south_west
+    - camera.sallatunturi_summit
 
 energenie_switches:
   name: Sockets
@@ -225,3 +232,16 @@ automation_all_lights:
     - group.energenie_switches
     - group.kitchen_lights
     - switch.loft_lighting
+
+people:
+  name: Device Trackers
+  entities:
+    - device_tracker.simon
+    - device_tracker.nikki
+
+travis_builds:
+  name: Travis Builds
+  entities:
+    - sensor.analbeardhomeassistant_state
+    - sensor.analbeardhomeassistant_last_build_started_at
+    - sensor.analbeardhomeassistant_last_build_duration
