@@ -13,3 +13,21 @@
 - platform: generic
   name: Sallatunturi
   still_image_url: http://sallanhissit.com/current.jpg
+- platform: generic
+  name: Salla Crossroads
+  still_image_url: https://images.webcams.travel/webcam/1222498680-Weather-Tie950-Sallatunturi-Sallaan-Salla.jpg?token=webcams.travel:8fe6c4fdc45d828298e2f5d163cd1c2d:1508151141
+- platform: generic
+  name: Salla Highway
+  still_image_url: https://images.webcams.travel/webcam/1336307897-Weather-Tie950-Sallatunturi-Kuusamoon-Salla.jpg?token=webcams.travel:bef7aedbdfd9824c1e36ce05020ff798:1508151141
+- platform: generic
+  name: Sallatunturi 2
+  still_image_url: https://images.webcams.travel/webcam/1461746387-salla-east-salla-ski-resort-sallatunturi.jpg?token=webcams.travel:905a457bb0e8347f07fbcaa893a93fa4:1508151313
+- platform: generic
+  name: Sallatunturi North East
+  still_image_url: https://images.webcams.travel/webcam/1461746144-salla-north-east-salla-ski-resort-sallatunturi.jpg?token=webcams.travel:f12fb53dff24bcd2fa91e4da1a8d51fd:1508151113
+- platform: generic
+  name: Sallatunturi South West
+  still_image_url: https://images.webcams.travel/webcam/1461745163-salla-south-west-salla-ski-resort-sallatunturi.jpg?token=webcams.travel:f5a6df54bdc58e2357bab51631d7ed02:1508151640
+- platform: generic
+  name: Sallatunturi Summit
+  still_image_url: https://images.webcams.travel/webcam/1461745538-salla-north-east-salla-ski-resort-sallatunturi.jpg?token=webcams.travel:a96b1c7c9bd128ffae943678dd1f0230:1508151122
