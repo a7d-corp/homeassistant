@@ -1,7 +1,7 @@
 - alias: "Turn off all lights"
   trigger:
     - platform: state
-      entity_id: device_tracker.simon, device_tracker.nikki
+      entity_id: group.people
       from: 'home'
       to: 'not_home'
   action:
