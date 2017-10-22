@@ -45,10 +45,19 @@ zone 3:
 # Enables configuration UI
 config:
 
+# enable map panel
+map:
+
 http:
   api_password: !secret http_password
   base_url: !secret base_url
   use_x_forwarded_for: true
+
+google_assistant:
+  project_id: home-assistant-177620
+  client_id: !secret google_assistant_client_id
+  access_token: !secret google_assistant_access_token
+  expose_by_default: true
 
 tts:
   platform: google
