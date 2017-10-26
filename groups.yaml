@@ -1,12 +1,12 @@
-#new_default_view:
-default_view:
+new_default_view:
+#default_view:
   name: Home
   view: yes    
   entities:
     - group.wunderground
     - group.travel_times
     - group.london_underground
-    - group.fitbit_stats
+#    - group.fitbit_stats
     - group.certificate_expiries
     - sun.sun
     - device_tracker.nikki
@@ -37,7 +37,6 @@ security_view:
   view: yes
   entities:
     - group.kitchen_cameras
-
 
 lighting_view:
   name: Lighting

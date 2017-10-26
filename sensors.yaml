@@ -103,17 +103,17 @@
 - platform: cert_expiry
   name: Grafana SSL
   host: !secret grafana_url
-- platform: fitbit
-  clock_format: 24H
-  monitored_resources:
-    - "devices/battery"
-    - "activities/steps"
-    - "activities/tracker/minutesSedentary"
-    - "sleep/awakeningsCount"
-    - "sleep/efficiency"
-    - "sleep/minutesAsleep"
-    - "sleep/minutesAwake"
-    - "sleep/minutesToFallAsleep"
+#- platform: fitbit
+#  clock_format: 24H
+#  monitored_resources:
+#    - "devices/battery"
+#    - "activities/steps"
+#    - "activities/tracker/minutesSedentary"
+#    - "sleep/awakeningsCount"
+#    - "sleep/efficiency"
+#    - "sleep/minutesAsleep"
+#    - "sleep/minutesAwake"
+#    - "sleep/minutesToFallAsleep"
 - platform: time_date
   display_options:
     - time
