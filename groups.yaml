@@ -1,143 +1,73 @@
-new_default_view:
-#default_view:
+default_view:
   name: Home
   view: yes    
+  icon: mdi:home-variant
   entities:
     - group.wunderground
-    - group.travel_times
-    - group.london_underground
-#    - group.fitbit_stats
-    - group.certificate_expiries
+    - group.wunderground_daily_forecast
+    - group.portsmouth_tides
+    - group.people
     - sun.sun
     - device_tracker.nikki
     - device_tracker.simon
     - sensor.loft_light_status
     - sensor.loft_temperature
     - sensor.yr_symbol
-    - group.holiday_toggle
-    - group.travis_builds
-
-holiday_toggle:
-  name: Holiday Mode
-  entities:
-    - input_boolean.holiday_mode
-
-media_view:
-  name: Media
-  view: yes
-  entities:
-    - group.media_devices
-    - group.audio_players
-    - group.streaming_devices
-    - group.plex_devices
-    - group.kodi_living_room_lights
 
 security_view:
   name: Security
   view: yes
+  icon: mdi:cctv
   entities:
     - group.kitchen_cameras
+    - group.cctv_cameras
+    - group.finland_webcams
+    - group.holiday_mode_toggle
+
+media_view:
+  name: Media
+  view: yes
+  icon: mdi:movie
+  entities:
+    - group.media_devices
+    - group.sonoses
+    - group.media_streaming
+    - group.plex_devices
+    - group.kodi_light_automation
 
 lighting_view:
   name: Lighting
   view: yes
+  icon: mdi:lightbulb-outline
   entities:
+    - group.all_home_lights
     - group.lounge_lights
-    - group.kitchen_lights
-    - group.all_lights
     - group.energenie_switches
+    - group.kitchen_lights
     - group.lighting_tools
     - group.loft_lighting
 
-automations:
-  name: Automations
+travel_view:
+  name: Travel
   view: yes
+  icon: mdi:car
   entities:
-    - group.holiday_toggle
-    - group.holiday_automation
-    - group.holiday_scenes
-    - group.kodi_living_room_lights
+    - group.travel_times
+    - group.london_underground
 
-streaming_devices:
-  name: Media Streaming
+infrastructure_view:
+  name: Infrastructure
+  view: yes
+  icon: mdi:cloud
   entities:
-    - media_player.chromecast101
-    - media_player.upstairs
-    - media_player.kodi
+    - group.certificate_expiries
+    - group.travis_builds
+    - group.speedtest_results
 
-media_devices:
-  name: Media Players
-  entities:
-    - media_player.samsung_tv_remote
-    - media_player.denon_avrx2100w
-
-plex_devices:
-  name: Plex
-  entities:
-    - media_player.plex_6ckun1j8g0we34orzv4n9v7l
-    - sensor.plex
-
-audio_players:
-  name: Audio Devices
-  entities:
-    - media_player.kitchen
-    - media_player.living_room
-
-lounge_lights:
-  name: Lounge Lights
-  entities:
-    - light.standard_lamp_left
-    - light.standard_lamp_right
-    - switch.energenie_one
-    - switch.energenie_two
-    - switch.energenie_three
-
-lounge_hues:
-  name: Lounge Hues
-  entities:
-    - light.standard_lamp_left
-    - light.standard_lamp_right
-
-kitchen_lights:
-  name: Kitchen Lights
-  entities:
-    - light.kitchen_cabinets
-
-all_lights:
-  name: All Lights
-  entities:
-    - group.lounge_lights
-    - group.energenie_switches
-    - group.kitchen_lights
-
-kitchen_cameras:
-  name: Kitchen Cameras
-  entities:
-#    - camera.kitchen_overview
-#    - camera.nugget_flap
-    - camera.salla_centre
-    - camera.sallatunturi
-    - camera.salla_crossroads
-    - camera.salla_highway
-    - camera.sallatunturi_2
-    - camera.sallatunturi_north_east
-    - camera.sallatunturi_south_west
-    - camera.sallatunturi_summit
-
-energenie_switches:
-  name: Sockets
-  entities:
-    - switch.energenie_one
-    - switch.energenie_two
-    - switch.energenie_three
-
-lighting_tools:
-  name: Lighting Control
-  entities:
-    - switch.flux_adjustment
-
+# groups for default_view
 wunderground:
   name: Weather
+  icon: mdi:weather-partlycloudy
   entities:
     - sensor.pws_alerts
     - sensor.pws_feelslike_c
@@ -150,8 +80,36 @@ wunderground:
     - sensor.pws_wind_mph
     - sensor.pws_wind_string
 
+wunderground_daily_forecast:
+  name: 4-day Forecast
+  icon: mdi:weather-partlycloudy
+  entities:
+    - sensor.pws_weather_1d_metric
+    - sensor.pws_weather_1n_metric
+    - sensor.pws_weather_2d_metric
+    - sensor.pws_weather_2n_metric
+    - sensor.pws_weather_3d_metric
+    - sensor.pws_weather_3n_metric
+    - sensor.pws_weather_4d_metric
+    - sensor.pws_weather_4n_metric
+
+portsmouth_tides:
+  name: Portmouth Harbour Tides
+  icon: mdi:waves
+  entities:
+    - sensor.portsmouth_tides
+
+people:
+  name: Device Trackers
+  icon: mdi:cellphone
+  entities:
+    - device_tracker.simon
+    - device_tracker.nikki
+
+# groups for travel_view
 travel_times:
   name: Travel Times
+  icon: mdi:car
   entities:
     - sensor.home__work_simon
     - sensor.work__home_simon
@@ -160,6 +118,7 @@ travel_times:
 
 london_underground:
   name: Underground Lines
+  icon: mdi:train
   entities:
     - sensor.bakerloo
     - sensor.central
@@ -174,8 +133,80 @@ london_underground:
     - sensor.victoria
     - sensor.waterloo__city
 
+# groups for media_view
+media_devices:
+  name: Media Players
+  icon: mdi:television
+  entities:
+    - media_player.samsung_tv_remote
+    - media_player.denon_avrx2100w
+
+sonoses:
+  name: Audio Devices
+  icon: mdi:speaker
+  entities:
+    - media_player.kitchen
+    - media_player.living_room
+
+media_streaming:
+  name: Media Streaming
+  icon: mdi:server-network
+  entities:
+    - media_player.chromecast101
+    - media_player.upstairs
+    - media_player.kodi
+
+plex_devices:
+  name: Plex
+  icon: mdi:server-network
+  entities:
+    - media_player.plex_6ckun1j8g0we34orzv4n9v7l
+    - sensor.plex
+
+kodi_light_automation:
+  name: Kodi lounge dimming
+  icon: mdi:lightbulb-on-outline
+  entities:
+    - input_boolean.lounge_media_dim_enable
+    - input_number.kodi_dimmer_slider
+
+#groups for security_view
+kitchen_cameras:
+  name: Kitchen Cameras
+  icon: mdi:cctv
+  entities:
+#    - camera.kitchen_overview
+#    - camera.nugget_flap
+
+cctv_cameras:
+  name: CCTV Cameras
+  icon: mdi:cctv
+  entities:
+    - camera.uvc_g3__exteriorfront
+
+finland_webcams:
+  name: Finland Webcams
+  icon: mdi:cctv
+  entities:
+    - camera.salla_centre
+    - camera.sallatunturi
+    - camera.salla_crossroads
+    - camera.salla_highway
+    - camera.sallatunturi_2
+    - camera.sallatunturi_north_east
+    - camera.sallatunturi_south_west
+    - camera.sallatunturi_summit
+
+holiday_mode_toggle:
+  name: Holiday Mode
+  icon: mdi:toggle-switch
+  entities:
+    - input_boolean.holiday_mode
+
+# groups for infrastructure_view
 certificate_expiries:
   name: SSL cert renewals
+  icon: mdi:certificate
   entities:
     - sensor.unifi_ssl
     - sensor.unifi_nvr_ssl
@@ -188,42 +219,69 @@ certificate_expiries:
     - sensor.plex_ssl
     - sensor.flood_ssl
 
-fitbit_stats:
-  name: Simon's Fitbit Stats
+travis_builds:
+  name: Travis Builds
+  icon: mdi:thumb-up
   entities:
-    - sensor.alta_battery
-    - sensor.alta_battery_2
-    - sensor.alta_battery_3
-    - sensor.steps
-    - sensor.steps_2
-    - sensor.steps_3
+    - sensor.analbeardhomeassistant_state
+    - sensor.analbeardhomeassistant_last_build_started_at
+    - sensor.analbeardhomeassistant_last_build_duration
 
-holiday_automation:
-  name: Holiday Mode
+speedtest_results:
+  name: Speedtest
+  icon: mdi:speedometer
   entities:
-    - automation.presence_simulation_started
-    - automation.presence_simulation_stopped
+    - sensor.speedtest_ping
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
 
-holiday_scenes:
-  name: Holiday Scenes
+# groups for lighting_view
+all_home_lights:
+  name: All Lights
+  icon: mdi:lightbulb-outline
   entities:
-    - scene.kitchen_away_mode_on
-    - scene.kitchen_away_mode_off
-    - scene.lounge_away_mode_on
-    - scene.lounge_away_mode_off
+    - group.lounge_lights
+    - group.energenie_switches
+    - group.kitchen_lights
 
-kodi_living_room_lights:
-  name: Lounge media dimming
+lounge_lights:
+  name: Lounge Lights
+  icon: mdi:lightbulb-outline
   entities:
-    - input_boolean.lounge_media_dim_enable
-    - input_number.kodi_dimmer_slider
+    - light.standard_lamp_left
+    - light.standard_lamp_right
+    - switch.energenie_one
+    - switch.energenie_two
+    - switch.energenie_three
+
+energenie_switches:
+  name: Sockets
+  icon: mdi:toggle-switch
+  entities:
+    - switch.energenie_one
+    - switch.energenie_two
+    - switch.energenie_three
+
+kitchen_lights:
+  name: Kitchen Lights
+  icon: mdi:lightbulb-outline
+  entities:
+    - light.kitchen_cabinets
+
+lighting_tools:
+  name: Lighting Control
+  icon: mdi:toggle-switch
+  entities:
+    - switch.flux_adjustment
 
 loft_lighting:
   name: Loft Lighting
+  icon: mdi:lightbulb-outline
   entities:
     - switch.loft_lighting
     - sensor.loft_light_status
 
+# automation groups
 automation_all_lights:
   name: All lights (automation only)
   entities:
@@ -232,15 +290,13 @@ automation_all_lights:
     - group.kitchen_lights
     - switch.loft_lighting
 
-people:
-  name: Device Trackers
+lounge_hues:
+  name: Lounge Hues
   entities:
-    - device_tracker.simon
-    - device_tracker.nikki
+    - light.standard_lamp_left
+    - light.standard_lamp_right
 
-travis_builds:
-  name: Travis Builds
+kitchen_hues:
+  name: Kitchen Hues
   entities:
-    - sensor.analbeardhomeassistant_state
-    - sensor.analbeardhomeassistant_last_build_started_at
-    - sensor.analbeardhomeassistant_last_build_duration
+    - light.kitchen_cabinets
