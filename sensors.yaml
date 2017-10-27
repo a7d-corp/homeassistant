@@ -27,6 +27,14 @@
     - temp_low_1d_c
     - wind_mph
     - wind_string
+    - weather_1d_metric
+    - weather_1n_metric
+    - weather_2d_metric
+    - weather_2n_metric
+    - weather_3d_metric
+    - weather_3n_metric
+    - weather_4d_metric
+    - weather_4n_metric
 - platform: google_travel_time
   name: Home > Work (Simon)
   api_key: !secret google_maps_api_key
@@ -119,3 +127,18 @@
     - time
 - platform: travisci
   api_key: !secret github_ha_token
+- platform: worldtidesinfo
+  name: Portsmouth Tides
+  api_key: !secret worldtides_api_key
+  latitude: 50.830573
+  longitude: -1.105639
+- platform: speedtest
+  name: Speedtest
+  server_id: 1234
+  minute:
+    - 0
+    - 30
+  monitored_conditions:
+    - ping
+    - download
+    - upload
