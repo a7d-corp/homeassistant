@@ -7,6 +7,7 @@ default_view:
     - group.wunderground_daily_forecast
     - group.portsmouth_tides
     - group.people
+    - group.global_controls
     - sun.sun
     - device_tracker.nikki
     - device_tracker.simon
@@ -105,6 +106,15 @@ people:
   entities:
     - device_tracker.simon
     - device_tracker.nikki
+
+global_controls:
+  name: Home Controls
+  icon: 'mdi:home-variant'
+  control: hidden
+  entities:
+    - input_boolean.global_away_mode_toggle
+    - input_boolean.lighting_away_mode_toggle
+    - input_boolean.heating_away_mode_toggle
 
 # groups for travel_view
 travel_times:
