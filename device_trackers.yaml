@@ -6,4 +6,4 @@
   verify_ssl: false
   site_id: !secret unifi_site
   track_new_devices: false
-  consider_home: 600
+  detection_time: 600
