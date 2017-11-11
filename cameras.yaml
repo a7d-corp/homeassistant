@@ -4,9 +4,9 @@
 #- platform: generic
 #  name: Nugget Flap
 #  still_image_url: !secret kitchen_cam2_url
-- platform: uvc
-  nvr: 10.101.0.50
-  key: !secret nvr_key
+#- platform: uvc
+#  nvr: 10.101.0.50
+#  key: !secret nvr_key
 - platform: generic
   name: Salla Centre
   still_image_url: http://www.salla.fi/webcam/current.jpg
@@ -31,3 +31,6 @@
 - platform: generic
   name: Sallatunturi Summit
   still_image_url: https://images.webcams.travel/webcam/1461745538-salla-north-east-salla-ski-resort-sallatunturi.jpg?token=webcams.travel:a96b1c7c9bd128ffae943678dd1f0230:1508151122
+- platform: generic
+  name: Europe rain map
+  still_image_url: "https://api.sat24.com/animated/EU/rainTMC/1/GMT%20Standard%20Time/544909"
