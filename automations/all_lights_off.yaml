@@ -5,9 +5,14 @@
       from: 'home'
       to: 'not_home'
   condition:
-    condition: state
-    entity_id: input_boolean.away_mode_enable
-    state: 'on'
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: input_boolean.global_away_mode_toggle
+        state: 'on'
+      - condition: state
+        entity_id: input_boolean.lighting_away_mode_toggle
+        state: 'on'
   action:
     service: light.turn_off
     entity_id:
