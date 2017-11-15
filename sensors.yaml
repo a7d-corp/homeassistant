@@ -142,3 +142,13 @@
     - ping
     - download
     - upload
+- platform: template
+  sensors:
+    simon_status:
+      value_template: '{{ states.input_select.simon_status_dropdown.state }}'
+      friendly_name: 'Simon'
+      entity_id: input_select.simon_status_dropdown
+    nikki_status:
+      value_template: '{{ states.input_select.nikki_status_dropdown.state }}'
+      friendly_name: 'Nikki'
+      entity_id: input_select.nikki_status_dropdown
