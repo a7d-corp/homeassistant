@@ -107,6 +107,8 @@ people:
   entities:
     - device_tracker.simon
     - device_tracker.nikki
+    - sensor.simon_status
+    - sensor.nikki_status
 
 global_controls:
   name: Home Controls
