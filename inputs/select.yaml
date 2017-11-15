@@ -1,0 +1,20 @@
+simon_status_dropdown:
+  name: Simon
+  options:
+    - Home
+    - Just arrived
+    - Just left
+    - Away
+    - Extended away
+  initial: Home
+  icon: 'mdi:human-male'
+nikki_status_dropdown:
+  name: Nikki
+  options:
+    - Home
+    - Just arrived
+    - Just left
+    - Away
+    - Extended away
+  initial: Home
+  icon: 'mdi:human-female'
