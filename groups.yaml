@@ -47,6 +47,7 @@ lighting_view:
     - group.kitchen_lights
     - group.lighting_tools
     - group.loft_lighting
+    - group.external_christmas_lights
 
 heating_view:
   name: Heating
@@ -303,6 +304,13 @@ loft_lighting:
   entities:
     - switch.loft_lighting
     - sensor.loft_light_status
+
+external_christmas_lights:
+  name: Outside Christmas Lights
+  icon: mdi:theme-light-dark
+  entities:
+    - switch.external_christmas_lights
+    - sensor.christmas_lights_power
 
 # groups for heating_view
 downstairs_heating:

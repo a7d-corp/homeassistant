@@ -152,3 +152,8 @@
       value_template: '{{ states.input_select.nikki_status_dropdown.state }}'
       friendly_name: 'Nikki'
       entity_id: input_select.nikki_status_dropdown
+- platform: template
+  sensors:
+    christmas_lights_power:
+      friendly_name: 'Christmas lights consumption'
+      value_template: '{{ states.switch.external_christmas_lights.attributes.current_consumption }}'

@@ -35,3 +35,6 @@
   payload_on: "on"
   payload_off: "off"
   retain: true
+- platform: tplink
+  name: 'External Christmas Lights'
+  host: !secret ip_tplink_1_switch
