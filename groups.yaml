@@ -48,6 +48,13 @@ lighting_view:
     - group.lighting_tools
     - group.loft_lighting
 
+heating_view:
+  name: Heating
+  view: yes
+  icon: mdi:radiator
+  entities:
+    - group.downstairs_heating
+
 travel_view:
   name: Travel
   view: yes
@@ -109,6 +116,8 @@ people:
     - device_tracker.nikki
     - sensor.simon_status
     - sensor.nikki_status
+    - input_select.simon_status_dropdown
+    - input_select.nikki_status_dropdown
 
 global_controls:
   name: Home Controls
@@ -203,6 +212,7 @@ finland_webcams:
   entities:
     - camera.salla_centre
     - camera.sallatunturi
+    - camera.sallatunturi_2
     - camera.salla_crossroads
     - camera.salla_highway
     - camera.sallatunturi_2
@@ -293,6 +303,21 @@ loft_lighting:
   entities:
     - switch.loft_lighting
     - sensor.loft_light_status
+
+# groups for heating_view
+downstairs_heating:
+  name: Downstairs Heating
+  icon: mdi:radiator
+  entities:
+    - input_number.downstairs_heating_morning_start
+    - input_number.downstairs_heating_morning_end
+    - input_number.downstairs_heating_morning_temp
+    - input_number.downstairs_heating_midday_start
+    - input_number.downstairs_heating_midday_end
+    - input_number.downstairs_heating_midday_temp
+    - input_number.downstairs_heating_evening_start
+    - input_number.downstairs_heating_evening_end
+    - input_number.downstairs_heating_evening_temp
 
 # automation groups
 automation_all_lights:
