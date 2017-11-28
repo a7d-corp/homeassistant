@@ -25,12 +25,12 @@
       entity_id: input_select.simon_status_dropdown
       to: 'Just arrived'
       for:
-        minutes: 10
+        minutes: 5
     - platform: state
       entity_id: input_select.nikki_status_dropdown
       to: 'Just arrived'
       for:
-        minutes: 10
+        minutes: 5
     - platform: state
       entity_id: input_select.simon_status_dropdown
       from: 'Just left'
@@ -77,12 +77,12 @@
       entity_id: input_select.simon_status_dropdown
       to: 'Just left'
       for:
-        minutes: 10
+        minutes: 5
     - platform: state
       entity_id: input_select.nikki_status_dropdown
       to: 'Just left'
       for:
-        minutes: 10
+        minutes: 5
   action:
     - service: input_select.select_option
       data_template:
