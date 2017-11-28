@@ -14,6 +14,9 @@
   name: Sallatunturi
   still_image_url: http://sallanhissit.com/current.jpg
 - platform: generic
+  name: Sallatunturi 2
+  still_image_url: https://ski.salla.fi/webcam1/Img_%20Eturinne/Snap_Eturinne1.jpg
+- platform: generic
   name: Salla Crossroads
   still_image_url: https://images.webcams.travel/webcam/1222498680-Weather-Tie950-Sallatunturi-Sallaan-Salla.jpg?token=webcams.travel:8fe6c4fdc45d828298e2f5d163cd1c2d:1508151141
 - platform: generic
