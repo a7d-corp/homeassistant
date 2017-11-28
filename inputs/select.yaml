@@ -18,3 +18,68 @@ nikki_status_dropdown:
     - Extended away
   initial: Home
   icon: 'mdi:human-female'
+downstairs_heating_dropdown:
+  name: Downstairs heating
+  options:
+    - on
+    - off
+    - away
+  initial: on
+  icon: 'mdi:radiator'
+#downstairs_heating_morning_on_dropdown:
+#  name: Morning on
+#  options:
+#    - 6
+#    - 7
+#    - 8
+#    - 9
+#    - 10
+#    - 11
+#  initial: 6
+#downstairs_heating_morning_off_dropdown:
+#  name: Morning off
+#  options:
+#    - 6
+#    - 7
+#    - 8
+#    - 9
+#    - 10
+#    - 11
+#downstairs_heating_midday_on_dropdown:
+#  name: Midday on
+#  options:
+#    - 10
+#    - 11
+#    - 12
+#    - 13
+#    - 14
+#    - 15
+#    - 16
+#downstairs_heating_midday_off_dropdown:
+#  name: Midday off
+#  options:
+#    - 10
+#    - 11
+#    - 12
+#    - 13
+#    - 14
+#    - 15
+#    - 16
+#downstairs_heating_evening_on_dropdown:
+#  name: Evening on
+#  options:
+#    - 17
+#    - 18
+#    - 19
+#    - 20
+#    - 21
+#    - 22
+#downstairs_heating_evening_off_dropdown:
+#  name: Evening off
+#  options:
+#    - 17
+#    - 18
+#    - 19
+#    - 20
+#    - 21
+#    - 22
