@@ -1,0 +1,8 @@
+- alias: 'Turn on external christmas lights'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.external_christmas_lights
