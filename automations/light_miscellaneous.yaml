@@ -1,3 +1,6 @@
+#
+# Turns off al lights when we leave the house
+#
 - alias: "Turn off all lights"
   trigger:
     - platform: state
@@ -17,3 +20,16 @@
     service: light.turn_off
     entity_id:
       - group.automation_all_lights
+#
+# Turns off loft lights after an hour
+#
+- alias: 'Turn loft light off'
+  trigger:
+    - platform: state
+      entity_id: sensor.loft_light_status
+      to: 'on'
+      for:
+        hours: 1
+  action:
+    service: switch.turn_off
+    entity_id: switch.loft_lighting
