@@ -7,78 +7,27 @@ kodi_dimmer_slider:
   mode: slider
   unit_of_measurement: '%'
   icon: 'mdi:toggle-switch'
-downstairs_heating_morning_temp:
+downstairs_heat_morning_temp:
   name: Morning temperature
   mode: slider
   min: 10
   max: 25
   step: 0.5
-  initial: 17
   unit_of_measurement: 'C'
-  icon: 'mdi:weather-sunset-up'
-downstairs_heating_midday_temp:
+  icon: 'mdi:temperature-celsius'
+downstairs_heat_midday_temp:
   name: Midday temperature
   mode: slider
   min: 10
   max: 25
   step: 0.5
-  initial: 17
   unit_of_measurement: 'C'
-  icon: 'mdi:weather-sunny'
-downstairs_heating_evening_temp:
+  icon: 'mdi:temperature-celsius'
+downstairs_heat_evening_temp:
   name: Evening temperature
   mode: slider
   min: 10
   max: 25
   step: 0.5
-  initial: 17
   unit_of_measurement: 'C'
-  icon: 'mdi:weather-sunset-down'
-downstairs_heating_morning_start:
-  name: Heating on (morning)
-  mode: slider
-  min: 5
-  max: 10
-  step: 0.5
-  initial: 6
-  icon: 'mdi:clock'
-downstairs_heating_morning_end:
-  name: Heating off (morning)
-  mode: slider
-  min: 7
-  max: 12
-  step: 0.5
-  initial: 7.5
-  icon: 'mdi:clock-end'
-downstairs_heating_midday_start:
-  name: Heating on (midday)
-  mode: slider
-  min: 11
-  max: 14
-  step: 0.5
-  initial: 12
-  icon: 'mdi:clock'
-downstairs_heating_midday_end:
-  name: Heating off (midday)
-  mode: slider
-  min: 12
-  max: 16
-  step: 0.5
-  initial: 14
-  icon: 'mdi:clock-end'
-downstairs_heating_evening_start:
-  name: Heating on (evening)
-  mode: slider
-  min: 16
-  max: 19
-  step: 0.5
-  initial: 16.5
-  icon: 'mdi:clock'
-downstairs_heating_eveninging_end:
-  name: Heating off (evening)
-  mode: slider
-  min: 18
-  max: 22
-  step: 0.5
-  initial: 21
-  icon: 'mdi:clock-end'
+  icon: 'mdi:temperature-celsius'

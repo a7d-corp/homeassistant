@@ -316,15 +316,16 @@ downstairs_heating:
   name: Downstairs Heating
   icon: mdi:radiator
   entities:
-    - input_number.downstairs_heating_morning_start
-    - input_number.downstairs_heating_morning_end
-    - input_number.downstairs_heating_morning_temp
-    - input_number.downstairs_heating_midday_start
-    - input_number.downstairs_heating_midday_end
-    - input_number.downstairs_heating_midday_temp
-    - input_number.downstairs_heating_evening_start
-    - input_number.downstairs_heating_evening_end
-    - input_number.downstairs_heating_evening_temp
+    - input_select.downstairs_heat_mode
+    - input_text.downstairs_heat_1_on
+    - input_text.downstairs_heat_1_off
+    - input_number.downstairs_heat_morning_temp
+    - input_text.downstairs_heat_2_on
+    - input_text.downstairs_heat_2_off
+    - input_number.downstairs_heat_midday_temp
+    - input_text.downstairs_heat_3_on
+    - input_text.downstairs_heat_3_off
+    - input_number.downstairs_heat_evening_temp
 
 # automation groups
 automation_all_lights:
