@@ -1,3 +1,6 @@
+#
+# Start presence simulation when holiday mode is enabled
+#
 - alias: 'Presence simulation started'
   trigger:
     platform: sun
@@ -22,6 +25,9 @@
       data:
         message: Away mode active
         target: device/Houston
+#
+# End presence simulation when holiday mode is enabled
+#
 - alias: 'Presence simulation stopped'
   trigger:
     platform: time
@@ -51,3 +57,19 @@
       data:
         message: Away mode deactivated
         target: device/Houston
+#
+# Disable holiday mode on our return
+#
+- alias: 'Disable holiday mode'
+  trigger:
+    platform: state
+    entity_id: device_tracker.simon, device_tracker.nikki
+    from: 'not_home'
+    to: 'home'
+  condition:
+    condition: state
+    entity_id: input_boolean.holiday_mode
+    state: 'on'
+  action:
+    service: input_boolean.turn_off
+    entity_id: input_boolean.holiday_mode
