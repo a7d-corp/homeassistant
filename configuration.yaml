@@ -63,8 +63,9 @@ tts:
   platform: google
 
 input_boolean: !include inputs/boolean.yaml
-input_number: !include inputs/sliders.yaml
+input_number: !include inputs/numbers.yaml
 input_select: !include inputs/select.yaml
+input_text: !include inputs/text.yaml
 
 updater:
 conversation:
