@@ -1,3 +1,6 @@
+#
+# re-enable away mode in case it has been left disabled
+#
 - alias: 're-enable away mode'
   trigger:
     - platform: time
