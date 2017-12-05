@@ -1,0 +1,35 @@
+- alias: "Turn on internal christmas lights"
+  trigger:
+    platform: sun
+    event: sunset
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.people
+        state: 'home'
+      - condition: state
+        entity_id: switch.energenie_two
+        state: 'off'
+  action:
+    service: switch.turn_on
+    entity_id:
+      - switch.energenie_two
+- alias: "Internal christmas lights on (arrival)"
+  trigger:
+    - platform: state
+      entity_id: group.people
+      from: 'not_home'
+      to: 'home'
+  condition:
+    condition: and
+    conditions:
+      - condition: sun
+        after: 'sunset'
+      - condition: state
+        entity_id: switch.energenie_two
+        state: 'off'
+  action:
+    service: switch.turn_on
+    entity_id:
+      - switch.energenie_two
