@@ -212,14 +212,13 @@ finland_webcams:
   icon: mdi:cctv
   entities:
     - camera.salla_centre
-    - camera.sallatunturi
-    - camera.sallatunturi_2
     - camera.salla_crossroads
     - camera.salla_highway
+    - camera.sallatunturi
     - camera.sallatunturi_2
     - camera.sallatunturi_north_east
-    - camera.sallatunturi_south_west
     - camera.sallatunturi_summit
+    - camera.sallatunturi_summit_2
 
 holiday_mode_toggle:
   name: Holiday Mode
