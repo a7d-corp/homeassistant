@@ -1,3 +1,6 @@
+#
+# Set status to just arrived
+#
 - alias: "Set person to just arrived"
   trigger:
     - platform: state
@@ -18,7 +21,9 @@
             input_select.nikki_status_dropdown
           {% endif %}
         option: Just arrived
-
+#
+# Transition from just arrived to home after 5 minutes
+#
 - alias: "Set person to home"
   trigger:
     - platform: state
@@ -49,7 +54,9 @@
             input_select.nikki_status_dropdown
           {% endif %}
         option: Home
-
+#
+# Set status to just left
+#
 - alias: "Set person to just left"
   trigger:
     - platform: state
@@ -70,7 +77,9 @@
             input_select.nikki_status_dropdown
           {% endif %}
         option: Just left
-
+#
+# Set status from just left to away after 5 minutes
+# 
 - alias: "Set person to away"
   trigger:
     - platform: state
@@ -93,7 +102,9 @@
             input_select.nikki_status_dropdown
           {% endif %}
         option: Away
-
+#
+# Set status to extended away (holiday mode)
+#
 - alias: "Set person to extended away"
   trigger:
     - platform: state
