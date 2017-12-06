@@ -117,8 +117,8 @@ people:
     - device_tracker.nikki
     - sensor.simon_status
     - sensor.nikki_status
-    - input_select.simon_status_dropdown
-    - input_select.nikki_status_dropdown
+    - input_select.simon_status
+    - input_select.nikki_status
 
 global_controls:
   name: Home Controls
@@ -346,3 +346,9 @@ kitchen_hues:
   name: Kitchen Hues
   entities:
     - light.kitchen_cabinets
+
+automation_people_status:
+  name: People status
+  entities:
+    - sensor.simon_status
+    - sensor.nikki_status
