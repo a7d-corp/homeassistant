@@ -16,9 +16,9 @@
       data_template:
         entity_id: >
           {% if trigger.entity_id == 'device_tracker.simon' %}
-            input_select.simon_status_dropdown
+            input_select.simon_status
           {% else %}
-            input_select.nikki_status_dropdown
+            input_select.nikki_status
           {% endif %}
         option: just arrived
 #
@@ -27,31 +27,31 @@
 - alias: "Set person to home"
   trigger:
     - platform: state
-      entity_id: input_select.simon_status_dropdown
+      entity_id: input_select.simon_status
       to: 'just arrived'
       for:
         minutes: 5
     - platform: state
-      entity_id: input_select.nikki_status_dropdown
+      entity_id: input_select.nikki_status
       to: 'just arrived'
       for:
         minutes: 5
     - platform: state
-      entity_id: input_select.simon_status_dropdown
+      entity_id: input_select.simon_status
       from: 'just left'
       to: 'just arrived'
     - platform: state
-      entity_id: input_select.nikki_status_dropdown
+      entity_id: input_select.nikki_status
       from: 'just left'
       to: 'just arrived'
   action:
     - service: input_select.select_option
       data_template:
         entity_id: >
-          {% if trigger.entity_id == 'input_select.simon_status_dropdown' %}
-            input_select.simon_status_dropdown
+          {% if trigger.entity_id == 'input_select.simon_status' %}
+            input_select.simon_status
           {% else %}
-            input_select.nikki_status_dropdown
+            input_select.nikki_status
           {% endif %}
         option: home
 #
@@ -72,9 +72,9 @@
       data_template:
         entity_id: >
           {% if trigger.entity_id == 'device_tracker.simon' %}
-            input_select.simon_status_dropdown
+            input_select.simon_status
           {% else %}
-            input_select.nikki_status_dropdown
+            input_select.nikki_status
           {% endif %}
         option: just left
 #
@@ -83,12 +83,12 @@
 - alias: "Set person to away"
   trigger:
     - platform: state
-      entity_id: input_select.simon_status_dropdown
+      entity_id: input_select.simon_status
       to: 'just left'
       for:
         minutes: 5
     - platform: state
-      entity_id: input_select.nikki_status_dropdown
+      entity_id: input_select.nikki_status
       to: 'just left'
       for:
         minutes: 5
@@ -96,10 +96,10 @@
     - service: input_select.select_option
       data_template:
         entity_id: >
-          {% if trigger.entity_id == 'input_select.simon_status_dropdown' %}
-            input_select.simon_status_dropdown
+          {% if trigger.entity_id == 'input_select.simon_status' %}
+            input_select.simon_status
           {% else %}
-            input_select.nikki_status_dropdown
+            input_select.nikki_status
           {% endif %}
         option: away
 #
@@ -108,12 +108,12 @@
 - alias: "Set person to extended away"
   trigger:
     - platform: state
-      entity_id: input_select.simon_status_dropdown
+      entity_id: input_select.simon_status
       to: 'away'
       for:
         hours: 24
     - platform: state
-      entity_id: input_select.nikki_status_dropdown
+      entity_id: input_select.nikki_status
       to: 'away'
       for:
         hours: 24
@@ -121,9 +121,9 @@
     - service: input_select.select_option
       data_template:
         entity_id: >
-          {% if trigger.entity_id == 'input_select.simon_status_dropdown' %}
-            input_select.simon_status_dropdown
+          {% if trigger.entity_id == 'input_select.simon_status' %}
+            input_select.simon_status
           {% else %}
-            input_select.nikki_status_dropdown
+            input_select.nikki_status
           {% endif %}
         option: extended away

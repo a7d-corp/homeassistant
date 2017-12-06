@@ -1,4 +1,4 @@
-simon_status_dropdown:
+simon_status:
   name: Simon
   options:
     - home
@@ -7,7 +7,7 @@ simon_status_dropdown:
     - away
     - extended away
   icon: 'mdi:human-male'
-nikki_status_dropdown:
+nikki_status:
   name: Nikki
   options:
     - home
