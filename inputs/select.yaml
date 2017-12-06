@@ -1,22 +1,20 @@
 simon_status_dropdown:
   name: Simon
   options:
-    - Home
-    - Just arrived
-    - Just left
-    - Away
-    - Extended away
-  initial: Home
+    - home
+    - just arrived
+    - just left
+    - away
+    - extended away
   icon: 'mdi:human-male'
 nikki_status_dropdown:
   name: Nikki
   options:
-    - Home
-    - Just arrived
-    - Just left
-    - Away
-    - Extended away
-  initial: Home
+    - home
+    - just arrived
+    - just left
+    - away
+    - extended away
   icon: 'mdi:human-female'
 downstairs_heat_mode:
   name: Downstairs heating control
