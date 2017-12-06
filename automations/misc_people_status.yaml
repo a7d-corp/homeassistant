@@ -20,7 +20,7 @@
           {% else %}
             input_select.nikki_status_dropdown
           {% endif %}
-        option: Just arrived
+        option: just arrived
 #
 # Transition from just arrived to home after 5 minutes
 #
@@ -28,22 +28,22 @@
   trigger:
     - platform: state
       entity_id: input_select.simon_status_dropdown
-      to: 'Just arrived'
+      to: 'just arrived'
       for:
         minutes: 5
     - platform: state
       entity_id: input_select.nikki_status_dropdown
-      to: 'Just arrived'
+      to: 'just arrived'
       for:
         minutes: 5
     - platform: state
       entity_id: input_select.simon_status_dropdown
-      from: 'Just left'
-      to: 'Just arrived'
+      from: 'just left'
+      to: 'just arrived'
     - platform: state
       entity_id: input_select.nikki_status_dropdown
-      from: 'Just left'
-      to: 'Just arrived'
+      from: 'just left'
+      to: 'just arrived'
   action:
     - service: input_select.select_option
       data_template:
@@ -53,7 +53,7 @@
           {% else %}
             input_select.nikki_status_dropdown
           {% endif %}
-        option: Home
+        option: home
 #
 # Set status to just left
 #
@@ -76,7 +76,7 @@
           {% else %}
             input_select.nikki_status_dropdown
           {% endif %}
-        option: Just left
+        option: just left
 #
 # Set status from just left to away after 5 minutes
 # 
@@ -84,12 +84,12 @@
   trigger:
     - platform: state
       entity_id: input_select.simon_status_dropdown
-      to: 'Just left'
+      to: 'just left'
       for:
         minutes: 5
     - platform: state
       entity_id: input_select.nikki_status_dropdown
-      to: 'Just left'
+      to: 'just left'
       for:
         minutes: 5
   action:
@@ -101,7 +101,7 @@
           {% else %}
             input_select.nikki_status_dropdown
           {% endif %}
-        option: Away
+        option: away
 #
 # Set status to extended away (holiday mode)
 #
@@ -109,12 +109,12 @@
   trigger:
     - platform: state
       entity_id: input_select.simon_status_dropdown
-      to: 'Away'
+      to: 'away'
       for:
         hours: 24
     - platform: state
       entity_id: input_select.nikki_status_dropdown
-      to: 'Away'
+      to: 'away'
       for:
         hours: 24
   action:
@@ -126,4 +126,4 @@
           {% else %}
             input_select.nikki_status_dropdown
           {% endif %}
-        option: Extended away
+        option: extended away
