@@ -49,8 +49,8 @@ lighting_view:
     - group.loft_lighting
     - group.external_christmas_lights
 
-heating_view:
-  name: Heating
+climate_view:
+  name: Climate
   view: yes
   icon: mdi:radiator
   entities:
@@ -313,19 +313,17 @@ external_christmas_lights:
 
 # groups for heating_view
 downstairs_heating:
-  name: Downstairs Heating
+  name: Downstairs heating
   icon: mdi:radiator
   entities:
+    - climate.living_room
+    - sensor.living_room_thermostat_operation_mode
+    - sensor.living_room_thermostat_humidity
+    - binary_sensor.living_room_thermostat_has_leaf
+    - binary_sensor.living_room_thermostat_online
+    - binary_sensor.living_room_thermostat_is_locked
+    - binary_sensor.living_room_thermostat_is_using_emergency_heat
     - input_select.downstairs_heat_mode
-    - input_text.downstairs_heat_1_on
-    - input_text.downstairs_heat_1_off
-    - input_number.downstairs_heat_morning_temp
-    - input_text.downstairs_heat_2_on
-    - input_text.downstairs_heat_2_off
-    - input_number.downstairs_heat_midday_temp
-    - input_text.downstairs_heat_3_on
-    - input_text.downstairs_heat_3_off
-    - input_number.downstairs_heat_evening_temp
 
 # automation groups
 automation_all_lights:
