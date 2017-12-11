@@ -1,3 +1,6 @@
+#
+# Turn internal christmas lights on at sunset
+#
 - alias: "Turn on internal christmas lights"
   trigger:
     platform: sun
@@ -15,6 +18,9 @@
     service: switch.turn_on
     entity_id:
       - switch.energenie_two
+#
+# Turn internal christmas lights on when we arrive
+#
 - alias: "Internal christmas lights on (arrival)"
   trigger:
     - platform: state
@@ -33,3 +39,15 @@
     service: switch.turn_on
     entity_id:
       - switch.energenie_two
+#
+# Turn internal christmas lights off when we leave
+#
+- alias: 'Turn off internal christmas lights'
+  trigger:
+    platform: state
+    entity_id: group.automation_people_status
+    from: 'just left'
+    to: 'away'
+  action:
+    service: switch.turn_off
+    entity_id: switch.energenie_two
