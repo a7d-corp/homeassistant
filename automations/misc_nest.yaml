@@ -3,12 +3,16 @@
 #
 - alias: 'Set Nests to away mode'
   trigger:
-    platform: state
-    entity_id: group.automation_people_status
-#    from: 'just left'
-#    to: 'away'
-    from: 'home'
-    to: 'not_home'
+    - platform: state
+      entity_id: sensor.simon_status
+      to: 'away'
+    - platform: state
+      entity_id: sensor.nikki_status
+      to: 'away'
+  condition:
+    condition: state
+    entity_id: group.people
+    state: 'not_home'
   action:
     - service: nest.set_mode
       data:
@@ -21,12 +25,16 @@
 #
 - alias: 'Set Nest to home mode'
   trigger:
-    platform: state
-    entity_id: group.automation_people_status
-#    from: 'away'
-#    to: 'just arrived'
-    from: 'not_home'
-    to: 'home'
+    - platform: state
+      entity_id: sensor.simon_status
+      to: 'just arrived'
+    - platform: state
+      entity_id: sensor.nikki_status
+      to: 'just arrived'
+  condition:
+    condition: state
+    entity_id: group.people
+    state: 'home'
   action:
     - service: nest.set_mode
       data:
