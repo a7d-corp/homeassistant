@@ -1,0 +1,36 @@
+#
+# Set thermostats to away mode when we leave
+#
+- alias: 'Set Nests to away mode'
+  trigger:
+    platform: state
+    entity_id: group.automation_people_status
+#    from: 'just left'
+#    to: 'away'
+    from: 'home'
+    to: 'not_home'
+  action:
+    - service: nest.set_mode
+      data:
+        home_mode: away
+    - service: notify.slack_connector
+      data:
+        message: Nest set to away mode
+#
+# Set thermostats to home mode when we arrive
+#
+- alias: 'Set Nest to home mode'
+  trigger:
+    platform: state
+    entity_id: group.automation_people_status
+#    from: 'away'
+#    to: 'just arrived'
+    from: 'not_home'
+    to: 'home'
+  action:
+    - service: nest.set_mode
+      data:
+        home_mode: home
+    - service: notify.slack_connector
+      data:
+        message: Nest set to home mode
