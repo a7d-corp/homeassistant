@@ -1,0 +1,13 @@
+- platform: template
+  sensors:
+    people_home:
+      entity_id:
+        - sensor.simon_status
+        - sensor.nikki_status
+      value_template: >-
+        {{ is_state('sensor.simon_status', 'home')
+           or is_state('sensor.simon_status', 'just arrived')
+           or is_state('sensor.simon_status', 'just left')
+           or is_state('sensor.nikki_status', 'home')
+           or is_state('sensor.nikki_status', 'just arrived')
+           or is_state('sensor.nikki_status', 'just left') }}
