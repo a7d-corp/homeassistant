@@ -261,6 +261,7 @@ speedtest_results:
 # groups for lighting_view
 all_home_lights:
   name: All Lights
+  control: hidden
   icon: mdi:lightbulb-outline
   entities:
     - group.lounge_lights
