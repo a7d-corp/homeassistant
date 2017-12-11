@@ -17,7 +17,6 @@
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.global_away_mode_toggle
-    - service: notify.simons_pushbullet_notifier
+    - service: notify.slack_connector
       data:
-        message: Away mode re-enabled
-        target: device/Houston
+        message: Global away mode re-enabled
