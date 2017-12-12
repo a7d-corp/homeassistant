@@ -5,11 +5,11 @@ lounge_media_dim_enable:
   name: Enable dimming
   icon: 'mdi:checkbox-marked-outline'
 global_away_mode_toggle:
-  name: Enable away mode
+  name: Away mode
   icon: 'mdi:home-map-marker'
 lighting_away_mode_toggle:
-  name: Away mode (lighting only)
+  name: Away mode (lighting)
   icon: 'mdi:lightbulb-on'
 heating_away_mode_toggle:
-  name: Away mode (heating only)
+  name: Away mode (heating)
   icon: 'mdi:radiator'
