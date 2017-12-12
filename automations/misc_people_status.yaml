@@ -127,3 +127,27 @@
             input_select.nikki_status
           {% endif %}
         option: extended away
+#
+# Notify home in away mode
+#
+- alias: 'Home away mode enabled'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.people_home
+    to: 'off'
+  action:
+    service: notify.slack_connector
+    data:
+      message: Home is in away mode
+#
+# Notify home left away mode
+#
+- alias: 'Home away mode disabled'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.people_home
+    to: 'on'
+  action:
+    service: notify.slack_connector
+    data:
+      message: Home left away mode

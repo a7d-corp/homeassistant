@@ -38,3 +38,12 @@ binary_sensor.living_room_thermostat_is_locked:
   friendly_name: Nest locked
 binary_sensor.living_room_thermostat_is_using_emergency_heat:
   friendly_name: Emergency heat
+device_tracker.nikki:
+  friendly_name: Nikki's phone
+  entity_picture: /local/nikki.jpg
+device_tracker.simon:
+  friendly_name: Simon's phone
+  entity_picture: /local/simon.jpg
+binary_sensor.people_home:
+  friendly_name: Presence sensor
+  icon: mdi:account-multiple
