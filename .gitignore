@@ -6,6 +6,7 @@ tts
 *.db
 *.db-*
 *~
+www
 
 # secrets
 known_devices.yaml
