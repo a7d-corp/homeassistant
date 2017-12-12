@@ -1,5 +1,6 @@
-# powers on living room amp and sets input when the Sonos
-# connect starts playing
+#
+# powers on living room amp and sets input when the Sonos Connect starts playing
+#
 - alias: "Sonos - power on amp"
   trigger:
     - platform: state
@@ -23,12 +24,13 @@
         entity_id: media_player.denon_avrx2100w
         volume_level: 0.5
 #
-# Dims living room Hues when Kodi transitions to playing
+# Dims living room Hues when Kodi transitions from idle to playing
 #
 - alias: "Kodi - Playing"
   trigger:
     - platform: state
       entity_id: media_player.kodi
+      from: 'idle'
       to: 'playing'
       for:
         seconds: 2
@@ -51,7 +53,7 @@
       brightness_pct: '{{ states.input_number.kodi_dimmer_slider.state | int }}'
       transition: '2'
 #
-# Dims living room Hues when Kodi transitions to playing
+# Dims living room Hues when they're turned on and Kodi is already playing
 #
 - alias: "Kodi - already playing"
   trigger:
@@ -60,7 +62,7 @@
       to: 'on'
   condition:
     - condition: state
-      entity_id: media_player.living_room
+      entity_id: media_player.kodi
       state: 'playing'
   action:
     service: light.turn_on
@@ -69,8 +71,7 @@
       brightness_pct: '{{ states.input_number.kodi_dimmer_slider.state | int }}'
       transition: '2'
 #
-# Sets living room Hue brightness down if Kodi is already playing
-# and the Hues are turned on
+# Sets living room Hues to 50% when Kodi is paused
 #
 - alias: "Kodi - Paused"
   trigger:
