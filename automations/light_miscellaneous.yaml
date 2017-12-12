@@ -3,12 +3,11 @@
 #
 - alias: "Turn off all lights"
   trigger:
-    - platform: state
-      entity_id: group.people
-      from: 'home'
-      to: 'not_home'
+    platform: state
+    entity_id: binary_sensor.people_home
+    to: 'off'
   condition:
-    condition: or
+    condition: and
     conditions:
       - condition: state
         entity_id: input_boolean.global_away_mode_toggle

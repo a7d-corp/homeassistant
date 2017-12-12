@@ -9,8 +9,8 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: group.people
-        state: 'home'
+        entity_id: binary_sensor.people_home
+        state: 'on'
       - condition: state
         entity_id: switch.energenie_two
         state: 'off'
@@ -24,9 +24,8 @@
 - alias: "Internal christmas lights on (arrival)"
   trigger:
     - platform: state
-      entity_id: group.people
-      from: 'not_home'
-      to: 'home'
+      entity_id: binary_sensor.people_home
+      to: 'on'
   condition:
     condition: and
     conditions:
