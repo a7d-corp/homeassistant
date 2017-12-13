@@ -9,7 +9,7 @@ kodi_dimmer_slider:
 saved_lounge_brightness:
   name: Previous lounge brightness (for automation use)
   min: 0
-  max: 100
+  max: 255
   mode: box
 downstairs_heat_morning_temp:
   name: Morning temperature
