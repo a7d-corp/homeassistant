@@ -1,12 +1,16 @@
 kodi_dimmer_slider:
   name: "Kodi dim level"
-  initial: 20
   min: 0
   max: 40
   step: 2
   mode: slider
   unit_of_measurement: '%'
   icon: 'mdi:toggle-switch'
+saved_lounge_brightness:
+  name: Previous lounge brightness (for automation use)
+  min: 0
+  max: 100
+  mode: box
 downstairs_heat_morning_temp:
   name: Morning temperature
   mode: slider
