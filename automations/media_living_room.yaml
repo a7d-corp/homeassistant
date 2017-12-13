@@ -48,7 +48,7 @@
     - service: input_number.set_value
       data_template:
         entity_id: input_number.saved_lounge_brightness
-        value: '{{ states.light.standard_lamp_right.brightness | int }}'
+        value: '{{ states.light.standard_lamp_right.attributes.brightness }}'
     - service: light.turn_on
       data_template:
         entity_id: group.lounge_hues
@@ -70,7 +70,7 @@
     - service: input_number.set_value
       data_template:
         entity_id: input_number.saved_lounge_brightness
-        value: '{{ states.light.standard_lamp_right.brightness | int }}'
+        value: '{{ states.light.standard_lamp_right.attributes.brightness }}'
     - service: light.turn_on
       data:
         entity_id: group.lounge_hues
