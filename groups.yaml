@@ -115,6 +115,7 @@ people:
   entities:
     - device_tracker.simon
     - device_tracker.nikki
+    - device_tracker.simon_houston
     - binary_sensor.people_home
     - input_select.simon_status
     - input_select.nikki_status
