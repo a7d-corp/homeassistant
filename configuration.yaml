@@ -53,6 +53,12 @@ http:
   base_url: !secret base_url
   use_x_forwarded_for: true
 
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - mac: 78:11:dc:b1:f7:66
+      key: 757C90A939F44F11
+
 google_assistant:
   project_id: home-assistant-177620
   client_id: !secret google_assistant_client_id
