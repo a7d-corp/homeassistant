@@ -47,3 +47,6 @@ device_tracker.simon:
 binary_sensor.people_home:
   friendly_name: Presence sensor
   icon: mdi:account-multiple
+light.gateway_light_7811dcb1f766:
+  friend_name: Aqara gateway light
+  icon: mdi:access-point-network
