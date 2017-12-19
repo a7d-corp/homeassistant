@@ -79,16 +79,6 @@ history:
 logbook:
 sun:
 
-emulated_hue:
-  host_ip: 10.101.0.45
-  listen_port: 8300
-  advertise_ip: 10.101.0.45
-  advertise_port: 1901
-  upnp_bind_multicast: false
-  expose_by_default: true
-  exposed_domains:
-    - input_boolean
-
 mqtt:
   broker: !secret ip_mqtt_broker
   port: 1883
