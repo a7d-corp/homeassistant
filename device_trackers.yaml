@@ -6,4 +6,9 @@
   verify_ssl: false
   site_id: !secret unifi_site
   track_new_devices: false
-  detection_time: 600
+  detection_time: 300
+- platform: owntracks_http
+  max_gps_accuracy: 200
+  waypoint_whitelist:
+    - simon
+    - nikki
