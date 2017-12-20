@@ -23,6 +23,7 @@ security_view:
     - group.kitchen_cameras
     - group.cctv_cameras
     - group.finland_webcams
+    - group.door_sensors
     - group.holiday_mode_toggle
 
 media_view:
@@ -220,6 +221,12 @@ finland_webcams:
     - camera.sallatunturi_summit
     - camera.sallatunturi_summit_2
 
+door_sensors:
+  name: Door sensors
+  icon: mdi:door-open
+  entities:
+    - sensor.door_loft_hatch
+
 holiday_mode_toggle:
   name: Holiday Mode
   icon: mdi:toggle-switch
@@ -304,6 +311,7 @@ loft_lighting:
   entities:
     - switch.loft_lighting
     - sensor.loft_light_status
+    - sensor.door_loft_hatch
 
 external_christmas_lights:
   name: Outside Christmas Lights

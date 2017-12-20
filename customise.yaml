@@ -50,3 +50,5 @@ binary_sensor.people_home:
 light.gateway_light_7811dcb1f766:
   friend_name: Aqara gateway light
   icon: mdi:access-point-network
+binary_sensor.door_window_sensor_158d0001bf6277:
+  friendly_name: Loft hatch sensor

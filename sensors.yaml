@@ -2,11 +2,11 @@
   name: Weather
   monitored_conditions:
     - symbol
-- platform: plex
-  host: 10.101.0.50
-  port: 32400
-  username: !secret local_plex_username
-  password: !secret local_plex_password
+#- platform: plex
+#  host: 10.101.0.50
+#  port: 32400
+#  username: !secret local_plex_username
+#  password: !secret local_plex_password
 - platform: command_line
   command: curl -s http://10.101.0.47:5000/api/envirophat/weather/temperature
   name: Loft temperature
@@ -157,3 +157,19 @@
     christmas_lights_power:
       friendly_name: 'Christmas lights consumption'
       value_template: '{{ states.switch.external_christmas_lights.attributes.current_consumption }}'
+- platform: template
+  sensors:
+    door_loft_hatch:
+      friendly_name: Loft hatch
+      value_template: >-
+        {% if is_state('binary_sensor.door_window_sensor_158d0001bf6277', 'on') %}
+          open
+        {% else %}
+          closed
+        {% endif %}
+      icon_template: >
+        {% if is_state('binary_sensor.door_window_sensor_158d0001bf6277', 'on') %}
+          mdi:door-open
+        {% else %}
+          mdi:door-closed
+        {% endif %}
