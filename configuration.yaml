@@ -10,6 +10,7 @@ homeassistant:
 
 # Enables the frontend
 frontend:
+  javascript_version: latest
   themes:
     greens:
       dark-primary-color: "#009688"
@@ -52,6 +53,12 @@ http:
   api_password: !secret http_password
   base_url: !secret base_url
   use_x_forwarded_for: true
+
+hue:
+  bridges:
+    - host: 10.101.0.178
+      allow_unreachable: true
+      allow_hue_groups: false
 
 xiaomi_aqara:
   discovery_retry: 5

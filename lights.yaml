@@ -1,5 +1,0 @@
-platform: hue
-host: 10.101.0.178
-allow_unreachable: true
-allow_hue_groups: false
-
