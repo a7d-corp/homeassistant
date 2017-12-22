@@ -279,8 +279,7 @@ lounge_lights:
   name: Lounge Lights
   icon: mdi:lightbulb-outline
   entities:
-    - light.standard_lamp_left
-    - light.standard_lamp_right
+    - group.lounge_hues
     - switch.energenie_one
     - switch.energenie_two
     - switch.energenie_three
