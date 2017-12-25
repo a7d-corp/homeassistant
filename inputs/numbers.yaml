@@ -1,5 +1,5 @@
 kodi_dimmer_slider:
-  name: "Kodi dim level"
+  name: "Dim level"
   min: 0
   max: 40
   step: 2

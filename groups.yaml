@@ -188,11 +188,12 @@ plex_devices:
     - sensor.plex
 
 kodi_light_automation:
-  name: Kodi lounge dimming
+  name: Kodi controls
   icon: mdi:lightbulb-on-outline
   entities:
     - input_boolean.lounge_media_dim_enable
     - input_number.kodi_dimmer_slider
+    - input_boolean.kodi_amp_trigger
 
 #groups for security_view
 kitchen_cameras:
