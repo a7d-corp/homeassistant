@@ -347,6 +347,7 @@ lounge_hues:
   entities:
     - light.standard_lamp_left
     - light.standard_lamp_right
+    - light.sideboard_bloom
 
 kitchen_hues:
   name: Kitchen Hues
