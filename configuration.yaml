@@ -70,10 +70,14 @@ google_assistant:
   project_id: home-assistant-177620
   client_id: !secret google_assistant_client_id
   access_token: !secret google_assistant_access_token
-  expose_by_default: true
-
-tts:
-  platform: google
+  agent_user_id: home-assistant-101
+  api_key: !secret google_assistant_api_key
+  exposed_domains:
+    - switch
+    - media_player
+    - group
+    - scene
+    - script
 
 input_boolean: !include inputs/boolean.yaml
 input_number: !include inputs/numbers.yaml
