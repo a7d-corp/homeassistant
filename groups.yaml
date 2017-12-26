@@ -18,7 +18,7 @@ default_view:
 security_view:
   name: Security
   view: yes
-  icon: mdi:cctv
+  icon: mdi:security
   entities:
     - group.kitchen_cameras
     - group.cctv_cameras
