@@ -8,7 +8,19 @@ homeassistant:
   time_zone: Europe/London
   customize: !include customise.yaml
 
-# Enables the frontend
+http:
+  api_password: !secret http_password
+  base_url: !secret base_url
+  use_x_forwarded_for: true
+
+config:
+map:
+updater:
+conversation:
+history:
+logbook:
+sun:
+
 frontend:
   javascript_version: latest
   themes:
@@ -43,17 +55,6 @@ zone 3:
   longitude: !secret nikki_work_long
   icon: mdi:laptop
 
-# Enables configuration UI
-config:
-
-# enable map panel
-map:
-
-http:
-  api_password: !secret http_password
-  base_url: !secret base_url
-  use_x_forwarded_for: true
-
 hue:
   bridges:
     - host: 10.101.0.178
@@ -79,17 +80,6 @@ google_assistant:
     - scene
     - script
 
-input_boolean: !include inputs/boolean.yaml
-input_number: !include inputs/numbers.yaml
-input_select: !include inputs/select.yaml
-input_text: !include inputs/text.yaml
-
-updater:
-conversation:
-history:
-logbook:
-sun:
-
 mqtt:
   broker: !secret ip_mqtt_broker
   port: 1883
@@ -100,6 +90,10 @@ nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
 
+input_boolean: !include inputs/boolean.yaml
+input_number: !include inputs/numbers.yaml
+input_select: !include inputs/select.yaml
+input_text: !include inputs/text.yaml
 notify: !include_dir_merge_list notify
 media_player: !include media_players.yaml
 light: !include lights.yaml
