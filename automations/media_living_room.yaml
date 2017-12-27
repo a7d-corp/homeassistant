@@ -1,28 +1,28 @@
 #
 # powers on living room amp and sets input when the Sonos Connect starts playing
 #
-- alias: "Sonos - power on amp"
-  trigger:
-    - platform: state
-      entity_id: media_player.living_room
-      to: 'playing'
-  condition:
-    - condition: state
-      entity_id: media_player.denon_avrx2100w
-      state: 'off'
-  action:
-    - service: media_player.turn_on
-      entity_id: media_player.denon_avrx2100w
-    - delay:
-        seconds: 10
-    - service: media_player.select_source
-      data:
-        entity_id: media_player.denon_avrx2100w
-        source: 'Media Player'
-    - service: media_player.volume_set
-      data:
-        entity_id: media_player.denon_avrx2100w
-        volume_level: 0.5
+#- alias: "Sonos - power on amp"
+#  trigger:
+#    - platform: state
+#      entity_id: media_player.living_room
+#      to: 'playing'
+#  condition:
+#    - condition: state
+#      entity_id: media_player.denon_avrx2100w
+#      state: 'off'
+#  action:
+#    - service: media_player.turn_on
+#      entity_id: media_player.denon_avrx2100w
+#    - delay:
+#        seconds: 10
+#    - service: media_player.select_source
+#      data:
+#        entity_id: media_player.denon_avrx2100w
+#        source: 'Media Player'
+#    - service: media_player.volume_set
+#      data:
+#        entity_id: media_player.denon_avrx2100w
+#        volume_level: 0.5
 #
 # Dims living room Hues when Kodi transitions from idle to playing
 #
@@ -159,28 +159,28 @@
 #
 # Turn on living room amp if Kodi transitions to playing
 #
-- alias: "Kodi - power on amp"
-  trigger:
-    - platform: state
-      entity_id: media_player.kodi
-      to: 'playing'
-  condition:
-    - condition: state
-      entity_id: media_player.denon_avrx2100w
-      state: 'off'
-  action:
-    - service: notify.kodi_notifier
-      data:
-        title: "Home Assistant"
-        message: "Pausing to wake amp"
-        data:
-          displaytime: 5000
-          icon: "info"
-    - service: media_player.media_play_pause
-      entity_id: media_player.kodi
-    - service: media_player.turn_on
-      entity_id: media_player.denon_avrx2100w
-    - delay:
-        seconds: 10
-    - service: media_player.media_play_pause
-      entity_id: media_player.kodi
+#- alias: "Kodi - power on amp"
+#  trigger:
+#    - platform: state
+#      entity_id: media_player.kodi
+#      to: 'playing'
+#  condition:
+#    - condition: state
+#      entity_id: media_player.denon_avrx2100w
+#      state: 'off'
+#  action:
+#    - service: notify.kodi_notifier
+#      data:
+#        title: "Home Assistant"
+#        message: "Pausing to wake amp"
+#        data:
+#          displaytime: 5000
+#          icon: "info"
+#    - service: media_player.media_play_pause
+#      entity_id: media_player.kodi
+#    - service: media_player.turn_on
+#      entity_id: media_player.denon_avrx2100w
+#    - delay:
+#        seconds: 10
+#    - service: media_player.media_play_pause
+#      entity_id: media_player.kodi

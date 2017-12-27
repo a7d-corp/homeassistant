@@ -1,43 +1,43 @@
 #
 # Set thermostats to away mode when we leave
 #
-- alias: 'Set climate to away mode'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.people_home
-    to: 'off'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.global_away_mode_toggle
-        state: 'on'
-      - condition: state
-        entity_id: input_boolean.heating_away_mode_toggle
-        state: 'on'
-  action:
-    - service: nest.set_mode
-      data:
-        home_mode: away
-    - service: notify.slack_connector
-      data:
-        message: Nest set to eco mode
+#- alias: 'Set climate to away mode'
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.people_home
+#    to: 'off'
+#  condition:
+#    condition: and
+#    conditions:
+#      - condition: state
+#        entity_id: input_boolean.global_away_mode_toggle
+#        state: 'on'
+#      - condition: state
+#        entity_id: input_boolean.heating_away_mode_toggle
+#        state: 'on'
+#  action:
+#    - service: nest.set_mode
+#      data:
+#        home_mode: away
+#    - service: notify.slack_connector
+#      data:
+#        message: Nest set to eco mode
 #
 # Set thermostats to home mode when we arrive
 #
-- alias: 'Set climate to home mode'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.people_home
-    to: 'on'
-  condition:
-    condition: state
-    entity_id: climate.living_room
-    state: 'eco'
-  action:
-    - service: nest.set_mode
-      data:
-        home_mode: home
-    - service: notify.slack_connector
-      data:
-        message: Nest set to heat mode
+#- alias: 'Set climate to home mode'
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.people_home
+#    to: 'on'
+#  condition:
+#    condition: state
+#    entity_id: climate.living_room
+#    state: 'eco'
+#  action:
+#    - service: nest.set_mode
+#      data:
+#        home_mode: home
+#    - service: notify.slack_connector
+#      data:
+#        message: Nest set to heat mode

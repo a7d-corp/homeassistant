@@ -1,57 +1,57 @@
 #
 #  Turn on kitchen Sonos on weekday mornings
 #
-- alias: 'Turn on Radio 1 in the morning'
-  trigger:
-    - platform: time
-      at: '06:15:00'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: device_tracker.simon
-        state: home
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-  action:
-    - service: media_player.sonos_unjoin
-      entity_id: media_player.kitchen
-    - service: media_player.volume_set
-      data:
-        entity_id: media_player.kitchen
-        volume_level: 0.05
-    - service: media_player.select_source
-      data:
-        entity_id: media_player.kitchen
-        source: 'BBC Radio 1'
+#- alias: 'Turn on Radio 1 in the morning'
+#  trigger:
+#    - platform: time
+#      at: '06:15:00'
+#  condition:
+#    condition: and
+#    conditions:
+#      - condition: state
+#        entity_id: device_tracker.simon
+#        state: home
+#      - condition: time
+#        weekday:
+#          - mon
+#          - tue
+#          - wed
+#          - thu
+#          - fri
+#  action:
+#    - service: media_player.sonos_unjoin
+#      entity_id: media_player.kitchen
+#    - service: media_player.volume_set
+#      data:
+#        entity_id: media_player.kitchen
+#        volume_level: 0.05
+#    - service: media_player.select_source
+#      data:
+#        entity_id: media_player.kitchen
+#        source: 'BBC Radio 1'
 #
 # Turn off the kitchen Sonos when we leave for work
 #
-- alias: 'Turn off Radio 1 in the morning'
-  trigger:
-    - platform: time
-      at: '07:45:00'
-    - platform: state
-      entity_id: binary_sensor.people_home
-      to: 'off'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: media_player.kitchen
-        state: playing
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-  action:
-    - service: media_player.media_pause
-      entity_id: media_player.kitchen
+#- alias: 'Turn off Radio 1 in the morning'
+#  trigger:
+#    - platform: time
+#      at: '07:45:00'
+#    - platform: state
+#      entity_id: binary_sensor.people_home
+#      to: 'off'
+#  condition:
+#    condition: and
+#    conditions:
+#      - condition: state
+#        entity_id: media_player.kitchen
+#        state: playing
+#      - condition: time
+#        weekday:
+#          - mon
+#          - tue
+#          - wed
+#          - thu
+#          - fri
+#  action:
+#    - service: media_player.media_pause
+#      entity_id: media_player.kitchen
