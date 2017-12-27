@@ -1,35 +1,71 @@
-group.kodi_living_room_lights:
-  icon: mdi:movie
+## lights
 group.lounge_lights:
   icon: mdi:lightbulb
-  assumed_state: false
+group.living_room_lights:
+  # living room hues only
+  google_assistant: true
+  google_assistant_name: living room lights
+  google_assistant_type: light
 group.kitchen_lights:
+  # hue lightstrip
   icon: mdi:lightbulb
+  google_assistant: true
+  google_assistant_name: kitchen lights
+  google_assistant_type: light
+light.gateway_light_7811dcb1f766:
+  friendly_name: Aqara gateway light
+  icon: mdi:access-point-network
+  google_assistant: true
+  google_assistant_name: understairs cupboard
+  google_assistant_type: light
+
+## switches
 group.energenie_switches:
   icon: mdi:lightbulb
+
 switch.energenie_one:
   icon: mdi:lightbulb
-  assumed_state: false
+  google_assistant: true
+  google_assistant_name: drinks cabinet
+  google_assistant_type: light
 switch.energenie_two:
   icon: mdi:lightbulb
-  assumed_state: false
+  google_assistant: true
+  google_assistant_name: garden room
+  google_assistant_type: light
 switch.energenie_three:
   icon: mdi:lightbulb
-  assumed_state: false
+  google_assistant: true
+  google_assistant_name: firefly lights
+  google_assistant_type: light
 switch.flux_adjustment:
+  # redshift/flux adjustment via living room hues
   icon: mdi:weather-night
+  google_assistant: true
+  google_assistant_name: living room colour adjustment
+  google_assistant_type: switch
+  aliases:
+    - living room redshift
+    - living room flux
+switch.loft_lighting:
+  # sonoff switch
+  icon: mdi:lightbulb
+  google_assistant: true
+  google_assistant_name: loft lights
+  google_assistant_type: light
 #input_boolean.lounge_media_dim_enable:
 #  icon: none
+
+## inputs
 input_slider.kodi_dimmer_slider:
   icon: mdi:brightness-6
-switch.loft_lighting:
-  icon: mdi:lightbulb
-climate.living_room:
-  friendly_name: Living room Nest
+
+## sensors
 sensor.living_room_thermostat_operation_mode:
   friendly_name: Operation mode
 sensor.living_room_thermostat_humidity:
   friendly_name: Living room humidity
+## binary sensors
 binary_sensor.living_room_thermostat_has_leaf:
   friendly_name: Eco leaf
 binary_sensor.living_room_thermostat_online:
@@ -38,6 +74,10 @@ binary_sensor.living_room_thermostat_is_locked:
   friendly_name: Nest locked
 binary_sensor.living_room_thermostat_is_using_emergency_heat:
   friendly_name: Emergency heat
+binary_sensor.door_window_sensor_158d0001bf6277:
+  friendly_name: Loft hatch sensor
+
+## device trackers
 device_tracker.nikki:
   friendly_name: Nikki's phone
   entity_picture: /local/nikki.jpg
@@ -47,8 +87,7 @@ device_tracker.simon:
 binary_sensor.people_home:
   friendly_name: Presence sensor
   icon: mdi:account-multiple
-light.gateway_light_7811dcb1f766:
-  friend_name: Aqara gateway light
-  icon: mdi:access-point-network
-binary_sensor.door_window_sensor_158d0001bf6277:
-  friendly_name: Loft hatch sensor
+
+## misc
+climate.living_room:
+  friendly_name: Living room Nest
