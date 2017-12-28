@@ -48,6 +48,7 @@ lighting_view:
     - group.kitchen_lights
     - group.lighting_tools
     - group.loft_lighting
+    - group.understairs_lighting
     - group.external_christmas_lights
 
 climate_view:
@@ -191,6 +192,7 @@ plex_devices:
 kodi_light_automation:
   name: Kodi controls
   icon: mdi:lightbulb-on-outline
+  control: hidden
   entities:
     - input_boolean.lounge_media_dim_enable
     - input_number.kodi_dimmer_slider
@@ -313,6 +315,12 @@ loft_lighting:
     - switch.loft_lighting
     - sensor.loft_light_status
     - sensor.door_loft_hatch
+
+understairs_lighting:
+  name: Understairs Cupboard
+  icon: mdi:lightbulb-outline
+  entities:
+    - light.gateway_light_7811dcb1f766
 
 external_christmas_lights:
   name: Outside Christmas Lights
