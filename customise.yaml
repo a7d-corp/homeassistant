@@ -3,6 +3,7 @@ group.lounge_lights:
   icon: mdi:lightbulb
 group.living_room_lights:
   # living room hues only
+  
   google_assistant: true
   google_assistant_name: living room lights
   google_assistant_type: light
@@ -14,7 +15,7 @@ group.kitchen_lights:
   google_assistant_type: light
 light.gateway_light_7811dcb1f766:
   friendly_name: Aqara gateway light
-  icon: mdi:access-point-network
+  icon: mdi:lightbulb
   google_assistant: true
   google_assistant_name: understairs cupboard
   google_assistant_type: light
