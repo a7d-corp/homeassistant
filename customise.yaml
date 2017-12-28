@@ -3,7 +3,7 @@ group.lounge_lights:
   icon: mdi:lightbulb
 group.living_room_lights:
   # living room hues only
-  
+  icon: mdi:lightbulb
   google_assistant: true
   google_assistant_name: living room lights
   google_assistant_type: light
