@@ -1,26 +1,34 @@
-# Home Assistant 
+# Home Assistant
 
 ### Equipment
 
 #### Hardware
 
- - Raspberry Pi 3
+ - Raspberry Pi 3 with containers:
+   - Home-Assistant
+   - Node-Red
+   - Mosquitto
  - Nest (3rd generation)
  - Unifi UAC-AP-Pro
  - Denon AVRX2100W
  - Samsung TV
- - Sonos Play:1
- -  Sonos Connect
- - Phillips Hue (Living room and kitchen)
- - Ubiquity UVC-G3
+ - Sonos Play:1 (dining room)
+ - Sonos One (kitchen)
+ - Sonos Connect (living room)
+ - Phillips Hue (living room and kitchen)
+ - Ubiquity UVC-G3 (x2; outside CCTV)
  - Xiaomi Aqara gateway
+   - Multiple door sensors
+   - Multiple temperature/humidity sensors
 
 #### Software
 
- - Plex
- - Kodi
- - Unifi-video
- - Unifi UAP controller
+ - Kodi (running on a Pi 3)
+ - Containers:
+   - Plex
+   - Unifi Video
+   - Unifi UAP controller
+   - Zabbix
 
 ### Meta
 
