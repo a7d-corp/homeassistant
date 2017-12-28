@@ -8,8 +8,8 @@
 
 - name: Lounge away mode on
   entities:
-    group.lounge_lights: on
+    group.lounge_hues: on
 
 - name: Lounge away mode off
   entities:
-    group.lounge_lights: off
+    group.lounge_hues: off
