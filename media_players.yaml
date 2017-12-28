@@ -12,6 +12,7 @@
   hosts:
     - !secret ip_sonos_kitchen
     - !secret ip_sonos_lounge
+    - !secret ip_sonos_garden_room
 - platform: samsungtv
   host: !secret ip_samsung
 - platform: denonavr

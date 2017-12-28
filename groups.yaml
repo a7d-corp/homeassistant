@@ -171,6 +171,7 @@ sonoses:
   entities:
     - media_player.kitchen
     - media_player.living_room
+    - media_player.garden_room
 
 media_streaming:
   name: Media Streaming
@@ -345,6 +346,13 @@ automation_all_lights:
 
 lounge_hues:
   name: Lounge Hues
+  entities:
+    - light.standard_lamp_left
+    - light.standard_lamp_right
+    - light.sideboard_bloom
+
+living_room_lights:
+  name: Living room lights
   entities:
     - light.standard_lamp_left
     - light.standard_lamp_right

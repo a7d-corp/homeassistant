@@ -73,12 +73,7 @@ google_assistant:
   access_token: !secret google_assistant_access_token
   agent_user_id: home-assistant-101
   api_key: !secret google_assistant_api_key
-  exposed_domains:
-    - switch
-    - media_player
-    - group
-    - scene
-    - script
+  expose_by_default: false
 
 mqtt:
   broker: !secret ip_mqtt_broker
