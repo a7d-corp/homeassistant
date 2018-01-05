@@ -54,9 +54,10 @@ lighting_view:
 climate_view:
   name: Climate
   view: yes
-  icon: mdi:radiator
+  icon: mdi:thermometer-lines
   entities:
     - group.downstairs_heating
+    - group.environmental_data_ensuite
 
 travel_view:
   name: Travel
@@ -342,6 +343,12 @@ downstairs_heating:
     - binary_sensor.living_room_thermostat_is_locked
     - binary_sensor.living_room_thermostat_is_using_emergency_heat
     - input_select.downstairs_heat_mode
+
+environmental_data_ensuite:
+  name: Ensuite
+  entities:
+    - sensor.temperature_158d0001fa5c1b
+    - sensor.humidity_158d0001fa5c1b
 
 # automation groups
 automation_all_lights:

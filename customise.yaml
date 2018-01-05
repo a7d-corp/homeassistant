@@ -77,6 +77,14 @@ binary_sensor.living_room_thermostat_is_using_emergency_heat:
   friendly_name: Emergency heat
 binary_sensor.door_window_sensor_158d0001bf6277:
   friendly_name: Loft hatch sensor
+sensor.humidity_158d0001fa5c1b:
+  friendly_name: Ensuite humidity
+  icon: mdi:water
+sensor.pressure_158d0001fa5c1b:
+  friendly_name: Ensuite air pressure
+sensor.temperature_158d0001fa5c1b:
+  friendly_name: Ensuite temperature
+  icon: mdi:thermometer
 
 ## device trackers
 device_tracker.nikki:
