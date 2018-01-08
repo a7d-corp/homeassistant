@@ -34,6 +34,8 @@ switch.energenie_two:
   google_assistant: true
   google_assistant_name: garden room
   google_assistant_type: light
+  aliases:
+    - garden room twigs
 switch.energenie_three:
   icon: mdi:lightbulb
   google_assistant: true
@@ -77,15 +79,27 @@ binary_sensor.living_room_thermostat_is_using_emergency_heat:
   friendly_name: Emergency heat
 binary_sensor.door_window_sensor_158d0001bf6277:
   friendly_name: Loft hatch sensor
+binary_sensor.door_window_sensor_158d0001a1f6b9:
+  friendly_name: Front door sensor
+binary_sensor.door_window_sensor_158d0001a3e090:
+  friendly_name: Patio door sensor
 sensor.humidity_158d0001fa5c1b:
   friendly_name: Ensuite humidity
   icon: mdi:water
+  google_assistant: true
+  google_assistant_name: ensuite humidity
+  aliases:
+    - ensuite bathroom humidity
 sensor.pressure_158d0001fa5c1b:
   friendly_name: Ensuite air pressure
 sensor.temperature_158d0001fa5c1b:
   friendly_name: Ensuite temperature
   icon: mdi:thermometer
-
+  google_assistant: true
+  google_assistant_name: ensuite temperature
+  aliases:
+    - ensuite bathroom temperature
+  
 ## device trackers
 device_tracker.nikki:
   friendly_name: Nikki's phone

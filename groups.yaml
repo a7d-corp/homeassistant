@@ -49,7 +49,7 @@ lighting_view:
     - group.lighting_tools
     - group.loft_lighting
     - group.understairs_lighting
-    - group.external_christmas_lights
+#    - group.external_christmas_lights
 
 climate_view:
   name: Climate
@@ -230,6 +230,8 @@ door_sensors:
   name: Door sensors
   icon: mdi:door-open
   entities:
+    - sensor.door_front_door
+    - sensor.door_patio_door
     - sensor.door_loft_hatch
 
 holiday_mode_toggle:
@@ -322,13 +324,6 @@ understairs_lighting:
   icon: mdi:lightbulb-outline
   entities:
     - light.gateway_light_7811dcb1f766
-
-external_christmas_lights:
-  name: Outside Christmas Lights
-  icon: mdi:theme-light-dark
-  entities:
-    - switch.external_christmas_lights
-    - sensor.christmas_lights_power
 
 # groups for heating_view
 downstairs_heating:
