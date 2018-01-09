@@ -252,6 +252,7 @@ certificate_expiries:
     - sensor.grafana_ssl
     - sensor.gogs_ssl
     - sensor.docker_registry_ssl
+    - sensor.rancher_ssl
     - sensor.home_assistant_ssl
     - sensor.plex_ssl
     - sensor.flood_ssl

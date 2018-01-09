@@ -111,6 +111,9 @@
 - platform: cert_expiry
   name: Grafana SSL
   host: !secret grafana_url
+- platform: cert_expiry
+  name: Rancher SSL
+  host: !secret rancher_url
 #- platform: fitbit
 #  clock_format: 24H
 #  monitored_resources:
