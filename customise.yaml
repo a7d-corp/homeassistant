@@ -4,15 +4,9 @@ group.lounge_lights:
 group.living_room_lights:
   # living room hues only
   icon: mdi:lightbulb
-  google_assistant: true
-  google_assistant_name: living room lights
-  google_assistant_type: light
 group.kitchen_lights:
   # hue lightstrip
   icon: mdi:lightbulb
-  google_assistant: true
-  google_assistant_name: kitchen lights
-  google_assistant_type: light
 light.gateway_light_7811dcb1f766:
   friendly_name: Aqara gateway light
   icon: mdi:lightbulb
@@ -23,24 +17,28 @@ light.gateway_light_7811dcb1f766:
 ## switches
 group.energenie_switches:
   icon: mdi:lightbulb
-
+  google_assistant: true
+  google_assistant_name: ambient switches
+  google_assistant_type: switch
 switch.energenie_one:
   icon: mdi:lightbulb
   google_assistant: true
   google_assistant_name: drinks cabinet
-  google_assistant_type: light
+  google_assistant_type: switch
 switch.energenie_two:
   icon: mdi:lightbulb
   google_assistant: true
   google_assistant_name: garden room
-  google_assistant_type: light
+  google_assistant_type: switch
   aliases:
     - garden room twigs
 switch.energenie_three:
   icon: mdi:lightbulb
   google_assistant: true
-  google_assistant_name: firefly lights
-  google_assistant_type: light
+  google_assistant_name: fireflies
+  google_assistant_type: switch
+  aliases:
+    - boat bookcase
 switch.flux_adjustment:
   # redshift/flux adjustment via living room hues
   icon: mdi:weather-night
@@ -87,18 +85,16 @@ sensor.humidity_158d0001fa5c1b:
   friendly_name: Ensuite humidity
   icon: mdi:water
   google_assistant: true
-  google_assistant_name: ensuite humidity
-  aliases:
-    - ensuite bathroom humidity
+  google_assistant_name: humidity
+  google_assistant_type: climate
 sensor.pressure_158d0001fa5c1b:
   friendly_name: Ensuite air pressure
 sensor.temperature_158d0001fa5c1b:
   friendly_name: Ensuite temperature
   icon: mdi:thermometer
   google_assistant: true
-  google_assistant_name: ensuite temperature
-  aliases:
-    - ensuite bathroom temperature
+  google_assistant_name: temperature
+  google_assistant_type: climate
   
 ## device trackers
 device_tracker.nikki:
@@ -110,6 +106,12 @@ device_tracker.simon:
 binary_sensor.people_home:
   friendly_name: Presence sensor
   icon: mdi:account-multiple
+
+## media players
+media_player.kodi:
+  friendly_name: kodi
+  google_assistant: true
+  google_assistant_name: kodi
 
 ## misc
 climate.living_room:
