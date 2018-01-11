@@ -8,6 +8,9 @@
   entity_namespace: 'plex'
 - platform: kodi
   host: !secret ip_kodi
+  port: 8080
+  tcp_port: 9090
+  enable_websocket: true
 - platform: sonos
   hosts:
     - !secret ip_sonos_kitchen
