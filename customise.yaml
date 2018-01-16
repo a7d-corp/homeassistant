@@ -54,8 +54,23 @@ switch.loft_lighting:
   google_assistant: true
   google_assistant_name: loft lights
   google_assistant_type: light
-#input_boolean.lounge_media_dim_enable:
-#  icon: none
+
+input_boolean.lounge_media_dim_enable:
+  google_assistant: true
+  google_assistant_name: media dimming
+  google_assistant_type: switch
+input_boolean.kodi_amp_trigger:
+  google_assistant: true
+  google_assistant_name: amp trigger
+  google_assistant_type: switch
+input_boolean.global_away_mode_toggle:
+  google_assistant: true
+  google_assistant_name: away mode
+  google_assistant_type: switch
+input_boolean.holiday_mode:
+  google_assistant: true
+  google_assistant_name: holiday mode
+  google_assistant_type: switch
 
 ## inputs
 input_slider.kodi_dimmer_slider:
@@ -110,9 +125,26 @@ binary_sensor.people_home:
 ## media players
 media_player.kodi:
   friendly_name: kodi
-  google_assistant: true
+  google_assistant: false
+  google_assistant_type: media_player
   google_assistant_name: kodi
+media_player.garden_room:
+  google_assistant: false
+  google_assistant_type: media_player
+  google_assistant_name: garden room sonos
+media_player.living_room:
+  google_assistant: false
+  google_assistant_type: media_player
+  google_assistant_name: living room sonos
+media_player.kitchen:
+  google_assistant: false
+  google_assistant_type: media_player
+  google_assistant_name: kitchen sonos
+media_player.denon_avrx2100w:
+  google_assistant: false
+  google_assistant_type: media_player
+  google_assistant_name: living room amp
 
 ## misc
-climate.living_room:
-  friendly_name: Living room Nest
+#climate.living_room:
+#  friendly_name: Living room Nest
