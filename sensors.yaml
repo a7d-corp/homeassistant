@@ -155,11 +155,11 @@
       value_template: '{{ states.input_select.nikki_status.state }}'
       friendly_name: 'Nikki'
       entity_id: input_select.nikki_status
-- platform: template
-  sensors:
-    christmas_lights_power:
-      friendly_name: 'Christmas lights consumption'
-      value_template: '{{ states.switch.external_christmas_lights.attributes.current_consumption }}'
+#- platform: template
+#  sensors:
+#    christmas_lights_power:
+#      friendly_name: 'Christmas lights consumption'
+#      value_template: '{{ states.switch.external_christmas_lights.attributes.current_consumption }}'
 - platform: template
   sensors:
     door_loft_hatch:
