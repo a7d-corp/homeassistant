@@ -68,12 +68,27 @@ xiaomi_aqara:
       key: !secret aqara_gateway_key
 
 google_assistant:
-  project_id: home-assistant-177620
+  project_id: home-assistant-ea5e7
   client_id: !secret google_assistant_client_id
   access_token: !secret google_assistant_access_token
   agent_user_id: home-assistant-101
   api_key: !secret google_assistant_api_key
   expose_by_default: false
+
+influxdb:
+  host: !secret influxdb_host
+  port: 8086
+  database: !secret influxdb_db
+  username: !secret influxdb_user
+  password: !secret influxdb_pass
+  max_retries: 3
+  default_measurement: state
+  exclude:
+    domains:
+       - automation
+       - scripts
+  tags:
+    source: hass
 
 mqtt:
   broker: !secret ip_mqtt_broker
