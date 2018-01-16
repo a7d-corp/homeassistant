@@ -17,6 +17,7 @@
   lights:
     - light.standard_lamp_left
     - light.standard_lamp_right
+    - light.sideboard_bloom
   name: Flux Adjustment
   start_time: '18:00'
   stop_time: '23:00'
@@ -35,6 +36,6 @@
   payload_on: "on"
   payload_off: "off"
   retain: true
-- platform: tplink
-  name: 'External Christmas Lights'
-  host: !secret ip_tplink_1_switch
+#- platform: tplink
+#  name: 'External Christmas Lights'
+#  host: !secret ip_tplink_1_switch
