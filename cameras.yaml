@@ -4,9 +4,9 @@
 #- platform: generic
 #  name: Nugget Flap
 #  still_image_url: !secret kitchen_cam2_url
-#- platform: uvc
-#  nvr: 10.101.0.50
-#  key: !secret nvr_key
+- platform: uvc
+  nvr: 10.101.0.50
+  key: !secret nvr_key
 - platform: generic
   name: Salla Centre
   still_image_url: http://www.salla.fi/webcam/current.jpg
