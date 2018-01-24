@@ -1,6 +1,7 @@
 ## lights
 group.lounge_lights:
   icon: mdi:lightbulb
+  assumed_state: false
 group.living_room_lights:
   # living room hues only
   icon: mdi:lightbulb
@@ -17,16 +18,19 @@ light.gateway_light_7811dcb1f766:
 ## switches
 group.energenie_switches:
   icon: mdi:lightbulb
+  assumed_state: false
   google_assistant: true
   google_assistant_name: ambient switches
   google_assistant_type: switch
 switch.energenie_one:
   icon: mdi:lightbulb
+  assumed_state: false
   google_assistant: true
   google_assistant_name: drinks cabinet
   google_assistant_type: switch
 switch.energenie_two:
   icon: mdi:lightbulb
+  assumed_state: false
   google_assistant: true
   google_assistant_name: garden room
   google_assistant_type: switch
@@ -34,6 +38,7 @@ switch.energenie_two:
     - garden room twigs
 switch.energenie_three:
   icon: mdi:lightbulb
+  assumed_state: false
   google_assistant: true
   google_assistant_name: fireflies
   google_assistant_type: switch
@@ -70,6 +75,10 @@ input_boolean.global_away_mode_toggle:
 input_boolean.holiday_mode:
   google_assistant: true
   google_assistant_name: holiday mode
+  google_assistant_type: switch
+input_boolean.party_mode:
+  google_assistant: true
+  google_assistant_name: party mode
   google_assistant_type: switch
 
 ## inputs

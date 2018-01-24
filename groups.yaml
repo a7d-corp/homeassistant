@@ -131,6 +131,7 @@ global_controls:
     - input_boolean.global_away_mode_toggle
     - input_boolean.lighting_away_mode_toggle
     - input_boolean.heating_away_mode_toggle
+    - input_boolean.party_mode
 
 # groups for travel_view
 travel_times:

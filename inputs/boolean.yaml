@@ -16,3 +16,6 @@ lighting_away_mode_toggle:
 heating_away_mode_toggle:
   name: Away mode (heating)
   icon: 'mdi:radiator'
+party_mode:
+  name: Party mode
+  icon: 'mdi:music'
