@@ -12,3 +12,6 @@
   waypoint_whitelist:
     - simon
     - nikki
+- platform: ping
+  hosts:
+    simon_iphone_ping: 10.101.0.201

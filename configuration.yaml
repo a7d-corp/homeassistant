@@ -41,12 +41,14 @@ zone:
   name: Home
   latitude: !secret home_lat
   longitude: !secret home_long
+  radius: 70
   icon: mdi:home
 
 zone 2:
   name: Simon (Work)
   latitude: !secret simon_work_lat
   longitude: !secret simon_work_long
+  radius: 250
   icon: mdi:laptop
 
 zone 3:
