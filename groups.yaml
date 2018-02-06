@@ -234,6 +234,9 @@ door_sensors:
     - sensor.door_front_door
     - sensor.door_patio_door
     - sensor.door_loft_hatch
+    - sensor.window_living_room
+    - sensor.window_kitchen_left
+    - sensor.window_kitchen_right
 
 holiday_mode_toggle:
   name: Holiday Mode

@@ -105,6 +105,12 @@ binary_sensor.door_window_sensor_158d0001a1f6b9:
   friendly_name: Front door sensor
 binary_sensor.door_window_sensor_158d0001a3e090:
   friendly_name: Patio door sensor
+binary_sensor.door_window_sensor_158d0001b70752:
+  friendly_name: Living room window sensor
+binary_sensor.door_window_sensor_158d0001e4820c:
+  friendly_name: Kitchen window (left)
+binary_sensor.door_window_sensor_158d0001de662f:
+  friendly_name: Kitchen window (right)
 sensor.humidity_158d0001fa5c1b:
   friendly_name: Ensuite humidity
   icon: mdi:water

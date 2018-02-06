@@ -208,3 +208,45 @@
         {% else %}
           mdi:door-closed
         {% endif %}
+    window_living_room:
+      friendly_name: 'Living room window'
+      value_template: >-
+        {% if is_state('binary_sensor.door_window_sensor_158d0001b70752', 'on') %}
+          open
+        {% else %}
+          closed
+        {% endif %}
+      icon_template: >
+        {% if is_state('binary_sensor.door_window_sensor_158d0001b70752', 'on') %}
+          mdi:window-open
+        {% else %}
+          mdi:window-closed
+        {% endif %}
+    window_kitchen_left:
+      friendly_name: 'Kitchen window (left)'
+      value_template: >-
+        {% if is_state('binary_sensor.door_window_sensor_158d0001e4820c', 'on') %}
+          open
+        {% else %}
+          closed
+        {% endif %}
+      icon_template: >
+        {% if is_state('binary_sensor.door_window_sensor_158d0001e4820c', 'on') %}
+          mdi:window-open
+        {% else %}
+          mdi:window-closed
+        {% endif %}
+    window_kitchen_right:
+      friendly_name: 'Kitchen window (right)'
+      value_template: >-
+        {% if is_state('binary_sensor.door_window_sensor_158d0001de662f', 'on') %}
+          open
+        {% else %}
+          closed
+        {% endif %}
+      icon_template: >
+        {% if is_state('binary_sensor.door_window_sensor_158d0001de662f', 'on') %}
+          mdi:window-open
+        {% else %}
+          mdi:window-closed
+        {% endif %}
