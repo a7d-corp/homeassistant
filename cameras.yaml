@@ -7,6 +7,7 @@
 - platform: uvc
   nvr: 10.101.0.50
   key: !secret nvr_key
+  password: !secret nvr_camera_pass
 - platform: generic
   name: Salla Centre
   still_image_url: http://www.salla.fi/webcam/current.jpg
