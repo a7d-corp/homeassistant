@@ -1,6 +1,6 @@
-#- platform: generic
-#  name: Kitchen Overview
-#  still_image_url: !secret kitchen_cam1_url
+- platform: ffmpeg
+  name: Kitchen Overview
+  input: !secret kitchen_cam1_url
 #- platform: generic
 #  name: Nugget Flap
 #  still_image_url: !secret kitchen_cam2_url
@@ -8,33 +8,30 @@
   nvr: 10.101.0.50
   key: !secret nvr_key
   password: !secret nvr_camera_pass
-- platform: generic
-  name: Salla Centre
-  still_image_url: http://www.salla.fi/webcam/current.jpg
-- platform: generic
-  name: Sallatunturi
-  still_image_url: http://sallanhissit.com/current.jpg
-- platform: generic
-  name: Sallatunturi 2
-  still_image_url: https://ski.salla.fi/webcam1/Img_EP/Snap_EP1.jpg
-- platform: generic
-  name: Salla Crossroads
-  still_image_url: https://images.webcams.travel/webcam/1222498680-Weather-Tie950-Sallatunturi-Sallaan-Salla.jpg?token=webcams.travel:8fe6c4fdc45d828298e2f5d163cd1c2d:1508151141
-- platform: generic
-  name: Salla Highway
-  still_image_url: https://images.webcams.travel/webcam/1336307897-Weather-Tie950-Sallatunturi-Kuusamoon-Salla.jpg?token=webcams.travel:bef7aedbdfd9824c1e36ce05020ff798:1508151141
-- platform: generic
-  name: Sallatunturi North East
-#  still_image_url: https://images.webcams.travel/webcam/1461746144-salla-north-east-salla-ski-resort-sallatunturi.jpg?token=webcams.travel:f12fb53dff24bcd2fa91e4da1a8d51fd:1508151113
-  still_image_url: https://ski.salla.fi/webcam1/Img_Karhulampi_/Snap_Karhulampi_1.jpg
-- platform: generic
-  name: Sallatunturi Summit
-#  still_image_url: https://images.webcams.travel/webcam/1461745538-salla-north-east-salla-ski-resort-sallatunturi.jpg?token=webcams.travel:a96b1c7c9bd128ffae943678dd1f0230:1508151122
-  still_image_url: https://ski.salla.fi/webcam1/Img_Huippu_itaan/Snap_Huippu_itaan1.jpg
-- platform: generic
-  name: Sallatunturi Summit 2
-#  still_image_url: https://images.webcams.travel/original/1461745824-salla-south-salla-ski-resort-sallatunturi.jpg?token=webcams.travel:340091e09a5f2629eb1c0766b4e3cd9e:1512457684
-  still_image_url: https://ski.salla.fi/webcam1/Img_Huippu_lanteen/Snap_Huippu_lanteen1.jpg
-- platform: generic
-  name: Europe rain map
-  still_image_url: "https://api.sat24.com/animated/EU/rainTMC/1/GMT%20Standard%20Time/544909"
+#- platform: generic
+#  name: Salla Centre
+#  still_image_url: http://www.salla.fi/webcam/current.jpg
+#- platform: generic
+#  name: Sallatunturi
+#  still_image_url: http://sallanhissit.com/current.jpg
+#- platform: generic
+#  name: Sallatunturi 2
+#  still_image_url: https://ski.salla.fi/webcam1/Img_EP/Snap_EP1.jpg
+#- platform: generic
+#  name: Salla Crossroads
+#  still_image_url: https://images.webcams.travel/webcam/1222498680-Weather-Tie950-Sallatunturi-Sallaan-Salla.jpg?token=webcams.travel:8fe6c4fdc45d828298e2f5d163cd1c2d:1508151141
+#- platform: generic
+#  name: Salla Highway
+#  still_image_url: https://images.webcams.travel/webcam/1336307897-Weather-Tie950-Sallatunturi-Kuusamoon-Salla.jpg?token=webcams.travel:bef7aedbdfd9824c1e36ce05020ff798:1508151141
+#- platform: generic
+#  name: Sallatunturi North East
+#  still_image_url: https://ski.salla.fi/webcam1/Img_Karhulampi_/Snap_Karhulampi_1.jpg
+#- platform: generic
+#  name: Sallatunturi Summit
+#  still_image_url: https://ski.salla.fi/webcam1/Img_Huippu_itaan/Snap_Huippu_itaan1.jpg
+#- platform: generic
+#  name: Sallatunturi Summit 2
+#  still_image_url: https://ski.salla.fi/webcam1/Img_Huippu_lanteen/Snap_Huippu_lanteen1.jpg
+#- platform: generic
+#  name: Europe rain map
+#  still_image_url: "https://api.sat24.com/animated/EU/rainTMC/1/GMT%20Standard%20Time/544909"
