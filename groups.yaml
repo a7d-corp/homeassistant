@@ -9,8 +9,8 @@ default_view:
     - group.people
     - group.global_controls
     - sun.sun
-    - device_tracker.nikki
-    - device_tracker.simon
+    - device_tracker.galaxys8
+    - device_tracker.houston
     - sensor.loft_light_status
     - sensor.loft_temperature
     - sensor.yr_symbol
@@ -22,7 +22,7 @@ security_view:
   entities:
     - group.kitchen_cameras
     - group.cctv_cameras
-    - group.finland_webcams
+#    - group.finland_webcams
     - group.door_sensors
     - group.holiday_mode_toggle
 
@@ -117,9 +117,8 @@ people:
   name: Device Trackers
   icon: mdi:cellphone
   entities:
-    - device_tracker.simon
-    - device_tracker.nikki
-    - device_tracker.simon_houston
+    - device_tracker.houston
+    - device_tracker.galaxys8
     - binary_sensor.people_home
     - input_select.simon_status
     - input_select.nikki_status
@@ -163,11 +162,12 @@ london_underground:
 
 # groups for media_view
 media_devices:
-  name: Media Players
+  name: Media Controls
   icon: mdi:television
   entities:
     - media_player.samsung_tv_remote
     - media_player.denon_avrx2100w
+    - switch.tv_power
 
 sonoses:
   name: Audio Devices
@@ -206,7 +206,7 @@ kitchen_cameras:
   name: Kitchen Cameras
   icon: mdi:cctv
   entities:
-#    - camera.kitchen_overview
+    - camera.kitchen_overview
 #    - camera.nugget_flap
 
 cctv_cameras:
@@ -214,19 +214,20 @@ cctv_cameras:
   icon: mdi:cctv
   entities:
     - camera.exterior__front
+    - camera.exterior__rear
 
-finland_webcams:
-  name: Finland Webcams
-  icon: mdi:cctv
-  entities:
-    - camera.salla_centre
-    - camera.salla_crossroads
-    - camera.salla_highway
-    - camera.sallatunturi
-    - camera.sallatunturi_2
-    - camera.sallatunturi_north_east
-    - camera.sallatunturi_summit
-    - camera.sallatunturi_summit_2
+#finland_webcams:
+#  name: Finland Webcams
+#  icon: mdi:cctv
+#  entities:
+#    - camera.salla_centre
+#    - camera.salla_crossroads
+#    - camera.salla_highway
+#    - camera.sallatunturi
+#    - camera.sallatunturi_2
+#    - camera.sallatunturi_north_east
+#    - camera.sallatunturi_summit
+#    - camera.sallatunturi_summit_2
 
 door_sensors:
   name: Door sensors
