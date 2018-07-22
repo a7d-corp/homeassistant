@@ -15,3 +15,8 @@ phue.conf
 plex.conf
 secrets.yaml
 nest.conf
+core
+entity_registry.yaml
+google_calendars.yaml
+.google.token
+.config_entries.json
