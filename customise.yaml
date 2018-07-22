@@ -44,6 +44,9 @@ switch.energenie_three:
   google_assistant_type: switch
   aliases:
     - boat bookcase
+switch.tv_power:
+  icon: mdi:toggle-switch
+  google_assistant: false
 switch.flux_adjustment:
   # redshift/flux adjustment via living room hues
   icon: mdi:weather-night
@@ -133,6 +136,12 @@ device_tracker.nikki:
 device_tracker.simon:
   friendly_name: Simon's phone
   entity_picture: /local/simon.jpg
+device_tracker.houston:
+  friendly_name: Simon's phone
+  entity_picture: /local/simon.jpg
+device_tracker.galaxys8:
+  friendly_name: Nikki's phone
+  entity_picture: /local/nikki.jpg
 binary_sensor.people_home:
   friendly_name: Presence sensor
   icon: mdi:account-multiple
