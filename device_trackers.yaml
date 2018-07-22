@@ -1,17 +1,18 @@
 - platform: unifi
-  username: admin
+  entity_namespace: network
+  username: hass
   password: !secret unifi_pass
   host: !secret unifi_host
   port: !secret unifi_port
   verify_ssl: false
   site_id: !secret unifi_site
-  track_new_devices: false
+  new_device_defaults:
+    track_new_devices: false
+    hide_if_away: false
   detection_time: 600
-- platform: owntracks_http
-  max_gps_accuracy: 200
-  waypoint_whitelist:
-    - simon
-    - nikki
+#  ssid_filter:
+#    - 'room101'
+
 - platform: ping
   hosts:
     simon_iphone_ping: 10.101.0.201
