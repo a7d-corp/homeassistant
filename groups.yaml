@@ -24,6 +24,7 @@ security_view:
     - group.cctv_cameras
 #    - group.finland_webcams
     - group.door_sensors
+    - group.motion_sensors
     - group.holiday_mode_toggle
 
 media_view:
@@ -239,6 +240,12 @@ door_sensors:
     - sensor.window_living_room
     - sensor.window_kitchen_left
     - sensor.window_kitchen_right
+
+motion_sensors:
+  name: Motion sensors
+  icon: mdi:run-fast
+  entities:
+    - binary_sensor.motion_sensor_158d000237acbc
 
 holiday_mode_toggle:
   name: Holiday Mode
