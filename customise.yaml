@@ -128,7 +128,13 @@ sensor.temperature_158d0001fa5c1b:
   google_assistant: true
   google_assistant_name: temperature
   google_assistant_type: climate
-  
+binary_sensor.motion_sensor_158d000237acbc:
+  friendly_name: Kitchen motion sensor
+sensor.illumination_158d000237acbc:
+  friendly_name: Kitchen brightness
+sensor.illumination_7811dcb1f766:
+  friendly_name: Understairs cupboard brightneess
+
 ## device trackers
 device_tracker.nikki:
   friendly_name: Nikki's phone
