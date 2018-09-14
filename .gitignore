@@ -20,3 +20,4 @@ entity_registry.yaml
 google_calendars.yaml
 .google.token
 .config_entries.json
+.storage
