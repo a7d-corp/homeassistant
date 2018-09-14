@@ -106,7 +106,7 @@ binary_sensor.living_room_thermostat_is_using_emergency_heat:
 sensor.master_bedroom_thermostat_operation_mode:
   friendly_name: Operation mode
 sensor.master_bedroom_thermostat_humidity:
-  friendly_name: Living room humidity
+  friendly_name: Master bedroom humidity
 ## binary sensors
 binary_sensor.master_bedroom_thermostat_has_leaf:
   friendly_name: Eco leaf
