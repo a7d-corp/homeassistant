@@ -102,6 +102,21 @@ binary_sensor.living_room_thermostat_is_locked:
   friendly_name: Nest locked
 binary_sensor.living_room_thermostat_is_using_emergency_heat:
   friendly_name: Emergency heat
+## sensors
+sensor.master_bedroom_thermostat_operation_mode:
+  friendly_name: Operation mode
+sensor.master_bedroom_thermostat_humidity:
+  friendly_name: Living room humidity
+## binary sensors
+binary_sensor.master_bedroom_thermostat_has_leaf:
+  friendly_name: Eco leaf
+binary_sensor.master_bedroom_thermostat_online:
+  friendly_name: Nest online
+binary_sensor.master_bedroom_thermostat_is_locked:
+  friendly_name: Nest locked
+binary_sensor.master_bedroom_thermostat_is_using_emergency_heat:
+  friendly_name: Emergency heat
+
 binary_sensor.door_window_sensor_158d0001bf6277:
   friendly_name: Loft hatch sensor
 binary_sensor.door_window_sensor_158d0001a1f6b9:
