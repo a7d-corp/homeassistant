@@ -16,10 +16,3 @@ nikki_status:
     - away
     - extended away
   icon: 'mdi:human-female'
-downstairs_heat_mode:
-  name: Downstairs heating control
-  options:
-    - nest
-    - program
-    - away
-  icon: 'mdi:view-list'

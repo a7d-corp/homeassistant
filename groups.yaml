@@ -58,6 +58,7 @@ climate_view:
   icon: mdi:thermometer-lines
   entities:
     - group.downstairs_heating
+    - group.upstairs_heating
     - group.environmental_data_ensuite
 
 travel_view:
@@ -360,7 +361,18 @@ downstairs_heating:
     - binary_sensor.living_room_thermostat_online
     - binary_sensor.living_room_thermostat_is_locked
     - binary_sensor.living_room_thermostat_is_using_emergency_heat
-    - input_select.downstairs_heat_mode
+
+upstairs_heating:
+  name: Upstairs heating
+  icon: mdi:radiator
+  entities:
+    - climate.master_bedroom
+    - sensor.master_bedroom_thermostat_operation_mode
+    - sensor.master_bedroom_thermostat_humidity
+    - binary_sensor.master_bedroom_thermostat_has_leaf
+    - binary_sensor.master_bedroom_thermostat_online
+    - binary_sensor.master_bedroom_thermostat_is_locked
+    - binary_sensor.master_bedroom_thermostat_is_using_emergency_heat
 
 environmental_data_ensuite:
   name: Ensuite
