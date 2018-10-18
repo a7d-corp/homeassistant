@@ -83,6 +83,10 @@ input_boolean.party_mode:
   google_assistant: true
   google_assistant_name: party mode
   google_assistant_type: switch
+input_boolean.night_mode_toggle:
+  google_assistant: true
+  google_assistant_name: night mode
+  google_assistant_type: switch
 
 ## inputs
 input_slider.kodi_dimmer_slider:

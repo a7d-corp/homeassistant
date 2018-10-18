@@ -130,6 +130,8 @@ global_controls:
   icon: 'mdi:home-variant'
   control: hidden
   entities:
+    - input_boolean.night_mode_toggle
+    - input_boolean.motion_lighting_toggle
     - input_boolean.global_away_mode_toggle
     - input_boolean.lighting_away_mode_toggle
     - input_boolean.heating_away_mode_toggle

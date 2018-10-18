@@ -19,3 +19,9 @@ heating_away_mode_toggle:
 party_mode:
   name: Party mode
   icon: 'mdi:music'
+motion_lighting_toggle:
+  name: Motion-controlled lighting
+  icon: 'mdi:webcam'
+night_mode_toggle:
+  name: Night mode
+  icon: 'mdi:sleep'
