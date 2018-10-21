@@ -85,6 +85,9 @@ google:
   client_secret: !secret google_client_secret
   track_new_calendar: false
 
+prometheus:
+  namespace: hass
+
 #influxdb:
 #  host: !secret influxdb_host
 #  port: 8086
