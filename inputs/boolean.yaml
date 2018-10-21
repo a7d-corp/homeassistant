@@ -8,19 +8,19 @@ kodi_amp_trigger:
   name: Enable amp trigger
   icon: mdi:checkbox-marked-outline
 global_away_mode_toggle:
-  name: Away mode
+  name: Enable away mode
   icon: 'mdi:home-map-marker'
 lighting_away_mode_toggle:
-  name: Away mode (lighting)
+  name: Enable away mode (lighting only)
   icon: 'mdi:lightbulb-on'
 heating_away_mode_toggle:
-  name: Away mode (heating)
+  name: Enable away mode (heating only)
   icon: 'mdi:radiator'
 party_mode:
   name: Party mode
   icon: 'mdi:music'
 motion_lighting_toggle:
-  name: Motion-controlled lighting
+  name: Allow motion controll of lighting
   icon: 'mdi:webcam'
 night_mode_toggle:
   name: Night mode
