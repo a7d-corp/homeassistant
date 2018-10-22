@@ -20,7 +20,7 @@ party_mode:
   name: Party mode
   icon: 'mdi:music'
 motion_lighting_toggle:
-  name: Allow motion controll of lighting
+  name: Allow motion control of lighting
   icon: 'mdi:webcam'
 night_mode_toggle:
   name: Night mode
