@@ -390,6 +390,9 @@ automation_all_lights:
     - group.energenie_switches
     - group.kitchen_lights
     - switch.loft_lighting
+    - switch.energenie_one
+    - switch.energenie_two
+    - switch.energenie_three
 
 lounge_hues:
   name: Lounge Hues
