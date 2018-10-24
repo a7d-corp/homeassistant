@@ -76,7 +76,6 @@ infrastructure_view:
   entities:
     - group.certificate_expiries
     - group.travis_builds
-    - group.pihole_stats
     - group.speedtest_results
 
 # groups for default_view
@@ -288,15 +287,6 @@ speedtest_results:
     - sensor.speedtest_ping
     - sensor.speedtest_download
     - sensor.speedtest_upload
-
-pihole_stats:
-  name: PiHole statistics
-  icon: mdi:alert-octagon
-  entities:
-    - sensor.pihole_dns_queries_today
-    - sensor.pihole_dns_queries_cached
-    - sensor.pihole_dns_queries_forwarded
-    - sensor.pihole_ads_blocked_today
 
 # groups for lighting_view
 all_home_lights:
