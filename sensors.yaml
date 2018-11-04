@@ -94,26 +94,23 @@
   name: Plex SSL
   host: !secret plex_url
 - platform: cert_expiry
-  name: AWX SSL
-  host: !secret awx_url
+  name: simonweald.com
+  host: !secret simonweald_url
 - platform: cert_expiry
-  name: GOGs SSL
-  host: !secret gogs_url
+  name: Startpage
+  host: !secret startpage_url
+- platform: cert_expiry
+  name: Gitea SSL
+  host: !secret gitea_url
 - platform: cert_expiry
   name: Docker Registry SSL
   host: !secret registry_url
 - platform: cert_expiry
-  name: Kibana SSL
-  host: !secret kibana_url
-- platform: cert_expiry
-  name: Flood SSL
-  host: !secret flood_url
-- platform: cert_expiry
   name: Grafana SSL
   host: !secret grafana_url
 - platform: cert_expiry
-  name: Rancher SSL
-  host: !secret rancher_url
+  name: Jenkins CI SSL
+  host: !secret jenkins_url
 #- platform: fitbit
 #  clock_format: 24H
 #  monitored_resources:
