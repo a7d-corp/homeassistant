@@ -156,12 +156,6 @@
   sensors:
     aqara_last_change:
       value_template: "{% if as_timestamp(states.sensor.date__time.last_updated) - as_timestamp(states.sensor.illumination_7811dcb1f766.last_updated) > 5*60 %}true{% endif %}"
-- platform: pi_hole
-  host: "10.101.0.30:10101"
-  ssl: false
-- platform: pi_hole
-  host: "10.101.0.20:10101"
-  ssl: false
 #- platform: template
 #  sensors:
 #    christmas_lights_power:
