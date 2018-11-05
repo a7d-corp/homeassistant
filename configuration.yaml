@@ -73,35 +73,70 @@ xiaomi_aqara:
       key: !secret aqara_gateway_key
 
 google_assistant:
-  project_id: home-assistant-ea5e7
-  client_id: !secret google_assistant_client_id
-  access_token: !secret google_assistant_access_token
-  agent_user_id: home-assistant-101
+  project_id: !secret google_assistant_project_id
   api_key: !secret google_assistant_api_key
-  expose_by_default: false
+#  expose_by_default: true
+#  exposed_domains:
+#    - SWITCH
+#    - GROUP
+#    - INPUT_BOOLEAN
+#    - MEDIA_PLAYER
+#  entity_config:
+#    light.gateway_light_7811dcb1f766:
+#      name: understairs cupboard
+#      aliases:
+#        - understairs cupboard light
+#        - gateway light
+#    group.energenie_switches:
+#      name: ambient switches
+#    switch.energenie_one:
+#      name: drinks cabinet
+#    switch.energenie_two:
+#      name: garden room
+#      aliases:
+#        - garden room twigs
+#        - twigs
+#    switch.energenie_three:
+#      name: firefly lights
+#      aliases:
+#        - boat bookcase
+#    switch.flux_adjustment:
+#      name: living room colour adjustment
+#      aliases:
+#        - living room redshift
+#        - living room flux
+#    switch.loft_lighting:
+#      name: loft lights
+#    input_boolean.lounge_media_dim_enable:
+#      name: media dimming
+#    input_boolean.kodi_amp_trigger:
+#      name: amp trigger
+#    input_boolean.global_away_mode_toggle:
+#      name: away mode
+#    input_boolean.holiday_mode:
+#      name: holiday mode
+#    input_boolean.party_mode:
+#      name: party mode
+#    input_boolean.night_mode_toggle:
+#      name: night mode
+#    media_player.kodi:
+#      name: kodi
+#    media_player.garden_room:
+#      name: garden room sonos
+#    media_player.living_room:
+#      name: living room sonos
+#    media_player.kitchen:
+#      name: kitchen sonos
+#    media_player.denon_avrx2100w:
+#      name: living room amp
 
-google:
-  client_id: !secret google_client_id
-  client_secret: !secret google_client_secret
-  track_new_calendar: false
+#google:
+#  client_id: !secret google_client_id
+#  client_secret: !secret google_client_secret
+#  track_new_calendar: false
 
 prometheus:
   namespace: hass
-
-#influxdb:
-#  host: !secret influxdb_host
-#  port: 8086
-#  database: !secret influxdb_db
-#  username: !secret influxdb_user
-#  password: !secret influxdb_pass
-#  max_retries: 3
-#  default_measurement: state
-#  exclude:
-#    domains:
-#       - automation
-#       - scripts
-#  tags:
-#    source: hass
 
 mqtt:
   broker: !secret ip_mqtt_broker
@@ -112,6 +147,11 @@ mqtt:
 nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
+
+zoneminder:
+  host: !secret zoneminder_host
+  username: !secret zoneminder_user
+  password: !secret zoneminder_pass
 
 input_boolean: !include inputs/boolean.yaml
 input_number: !include inputs/numbers.yaml
