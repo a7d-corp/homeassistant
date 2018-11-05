@@ -26,3 +26,8 @@
       prob_given_false: 0.2
       platform: 'state'
       to_state: 'home'
+- platform: ping
+  host: !secret ip_xbox
+  name: Xbox One
+  scan_interval: 30
+    
