@@ -1,6 +1,0 @@
-[submodule "git/home-assistant-custom-ui"]
-	path = git/home-assistant-custom-ui
-	url = https://github.com/andrey-git/home-assistant-custom-ui.git
-[submodule "git/home-assistant-customizer"]
-	path = git/home-assistant-customizer
-	url = https://github.com/andrey-git/home-assistant-customizer.git
