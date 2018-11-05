@@ -247,3 +247,5 @@
         {% else %}
           mdi:window-closed
         {% endif %}
+- platform: zoneminder
+  include_archived: false
