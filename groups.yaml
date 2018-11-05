@@ -210,7 +210,6 @@ kitchen_cameras:
   icon: mdi:cctv
   entities:
     - camera.kitchen_overview
-#    - camera.nugget_flap
 
 cctv_cameras:
   name: CCTV Cameras
@@ -218,19 +217,6 @@ cctv_cameras:
   entities:
     - camera.exterior__front
     - camera.exterior__rear
-
-#finland_webcams:
-#  name: Finland Webcams
-#  icon: mdi:cctv
-#  entities:
-#    - camera.salla_centre
-#    - camera.salla_crossroads
-#    - camera.salla_highway
-#    - camera.sallatunturi
-#    - camera.sallatunturi_2
-#    - camera.sallatunturi_north_east
-#    - camera.sallatunturi_summit
-#    - camera.sallatunturi_summit_2
 
 door_sensors:
   name: Door sensors
