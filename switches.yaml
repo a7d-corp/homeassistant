@@ -27,7 +27,6 @@
   brightness: 200
   disable_brightness_adjust: True
   mode: xy
-
 - platform: mqtt
   name: "Loft Lighting"
   state_topic: "home/sonoff/loft/1/stat"
