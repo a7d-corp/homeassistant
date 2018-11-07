@@ -209,7 +209,7 @@ kitchen_cameras:
   name: Kitchen Cameras
   icon: mdi:cctv
   entities:
-    - camera.kitchen_overview
+    - camera.kitchen
 
 cctv_cameras:
   name: CCTV Cameras
