@@ -111,6 +111,7 @@ views:
             icon: mdi:run-fast
       - type: entities
         title: Holiday Mode
+        show_header_toggle: false
         entities:
           - entity: input_boolean.holiday_mode
             icon: mdi:airplane-takeoff
@@ -119,6 +120,7 @@ views:
     cards:
       - type: entities
         title: Media Controls
+        show_header_toggle: false
         entities:
           - media_player.samsung_tv_remote
           - media_player.denon_avrx2100w
@@ -146,6 +148,7 @@ views:
           - sensor.plex
       - type: entities
         title: Kodi Controls
+        show_header_toggle: false
         entities:
           - input_boolean.lounge_media_dim_enable
           - input_number.kodi_dimmer_slider
@@ -162,6 +165,7 @@ views:
           - group.kitchen_lights
       - type: entities
         title: Lounge Lights
+        show_header_toggle: false
         entities:
           - group.lounge_hues
           - switch.energenie_one
@@ -169,20 +173,24 @@ views:
           - switch.energenie_three
       - type: entities
         title: Sockets
+        show_header_toggle: false
         entities:
           - switch.energenie_one
           - switch.energenie_two
           - switch.energenie_three
       - type: entities
         title: Kitchen Lights
+        show_header_toggle: false
         entities:
           - light.kitchen_cabinets
       - type: entities
         title: Lighting Control
+        show_header_toggle: false
         entities:
           - switch.flux_adjustment
       - type: entities
         title: Loft Lighting
+        show_header_toggle: false
         entities:
           - switch.loft_lighting
           - sensor.loft_light_status
