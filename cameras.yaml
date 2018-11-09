@@ -6,3 +6,6 @@
   key: !secret nvr_key
   password: !secret nvr_camera_pass
 - platform: zoneminder
+- platform: generic
+  name: Europe rain map
+  still_image_url: "https://api.sat24.com/animated/EU/rainTMC/1/GMT%20Standard%20Time/544909"
