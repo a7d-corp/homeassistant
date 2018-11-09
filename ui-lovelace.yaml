@@ -26,6 +26,8 @@ views:
               - sensor.pws_wind_string
           - type: picture-entity
             title: European rain map
+            show_name: false
+            show_state: false
             entity: camera.europe_rain_map
       - type: entities
         title: 4-day Forecast
@@ -83,6 +85,8 @@ views:
                 state: "off"
             card:
               type: picture-entity
+              show_name: false
+              show_state: false
               entity: camera.kitchen
           - type: conditional
             conditions:
@@ -90,14 +94,20 @@ views:
                 state: "off"
             card:
               type: picture-entity
+              show_name: false
+              show_state: false
               entity: camera.living_room
       - type: vertical-stack
         cards:
           - type: picture-entity
             title: Front CCTV
+            show_name: false
+            show_state: false
             entity: camera.exterior__front
           - type: picture-entity
             title: Rear CCTV
+            show_name: false
+            show_state: false
             entity: camera.exterior__rear
       - type: entities
         title: Door Sensors
