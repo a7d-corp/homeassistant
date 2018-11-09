@@ -154,6 +154,7 @@ zoneminder:
   password: !secret zoneminder_pass
 
 input_boolean: !include inputs/boolean.yaml
+input_number: !include inputs/numbers.yaml
 input_select: !include inputs/select.yaml
 notify: !include_dir_merge_list notify
 media_player: !include media_players.yaml
