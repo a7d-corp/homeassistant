@@ -290,15 +290,14 @@ views:
         entities:
           - sensor.unifi_ssl
           - sensor.unifi_nvr_ssl
-          - sensor.awx_ssl
-          - sensor.kibana_ssl
           - sensor.grafana_ssl
-          - sensor.gogs_ssl
+          - sensor.gitea_ssl
           - sensor.docker_registry_ssl
-          - sensor.rancher_ssl
           - sensor.home_assistant_ssl
           - sensor.plex_ssl
-          - sensor.flood_ssl
+          - sensor.simonwealdcom
+          - sensor.startpage
+          - sensor.jenkins_ci_ssl
       - type: entities
         title: HA Travis Builds
         entities:
