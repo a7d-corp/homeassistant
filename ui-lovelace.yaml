@@ -3,16 +3,30 @@ views:
   - title: Home
     icon: mdi:home-variant
     cards:
-      - type: glance
-        title: At a glance
-        entities:
-          - sun.sun
-          - sensor.loft_light_status
-          - sensor.loft_temperature
-      - type: entities
-        title: Portsmouth Tides
-        entities:
-          - sensor.portsmouth_tides
+      - type: vertical-stack
+        cards:
+          - type: glance
+            title: At a glance
+            entities:
+              - sun.sun
+              - sensor.loft_light_status
+              - sensor.loft_temperature
+          - type: entities
+            title: Home Controls
+            show_header_toggle: false
+            entities:
+              - input_boolean.night_mode_toggle
+              - input_boolean.motion_lighting_toggle
+              - entity: input_boolean.global_away_mode_toggle
+                icon: mdi:account-off
+                name: "Away: all automations"
+              - entity: input_boolean.lighting_away_mode_toggle
+                icon: mdi:lightbulb-outline
+                name: "Away: lighting only"
+              - entity: input_boolean.heating_away_mode_toggle
+                icon: mdi:radiator
+                name: "Away: heating only"
+              - input_boolean.party_mode
       - type: vertical-stack
         cards:
           - type: entities
@@ -27,22 +41,6 @@ views:
             title: Occupancy
             entities:
               - binary_sensor.people_home
-      - type: entities
-        title: Home Controls
-        show_header_toggle: false
-        entities:
-          - input_boolean.night_mode_toggle
-          - input_boolean.motion_lighting_toggle
-          - entity: input_boolean.global_away_mode_toggle
-            icon: mdi:account-off
-            name: "Away: all automations"
-          - entity: input_boolean.lighting_away_mode_toggle
-            icon: mdi:lightbulb-outline
-            name: "Away: lighting only"
-          - entity: input_boolean.heating_away_mode_toggle
-            icon: mdi:radiator
-            name: "Away: heating only"
-          - input_boolean.party_mode
   - title: Security
     icon: mdi:security
     cards:
