@@ -132,13 +132,15 @@ views:
   - title: Media
     icon: mdi:movie
     cards:
-      - type: entities
-        title: Media Controls
-        show_header_toggle: false
-        entities:
-          - media_player.samsung_tv_remote
-          - media_player.denon_avrx2100w
-          - switch.tv_power
+      - type: vertical-stack
+        cards:
+          - type: media-control
+            entity: media_player.samsung_tv_remote
+          - type: media-control
+            entity: media_player.denon_avrx2100w
+          - type: entities
+            entities:
+              - switch.tv_power
       - type: vertical-stack
         cards:
           - type: media-control
