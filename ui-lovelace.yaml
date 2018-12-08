@@ -161,11 +161,17 @@ views:
           - switch.energenie_one
           - switch.energenie_two
           - switch.energenie_three
-      - type: entities
-        title: Kitchen Lights
-        show_header_toggle: false
-        entities:
-          - light.kitchen_cabinets
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Kitchen Lights
+            show_header_toggle: false
+            entities:
+              - light.kitchen_cabinets
+          - type: sensor
+            entity: sensor.illumination_158d000237acbc
+            name: Kitchen illumination
+            unit: lux
       - type: entities
         title: Lighting Control
         show_header_toggle: false
