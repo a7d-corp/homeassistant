@@ -61,20 +61,11 @@ climate_view:
     - group.upstairs_heating
     - group.environmental_data_ensuite
 
-travel_view:
-  name: Travel
-  view: yes
-  icon: mdi:car
-  entities:
-    - group.travel_times
-    - group.london_underground
-
 infrastructure_view:
   name: Infrastructure
   view: yes
   icon: mdi:cloud
   entities:
-    - group.certificate_expiries
     - group.travis_builds
     - group.speedtest_results
 
@@ -242,22 +233,6 @@ holiday_mode_toggle:
     - input_boolean.holiday_mode
 
 # groups for infrastructure_view
-certificate_expiries:
-  name: SSL cert renewals
-  icon: mdi:certificate
-  entities:
-    - sensor.unifi_ssl
-    - sensor.unifi_nvr_ssl
-    - sensor.awx_ssl
-    - sensor.kibana_ssl
-    - sensor.grafana_ssl
-    - sensor.gogs_ssl
-    - sensor.docker_registry_ssl
-    - sensor.rancher_ssl
-    - sensor.home_assistant_ssl
-    - sensor.plex_ssl
-    - sensor.flood_ssl
-
 travis_builds:
   name: Travis Builds
   icon: mdi:thumb-up
