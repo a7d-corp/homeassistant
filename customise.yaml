@@ -134,7 +134,7 @@ binary_sensor.door_window_sensor_158d0001e4820c:
 binary_sensor.door_window_sensor_158d0001de662f:
   friendly_name: Kitchen window (right)
 binary_sensor.door_window_sensor_158d000232ab79:
-  friendly_name: Doorbell
+  friendly_name: Understairs cupboard door
 sensor.humidity_158d0001fa5c1b:
   friendly_name: Ensuite humidity
   icon: mdi:water
