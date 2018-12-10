@@ -102,11 +102,17 @@ views:
             title: Loft hatch
             entities:
               - sensor.door_loft_hatch
-      - type: entities
-        title: Motion Sensors
-        entities:
-          - entity: binary_sensor.motion_sensor_158d000237acbc
-            icon: mdi:run-fast
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Motion Sensors
+            entities:
+              - entity: binary_sensor.motion_sensor_158d000237acbc
+                icon: mdi:run-fast
+          - type: history-graph
+            title: Kitchen motion sensor
+            entities:
+              - binary_sensor.motion_sensor_158d000237acbc
       - type: entities
         title: Holiday Mode
         show_header_toggle: false
