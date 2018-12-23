@@ -31,6 +31,7 @@ views:
         cards:
           - type: entities
             title: Device Trackers
+            show_header_toggle: false
             entities:
               - device_tracker.houston
               - device_tracker.galaxys8
@@ -106,6 +107,7 @@ views:
         cards:
           - type: entities
             title: Motion Sensors
+            show_header_toggle: false
             entities:
               - entity: binary_sensor.motion_sensor_158d000237acbc
                 icon: mdi:run-fast
@@ -220,6 +222,7 @@ views:
             entity: climate.living_room
           - type: entities
             title: Downstairs Heating
+            show_header_toggle: false
             entities:
               - climate.living_room
               - sensor.living_room_thermostat_operation_mode
@@ -234,6 +237,7 @@ views:
             entity: climate.master_bedroom
           - type: entities
             title: Upstairs Heating
+            show_header_toggle: false
             entities:
               - climate.master_bedroom
               - sensor.master_bedroom_thermostat_operation_mode
@@ -252,6 +256,7 @@ views:
             max: 30
           - type: entities
             title: Ensuite Bathroom
+            show_header_toggle: false
             entities:
               - sensor.temperature_158d0001fa5c1b
               - sensor.humidity_158d0001fa5c1b
@@ -260,6 +265,7 @@ views:
     cards:
       - type: entities
         title: 4-day Forecast
+        show_header_toggle: false
         entities:
           - sensor.pws_weather_1d_metric
           - sensor.pws_weather_1n_metric
@@ -273,6 +279,7 @@ views:
         url: https://embed.windy.com/embed2.html?lat=51.055&lon=-0.330&zoom=6&level=surface&overlay=rain&menu=&message=true&marker=&calendar=&pressure=true&type=map&location=coordinates&detail=&detailLat=51.077&detailLon=-0.334&metricWind=mph&metricTemp=%C2%B0C&radarRange=-1
       - type: entities
         title: Current weather
+        show_header_toggle: false
         entities:
           - sensor.pws_temp_c
           - sensor.pws_feelslike_c
@@ -287,6 +294,7 @@ views:
     cards:
       - type: entities
         title: HA Travis Builds
+        show_header_toggle: false
         entities:
           - sensor.analbeardhomeassistant_state
           - sensor.analbeardhomeassistant_last_build_started_at
