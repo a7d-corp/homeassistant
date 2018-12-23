@@ -8,6 +8,9 @@ homeassistant:
   time_zone: Europe/London
   customize: !include customise.yaml
 
+lovelace:
+  mode: yaml
+
 http:
   api_password: !secret http_password
   base_url: !secret base_url
@@ -120,11 +123,10 @@ google_assistant:
   project_id: !secret google_assistant_project_id
   api_key: !secret google_assistant_api_key
 #  expose_by_default: true
-#  exposed_domains:
-#    - SWITCH
-#    - GROUP
-#    - INPUT_BOOLEAN
-#    - MEDIA_PLAYER
+  exposed_domains:
+    - switch
+    - input_boolean
+    - media_player
 #  entity_config:
 #    light.gateway_light_7811dcb1f766:
 #      name: understairs cupboard
