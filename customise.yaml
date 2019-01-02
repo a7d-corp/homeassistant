@@ -155,6 +155,8 @@ sensor.illumination_158d000237acbc:
   friendly_name: Kitchen brightness
 sensor.illumination_7811dcb1f766:
   friendly_name: Understairs cupboard brightneess
+binary_sensor.switch_158d0001ef3aaa:
+  friendly_name: Landing switch
 
 ## device trackers
 device_tracker.nikki:
