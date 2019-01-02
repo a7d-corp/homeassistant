@@ -42,6 +42,34 @@ views:
             title: Occupancy
             entities:
               - binary_sensor.people_home
+      - type: entity-filter
+        entities:
+          - sensor.ensuite_humidity_sensor_battery
+          - sensor.front_door_sensor_battery
+          - sensor.kitchen_motion_sensor_battery
+          - sensor.kitchen_window_left_sensor_battery
+          - sensor.kitchen_window_right_sensor_battery
+          - sensor.landing_switch_sensor_battery
+          - sensor.living_room_window_sensor_battery
+          - sensor.loft_hatch_sensor_battery
+          - sensor.patio_door_sensor_battery
+          - sensor.understairs_cupboard_door_sensor_battery
+        state_filter:
+          - "10.0"
+          - "9.0"
+          - "8.0"
+          - "7.0"
+          - "6.0"
+          - "5.0"
+          - "4.0"
+          - "3.0"
+          - "2.0"
+          - "1.0"
+          - "0.0"
+        show_empty: false
+        card:
+          type: glance
+          title: Low batteries
   - title: Security
     icon: mdi:security
     cards:
@@ -296,9 +324,9 @@ views:
         title: HA Travis Builds
         show_header_toggle: false
         entities:
-          - sensor.analbeardhomeassistant_state
-          - sensor.analbeardhomeassistant_last_build_started_at
-          - sensor.analbeardhomeassistant_last_build_duration
+          - sensor.glitchcrabhomeassistant_state
+          - sensor.glitchcrabhomeassistant_last_build_started_at
+          - sensor.glitchcrabhomeassistant_last_build_duration
       - type: vertical-stack
         cards:
           - type: gauge
