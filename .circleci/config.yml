@@ -9,7 +9,6 @@ jobs:
       - run:
           name: check config
           command: |
-            pwd
             mv .circleci/secrets.yaml secrets.yaml
             python3.6 -m venv .
             source bin/activate
