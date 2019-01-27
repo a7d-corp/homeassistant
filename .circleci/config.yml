@@ -9,7 +9,7 @@ jobs:
       - run:
           name: check config
           command: |
-            mv travis_secrets.yaml secrets.yaml
+            mv .travis_secrets.yaml secrets.yaml
             python3.6 -m venv .
             source bin/activate
             pip3 install --pre --upgrade homeassistant
