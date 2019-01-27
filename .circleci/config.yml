@@ -1,14 +1,16 @@
-
 version: 2
 jobs:
   build:
     docker:
-      - image: homeassistant/home-assistant:latest
+      - image: circleci/python:3.6.4
     working_directory: ~/repo
     steps:
       - checkout
       - run:
           name: check config
           command: |
-            mv .travis_secrets.yaml secrets.yaml
+            mv travis_secrets.yaml secrets.yaml
+            python3.6 -m venv .
+            source bin/activate
+            pip3 install --pre --upgrade homeassistant
             hass -c . --script check_config --info all
