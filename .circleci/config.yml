@@ -10,5 +10,5 @@ jobs:
       - run:
           name: check config
           command: |
-            mv .travis_secrets secrets.yaml
+            mv .travis_secrets.yaml secrets.yaml
             hass -c . --script check_config --info all
