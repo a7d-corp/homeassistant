@@ -1,0 +1,14 @@
+
+version: 2
+jobs:
+  build:
+    docker:
+      - image: homeassistant/home-assistant:latest
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: check config
+          command: |
+            mv .travis_secrets secrets.yaml
+            hass -c . --script check_config --info all
