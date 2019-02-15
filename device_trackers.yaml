@@ -1,17 +1,14 @@
 - platform: unifi
-  entity_namespace: network
+  host: !secret unifi_host
   username: hass
   password: !secret unifi_pass
-  host: !secret unifi_host
   port: !secret unifi_port
-  verify_ssl: false
+  verify_ssl: true
   site_id: !secret unifi_site
   new_device_defaults:
     track_new_devices: false
     hide_if_away: false
   detection_time: 600
-#  ssid_filter:
-#    - 'room101'
 
 - platform: ping
   hosts:
