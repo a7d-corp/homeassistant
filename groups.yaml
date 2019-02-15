@@ -132,10 +132,10 @@ travel_times:
   name: Travel Times
   icon: mdi:car
   entities:
-    - sensor.home__work_simon
-    - sensor.work__home_simon
-    - sensor.home__work_nikki
-    - sensor.work__home_nikki
+    - sensor.home_work_simon
+    - sensor.work_home_simon
+    - sensor.home_work_nikki
+    - sensor.work_home_nikki
 
 london_underground:
   name: Underground Lines
@@ -146,13 +146,13 @@ london_underground:
     - sensor.circle
     - sensor.district
     - sensor.dlr
-    - sensor.hammersmith__city
+    - sensor.hammersmith_city
     - sensor.jubilee
     - sensor.metropolitan
     - sensor.northern
     - sensor.piccadilly
     - sensor.victoria
-    - sensor.waterloo__city
+    - sensor.waterloo_city
 
 # groups for media_view
 media_devices:
@@ -206,8 +206,8 @@ cctv_cameras:
   name: CCTV Cameras
   icon: mdi:cctv
   entities:
-    - camera.exterior__front
-    - camera.exterior__rear
+    - camera.exterior_front
+    - camera.exterior_rear
 
 door_sensors:
   name: Door sensors

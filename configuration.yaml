@@ -19,6 +19,11 @@ http:
     - 10.101.0.30
     - 10.101.0.60
 
+logger:
+  default: warn
+  logs:
+    homeassistant.components.device_tracker: debug
+
 config:
 map:
 updater:
@@ -58,13 +63,13 @@ recorder:
       - sensor.pws_feelslike_c
       - sensor.pws_alerts
       - sensor.portsmouth_tides
-      - sensor.waterloo__city
+      - sensor.waterloo_city
       - sensor.victoria
       - sensor.piccadilly
       - sensor.northern
       - sensor.metropolitan
       - sensor.jubilee
-      - sensor.hammersmith__city
+      - sensor.hammersmith_city
       - sensor.dlr
       - sensor.district
       - sensor.circle
