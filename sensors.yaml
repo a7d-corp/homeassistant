@@ -38,23 +38,11 @@
 - platform: time_date
   display_options:
     - time
-- platform: travisci
-  api_key: !secret github_ha_token
 - platform: worldtidesinfo
   name: Portsmouth Tides
   api_key: !secret worldtides_api_key
   latitude: 50.830573
   longitude: -1.105639
-- platform: speedtest
-  name: Speedtest
-  server_id: 1234
-  minute:
-    - 0
-    - 30
-  monitored_conditions:
-    - ping
-    - download
-    - upload
 - platform: template
   sensors:
     simon_status:

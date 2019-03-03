@@ -61,14 +61,6 @@ climate_view:
     - group.upstairs_heating
     - group.environmental_data_ensuite
 
-infrastructure_view:
-  name: Infrastructure
-  view: yes
-  icon: mdi:cloud
-  entities:
-    - group.travis_builds
-    - group.speedtest_results
-
 # groups for default_view
 current_weather:
   name: Weather
@@ -240,14 +232,6 @@ travis_builds:
     - sensor.analbeardhomeassistant_state
     - sensor.analbeardhomeassistant_last_build_started_at
     - sensor.analbeardhomeassistant_last_build_duration
-
-speedtest_results:
-  name: Speedtest
-  icon: mdi:speedometer
-  entities:
-    - sensor.speedtest_ping
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
 
 # groups for lighting_view
 all_home_lights:
