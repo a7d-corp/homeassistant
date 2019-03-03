@@ -113,6 +113,16 @@ zone 3:
   longitude: !secret nikki_work_long
   icon: mdi:laptop
 
+person:
+  - name: Simon
+    id: simon0000
+    device_trackers:
+      - device_tracker.houston
+  - name: Nikki
+    id: niki0000
+    device_trackers:
+      - device_tracker.galaxys8
+
 hue:
   bridges:
     - host: 10.101.0.178
