@@ -26,35 +26,35 @@
 #
 # Dims living room Hues when Kodi transitions from idle to playing
 #
-#- alias: "Kodi - Playing"
-#  trigger:
-#    - platform: state
-#      entity_id: media_player.kodi
-#      from: 'idle'
-#      to: 'playing'
-#  condition:
-#    condition: and
-#    conditions:
-#      - condition: state
-#        entity_id: sun.sun
-#        state: 'below_horizon'
-#      - condition: state
-#        entity_id: input_boolean.lounge_media_dim_enable
-#        state: 'on'
-#      - condition: state
-#        entity_id: group.lounge_hues
-#        state: 'on'
-#  action:
-#    - service: input_number.set_value
-#      data_template:
-#        entity_id: input_number.saved_lounge_brightness
-#        value: '{{ states.light.standard_lamp_right.attributes.brightness }}'
-#    - service: light.turn_on
-#      data_template:
-#        entity_id: group.lounge_hues
-#        brightness_pct: '{{ states.input_number.kodi_dimmer_slider.state | int }}'
-#        transition: '2'
-#
+- alias: "Kodi - Playing"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      from: 'idle'
+      to: 'playing'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      - condition: state
+        entity_id: input_boolean.lounge_media_dim_enable
+        state: 'on'
+      - condition: state
+        entity_id: group.lounge_hues
+        state: 'on'
+  action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.saved_lounge_brightness
+        value: '{{ states.light.standard_lamp_right.attributes.brightness }}'
+    - service: light.turn_on
+      data_template:
+        entity_id: group.lounge_hues
+        brightness_pct: '{{ states.input_number.kodi_dimmer_slider.state | int }}'
+        transition: '2'
+
 # Dims living room Hues when they're turned on and Kodi is already playing
 #
 - alias: "Kodi - already playing"
@@ -76,87 +76,87 @@
         entity_id: group.lounge_hues
         brightness_pct: '{{ states.input_number.kodi_dimmer_slider.state | int }}'
         transition: '2'
-#
+
 # Sets living room Hues to 50% when Kodi is paused
 #
-#- alias: "Kodi - Paused"
-#  trigger:
-#    - platform: state
-#      entity_id: media_player.kodi
-#      from: 'playing'
-#      to: 'paused'
-#  condition:
-#    condition: and
-#    conditions:
-#      - condition: state
-#        entity_id: sun.sun
-#        state: 'below_horizon'
-#      - condition: state
-#        entity_id: input_boolean.lounge_media_dim_enable
-#        state: 'on'
-#      - condition: state
-#        entity_id: group.lounge_hues
-#        state: 'on'
-#  action:
-#    service: light.turn_on
-#    entity_id: group.lounge_hues
-#    data:
-#      brightness_pct: '50'
-#      transition: '3'
-#
+- alias: "Kodi - Paused"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      from: 'playing'
+      to: 'paused'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      - condition: state
+        entity_id: input_boolean.lounge_media_dim_enable
+        state: 'on'
+      - condition: state
+        entity_id: group.lounge_hues
+        state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: group.lounge_hues
+    data:
+      brightness_pct: '50'
+      transition: '3'
+
 # Sets living room Hues down when Kodi is unpaused
 #
-#- alias: "Kodi - unpaused"
-#  trigger:
-#    - platform: state
-#      entity_id: media_player.kodi
-#      from: 'paused'
-#      to: 'playing'
-#  condition:
-#    condition: and
-#    conditions:
-#      - condition: state
-#        entity_id: sun.sun
-#        state: 'below_horizon'
-#      - condition: state
-#        entity_id: input_boolean.lounge_media_dim_enable
-#        state: 'on'
-#      - condition: state
-#        entity_id: group.lounge_hues
-#        state: 'on'
-#  action:
-#    service: light.turn_on
-#    entity_id: group.lounge_hues
-#    data:
-#      brightness_pct: '{{ states.input_number.kodi_dimmer_slider.state | int }}'
-#      transition: '2'
-#
+- alias: "Kodi - unpaused"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      from: 'paused'
+      to: 'playing'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      - condition: state
+        entity_id: input_boolean.lounge_media_dim_enable
+        state: 'on'
+      - condition: state
+        entity_id: group.lounge_hues
+        state: 'on'
+  action:
+    service: light.turn_on
+    entity_id: group.lounge_hues
+    data:
+      brightness_pct: '{{ states.input_number.kodi_dimmer_slider.state | int }}'
+      transition: '2'
+
 # Resets living room Hues when Kodi transitions to stopped
 #
-#- alias: "Kodi - Stopped"
-#  trigger:
-#    - platform: state
-#      entity_id: media_player.kodi
-#      to: 'idle'
-#  condition:
-#    condition: and
-#    conditions:
-#      - condition: state
-#        entity_id: sun.sun
-#        state: 'below_horizon'
-#      - condition: state
-#        entity_id: input_boolean.lounge_media_dim_enable
-#        state: 'on'
-#      - condition: state
-#        entity_id: group.lounge_hues
-#        state: 'on'
-#  action:
-#    service: light.turn_on
-#    data_template:
-#      entity_id: group.lounge_hues
-#      brightness: '{{ states.input_number.saved_lounge_brightness.state | int }}'
-#      transition: '3'
-#
+- alias: "Kodi - Stopped"
+  trigger:
+    - platform: state
+      entity_id: media_player.kodi
+      to: 'idle'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: 'below_horizon'
+      - condition: state
+        entity_id: input_boolean.lounge_media_dim_enable
+        state: 'on'
+      - condition: state
+        entity_id: group.lounge_hues
+        state: 'on'
+  action:
+    service: light.turn_on
+    data_template:
+      entity_id: group.lounge_hues
+      brightness: '{{ states.input_number.saved_lounge_brightness.state | int }}'
+      transition: '3'
+
 # Turn on living room amp if Kodi transitions to playing
 #
 #- alias: "Kodi - power on amp"
