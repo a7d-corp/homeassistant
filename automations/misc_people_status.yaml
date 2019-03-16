@@ -4,18 +4,18 @@
 - alias: "Set person to just arrived"
   trigger:
     - platform: state
-      entity_id: device_tracker.simon
+      entity_id: device_tracker.houston
       from: 'not_home'
       to: 'home'
     - platform: state
-      entity_id: device_tracker.nikki
+      entity_id: device_tracker.galaxys8
       from: 'not_home'
       to: 'home'
   action:
     - service: input_select.select_option
       data_template:
         entity_id: >
-          {% if trigger.entity_id == 'device_tracker.simon' %}
+          {% if trigger.entity_id == 'device_tracker.houston' %}
             input_select.simon_status
           {% else %}
             input_select.nikki_status
@@ -60,18 +60,18 @@
 - alias: "Set person to just left"
   trigger:
     - platform: state
-      entity_id: device_tracker.simon
+      entity_id: device_tracker.houston
       from: 'home'
       to: 'not_home'
     - platform: state
-      entity_id: device_tracker.nikki
+      entity_id: device_tracker.galaxys8
       from: 'home'
       to: 'not_home'
   action:
     - service: input_select.select_option
       data_template:
         entity_id: >
-          {% if trigger.entity_id == 'device_tracker.simon' %}
+          {% if trigger.entity_id == 'device_tracker.houston' %}
             input_select.simon_status
           {% else %}
             input_select.nikki_status
