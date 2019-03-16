@@ -46,10 +46,10 @@
       entity_id: scene.kitchen_away_mode_off
     - delay: '00:00:{{ (range(30, 59)|random|int) }}'
     - service: switch.turn_on
-      entity_id: switch.energenie_one
+      entity_id: switch.tplink_1
     - delay: '00:{{ (range(5, 10)|random|int) }}:00'
     - service: switch.turn_off
-      entity_id: switch.energenie_one
+      entity_id: switch.tplink_1
     - service: notify.slack_connector
       data:
         message: Presence simulation stopped
