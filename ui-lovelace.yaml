@@ -199,14 +199,20 @@ views:
           - group.lounge_lights
           - group.energenie_switches
           - group.kitchen_lights
-      - type: entities
-        title: Lounge Lights
-        show_header_toggle: false
-        entities:
-          - group.lounge_hues
-          - switch.energenie_one
-          - switch.energenie_two
-          - switch.energenie_three
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Lounge Lights
+            show_header_toggle: false
+            entities:
+              - group.lounge_hues
+              - switch.energenie_one
+              - switch.energenie_two
+              - switch.energenie_three
+          - type: sensor
+            entity: sensor.illumination_158d0002b7f000
+            name: Living room illumination
+            unit: lux
       - type: entities
         title: Sockets
         show_header_toggle: false
