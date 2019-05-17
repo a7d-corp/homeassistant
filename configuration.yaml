@@ -7,12 +7,15 @@ homeassistant:
   temperature_unit: C
   time_zone: Europe/London
   customize: !include customise.yaml
+  auth_providers:
+    - type: homeassistant
+    - type: legacy_api_password
+      api_password: !secret http_password
 
 lovelace:
   mode: yaml
 
 http:
-  api_password: !secret http_password
   base_url: !secret base_url
   use_x_forwarded_for: true
   trusted_proxies:
@@ -20,9 +23,9 @@ http:
     - 10.101.0.60
 
 logger:
-  default: warn
-  logs:
-    homeassistant.components.device_tracker: debug
+  default: warning
+#  logs:
+#    homeassistant.components.device_tracker: debug
 
 config:
 map:
@@ -122,6 +125,10 @@ person:
     id: niki0000
     device_trackers:
       - device_tracker.galaxys8
+
+tts:
+  - platform: google_translate
+    base_url: http://10.101.0.45:8123
 
 hue:
   bridges:
