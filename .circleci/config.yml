@@ -12,5 +12,5 @@ jobs:
             mv .circleci/secrets.yaml secrets.yaml
             python3.6 -m venv .
             source bin/activate
-            pip3 install --pre --upgrade homeassistant==0.88.2
+            pip3 install --pre --upgrade homeassistant==0.92.2
             hass -c . --script check_config --info all
