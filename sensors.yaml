@@ -35,6 +35,21 @@
 #    - weather_3n_metric
 #    - weather_4d_metric
 #    - weather_4n_metric
+- platform: metoffice
+  name: metoffice
+  api_key: !secret metoffice_key
+  monitored_conditions:
+    - weather
+    - temperature
+    - feels_like_temperature
+    - wind_speed
+    - wind_direction
+    - wind_gust
+    - visibility
+    - visibility_distance
+    - uv
+    - precipitation
+    - humidity
 - platform: time_date
   display_options:
     - time
