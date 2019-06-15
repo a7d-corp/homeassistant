@@ -27,6 +27,9 @@ views:
                 icon: mdi:radiator
                 name: "Away: heating only"
               - input_boolean.party_mode
+              - entity: switch.desk_power
+                icon: mdi:desktop-classic
+                name: "Desk power"
       - type: vertical-stack
         cards:
           - type: entities
@@ -158,9 +161,6 @@ views:
             entity: media_player.samsung_tv_remote
           - type: media-control
             entity: media_player.denon_avrx2100w
-          - type: entities
-            entities:
-              - switch.tv_power
       - type: vertical-stack
         cards:
           - type: media-control
@@ -197,7 +197,6 @@ views:
         show_header_toggle: false
         entities:
           - group.lounge_lights
-          - group.energenie_switches
           - group.kitchen_lights
       - type: vertical-stack
         cards:
@@ -206,20 +205,15 @@ views:
             show_header_toggle: false
             entities:
               - group.lounge_hues
-              - switch.energenie_one
-              - switch.energenie_two
-              - switch.energenie_three
           - type: sensor
             entity: sensor.illumination_158d0002b7f000
             name: Living room illumination
             unit: lux
-      - type: entities
-        title: Sockets
-        show_header_toggle: false
-        entities:
-          - switch.energenie_one
-          - switch.energenie_two
-          - switch.energenie_three
+          - type: entities
+            title: Sockets
+            entities:
+              - switch.bookcase_lights
+              - switch.twigs
       - type: vertical-stack
         cards:
           - type: entities
@@ -231,6 +225,11 @@ views:
             entity: sensor.illumination_158d000237acbc
             name: Kitchen illumination
             unit: lux
+          - type: entities
+            title: Desk Power
+            show_header_toggle: false
+            entities:
+              - switch.desk_power
       - type: entities
         title: Lighting Control
         show_header_toggle: false
@@ -245,6 +244,7 @@ views:
           - sensor.door_loft_hatch
       - type: entities
         title: Understairs Lighting
+        show_header_toggle: false
         entities:
           - light.gateway_light_7811dcb1f766
   - title: Climate

@@ -45,7 +45,6 @@ lighting_view:
   entities:
     - group.all_home_lights
     - group.lounge_lights
-    - group.energenie_switches
     - group.kitchen_lights
     - group.lighting_tools
     - group.loft_lighting
@@ -124,8 +123,6 @@ travel_times:
   name: Travel Times
   icon: mdi:car
   entities:
-    - sensor.home_work_simon
-    - sensor.work_home_simon
     - sensor.home_work_nikki
     - sensor.work_home_nikki
 
@@ -240,7 +237,6 @@ all_home_lights:
   icon: mdi:lightbulb-outline
   entities:
     - group.lounge_lights
-    - group.energenie_switches
     - group.kitchen_lights
 
 lounge_lights:
@@ -248,9 +244,6 @@ lounge_lights:
   icon: mdi:lightbulb-outline
   entities:
     - group.lounge_hues
-    - switch.energenie_one
-    - switch.energenie_two
-    - switch.energenie_three
 
 energenie_switches:
   name: Sockets
@@ -322,12 +315,8 @@ automation_all_lights:
   name: All lights (automation only)
   entities:
     - group.lounge_lights
-    - group.energenie_switches
     - group.kitchen_lights
     - switch.loft_lighting
-    - switch.energenie_one
-    - switch.energenie_two
-    - switch.energenie_three
 
 lounge_hues:
   name: Lounge Hues
@@ -335,6 +324,7 @@ lounge_hues:
     - light.standard_lamp_left
     - light.standard_lamp_right
     - light.sideboard_bloom
+    - light.sideboard_bloom_2
 
 living_room_lights:
   name: Living room lights
@@ -342,6 +332,7 @@ living_room_lights:
     - light.standard_lamp_left
     - light.standard_lamp_right
     - light.sideboard_bloom
+    - light.sideboard_bloom_2
 
 kitchen_hues:
   name: Kitchen Hues
