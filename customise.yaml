@@ -16,34 +16,34 @@ light.gateway_light_7811dcb1f766:
   google_assistant_type: light
 
 ## switches
-group.energenie_switches:
-  icon: mdi:lightbulb
-  assumed_state: false
-  google_assistant: true
-  google_assistant_name: ambient switches
-  google_assistant_type: switch
-switch.energenie_one:
-  icon: mdi:lightbulb
-  assumed_state: false
-  google_assistant: true
-  google_assistant_name: drinks cabinet
-  google_assistant_type: switch
-switch.energenie_two:
-  icon: mdi:lightbulb
-  assumed_state: false
-  google_assistant: true
-  google_assistant_name: garden room
-  google_assistant_type: switch
-  aliases:
-    - garden room twigs
-switch.energenie_three:
-  icon: mdi:lightbulb
-  assumed_state: false
-  google_assistant: true
-  google_assistant_name: fireflies
-  google_assistant_type: switch
-  aliases:
-    - boat bookcase
+#group.energenie_switches:
+#  icon: mdi:lightbulb
+#  assumed_state: false
+#  google_assistant: true
+#  google_assistant_name: ambient switches
+#  google_assistant_type: switch
+#switch.energenie_one:
+#  icon: mdi:lightbulb
+#  assumed_state: false
+#  google_assistant: true
+#  google_assistant_name: drinks cabinet
+#  google_assistant_type: switch
+#switch.energenie_two:
+#  icon: mdi:lightbulb
+#  assumed_state: false
+#  google_assistant: true
+#  google_assistant_name: garden room
+#  google_assistant_type: switch
+#  aliases:
+#    - garden room twigs
+#switch.energenie_three:
+#  icon: mdi:lightbulb
+#  assumed_state: false
+#  google_assistant: true
+#  google_assistant_name: fireflies
+#  google_assistant_type: switch
+#  aliases:
+#    - boat bookcase
 switch.tv_power:
   icon: mdi:toggle-switch
   google_assistant: false
@@ -135,6 +135,8 @@ binary_sensor.door_window_sensor_158d0001de662f:
   friendly_name: Kitchen window (right)
 binary_sensor.door_window_sensor_158d000232ab79:
   friendly_name: Understairs cupboard door
+binary_sensor.door_window_sensor_158d000346b47f:
+  friendly_name: Living room internal door
 sensor.humidity_158d0001fa5c1b:
   friendly_name: Ensuite humidity
   icon: mdi:water
