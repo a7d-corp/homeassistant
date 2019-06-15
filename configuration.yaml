@@ -142,6 +142,11 @@ xiaomi_aqara:
     - mac: 78:11:dc:b1:f7:66
       key: !secret aqara_gateway_key
 
+tplink:
+  discovery: false
+  switch:
+    - host: !secret ip_desk_switch
+
 google_assistant:
   project_id: !secret google_assistant_project_id
   api_key: !secret google_assistant_api_key

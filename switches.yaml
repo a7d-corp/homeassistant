@@ -1,18 +1,17 @@
-- platform: command_line
-  switches:
-    energenie_one:
-      command_on: curl -s http://10.101.0.20:5000/api/energenie/1/1
-      command_off: curl -s http://10.101.0.20:5000/api/energenie/1/0
-      friendly_name: Drinks Cabinet
-    energenie_two:
-      command_on: curl -s http://10.101.0.20:5000/api/energenie/2/1
-      command_off: curl -s http://10.101.0.20:5000/api/energenie/2/0
-      friendly_name: Garden Room
-    energenie_three:
-      command_on: curl -s http://10.101.0.20:5000/api/energenie/3/1
-      command_off: curl -s http://10.101.0.20:5000/api/energenie/3/0
-      friendly_name: Firefly Lights
-
+#- platform: command_line
+#  switches:
+#    energenie_one:
+#      command_on: curl -s http://10.101.0.20:5000/api/energenie/1/1
+#      command_off: curl -s http://10.101.0.20:5000/api/energenie/1/0
+#      friendly_name: Drinks Cabinet
+#    energenie_two:
+#      command_on: curl -s http://10.101.0.20:5000/api/energenie/2/1
+#      command_off: curl -s http://10.101.0.20:5000/api/energenie/2/0
+#      friendly_name: Garden Room
+#    energenie_three:
+#      command_on: curl -s http://10.101.0.20:5000/api/energenie/3/1
+#      command_off: curl -s http://10.101.0.20:5000/api/energenie/3/0
+#      friendly_name: Firefly Lights
 - platform: flux
   lights:
     - light.standard_lamp_left
@@ -35,6 +34,3 @@
   payload_on: "on"
   payload_off: "off"
   retain: true
-- platform: tplink
-  name: 'tv power'
-  host: !secret ip_tv_power_switch
