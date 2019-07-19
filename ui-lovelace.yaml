@@ -117,6 +117,11 @@ views:
             show_name: false
             show_state: false
             entity: camera.exterior_rear
+          - type: picture-entity
+            title: Front door
+            show_name: false
+            show_state: false
+            entity: camera.uvc_g3_door
       - type: vertical-stack
         cards:
           - type: history-graph
