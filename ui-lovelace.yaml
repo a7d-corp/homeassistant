@@ -11,25 +11,10 @@ views:
               - sun.sun
               - sensor.loft_light_status
               - sensor.loft_temperature
-          - type: entities
-            title: Home Controls
-            show_header_toggle: false
+          - type: history-graph
+            title: Occupancy
             entities:
-              - input_boolean.night_mode_toggle
-              - input_boolean.motion_lighting_toggle
-              - entity: input_boolean.global_away_mode_toggle
-                icon: mdi:account-off
-                name: "Away: all automations"
-              - entity: input_boolean.lighting_away_mode_toggle
-                icon: mdi:lightbulb-outline
-                name: "Away: lighting only"
-              - entity: input_boolean.heating_away_mode_toggle
-                icon: mdi:radiator
-                name: "Away: heating only"
-              - input_boolean.party_mode
-              - entity: switch.desk_power
-                icon: mdi:desktop-classic
-                name: "Desk power"
+              - binary_sensor.people_home
       - type: vertical-stack
         cards:
           - type: entities
@@ -41,38 +26,62 @@ views:
               - binary_sensor.people_home
               - input_select.simon_status
               - input_select.nikki_status
-          - type: history-graph
-            title: Occupancy
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Home Controls
+            show_header_toggle: false
             entities:
-              - binary_sensor.people_home
-      - type: entity-filter
-        entities:
-          - sensor.ensuite_humidity_sensor_battery
-          - sensor.front_door_sensor_battery
-          - sensor.kitchen_motion_sensor_battery
-          - sensor.kitchen_window_left_sensor_battery
-          - sensor.kitchen_window_right_sensor_battery
-          - sensor.landing_switch_sensor_battery
-          - sensor.living_room_window_sensor_battery
-          - sensor.loft_hatch_sensor_battery
-          - sensor.patio_door_sensor_battery
-          - sensor.understairs_cupboard_door_sensor_battery
-        state_filter:
-          - "10.0"
-          - "9.0"
-          - "8.0"
-          - "7.0"
-          - "6.0"
-          - "5.0"
-          - "4.0"
-          - "3.0"
-          - "2.0"
-          - "1.0"
-          - "0.0"
-        show_empty: false
-        card:
-          type: glance
-          title: Low batteries
+              - input_boolean.house_lighting_toggle
+              - input_boolean.motion_lighting_toggle
+              - entity: input_boolean.global_away_mode_toggle
+                icon: mdi:account-off
+                name: "Away: all automations"
+              - entity: input_boolean.lighting_away_mode_toggle
+                icon: mdi:lightbulb-outline
+                name: "Away: lighting only"
+              - entity: input_boolean.heating_away_mode_toggle
+                icon: mdi:radiator
+                name: "Away: heating only"
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Misc Controls
+            show_header_toggle: false
+            entities:
+              - input_boolean.night_mode_toggle
+              - entity: switch.desk_power
+                icon: mdi:desktop-classic
+                name: "Desk power"
+              - input_boolean.party_mode
+                #     - type: entity-filter
+                #        entities:
+                #          - sensor.ensuite_humidity_sensor_battery
+                #          - sensor.front_door_sensor_battery
+                #          - sensor.kitchen_motion_sensor_battery
+                #          - sensor.kitchen_window_left_sensor_battery
+                #          - sensor.kitchen_window_right_sensor_battery
+                #          - sensor.landing_switch_sensor_battery
+                #          - sensor.living_room_window_sensor_battery
+                #          - sensor.loft_hatch_sensor_battery
+                #          - sensor.patio_door_sensor_battery
+                #          - sensor.understairs_cupboard_door_sensor_battery
+                #        state_filter:
+                #          - "10.0"
+                #          - "9.0"
+                #          - "8.0"
+                #          - "7.0"
+                #          - "6.0"
+                #          - "5.0"
+                #          - "4.0"
+                #          - "3.0"
+                #          - "2.0"
+                #          - "1.0"
+                #          - "0.0"
+                #        show_empty: false
+                #        card:
+                #          type: glance
+                #          title: Low batteries
   - title: Security
     icon: mdi:security
     cards:
