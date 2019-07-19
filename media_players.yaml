@@ -1,21 +1,16 @@
-- platform: cast
-  host: !secret ip_ccast_1
-- platform: cast
-  host: !secret ip_ccast_2
-- platform: plex
-  show_all_controls: true
-  use_custom_entity_ids: true
-  entity_namespace: 'plex'
+  #- platform: cast
+  #host: !secret ip_ccast_1
+  #- platform: cast
+  #host: !secret ip_ccast_2
+  #- platform: plex
+  #show_all_controls: true
+  #use_custom_entity_ids: true
+  #entity_namespace: 'plex'
 - platform: kodi
   host: !secret ip_kodi
   port: 8080
   tcp_port: 9090
   enable_websocket: true
-- platform: sonos
-  hosts:
-    - !secret ip_sonos_kitchen
-    - !secret ip_sonos_lounge
-    - !secret ip_sonos_garden_room
 - platform: samsungtv
   host: !secret ip_samsung
 - platform: denonavr
