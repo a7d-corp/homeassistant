@@ -25,3 +25,6 @@ motion_lighting_toggle:
 night_mode_toggle:
   name: Night mode
   icon: 'mdi:sleep'
+house_lighting_toggle:
+  name: House lighting
+  icon: 'mdi:lightbulb-on'
