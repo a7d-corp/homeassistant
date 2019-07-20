@@ -156,10 +156,16 @@ views:
             entities:
               - entity: binary_sensor.motion_sensor_158d000237acbc
                 icon: mdi:run-fast
+              - entity: binary_sensor.motion_sensor_158d0002b7f000
+                icon: mdi:run-fast
           - type: history-graph
             title: Kitchen motion sensor
             entities:
               - binary_sensor.motion_sensor_158d000237acbc
+          - type: history-graph
+            title: Living room motion sensor
+            entities:
+              - binary_sensor.motion_sensor_158d0002b7f000
       - type: entities
         title: Holiday Mode
         show_header_toggle: false
