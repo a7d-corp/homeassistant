@@ -1,4 +1,7 @@
 title: Room 101
+resources:
+  - url: /local/monster-card/monster-card.js
+    type: js
 views:
   - title: Home
     icon: mdi:home-variant
