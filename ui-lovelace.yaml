@@ -124,29 +124,15 @@ views:
             entity: camera.uvc_g3_door
       - type: vertical-stack
         cards:
-          - type: history-graph
-            title: Front door 
+          - type: entities
+            title: Door/Window Sensors
+            show_header_toggle: false
             entities:
               - sensor.door_front_door
-          - type: history-graph
-            title: Patio doors
-            entities:
               - sensor.door_patio_door
-          - type: history-graph
-            title: Living room window
-            entities:
               - sensor.window_living_room
-          - type: history-graph
-            title: Kitchen window (left)
-            entities:
               - sensor.window_kitchen_left
-          - type: history-graph
-            title: Kitchen window (right)
-            entities:
               - sensor.window_kitchen_right
-          - type: history-graph
-            title: Loft hatch
-            entities:
               - sensor.door_loft_hatch
       - type: vertical-stack
         cards:
