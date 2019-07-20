@@ -183,11 +183,11 @@ views:
             entity: media_player.upstairs
           - type: media-control
             entity: media_player.kodi
-      - type: entities
-        title: Plex
-        entities:
-          - media_player.plex_6ckun1j8g0we34orzv4n9v7l
-          - sensor.plex
+      #- type: entities
+      #  title: Plex
+      #  entities:
+      #    - media_player.plex_6ckun1j8g0we34orzv4n9v7l
+      #    - sensor.plex
       - type: entities
         title: Kodi Controls
         show_header_toggle: false
