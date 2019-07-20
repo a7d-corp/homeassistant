@@ -57,6 +57,19 @@ views:
                 icon: mdi:desktop-classic
                 name: "Desk power"
               - input_boolean.party_mode
+      - type: custom:monster-card
+        show_empty: false
+        card:
+          type: glance
+          title: Low batteries
+        filter:
+          include:
+            - entity_id: "*battery_level*"
+              state: '< 25'
+            - attributes:
+                battery: '< 25'
+            - attributes:
+                battery_level: '< 25'
                 #     - type: entity-filter
                 #        entities:
                 #          - sensor.ensuite_humidity_sensor_battery
