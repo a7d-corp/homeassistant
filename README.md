@@ -14,11 +14,20 @@
  - Samsung TV
  - 3x Sonos
  - 2x Chromecast
- - GOogle Home Mini
+ - 2x Google Home Mini
  - Phillips Hue
- - Ikea Tradfri
+   - Bulbs
+   - Blooms
+   - Lightstrips
+ - Ikea Tradfri sockets
  - 2x Ubiquiti UVC-G3
+ - 1x Ubiquiti UVC-G3-Dome
  - Xiaomi Aqara with a variety of sensors
+   - Door/window sensors
+   - Motion sensors
+   - Wall switches
+   - Temperatures sensors
+   - Buttons
 
 #### Software
 
