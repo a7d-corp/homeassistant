@@ -1,0 +1,58 @@
+title: Lighting
+icon: mdi:lightbulb-outline
+cards:
+- type: entities
+  title: All Lights
+  show_header_toggle: false
+  entities:
+    - group.lounge_lights
+    - group.kitchen_lights
+- type: vertical-stack
+  cards:
+    - type: entities
+      title: Lounge Lights
+      show_header_toggle: false
+      entities:
+        - group.lounge_hues
+    - type: sensor
+      entity: sensor.illumination_158d0002b7f000
+      name: Living room illumination
+      unit: lux
+    - type: entities
+      title: Sockets
+      entities:
+        - switch.bookcase_lights
+        - switch.twigs
+- type: vertical-stack
+  cards:
+    - type: entities
+      title: Kitchen Lights
+      show_header_toggle: false
+      entities:
+        - light.kitchen_cabinets
+    - type: sensor
+      entity: sensor.illumination_158d000237acbc
+      name: Kitchen illumination
+      unit: lux
+    - type: entities
+      title: Desk Power
+      show_header_toggle: false
+      entities:
+        - switch.desk_power
+- type: entities
+  title: Lighting Control
+  show_header_toggle: false
+  entities:
+    - switch.flux_adjustment
+- type: entities
+  title: Loft Lighting
+  show_header_toggle: false
+  entities:
+    - switch.loft_lighting
+    - sensor.loft_light_status
+    - sensor.door_loft_hatch
+- type: entities
+  title: Understairs Lighting
+  show_header_toggle: false
+  entities:
+    - light.gateway_light_7811dcb1f766

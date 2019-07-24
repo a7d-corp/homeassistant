@@ -1,0 +1,37 @@
+title: Media
+icon: mdi:movie
+cards:
+- type: vertical-stack
+  cards:
+    - type: media-control
+      entity: media_player.samsung_tv_remote
+    - type: media-control
+      entity: media_player.denon_avrx2100w
+- type: vertical-stack
+  cards:
+    - type: media-control
+      entity: media_player.kitchen
+    - type: media-control
+      entity: media_player.living_room
+    - type: media-control
+      entity: media_player.garden_room
+- type: vertical-stack
+  cards:
+    - type: media-control
+      entity: media_player.chromecast101
+    - type: media-control
+      entity: media_player.upstairs
+    - type: media-control
+      entity: media_player.kodi
+    #- type: entities
+    #  title: Plex
+    #  entities:
+    #    - media_player.plex_6ckun1j8g0we34orzv4n9v7l
+    #    - sensor.plex
+    - type: entities
+      title: Kodi Controls
+      show_header_toggle: false
+      entities:
+        - input_boolean.lounge_media_dim_enable
+        - input_number.kodi_dimmer_slider
+        - input_boolean.kodi_amp_trigger

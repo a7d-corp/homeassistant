@@ -1,0 +1,76 @@
+title: Security
+icon: mdi:security
+cards:
+- type: vertical-stack
+  cards:
+    - type: conditional
+      conditions:
+        - entity: binary_sensor.people_home
+          state: "off"
+      card:
+        type: picture-entity
+        show_name: false
+        show_state: false
+        entity: camera.kitchen
+    - type: conditional
+      conditions:
+        - entity: binary_sensor.people_home
+          state: "off"
+      card:
+        type: picture-entity
+        show_name: false
+        show_state: false
+        entity: camera.living_room
+- type: vertical-stack
+  cards:
+    - type: picture-entity
+      title: Front CCTV
+      show_name: false
+      show_state: false
+      entity: camera.exterior_front
+    - type: picture-entity
+      title: Rear CCTV
+      show_name: false
+      show_state: false
+      entity: camera.exterior_rear
+    - type: picture-entity
+      title: Front door
+      show_name: false
+      show_state: false
+      entity: camera.uvc_g3_door
+- type: vertical-stack
+  cards:
+    - type: entities
+      title: Door/Window Sensors
+      show_header_toggle: false
+      entities:
+        - sensor.door_front_door
+        - sensor.door_patio_door
+        - sensor.window_living_room
+        - sensor.window_kitchen_left
+        - sensor.window_kitchen_right
+        - sensor.door_loft_hatch
+- type: vertical-stack
+  cards:
+    - type: entities
+      title: Motion Sensors
+      show_header_toggle: false
+      entities:
+        - entity: binary_sensor.motion_sensor_158d000237acbc
+          icon: mdi:run-fast
+        - entity: binary_sensor.motion_sensor_158d0002b7f000
+          icon: mdi:run-fast
+    - type: history-graph
+      title: Kitchen motion sensor
+      entities:
+        - binary_sensor.motion_sensor_158d000237acbc
+    - type: history-graph
+      title: Living room motion sensor
+      entities:
+        - binary_sensor.motion_sensor_158d0002b7f000
+- type: entities
+  title: Holiday Mode
+  show_header_toggle: false
+  entities:
+    - entity: input_boolean.holiday_mode
+      icon: mdi:airplane-takeoff

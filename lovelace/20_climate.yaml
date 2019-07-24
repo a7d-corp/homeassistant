@@ -1,0 +1,47 @@
+title: Climate
+icon: mdi:thermometer-lines
+cards:
+- type: vertical-stack
+  cards:
+    - type: thermostat
+      entity: climate.living_room
+    - type: entities
+      title: Downstairs Heating
+      show_header_toggle: false
+      entities:
+        - climate.living_room
+        - sensor.living_room_thermostat_operation_mode
+        - sensor.living_room_thermostat_humidity
+        - binary_sensor.living_room_thermostat_has_leaf
+        - binary_sensor.living_room_thermostat_online
+        - binary_sensor.living_room_thermostat_is_locked
+        - binary_sensor.living_room_thermostat_is_using_emergency_heat
+- type: vertical-stack
+  cards:
+    - type: thermostat
+      entity: climate.master_bedroom 
+    - type: entities
+      title: Upstairs Heating
+      show_header_toggle: false
+      entities:
+        - climate.master_bedroom
+        - sensor.master_bedroom_thermostat_operation_mode
+        - sensor.master_bedroom_thermostat_humidity
+        - binary_sensor.master_bedroom_thermostat_has_leaf
+        - binary_sensor.master_bedroom_thermostat_online
+        - binary_sensor.master_bedroom_thermostat_is_locked
+        - binary_sensor.master_bedroom_thermostat_is_using_emergency_heat
+- type: vertical-stack
+  cards:
+    - type: gauge
+      title: Ensuite Temperature
+      entity: sensor.temperature_158d0001fa5c1b
+      unit_of_measurement: ""
+      min: 0
+      max: 30
+    - type: entities
+      title: Ensuite Bathroom
+      show_header_toggle: false
+      entities:
+        - sensor.temperature_158d0001fa5c1b
+        - sensor.humidity_158d0001fa5c1b
