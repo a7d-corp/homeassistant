@@ -222,6 +222,13 @@ mqtt:
   port: 1883
   username: !secret mqtt_user
   password: !secret mqtt_pass
+  discovery: true
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
 
 nest:
   client_id: !secret nest_client_id
