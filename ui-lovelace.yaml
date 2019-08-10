@@ -9,3 +9,4 @@ views:
   - !include lovelace/15_lighting.yaml
   - !include lovelace/20_climate.yaml
   - !include lovelace/25_weather.yaml
+  - !include lovelace/30_zigbee.yaml

@@ -230,3 +230,20 @@
       unit_of_measurement: '%'
       entity_id: sensor.humidity_158d0001fa5c1b
       device_class: battery
+# Sensor for monitoring the bridge state
+- platform: mqtt
+  name: Zigbee2mqtt bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless
+  # Sensor for Showing the Zigbee2mqtt Version
+- platform: mqtt
+  name: Zigbee2mqtt version
+  state_topic: "zigbee2mqtt/bridge/config"
+  value_template: "{{ value_json.version }}"
+  icon: mdi:zigbee
+  # Sensor for Showing the Coordinator Version
+- platform: mqtt
+  name: Coordinator version
+  state_topic: "zigbee2mqtt/bridge/config"
+  value_template: "{{ value_json.coordinator }}"
+  icon: mdi:chip
