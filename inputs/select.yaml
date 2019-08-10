@@ -16,3 +16,21 @@ nikki_status:
     - away
     - extended away
   icon: 'mdi:human-female'
+houston:
+  name: Simon
+  options:
+    - home
+    - just arrived
+    - just left
+    - away
+    - extended away
+  icon: 'mdi:human-male'
+galaxys8:
+  name: Nikki
+  options:
+    - home
+    - just arrived
+    - just left
+    - away
+    - extended away
+  icon: 'mdi:human-female'
