@@ -30,4 +30,11 @@
   host: !secret ip_xbox
   name: Xbox One
   scan_interval: 30
-    
+- platform: ping
+  host: !secret ip_houston
+  name: Houston ping
+  scan_interval: 15
+- platform: ping
+  host: !secret ip_galaxys8
+  name: Galaxy S8 ping
+  scan_interval: 15
