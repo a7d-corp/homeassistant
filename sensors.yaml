@@ -2,11 +2,6 @@
   name: Weather
   monitored_conditions:
     - symbol
-#- platform: plex
-#  host: 10.101.0.50
-#  port: 32400
-#  username: !secret local_plex_username
-#  password: !secret local_plex_password
 - platform: command_line
   command: curl -s http://10.101.0.47:5000/api/envirophat/weather/temperature
   name: Loft temperature
@@ -14,27 +9,6 @@
 - platform: command_line
   command: curl -s http://10.101.0.47:5000/api/envirophat/light/light
   name: Loft light status
-#- platform: wunderground
-#  api_key: !secret wunderground_key
-#  monitored_conditions:
-#    - alerts
-#    - feelslike_c
-#    - precip_today_metric
-#    - pressure_mb
-#    - relative_humidity
-#    - temp_c
-#    - temp_high_1d_c
-#    - temp_low_1d_c
-#    - wind_mph
-#    - wind_string
-#    - weather_1d_metric
-#    - weather_1n_metric
-#    - weather_2d_metric
-#    - weather_2n_metric
-#    - weather_3d_metric
-#    - weather_3n_metric
-#    - weather_4d_metric
-#    - weather_4n_metric
 - platform: metoffice
   name: metoffice
   api_key: !secret metoffice_key
@@ -53,11 +27,6 @@
 - platform: time_date
   display_options:
     - time
-- platform: worldtidesinfo
-  name: Portsmouth Tides
-  api_key: !secret worldtides_api_key
-  latitude: 50.830573
-  longitude: -1.105639
 - platform: template
   sensors:
     simon_status:
@@ -72,11 +41,6 @@
   sensors:
     aqara_last_change:
       value_template: "{% if as_timestamp(states.sensor.date__time.last_updated) - as_timestamp(states.sensor.illumination_7811dcb1f766.last_updated) > 5*60 %}true{% endif %}"
-#- platform: template
-#  sensors:
-#    christmas_lights_power:
-#      friendly_name: 'Christmas lights consumption'
-#      value_template: '{{ states.switch.external_christmas_lights.attributes.current_consumption }}'
 - platform: template
   sensors:
     door_loft_hatch:

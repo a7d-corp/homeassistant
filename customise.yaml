@@ -16,34 +16,6 @@ light.gateway_light_7811dcb1f766:
   google_assistant_type: light
 
 ## switches
-#group.energenie_switches:
-#  icon: mdi:lightbulb
-#  assumed_state: false
-#  google_assistant: true
-#  google_assistant_name: ambient switches
-#  google_assistant_type: switch
-#switch.energenie_one:
-#  icon: mdi:lightbulb
-#  assumed_state: false
-#  google_assistant: true
-#  google_assistant_name: drinks cabinet
-#  google_assistant_type: switch
-#switch.energenie_two:
-#  icon: mdi:lightbulb
-#  assumed_state: false
-#  google_assistant: true
-#  google_assistant_name: garden room
-#  google_assistant_type: switch
-#  aliases:
-#    - garden room twigs
-#switch.energenie_three:
-#  icon: mdi:lightbulb
-#  assumed_state: false
-#  google_assistant: true
-#  google_assistant_name: fireflies
-#  google_assistant_type: switch
-#  aliases:
-#    - boat bookcase
 switch.tv_power:
   icon: mdi:toggle-switch
   google_assistant: false
@@ -203,7 +175,3 @@ media_player.denon_avrx2100w:
   google_assistant: false
   google_assistant_type: media_player
   google_assistant_name: living room amp
-
-## miscellaneous
-#climate.living_room:
-#  friendly_name: Living room Nest

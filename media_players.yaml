@@ -1,11 +1,3 @@
-  #- platform: cast
-  #host: !secret ip_ccast_1
-  #- platform: cast
-  #host: !secret ip_ccast_2
-  #- platform: plex
-  #show_all_controls: true
-  #use_custom_entity_ids: true
-  #entity_namespace: 'plex'
 - platform: kodi
   host: !secret ip_kodi
   port: 8080

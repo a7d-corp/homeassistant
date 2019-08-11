@@ -1,101 +1,4 @@
-default_view:
-  name: Home
-  view: yes    
-  icon: mdi:home-variant
-  entities:
-    - group.current_weather
-    - group.wunderground_daily_forecast
-    - group.portsmouth_tides
-    - group.people
-    - group.global_controls
-    - sun.sun
-    - device_tracker.galaxys8
-    - device_tracker.houston
-    - sensor.loft_light_status
-    - sensor.loft_temperature
-    - sensor.yr_symbol
-
-security_view:
-  name: Security
-  view: yes
-  icon: mdi:security
-  entities:
-    - group.kitchen_cameras
-    - group.cctv_cameras
-#    - group.finland_webcams
-    - group.door_sensors
-    - group.motion_sensors
-    - group.holiday_mode_toggle
-
-media_view:
-  name: Media
-  view: yes
-  icon: mdi:movie
-  entities:
-    - group.media_devices
-    - group.sonoses
-    - group.media_streaming
-    - group.plex_devices
-    - group.kodi_light_automation
-
-lighting_view:
-  name: Lighting
-  view: yes
-  icon: mdi:lightbulb-outline
-  entities:
-    - group.all_home_lights
-    - group.lounge_lights
-    - group.kitchen_lights
-    - group.lighting_tools
-    - group.loft_lighting
-    - group.understairs_lighting
-#    - group.external_christmas_lights
-
-climate_view:
-  name: Climate
-  view: yes
-  icon: mdi:thermometer-lines
-  entities:
-    - group.downstairs_heating
-    - group.upstairs_heating
-    - group.environmental_data_ensuite
-
 # groups for default_view
-current_weather:
-  name: Weather
-  icon: mdi:weather-partlycloudy
-  entities:
-    - sensor.pws_alerts
-    - sensor.pws_feelslike_c
-    - sensor.pws_precip_today_metric
-    - sensor.pws_pressure_mb
-    - sensor.pws_relative_humidity
-    - sensor.pws_temp_c
-    - sensor.pws_temp_high_1d_c
-    - sensor.pws_temp_low_1d_c
-    - sensor.pws_wind_mph
-    - sensor.pws_wind_string
-    - camera.europe_rain_map
-
-wunderground_daily_forecast:
-  name: 4-day Forecast
-  icon: mdi:weather-partlycloudy
-  entities:
-    - sensor.pws_weather_1d_metric
-    - sensor.pws_weather_1n_metric
-    - sensor.pws_weather_2d_metric
-    - sensor.pws_weather_2n_metric
-    - sensor.pws_weather_3d_metric
-    - sensor.pws_weather_3n_metric
-    - sensor.pws_weather_4d_metric
-    - sensor.pws_weather_4n_metric
-
-portsmouth_tides:
-  name: Portmouth Harbour Tides
-  icon: mdi:waves
-  entities:
-    - sensor.portsmouth_tides
-
 people:
   name: Device Trackers
   icon: mdi:cellphone
@@ -118,31 +21,6 @@ global_controls:
     - input_boolean.heating_away_mode_toggle
     - input_boolean.party_mode
 
-# groups for travel_view
-travel_times:
-  name: Travel Times
-  icon: mdi:car
-  entities:
-    - sensor.home_work_nikki
-    - sensor.work_home_nikki
-
-london_underground:
-  name: Underground Lines
-  icon: mdi:train
-  entities:
-    - sensor.bakerloo
-    - sensor.central
-    - sensor.circle
-    - sensor.district
-    - sensor.dlr
-    - sensor.hammersmith_city
-    - sensor.jubilee
-    - sensor.metropolitan
-    - sensor.northern
-    - sensor.piccadilly
-    - sensor.victoria
-    - sensor.waterloo_city
-
 # groups for media_view
 media_devices:
   name: Media Controls
@@ -150,7 +28,6 @@ media_devices:
   entities:
     - media_player.samsung_tv_remote
     - media_player.denon_avrx2100w
-    - switch.tv_power
 
 sonoses:
   name: Audio Devices
@@ -221,15 +98,6 @@ holiday_mode_toggle:
   entities:
     - input_boolean.holiday_mode
 
-# groups for infrastructure_view
-travis_builds:
-  name: Travis Builds
-  icon: mdi:thumb-up
-  entities:
-    - sensor.analbeardhomeassistant_state
-    - sensor.analbeardhomeassistant_last_build_started_at
-    - sensor.analbeardhomeassistant_last_build_duration
-
 # groups for lighting_view
 all_home_lights:
   name: All Lights
@@ -244,14 +112,6 @@ lounge_lights:
   icon: mdi:lightbulb-outline
   entities:
     - group.lounge_hues
-
-energenie_switches:
-  name: Sockets
-  icon: mdi:toggle-switch
-  entities:
-    - switch.energenie_one
-    - switch.energenie_two
-    - switch.energenie_three
 
 kitchen_lights:
   name: Kitchen Lights
