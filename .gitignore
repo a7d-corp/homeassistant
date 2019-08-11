@@ -22,3 +22,4 @@ google_calendars.yaml
 .config_entries.json
 .storage
 secrets/*
+*.swp
