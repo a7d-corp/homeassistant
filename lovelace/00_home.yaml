@@ -19,8 +19,8 @@ cards:
       title: Device Trackers
       show_header_toggle: false
       entities:
-        - device_tracker.houston
-        - device_tracker.galaxys8
+        - device_tracker.houston_2
+        - device_tracker.galaxy_s8
         - binary_sensor.people_home
         - input_select.simon_status
         - input_select.nikki_status

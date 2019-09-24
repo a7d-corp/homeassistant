@@ -1,15 +1,3 @@
-- platform: unifi
-  host: !secret unifi_host
-  username: hass
-  password: !secret unifi_pass
-  port: !secret unifi_port
-  verify_ssl: true
-  site_id: !secret unifi_site
-  new_device_defaults:
-    track_new_devices: false
-    hide_if_away: false
-  detection_time: 600
-
 - platform: ping
   hosts:
     simon_iphone_ping: 10.101.0.201
