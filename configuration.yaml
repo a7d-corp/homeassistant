@@ -161,7 +161,7 @@ unifi:
   controllers:
     - host: !secret unifi_host
       site: !secret unifi_site
-      detection)time: 600
+      detection_time: 600
 
 input_boolean: !include inputs/boolean.yaml
 input_number: !include inputs/numbers.yaml
