@@ -8,7 +8,7 @@
       from: 'not_home'
       to: 'home'
     - platform: state
-      entity_id: device_tracker.galaxy_s8s8
+      entity_id: device_tracker.galaxy_s8
       from: 'not_home'
       to: 'home'
   action:
@@ -64,7 +64,7 @@
       from: 'home'
       to: 'not_home'
     - platform: state
-      entity_id: device_tracker.galaxy_s8s8
+      entity_id: device_tracker.galaxy_s8
       from: 'home'
       to: 'not_home'
   action:
