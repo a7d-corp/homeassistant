@@ -35,10 +35,11 @@ cards:
       name: Kitchen illumination
       unit: lux
     - type: entities
-      title: Desk Power
+      title: Office
       show_header_toggle: false
       entities:
         - switch.desk_power
+        - light.office_lamp
 - type: entities
   title: Lighting Control
   show_header_toggle: false
