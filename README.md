@@ -45,4 +45,5 @@
 ### Meta
 
 [![CircleCI](https://img.shields.io/circleci/build/gh/glitchcrab/homeassistant?style=for-the-badge&logo=appveyor)](https://circleci.com/gh/glitchcrab/homeassistant/tree/master)
+
 [![GitHub issues](https://img.shields.io/github/issues/glitchcrab/homeassistant?style=for-the-badge&logo=appveyor)](https://github.com/glitchcrab/homeassistant/issues)
