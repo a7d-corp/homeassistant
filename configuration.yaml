@@ -88,11 +88,13 @@ person:
   - name: Simon
     id: simon0000
     device_trackers:
-      - device_tracker.houston
+      - device_tracker.houston_2
+      - binary_sensor.houston_ping
   - name: Nikki
     id: niki0000
     device_trackers:
-      - device_tracker.galaxys8
+      - device_tracker.galaxy_s8
+      - binary_sensor.galaxy_s8_ping
 
 tts:
   - platform: google_translate
