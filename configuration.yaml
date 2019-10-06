@@ -89,12 +89,10 @@ person:
     id: simon0000
     device_trackers:
       - device_tracker.houston_2
-      - binary_sensor.houston_ping
   - name: Nikki
     id: niki0000
     device_trackers:
       - device_tracker.galaxy_s8
-      - binary_sensor.galaxy_s8_ping
 
 tts:
   - platform: google_translate
@@ -125,14 +123,12 @@ tplink:
 google_assistant:
   project_id: !secret google_assistant_project_id
   api_key: !secret google_assistant_api_key
-#  expose_by_default: true
+  expose_by_default: true
   exposed_domains:
-    - switch
-    - input_boolean
     - media_player
 
-prometheus:
-  namespace: hass
+#prometheus:
+#  namespace: hass
 
 mqtt:
   broker: !secret ip_mqtt_broker
