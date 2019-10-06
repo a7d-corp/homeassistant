@@ -2,12 +2,19 @@
   name: Weather
   monitored_conditions:
     - symbol
-- platform: command_line
-  command: curl -s http://10.101.0.47:5000/api/envirophat/weather/temperature
+#- platform: command_line
+#  command: curl -s http://10.101.0.47:5000/api/envirophat/weather/temperature
+#  name: Loft temperature
+#  unit_of_measurement: "C"
+#- platform: command_line
+#  command: curl -s http://10.101.0.47:5000/api/envirophat/light/light
+#  name: Loft light status
+- platform: rest
+  resource: http://10.101.0.47:5000/api/envirophat/weather/temperature
   name: Loft temperature
   unit_of_measurement: "C"
-- platform: command_line
-  command: curl -s http://10.101.0.47:5000/api/envirophat/light/light
+- platform: rest
+  resource: http://10.101.0.47:5000/api/envirophat/light/light
   name: Loft light status
 - platform: metoffice
   name: metoffice
