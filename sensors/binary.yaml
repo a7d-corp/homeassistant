@@ -38,3 +38,7 @@
   host: !secret ip_galaxys8
   name: Galaxy S8 ping
   scan_interval: 15
+- platform: ping
+  host: !secret ip_samsung
+  name: Samsung ping
+  scan_interval: 15
