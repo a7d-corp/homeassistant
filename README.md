@@ -19,15 +19,19 @@
    - Bulbs
    - Blooms
    - Lightstrips
- - Ikea Tradfri sockets
- - 2x Ubiquiti UVC-G3
- - 1x Ubiquiti UVC-G3-Dome
+ - Ikea Tradfri:
+   - sockets
+   - bulbs
+ - Ubiquiti CCTV
+   - UVC-G3 (2x)
+   - UVC-G3-Dome
  - Xiaomi Aqara with a variety of sensors
    - Door/window sensors
    - Motion sensors
    - Wall switches
    - Temperatures sensors
    - Buttons
+   - Vibration sensors
 
 #### Software
 
@@ -40,6 +44,5 @@
 
 ### Meta
 
-[![CircleCI](https://circleci.com/gh/glitchcrab/homeassistant/tree/master.svg?style=svg)](https://circleci.com/gh/glitchcrab/homeassistant/tree/master)
-
-[![Open Issues](https://img.shields.io/github/issues/analbeard/homeassistant.svg)](https://github.com/analbeard/homeassistant/issues) Issue count (todo items)
+[![CircleCI](https://img.shields.io/circleci/build/gh/glitchcrab/homeassistant?style=for-the-badge&logo=appveyor)](https://circleci.com/gh/glitchcrab/homeassistant/tree/master)
+[![GitHub issues](https://img.shields.io/github/issues/glitchcrab/homeassistant?style=for-the-badge&logo=appveyor)](https://github.com/glitchcrab/homeassistant/issues)
