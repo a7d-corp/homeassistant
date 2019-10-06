@@ -12,7 +12,7 @@ jobs:
             mv .circleci/secrets.yaml secrets.yaml
             mkdir secrets
             mv .circleci/google-cloud-tts.json secrets/google-cloud-tts.json
-            python3.6 -m venv .
+            python3.7 -m venv .
             source bin/activate
             pip3 install --pre --upgrade homeassistant==0.99.2
             hass -c . --script check_config --info all
