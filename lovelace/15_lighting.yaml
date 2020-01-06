@@ -15,7 +15,7 @@ cards:
       entities:
         - group.lounge_hues
     - type: sensor
-      entity: sensor.illumination_158d0002b7f000
+      entity: sensor.0x00158d0002b7f000_illuminance
       name: Living room illumination
       unit: lux
     - type: entities
