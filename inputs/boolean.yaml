@@ -28,3 +28,25 @@ night_mode_toggle:
 house_lighting_toggle:
   name: House lighting
   icon: 'mdi:lightbulb-on'
+
+# alarm clock controls
+# Switch to Enable Alarm Clock
+house_option_alarmclock:
+  name: Alarm Clock
+  initial: off
+  icon: mdi:alarm
+# Used by Automation to enable Snooze
+house_alarmclock_snooze:
+  name: Snoozing
+  initial: off
+  icon: mdi:alarm-snooze
+# Used by Automation to track if alarm clock is running
+house_alarmclock_active:
+  name: Snoozing
+  initial: off
+  icon: mdi:alarm-snooze
+# Optional: Enable radio for sequence
+#  house_alarmclock_radio:
+#  name: Alarm Radio
+#  initial: on
+#  icon: mdi:radio
