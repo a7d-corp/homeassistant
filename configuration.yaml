@@ -24,7 +24,8 @@ http:
 
 logger:
   default: warning
-#  logs:
+  logs:
+    hacs: debug
 #    homeassistant.components.device_tracker: debug
 
 config:
