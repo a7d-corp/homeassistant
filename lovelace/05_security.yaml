@@ -58,7 +58,7 @@ cards:
       entities:
         - entity: binary_sensor.motion_sensor_158d000237acbc
           icon: mdi:run-fast
-        - entity: binary_sensor.motion_sensor_158d0002b7f000
+        - entity: binary_sensor.0x00158d0002b7f000_occupancy
           icon: mdi:run-fast
     - type: history-graph
       title: Kitchen motion sensor
