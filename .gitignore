@@ -23,3 +23,4 @@ google_calendars.yaml
 .storage
 secrets/*
 *.swp
+custom_components
