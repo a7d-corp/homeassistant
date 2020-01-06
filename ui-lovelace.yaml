@@ -2,6 +2,8 @@ title: Room 101
 resources:
   - url: /local/monster-card/monster-card.js
     type: js
+  - url: /community_plugin/mini-media-player/mini-media-player-bundle.js
+    type: module
 views:
   - !include lovelace/00_home.yaml
   - !include lovelace/05_security.yaml

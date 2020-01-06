@@ -9,12 +9,28 @@ cards:
       entity: media_player.denon_avrx2100w
 - type: vertical-stack
   cards:
-    - type: media-control
+    - type: custom:mini-media-player
       entity: media_player.kitchen
-    - type: media-control
+      artwork: cover
+    - type: custom:mini-media-player
       entity: media_player.living_room
-    - type: media-control
+      artwork: cover
+    - type: custom:mini-media-player
       entity: media_player.garden_room
+      artwork: cover
+    - type: custom:mini-media-player
+      entity: media_player.bedroom
+      artwork: cover
+#- type: vertical-stack
+#  cards:
+#    - type: media-control
+#      entity: media_player.kitchen
+#    - type: media-control
+#      entity: media_player.living_room
+#    - type: media-control
+#      entity: media_player.garden_room
+#    - type: media-control
+#      entity: media_player.bedroom
 - type: vertical-stack
   cards:
     - type: media-control
