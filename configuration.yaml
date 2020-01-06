@@ -36,6 +36,7 @@ history:
 logbook:
 sun:
 ffmpeg:
+mobile_app:
 
 recorder:
   # Delete events and states older than 2 weeks
