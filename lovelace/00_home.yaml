@@ -54,6 +54,16 @@ cards:
           icon: mdi:desktop-classic
           name: "Desk power"
         - input_boolean.party_mode
+- type: vertical-stack
+  cards:
+    - type: entities
+      title: Morning Alarm
+      show_header_toggle: false
+      entities:
+        - entity: input_boolean.house_option_alarmclock
+          name: Enabled
+        - entity: input_datetime.alarmclock_time
+          name: Time
 - type: custom:monster-card
   show_empty: false
   card:
