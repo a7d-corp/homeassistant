@@ -33,8 +33,8 @@ cards:
 #      entity: media_player.bedroom
 - type: vertical-stack
   cards:
-    - type: media-control
-      entity: media_player.chromecast101
+#    - type: media-control
+#      entity: media_player.chromecast101
     - type: media-control
       entity: media_player.upstairs
     - type: media-control
