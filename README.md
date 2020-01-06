@@ -8,13 +8,15 @@
    - Home-Assistant
    - Node-Red
    - Mosquitto
+   - Zigbee2MQTT
  - 2x Nest (3rd generation)
  - Unifi UAC-AP-Pro
  - Denon AVRX2100W
  - Samsung TV
- - 3x Sonos
+ - 4x Sonos
  - 2x Chromecast
  - 2x Google Home Mini
+ - 1x Google Nest Hub
  - Phillips Hue
    - Bulbs
    - Blooms
