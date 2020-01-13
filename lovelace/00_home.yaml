@@ -50,9 +50,9 @@ cards:
       show_header_toggle: false
       entities:
         - input_boolean.night_mode_toggle
-        - entity: switch.desk_power
-          icon: mdi:desktop-classic
-          name: "Desk power"
+#        - entity: switch.desk_power
+#          icon: mdi:desktop-classic
+#          name: "Desk power"
         - input_boolean.party_mode
 - type: vertical-stack
   cards:
