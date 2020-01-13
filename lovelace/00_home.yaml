@@ -25,7 +25,7 @@ cards:
         - input_select.simon_status
         - input_select.nikki_status
         - input_select.houston_2
-        - input_select.galaxy_s8
+        - input_select.galaxy_s8_2
 - type: vertical-stack
   cards:
     - type: entities
