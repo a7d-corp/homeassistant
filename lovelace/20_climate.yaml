@@ -35,7 +35,7 @@ cards:
   cards:
     - type: gauge
       title: Ensuite Temperature
-      entity: sensor.temperature_158d0001fa5c1b
+      entity: sensor.0x00158d0001fa5c1b_temperature
       unit_of_measurement: ""
       min: 0
       max: 30
@@ -43,5 +43,4 @@ cards:
       title: Ensuite Bathroom
       show_header_toggle: false
       entities:
-        - sensor.temperature_158d0001fa5c1b
-        - sensor.humidity_158d0001fa5c1b
+        -  sensor.0x00158d0001fa5c1b_humidity
