@@ -38,8 +38,9 @@ cards:
       title: Office
       show_header_toggle: false
       entities:
-#        - switch.desk_power
+        - light.office_uplighter
         - light.office_lamp
+        - switch.desk_power_2
 - type: entities
   title: Lighting Control
   show_header_toggle: false
