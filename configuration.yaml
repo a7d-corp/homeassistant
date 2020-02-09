@@ -94,7 +94,7 @@ person:
   - name: Nikki
     id: niki0000
     device_trackers:
-      - device_tracker.galaxy_s8
+      - device_tracker.galaxy_s10
 
 tts:
   - platform: google_translate

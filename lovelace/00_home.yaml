@@ -20,12 +20,12 @@ cards:
       show_header_toggle: false
       entities:
         - device_tracker.houston_2
-        - device_tracker.galaxy_s8_2
+        - device_tracker.galaxy_s10
         - binary_sensor.people_home
         - input_select.simon_status
         - input_select.nikki_status
-        - input_select.houston_2
-        - input_select.galaxy_s8
+#        - input_select.houston_2
+#        - input_select.galaxy_s10
 - type: vertical-stack
   cards:
     - type: entities
