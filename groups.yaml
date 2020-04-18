@@ -12,7 +12,7 @@ people:
 global_controls:
   name: Home Controls
   icon: 'mdi:home-variant'
-  control: hidden
+  #control: hidden
   entities:
     - input_boolean.night_mode_toggle
     - input_boolean.motion_lighting_toggle
@@ -55,7 +55,7 @@ plex_devices:
 kodi_light_automation:
   name: Kodi controls
   icon: mdi:lightbulb-on-outline
-  control: hidden
+  #control: hidden
   entities:
     - input_boolean.lounge_media_dim_enable
     - input_number.kodi_dimmer_slider
@@ -101,7 +101,7 @@ holiday_mode_toggle:
 # groups for lighting_view
 all_home_lights:
   name: All Lights
-  control: hidden
+  #control: hidden
   icon: mdi:lightbulb-outline
   entities:
     - group.lounge_lights
