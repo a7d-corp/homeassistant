@@ -154,6 +154,10 @@ zoneminder:
   username: !secret zoneminder_user
   password: !secret zoneminder_pass
 
+spotify:
+  client_id: !secret spotify_id
+  client_secret: !secret spotify_secret
+
 tradfri:
   host: !secret ip_tradfri
 
