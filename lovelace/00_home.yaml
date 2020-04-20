@@ -24,8 +24,6 @@ cards:
         - binary_sensor.people_home
         - input_select.simon_status
         - input_select.nikki_status
-#        - input_select.houston_2
-#        - input_select.galaxy_s10
 - type: vertical-stack
   cards:
     - type: entities
@@ -50,9 +48,6 @@ cards:
       show_header_toggle: false
       entities:
         - input_boolean.night_mode_toggle
-#        - entity: switch.desk_power
-#          icon: mdi:desktop-classic
-#          name: "Desk power"
         - input_boolean.party_mode
 - type: vertical-stack
   cards:
