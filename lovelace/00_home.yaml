@@ -7,8 +7,7 @@ cards:
       title: At a glance
       entities:
         - sun.sun
-        - sensor.loft_light_status
-        - sensor.loft_temperature
+        - binary_sensor.people_home
     - type: history-graph
       title: Occupancy
       entities:
