@@ -1,0 +1,4 @@
+[submodule "secrets"]
+	path = secrets
+	url = ssh://git@gitea.analbeard.com:222/simon/home-assistant-secrets.git
+	branch = master

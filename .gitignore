@@ -21,6 +21,5 @@ google_calendars.yaml
 .google.token
 .config_entries.json
 .storage
-secrets/*
 *.swp
 custom_components
