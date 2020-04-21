@@ -13,7 +13,6 @@ known_devices.yaml
 fitbit.conf
 phue.conf
 plex.conf
-secrets.yaml
 nest.conf
 core
 entity_registry.yaml
