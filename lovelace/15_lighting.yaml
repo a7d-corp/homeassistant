@@ -7,54 +7,54 @@ cards:
   entities:
     - group.lounge_lights
     - group.kitchen_lights
+- type: entities
+  title: Living Room Lights
+  show_header_toggle: false
+  entities:
+    - group.lounge_hues
+    - sensor.0x00158d0002b7f000_illuminance
+    - switch.bookcase_lights
+    - switch.twigs
+  footer:
+    type: graph
+    entity: sensor.0x00158d0002b7f000_illuminance
+    hours_to_show: 24
+    detail: 1
+- type: entities
+  title: Kitchen Lights
+  show_header_toggle: false
+  entities:
+    - light.kitchen_cabinets
+    - light.kicking_strip_lights
+    - sensor.illumination_158d000237acbc
+  footer:
+    type: graph
+    entity: sensor.illumination_158d000237acbc
+    hours_to_show: 24
+    detail: 1
+- type: entities
+  title: Office
+  show_header_toggle: false
+  entities:
+    - light.office_uplighter
+    - light.office_lamp
+    - switch.desk_power_2
 - type: vertical-stack
   cards:
     - type: entities
-      title: Lounge Lights
+      title: Loft Lighting
       show_header_toggle: false
       entities:
-        - group.lounge_hues
-    - type: sensor
-      entity: sensor.0x00158d0002b7f000_illuminance
-      name: Living room illumination
-      unit: lux
+        - switch.loft_lighting
+        - sensor.loft_light_status
+        - sensor.door_loft_hatch
     - type: entities
-      title: Sockets
-      entities:
-        - switch.bookcase_lights
-        - switch.twigs
-- type: vertical-stack
-  cards:
-    - type: entities
-      title: Kitchen Lights
+      title: Understairs Lighting
       show_header_toggle: false
       entities:
-        - light.kitchen_cabinets
-    - type: sensor
-      entity: sensor.illumination_158d000237acbc
-      name: Kitchen illumination
-      unit: lux
+        - light.gateway_light_7811dcb1f766
     - type: entities
-      title: Office
+      title: Lighting Control
       show_header_toggle: false
       entities:
-        - light.office_uplighter
-        - light.office_lamp
-        - switch.desk_power_2
-- type: entities
-  title: Lighting Control
-  show_header_toggle: false
-  entities:
-    - switch.flux_adjustment
-- type: entities
-  title: Loft Lighting
-  show_header_toggle: false
-  entities:
-    - switch.loft_lighting
-    - sensor.loft_light_status
-    - sensor.door_loft_hatch
-- type: entities
-  title: Understairs Lighting
-  show_header_toggle: false
-  entities:
-    - light.gateway_light_7811dcb1f766
+        - switch.flux_adjustment
