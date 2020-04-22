@@ -16,6 +16,11 @@ cards:
         - binary_sensor.living_room_thermostat_online
         - binary_sensor.living_room_thermostat_is_locked
         - binary_sensor.living_room_thermostat_is_using_emergency_heat
+      footer:
+        type: graph
+        entity: sensor.living_room_thermostat_temperature
+        hours_to_show: 24
+        detail: 2
 - type: vertical-stack
   cards:
     - type: thermostat
@@ -31,6 +36,11 @@ cards:
         - binary_sensor.master_bedroom_thermostat_online
         - binary_sensor.master_bedroom_thermostat_is_locked
         - binary_sensor.master_bedroom_thermostat_is_using_emergency_heat
+      footer:
+        type: graph
+        entity: sensor.master_bedroom_thermostat_temperature
+        hours_to_show: 24
+        detail: 2
 - type: vertical-stack
   cards:
     - type: gauge
