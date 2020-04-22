@@ -22,3 +22,4 @@ google_calendars.yaml
 .storage
 *.swp
 custom_components
+themes/
