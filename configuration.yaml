@@ -52,19 +52,7 @@ recorder:
 
 frontend:
   javascript_version: latest
-  themes:
-    greens:
-      dark-primary-color: "#009688"
-      primary-color: "#009688"
-      light-primary-color: "#009688"
-      paper-toggle-button-checked-ink-color: "#009688"
-      paper-toggle-button-checked-button-color: "#009688"
-      paper-toggle-button-checked-bar-color: "#99d5cf"
-      paper-slider-knob-color: "#66c0b7"
-      paper-slider-knob-start-color: "#32ab9f"
-      paper-slider-pin-color: "#66c0b7"
-      paper-slider-active-color: "#009688"
-      paper-slider-secondary-color: "#009688"
+  themes: !include_dir_merge_named themes
 
 zone:
   name: Home
