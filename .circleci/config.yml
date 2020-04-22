@@ -10,6 +10,7 @@ jobs:
           name: check config
           command: |
             mv .circleci/secrets.yaml secrets.yaml
+            mv secrets secrets.old
             mkdir secrets
             mv .circleci/google-cloud-tts.json secrets/google-cloud-tts.json
             python3.7 -m venv .
