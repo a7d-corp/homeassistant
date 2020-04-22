@@ -118,6 +118,7 @@ kitchen_lights:
   icon: mdi:lightbulb-outline
   entities:
     - light.kitchen_cabinets
+    - light.kicking_strip_lights
 
 lighting_tools:
   name: Lighting Control
