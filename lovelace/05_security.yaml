@@ -67,7 +67,7 @@ cards:
     - type: history-graph
       title: Living room motion sensor
       entities:
-        - binary_sensor.motion_sensor_158d0002b7f000
+        - binary_sensor.0x00158d0002b7f000_occupancy
 - type: entities
   title: Holiday Mode
   show_header_toggle: false
