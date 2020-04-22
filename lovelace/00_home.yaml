@@ -58,16 +58,3 @@ cards:
           name: Enabled
         - entity: input_datetime.alarmclock_time
           name: Time
-- type: custom:monster-card
-  show_empty: false
-  card:
-    type: glance
-    title: Low batteries
-  filter:
-    include:
-      - entity_id: "*battery_level*"
-        state: '< 25'
-      - attributes:
-          battery: '< 25'
-      - attributes:
-          battery_level: '< 25'
