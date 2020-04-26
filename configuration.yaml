@@ -161,6 +161,12 @@ unifi:
       site: !secret unifi_site
       detection_time: 600
 
+weather:
+  - platform: metoffice
+    api_key: !secret metoffice_key
+  - platform: openweathermap
+    api_key: !secret openweathermap_api_key
+
 input_boolean: !include inputs/boolean.yaml
 input_number: !include inputs/numbers.yaml
 input_select: !include inputs/select.yaml
