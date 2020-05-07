@@ -1,8 +1,16 @@
 title: Room 101
 resources:
-  - url: /local/monster-card/monster-card.js
-    type: js
-  - url: /community_plugin/mini-media-player/mini-media-player-bundle.js
+  - url: /local/community/mini-media-player/mini-media-player-bundle.js
+    type: module
+  - url: /local/community/lovelace-auto-entities/auto-entities.js
+    type: module
+  - url: /local/community/weather-card/weather-card.js
+    type: module
+  - url: /local/community/lovelace-card-mod/card-mod.js
+    type: module
+  - url: /local/community/lovelace-layout-card/layout-card.js
+    type: module
+  - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
     type: module
 views:
   - !include lovelace/00_home.yaml
@@ -12,3 +20,9 @@ views:
   - !include lovelace/20_climate.yaml
   - !include lovelace/25_weather.yaml
   - !include lovelace/30_zigbee.yaml
+  - !include lovelace/99_admin.yaml
+  # new dashboards
+  - !include lovelace/zz_00_home.yaml
+  - !include lovelace/zz_05_living_room.yaml
+  - !include lovelace/zz_10_kitchen.yaml
+  - !include lovelace/zz_15_bedroom.yaml
