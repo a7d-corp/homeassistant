@@ -1,0 +1,114 @@
+title: Living Room
+icon: mdi:sofa
+cards:
+- type: vertical-stack
+  cards:
+    - type: "custom:mini-media-player"
+      artwork: cover
+      entity: media_player.living_room
+      hide:
+        power_state: true
+      info: scroll
+      volume_stateless: true
+    - type: "custom:mini-media-player"
+      artwork: cover
+      entity: media_player.garden_room
+      hide:
+        power_state: true
+      info: scroll
+      volume_stateless: true
+    - type: media-control
+      entity: media_player.kodi
+    - type: media-control
+      entity: media_player.living_room_chromecast
+    - type: media-control
+      entity: media_player.denon_avrx2100w
+#media_player.samsung_tv_remote
+- type: vertical-stack
+  cards:
+    - type: entities
+      entities:
+        - entity: group.living_room_lights
+          name: All lights
+      title: Lighting
+    - type: horizontal-stack
+      cards:
+        - type: entity-button
+          entity: light.standard_lamp_left 
+          name: Left uplighter
+          tap_action:
+            action: toggle
+        - type: entity-button
+          entity: light.standard_lamp_right
+          name: Right uplighter
+          tap_action:
+            action: toggle
+    - type: horizontal-stack
+      cards:
+        - type: entity-button
+          entity: light.sideboard_bloom
+          name: Left Bloom
+          tap_action:
+            action: toggle
+        - type: entity-button
+          entity: light.sideboard_bloom_2
+          name: Right Bloom
+          tap_action:
+            action: toggle
+    - type: entities
+      entities:
+        - entity: input_number.kodi_dimmer_slider
+          name: Auto-dim Hue level
+      title: Movie Mode
+    - type: horizontal-stack
+      cards:
+        - type: entity-button
+          entity: input_boolean.lounge_media_dim_enable
+          name: Auto-dim Hues
+          tap_action:
+            action: toggle
+        - type: entity-button
+          entity: input_boolean.kodi_amp_trigger
+          name: Auto-on amp
+          tap_action:
+            action: toggle
+- type: vertical-stack
+  cards:
+    - type: thermostat
+      entity: climate.living_room
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - climate.living_room
+    - type: "custom:mini-graph-card"
+      color_thresholds:
+        - value: 15
+          color: "#2facfa"
+        - value: 18
+          color: "#ffc72b"
+        - value: 25
+          color: "#c0392b"
+      decimals: 1
+      entities:
+        - entity: sensor.living_room_thermostat_temperature
+      font_size: 80
+      hours_to_show: 24
+      name: Temperature
+      points_per_hour: 0.5
+      show:
+        labels: false
+        labels_secondary: false
+        points: false
+    - type: "custom:mini-graph-card"
+      decimals: 1
+      entities:
+        - entity: sensor.living_room_thermostat_humidity
+      font_size: 80
+      hours_to_show: 24
+      line_color: "#45bf4b"
+      name: Humidity
+      points_per_hour: 0.5
+      show:
+        labels: false
+        labels_secondary: false
+        points: false

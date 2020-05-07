@@ -1,0 +1,65 @@
+title: Kitchen
+icon: mdi:stove
+cards:
+- type: vertical-stack
+  cards:
+    - type: "custom:mini-media-player"
+      artwork: cover
+      entity: media_player.kitchen
+      hide:
+        power_state: true
+      info: scroll
+      volume_stateless: true
+- type: horizontal-stack
+  name: Lighting
+  cards:
+    - type: entity-button
+      entity: group.kitchen_lights
+      name: All lights
+      tap_action:
+        action: toggle
+    - type: entity-button
+      entity: light.kitchen_cabinets
+      name: Cabinets
+      tap_action:
+        action: toggle
+    - type: entity-button
+      entity: light.kicking_strip_lights
+      name: Floor lighting
+      tap_action:
+        action: toggle
+- type: vertical-stack
+  cards:
+    - type: "custom:mini-graph-card"
+      aggregate_func: max
+      entities:
+        - entity: binary_sensor.motion_sensor_158d000237acbc
+          name: Kitchen
+      hours_to_show: 1
+      line_color: "#bd3535"
+      name: Motion (previous hour)
+      points_per_hour: 30
+      show:
+        labels: false
+        labels_secondary: false
+        legend: false
+      smoothing: false
+      state_map:
+        - value: "off"
+          label: Clear
+        - value: "on"
+          label: Detected
+      update_interval: 30
+    - type: "custom:mini-graph-card"
+      entities:
+        - entity: sensor.illumination_158d000237acbc
+          name: Kitchen
+      hours_to_show: 12
+      line_color: "#fff53d"
+      name: Brightness (last 12 hours)
+      points_per_hour: 20
+      show:
+        labels: false
+        labels_secondary: false
+        legend: false
+        points: false

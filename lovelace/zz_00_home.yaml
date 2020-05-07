@@ -1,0 +1,176 @@
+title: Home new
+icon: mdi:home-variant
+cards:
+- type: vertical-stack
+  layout: vertical
+  cards:
+    - type: "custom:weather-card"
+      current: true
+      details: true
+      entity: weather.openweathermap
+      forecast: true
+      tap_action:
+        action: none
+    - type: horizontal-stack
+      cards:
+        - type: "custom:mini-graph-card"
+          color_thresholds:
+            - value: 15
+              color: "#2facfa"
+            - value: 18
+              color: "#ffc72b"
+            - value: 25
+              color: "#c0392b"
+          decimals: 1
+          entities:
+            - entity: sensor.living_room_thermostat_temperature
+          font_size: 80
+          hours_to_show: 24
+          name: Living Room
+          points_per_hour: 0.5
+          show:
+            labels: false
+            labels_secondary: false
+            legend: false
+            points: false
+          style: |
+            div.header { padding-bottom: 0px; }
+            div.info { display: none; }
+        - type: "custom:mini-graph-card"
+          color_thresholds:
+            - value: 15
+              color: "#2facfa"
+            - value: 18
+              color: "#ffc72b"
+            - value: 25
+              color: "#c0392b"
+          decimals: 1
+          entities:
+            - entity: sensor.master_bedroom_thermostat_temperature
+          font_size: 80
+          hours_to_show: 24
+          name: Bedroom
+          points_per_hour: 0.5
+          show:
+            labels: false
+            labels_secondary: false
+            legend: false
+            points: false
+          style: |
+            div.header { padding-bottom: 0px; }
+            div.info { display: none; }
+        - type: "custom:mini-graph-card"
+          decimals: 1
+          entities:
+            - entity: sensor.living_room_thermostat_humidity
+              name: in
+            - entity: sensor.metoffice_humidity
+              name: out
+          font_size: 80
+          hours_to_show: 24
+          name: Humidity
+          points_per_hour: 0.5
+          show:
+            labels: false
+            labels_secondary: false
+            legend: true
+            points: false
+          style: |
+            div.header, div.states { padding-bottom: 0px; }
+            div.info { display: none; overflow: hidden; }
+    - type: horizontal-stack
+      cards:
+        - type: entity-button
+          double_tap_action:
+            action: none
+          entity: binary_sensor.people_home
+          hold_action:
+            action: none
+          map_state:
+            "on": "Home"
+            "off": "Away"
+          name: People
+          show_state: false
+          tap_action:
+            action: none
+        - type: entity-button
+          double_tap_action:
+            action: none
+          entity: input_boolean.house_lighting_toggle
+          hold_action:
+            action: toggle
+            confirmation: Toggle all lights?
+          icon: mdi:lightbulb-multiple
+          name: All Lights
+          tap_action:
+            action: none
+        - type: entity-button
+          double_tap_action:
+            action: none
+          entity: input_boolean.motion_lighting_toggle
+          hold_action:
+            action: toggle
+            confirmation: Toggle motion sensing?
+          icon: mdi:access-point
+          name: Motion Sensors
+          tap_action:
+            action: none
+- type: picture-glance
+  entities:
+    - binary_sensor.0x00158d0002b7f000_occupancy
+    - entity: group.lounge_hues
+      icon: mdi:lightbulb-multiple
+  hold_action:
+    action: navigate
+    navigation_path: /lovelace/5/
+  image: /local/images/living_room.jpg
+  # darken entity row background
+  style: |
+    div.box {
+      background-color: rgba(0, 0, 0, 0.7)
+    }
+  title: Living Room
+- type: picture-glance
+  entities:
+    - input_boolean.house_option_alarmclock
+    - input_boolean.night_mode_toggle
+  hold_action:
+    action: navigate
+    navigation_path: /lovelace/5/
+  image: /local/images/bedroom.jpg
+  # darken entity row background
+  style: |
+    div.box {
+      background-color: rgba(0, 0, 0, 0.7)
+    }
+  title: Bedroom
+- type: picture-glance
+  entities:
+    - entity: group.kitchen_hues
+      icon: mdi:lightbulb-multiple
+    - binary_sensor.motion_sensor_158d000237acbc
+  hold_action:
+    action: navigate
+    navigation_path: /lovelace/5/
+  image: /local/images/kitchen.jpg
+  # darken entity row background
+  style: |
+    div.box {
+      background-color: rgba(0, 0, 0, 0.7)
+    }
+  title: Kitchen
+- type: picture-glance
+  entities:
+    - light.office_uplighter
+    - light.office_lamp
+    - switch.desk_power_2
+  hold_action:
+    action: navigate
+    navigation_path: /lovelace/5/
+  image: /local/images/office.jpg
+  # darken entity row background
+  style: |
+    div.box {
+      background-color: rgba(0, 0, 0, 0.7)
+    }
+  title: Office

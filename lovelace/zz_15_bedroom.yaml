@@ -1,0 +1,61 @@
+title: Bedroom
+icon: mdi:bed-king
+cards:
+- type: vertical-stack
+  cards:
+    - type: "custom:mini-media-player"
+      artwork: cover
+      entity: media_player.bedroom
+      hide:
+        power_state: true
+      info: scroll
+      volume_stateless: true
+- type: vertical-stack
+  cards:
+    - type: thermostat
+      entity: climate.master_bedroom 
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - climate.master_bedroom
+- type: vertical-stack
+  cards:
+    - type: "custom:mini-graph-card"
+      color_thresholds:
+        - value: 15
+          color: "#2facfa"
+        - value: 18
+          color: "#ffc72b"
+        - value: 25
+          color: "#c0392b"
+      decimals: 1
+      entities:
+        - entity: sensor.living_room_thermostat_temperature
+          name: bedroom
+        - entity: sensor.0x00158d0001fa5c1b_temperature
+          name: ensuite
+      font_size: 80
+      hours_to_show: 24
+      name: Temperature
+      points_per_hour: 0.5
+      show:
+        labels: false
+        labels_secondary: false
+        points: false
+    - type: "custom:mini-graph-card"
+      decimals: 1
+      entities:
+        - entity: sensor.master_bedroom_thermostat_humidity
+          color: "#45bf4b"
+          name: bedroom
+        - entity: sensor.0x00158d0001fa5c1b_humidity
+          color: "#7dafff"
+          name: ensuite
+      font_size: 80
+      hours_to_show: 24
+      name: Humidity
+      points_per_hour: 0.5
+      show:
+        labels: false
+        labels_secondary: false
+        points: false
