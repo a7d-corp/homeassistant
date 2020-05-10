@@ -120,6 +120,14 @@ kitchen_lights:
     - light.kitchen_cabinets
     - light.kicking_strip_lights
 
+# office lights
+office_lights:
+  name: Office Lights
+  icon: mdi:desk
+  entities:
+    - light.office_lamp
+    - light.office_uplighter
+
 lighting_tools:
   name: Lighting Control
   icon: mdi:toggle-switch
