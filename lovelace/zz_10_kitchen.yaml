@@ -10,24 +10,27 @@ cards:
         power_state: true
       info: scroll
       volume_stateless: true
-- type: horizontal-stack
-  name: Lighting
+- type: vertical-stack
   cards:
     - type: entity-button
       entity: group.kitchen_lights
-      name: All lights
+      name: Toggle lights
+      show_icon: false
       tap_action:
         action: toggle
-    - type: entity-button
-      entity: light.kitchen_cabinets
-      name: Cabinets
-      tap_action:
-        action: toggle
-    - type: entity-button
-      entity: light.kicking_strip_lights
-      name: Floor lighting
-      tap_action:
-        action: toggle
+    - type: horizontal-stack
+      name: Lighting
+      cards:
+        - type: entity-button
+          entity: light.kitchen_cabinets
+          name: Cabinets
+          tap_action:
+            action: toggle
+        - type: entity-button
+          entity: light.kicking_strip_lights
+          name: Floor lighting
+          tap_action:
+            action: toggle
 - type: vertical-stack
   cards:
     - type: "custom:mini-graph-card"
