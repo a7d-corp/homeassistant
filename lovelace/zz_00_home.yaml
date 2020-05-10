@@ -80,19 +80,20 @@ cards:
             div.info { display: none; overflow: hidden; }
     - type: horizontal-stack
       cards:
-        - type: entity-button
-          double_tap_action:
-            action: none
-          entity: binary_sensor.people_home
-          hold_action:
-            action: none
-          map_state:
-            "on": "Home"
-            "off": "Away"
-          name: People
-          show_state: false
-          tap_action:
-            action: none
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: binary_sensor.people_home
+            hold_action:
+              action: none
+            name_template: '{{ "Occupied" if is_state("binary_sensor.people_home", "on") else "Unoccupied" }}'
+            show_state: false
+            tap_action:
+              action: none
+          entities:
+            - binary_sensor.people_home
         - type: entity-button
           double_tap_action:
             action: none
@@ -104,17 +105,21 @@ cards:
           name: All Lights
           tap_action:
             action: none
-        - type: entity-button
-          double_tap_action:
-            action: none
-          entity: input_boolean.motion_lighting_toggle
-          hold_action:
-            action: toggle
-            confirmation: Toggle motion sensing?
-          icon: mdi:access-point
-          name: Motion Sensors
-          tap_action:
-            action: none
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: input_boolean.motion_lighting_toggle
+            hold_action:
+              action: toggle
+              confirmation: Toggle motion sensing?
+            icon: mdi:access-point
+            name_template: '{{ "Sensors enabled" if is_state("input_boolean.motion_lighting_toggle", "on") else "Sensors disabled" }}'
+            tap_action:
+              action: none
+          entities:
+            - input_boolean.motion_lighting_toggle
 - type: picture-glance
   entities:
     - binary_sensor.0x00158d0002b7f000_occupancy
