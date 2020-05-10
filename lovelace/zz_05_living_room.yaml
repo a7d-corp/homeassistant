@@ -26,11 +26,12 @@ cards:
 #media_player.samsung_tv_remote
 - type: vertical-stack
   cards:
-    - type: entities
-      entities:
-        - entity: group.living_room_lights
-          name: All lights
-      title: Lighting
+    - type: entity-button
+      entity: group.living_room_lights
+      name: Toggle lights
+      show_icon: false
+      tap_action:
+        action: toggle
     - type: horizontal-stack
       cards:
         - type: entity-button
