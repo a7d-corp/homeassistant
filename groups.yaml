@@ -36,6 +36,7 @@ sonoses:
     - media_player.kitchen
     - media_player.living_room
     - media_player.garden_room
+    - media_player.bedroom
 
 media_streaming:
   name: Media Streaming
