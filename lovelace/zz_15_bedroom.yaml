@@ -10,6 +10,23 @@ cards:
         power_state: true
       info: scroll
       volume_stateless: true
+- type: horizontal-stack
+  cards:
+    - type: entity-button
+      entity: input_boolean.house_option_alarmclock
+      name: Alarm enabled?
+      tap_action:
+        action: toggle
+    - type: "custom:time-picker-card"
+      entity: input_datetime.alarmclock_time
+      name: Alarm time
+      hour_mode: 24
+      hour_step: 1
+      minute_step: 5
+      hide:
+       name: false
+      style: |
+        div.time-picker-header { border-radius: 15px 15px 0px 0px }
 - type: vertical-stack
   cards:
     - type: thermostat
