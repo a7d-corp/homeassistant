@@ -12,6 +12,8 @@ resources:
     type: module
   - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
     type: module
+  - url: /local/community/lovelace-time-picker-card/time-picker-card.js
+    type: module
 views:
   - !include lovelace/00_home.yaml
   - !include lovelace/05_security.yaml
