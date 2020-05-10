@@ -99,8 +99,11 @@ cards:
             action: none
           entity: input_boolean.house_lighting_toggle
           hold_action:
-            action: toggle
+            action: call-service
             confirmation: Toggle all lights?
+            service: light.turn_off
+            service_data:
+              entity_id: all
           icon: mdi:lightbulb-multiple
           name: All Lights
           tap_action:
