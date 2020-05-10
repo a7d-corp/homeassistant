@@ -26,12 +26,21 @@ cards:
 #media_player.samsung_tv_remote
 - type: vertical-stack
   cards:
-    - type: entity-button
-      entity: group.living_room_lights
-      name: Toggle lights
-      show_icon: false
-      tap_action:
-        action: toggle
+    - type: "custom:card-templater"
+      card:
+        type: entity-button
+        double_tap_action:
+          action: none
+        entity: group.living_room_lights
+        hold_action:
+          action: none
+        name_template: '{{ "Turn lights off" if is_state("group.living_room_lights", "on") else "Turn lights on" }}'
+        show_icon: false
+        show_state: false
+        tap_action:
+          action: toggle
+      entities:
+        - group.living_room_lights
     - type: horizontal-stack
       cards:
         - type: entity-button
@@ -63,16 +72,38 @@ cards:
       title: Movie Mode
     - type: horizontal-stack
       cards:
-        - type: entity-button
-          entity: input_boolean.lounge_media_dim_enable
-          name: Auto-dim Hues
-          tap_action:
-            action: toggle
-        - type: entity-button
-          entity: input_boolean.kodi_amp_trigger
-          name: Auto-on amp
-          tap_action:
-            action: toggle
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: input_boolean.lounge_media_dim_enable
+            hold_action:
+              action: none
+            icon_template: >
+              {{ "mdi:radiobox-marked" if is_state("input_boolean.lounge_media_dim_enable", "on") else "mdi:radiobox-blank" }}
+            name_template: >
+              {{ "Hue dimming enabled" if is_state("input_boolean.lounge_media_dim_enable", "on") else "Hue dimming disabled" }}
+            tap_action:
+              action: toggle
+          entities:
+            - input_boolean.lounge_media_dim_enable
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: input_boolean.kodi_amp_trigger
+            hold_action:
+              action: none
+            icon_template: >
+              {{ "mdi:radiobox-marked" if is_state("input_boolean.kodi_amp_trigger", "on") else "mdi:radiobox-blank" }}
+            name_template: >
+              {{ "Amp auto-on enabled" if is_state("input_boolean.kodi_amp_trigger", "on") else "Amp auto-on disabled" }}
+            tap_action:
+              action: toggle
+          entities:
+            - input_boolean.kodi_amp_trigger
 - type: vertical-stack
   cards:
     - type: thermostat
