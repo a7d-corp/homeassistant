@@ -14,6 +14,8 @@ resources:
     type: module
   - url: /local/community/lovelace-time-picker-card/time-picker-card.js
     type: module
+  - url: /local/community/lovelace-card-templater/lovelace-card-templater.js
+    type: js
 views:
   - !include lovelace/00_home.yaml
   - !include lovelace/05_security.yaml
