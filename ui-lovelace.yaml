@@ -30,3 +30,4 @@ views:
   - !include lovelace/zz_05_living_room.yaml
   - !include lovelace/zz_10_kitchen.yaml
   - !include lovelace/zz_15_bedroom.yaml
+  - !include lovelace/zz_20_office.yaml

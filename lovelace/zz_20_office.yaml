@@ -1,0 +1,52 @@
+title: Office
+icon: mdi:desk
+cards:
+- type: vertical-stack
+  cards:
+    - type: "custom:card-templater"
+      card:
+        type: entity-button
+        double_tap_action:
+          action: none
+        entity: group.office_lights
+        hold_action:
+          action: none
+        name_template: '{{ "Turn lights off" if is_state("group.office_lights", "on") else "Turn lights on" }}'
+        show_icon: false
+        show_state: false
+        tap_action:
+          action: toggle
+      entities:
+        - group.office_lights
+    - type: horizontal-stack
+      cards:
+        - type: entity-button
+          entity: light.office_lamp
+          name: Lamp
+          tap_action:
+            action: toggle
+        - type: entity-button
+          entity: light.office_uplighter
+          name: Uplighter
+          tap_action:
+            action: toggle
+- type: "custom:mini-graph-card"
+  decimals: 1
+  entities:
+    - entity: binary_sensor.phoenix_ping
+      name: phoenix
+  font_size: 80
+  hours_to_show: 24
+  name: Work Laptop
+  points_per_hour: 1
+  show:
+    icon: false
+    labels: false
+    labels_secondary: false
+    points: false
+  smoothing: false
+  state_map:
+    - value: "off"
+      label: Offline
+    - value: "on"
+      label: Online
