@@ -123,6 +123,15 @@ cards:
               action: none
           entities:
             - input_boolean.motion_lighting_toggle
+    - type: custom:auto-entities
+      card:
+        type: entities
+        title: Low Batteries
+      filter:
+        include:
+          - entity_id: "sensor.*_battery"
+            state: "< 25"
+      show_empty: false
 - type: picture-glance
   entities:
     - binary_sensor.0x00158d0002b7f000_occupancy
