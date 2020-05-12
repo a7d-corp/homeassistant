@@ -176,7 +176,7 @@ cards:
   # darken entity row background
   style: |
     div.box {
-      background-color: rgba(0, 0, 0, 0.7)
+      background-color: rgba(0, 0, 0, 0.7);
     }
   title: Living Room
 - type: picture-glance
@@ -190,7 +190,7 @@ cards:
   # darken entity row background
   style: |
     div.box {
-      background-color: rgba(0, 0, 0, 0.7)
+      background-color: rgba(0, 0, 0, 0.7);
     }
   title: Bedroom
 - type: picture-glance
@@ -205,7 +205,7 @@ cards:
   # darken entity row background
   style: |
     div.box {
-      background-color: rgba(0, 0, 0, 0.7)
+      background-color: rgba(0, 0, 0, 0.7);
     }
   title: Kitchen
 - type: picture-glance
@@ -220,6 +220,6 @@ cards:
   # darken entity row background
   style: |
     div.box {
-      background-color: rgba(0, 0, 0, 0.7)
+      background-color: rgba(0, 0, 0, 0.7);
     }
   title: Office
