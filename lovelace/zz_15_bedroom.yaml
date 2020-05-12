@@ -35,7 +35,7 @@ cards:
       hide:
        name: false
       style: |
-        div.time-picker-header { border-radius: 15px 15px 0px 0px }
+        div.time-picker-header { border-radius: 15px 15px 0px 0px; }
 - type: vertical-stack
   cards:
     - type: thermostat
