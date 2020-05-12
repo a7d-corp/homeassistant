@@ -1,0 +1,34 @@
+title: Admin
+icon: mdi:tools
+cards:
+- type: vertical-stack
+  cards:
+    - type: entities
+      title: Home Controls
+      show_header_toggle: false
+      entities:
+        - input_boolean.house_lighting_toggle
+        - input_boolean.night_mode_toggle
+        - input_boolean.motion_lighting_toggle
+        - entity: input_boolean.global_away_mode_toggle
+          icon: mdi:account-off
+          name: "Away: all automations"
+        - input_boolean.party_mode
+- type: entities
+  title: Zigbee2mqtt
+  show_header_toggle: false
+  entities:
+    - entity: sensor.zigbee2mqtt_bridge_state
+    - entity: sensor.zigbee2mqtt_version
+    - entity: sensor.coordinator_version
+    - entity: input_select.zigbee2mqtt_log_level
+    - type: divider
+    - entity: switch.zigbee2mqtt_main_join
+    - entity: timer.zigbee_permit_join
+    - type: divider
+    - entity: input_text.zigbee2mqtt_old_name
+    - entity: input_text.zigbee2mqtt_new_name
+    - entity: script.zigbee2mqtt_rename
+    - type: divider
+    - entity: input_text.zigbee2mqtt_remove
+    - entity: script.zigbee2mqtt_remove
