@@ -129,6 +129,8 @@ cards:
           card:
             type: entities
             title: Open Doors
+            style: |
+              ha-card { background-color: #de6674; }
           filter:
             include:
               - entity_id: "sensor.door_front_door"
@@ -140,6 +142,8 @@ cards:
           card:
             type: entities
             title: Open Windows
+            style: |
+              ha-card { background-color: #de6674; }
           filter:
             include:
               - entity_id: "sensor.window_kitchen_left"
@@ -153,6 +157,8 @@ cards:
           card:
             type: entities
             title: Low Batteries
+            style: |
+              ha-card { background-color: #de6674; }
           filter:
             include:
               - entity_id: "sensor.*_battery"
