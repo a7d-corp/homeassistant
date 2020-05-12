@@ -4,6 +4,47 @@ cards:
 - type: vertical-stack
   layout: vertical
   cards:
+    - type: vertical-stack
+      cards:
+        - type: "custom:auto-entities"
+          card:
+            type: entities
+            title: Open Doors
+            style: |
+              ha-card { background-color: #de6674; }
+          filter:
+            include:
+              - entity_id: "sensor.door_front_door"
+                state: "open"
+              - entity_id: "sensor.door_patio_door"
+                state: "open"
+          show_empty: false
+        - type: "custom:auto-entities"
+          card:
+            type: entities
+            title: Open Windows
+            style: |
+              ha-card { background-color: #de6674; }
+          filter:
+            include:
+              - entity_id: "sensor.window_kitchen_left"
+                state: "open"
+              - entity_id: "sensor.window_kitchen_right"
+                state: "open"
+              - entity_id: "sensor.window_living_room"
+                state: "open"
+          show_empty: false
+        - type: custom:auto-entities
+          card:
+            type: entities
+            title: Low Batteries
+            style: |
+              ha-card { background-color: #de6674; }
+          filter:
+            include:
+              - entity_id: "sensor.*_battery"
+                state: "< 25"
+          show_empty: false
     - type: "custom:weather-card"
       current: true
       details: true
@@ -123,47 +164,6 @@ cards:
               action: none
           entities:
             - input_boolean.motion_lighting_toggle
-    - type: vertical-stack
-      cards:
-        - type: "custom:auto-entities"
-          card:
-            type: entities
-            title: Open Doors
-            style: |
-              ha-card { background-color: #de6674; }
-          filter:
-            include:
-              - entity_id: "sensor.door_front_door"
-                state: "open"
-              - entity_id: "sensor.door_patio_door"
-                state: "open"
-          show_empty: false
-        - type: "custom:auto-entities"
-          card:
-            type: entities
-            title: Open Windows
-            style: |
-              ha-card { background-color: #de6674; }
-          filter:
-            include:
-              - entity_id: "sensor.window_kitchen_left"
-                state: "open"
-              - entity_id: "sensor.window_kitchen_right"
-                state: "open"
-              - entity_id: "sensor.window_living_room"
-                state: "open"
-          show_empty: false
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Low Batteries
-            style: |
-              ha-card { background-color: #de6674; }
-          filter:
-            include:
-              - entity_id: "sensor.*_battery"
-                state: "< 25"
-          show_empty: false
 - type: picture-glance
   entities:
     - binary_sensor.0x00158d0002b7f000_occupancy
