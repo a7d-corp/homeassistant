@@ -18,19 +18,10 @@ resources:
     type: js
 views:
   - !include lovelace/00_home.yaml
-  - !include lovelace/05_security.yaml
-  - !include lovelace/10_media.yaml
-  - !include lovelace/15_lighting.yaml
-  - !include lovelace/20_climate.yaml
-  - !include lovelace/25_weather.yaml
-  - !include lovelace/30_zigbee.yaml
+  - !include lovelace/05_living_room.yaml
+  - !include lovelace/10_kitchen.yaml
+  - !include lovelace/15_bedroom.yaml
+  - !include lovelace/20_office.yaml
+  - !include lovelace/25_hall.yaml
+  - !include lovelace/50_security.yaml
   - !include lovelace/99_admin.yaml
-  # new dashboards
-  - !include lovelace/zz_00_home.yaml
-  - !include lovelace/zz_05_living_room.yaml
-  - !include lovelace/zz_10_kitchen.yaml
-  - !include lovelace/zz_15_bedroom.yaml
-  - !include lovelace/zz_20_office.yaml
-  - !include lovelace/zz_25_hall.yaml
-  - !include lovelace/zz_50_security.yaml
-  - !include lovelace/zz_99_admin.yaml
