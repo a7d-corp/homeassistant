@@ -4,6 +4,12 @@ cards:
 - type: vertical-stack
   cards:
     - type: entities
+      title: Holiday Mode
+      show_header_toggle: false
+      entities:
+        - entity: input_boolean.holiday_mode
+          icon: mdi:airplane-takeoff
+    - type: entities
       title: Home Controls
       show_header_toggle: false
       entities:
@@ -13,6 +19,7 @@ cards:
         - entity: input_boolean.global_away_mode_toggle
           icon: mdi:account-off
           name: "Away: all automations"
+        - switch.flux_adjustment
         - input_boolean.party_mode
 - type: entities
   title: Zigbee2mqtt
