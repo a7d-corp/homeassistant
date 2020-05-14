@@ -1,5 +1,6 @@
 title: Security
 icon: mdi:security
+path: security
 cards:
 - type: vertical-stack
   cards:

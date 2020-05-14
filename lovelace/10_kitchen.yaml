@@ -1,5 +1,6 @@
 title: Kitchen
 icon: mdi:stove
+path: kitchen
 cards:
 - type: vertical-stack
   cards:

@@ -1,5 +1,6 @@
 title: Living Room
 icon: mdi:sofa
+path: livingroom
 cards:
 - type: vertical-stack
   cards:

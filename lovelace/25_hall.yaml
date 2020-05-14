@@ -1,5 +1,6 @@
 title: Hall
 icon: mdi:stairs
+path: hall
 cards:
 - type: horizontal-stack
   cards:

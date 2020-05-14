@@ -1,5 +1,6 @@
 title: Admin
 icon: mdi:tools
+path: admin
 cards:
 - type: vertical-stack
   cards:

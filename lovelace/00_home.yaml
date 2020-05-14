@@ -171,7 +171,7 @@ cards:
       icon: mdi:lightbulb-multiple
   hold_action:
     action: navigate
-    navigation_path: /lovelace/5/
+    navigation_path: /lovelace/livingroom/
   image: /local/images/living_room.jpg
   # darken entity row background
   style: |
@@ -185,7 +185,7 @@ cards:
     - input_boolean.night_mode_toggle
   hold_action:
     action: navigate
-    navigation_path: /lovelace/5/
+    navigation_path: /lovelace/bedroom/
   image: /local/images/bedroom.jpg
   # darken entity row background
   style: |
@@ -200,7 +200,7 @@ cards:
     - binary_sensor.motion_sensor_158d000237acbc
   hold_action:
     action: navigate
-    navigation_path: /lovelace/5/
+    navigation_path: /lovelace/kitchen/
   image: /local/images/kitchen.jpg
   # darken entity row background
   style: |
@@ -215,7 +215,7 @@ cards:
     - switch.desk_power_2
   hold_action:
     action: navigate
-    navigation_path: /lovelace/5/
+    navigation_path: /lovelace/office/
   image: /local/images/office.jpg
   # darken entity row background
   style: |

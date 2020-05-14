@@ -1,5 +1,6 @@
 title: Office
 icon: mdi:desk
+path: office
 cards:
 - type: vertical-stack
   cards:

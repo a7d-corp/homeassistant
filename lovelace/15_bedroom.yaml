@@ -1,5 +1,6 @@
 title: Bedroom
 icon: mdi:bed-king
+path: bedroom
 cards:
 - type: vertical-stack
   cards:
