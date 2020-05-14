@@ -1,0 +1,20 @@
+title: Security
+icon: mdi:security
+cards:
+- type: vertical-stack
+  cards:
+    - type: picture-entity
+      title: Front CCTV
+      show_name: false
+      show_state: false
+      entity: camera.exterior_front
+    - type: picture-entity
+      title: Rear CCTV
+      show_name: false
+      show_state: false
+      entity: camera.exterior_rear
+    - type: picture-entity
+      title: Front door
+      show_name: false
+      show_state: false
+      entity: camera.uvc_g3_door

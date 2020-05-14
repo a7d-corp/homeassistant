@@ -1,60 +1,225 @@
-title: Home
+title: Home new
 icon: mdi:home-variant
 cards:
 - type: vertical-stack
+  layout: vertical
   cards:
-    - type: glance
-      title: At a glance
-      entities:
-        - sun.sun
-        - binary_sensor.people_home
-    - type: history-graph
-      title: Occupancy
-      entities:
-        - binary_sensor.people_home
-- type: vertical-stack
-  cards:
-    - type: entities
-      title: Device Trackers
-      show_header_toggle: false
-      entities:
-        - device_tracker.houston_2
-        - device_tracker.galaxy_s10
-        - binary_sensor.people_home
-        - input_select.simon_status
-        - input_select.nikki_status
-- type: vertical-stack
-  cards:
-    - type: entities
-      title: Home Controls
-      show_header_toggle: false
-      entities:
-        - input_boolean.house_lighting_toggle
-        - input_boolean.motion_lighting_toggle
-        - entity: input_boolean.global_away_mode_toggle
-          icon: mdi:account-off
-          name: "Away: all automations"
-        - entity: input_boolean.lighting_away_mode_toggle
-          icon: mdi:lightbulb-outline
-          name: "Away: lighting only"
-        - entity: input_boolean.heating_away_mode_toggle
-          icon: mdi:radiator
-          name: "Away: heating only"
-- type: vertical-stack
-  cards:
-    - type: entities
-      title: Misc Controls
-      show_header_toggle: false
-      entities:
-        - input_boolean.night_mode_toggle
-        - input_boolean.party_mode
-- type: vertical-stack
-  cards:
-    - type: entities
-      title: Morning Alarm
-      show_header_toggle: false
-      entities:
-        - entity: input_boolean.house_option_alarmclock
-          name: Enabled
-        - entity: input_datetime.alarmclock_time
-          name: Time
+    - type: vertical-stack
+      cards:
+        - type: "custom:auto-entities"
+          card:
+            type: entities
+            title: Open Doors
+            style: |
+              ha-card { background-color: #de6674; }
+          filter:
+            include:
+              - entity_id: "sensor.door_front_door"
+                state: "open"
+              - entity_id: "sensor.door_patio_door"
+                state: "open"
+          show_empty: false
+        - type: "custom:auto-entities"
+          card:
+            type: entities
+            title: Open Windows
+            style: |
+              ha-card { background-color: #de6674; }
+          filter:
+            include:
+              - entity_id: "sensor.window_kitchen_left"
+                state: "open"
+              - entity_id: "sensor.window_kitchen_right"
+                state: "open"
+              - entity_id: "sensor.window_living_room"
+                state: "open"
+          show_empty: false
+        - type: custom:auto-entities
+          card:
+            type: entities
+            title: Low Batteries
+            style: |
+              ha-card { background-color: #de6674; }
+          filter:
+            include:
+              - entity_id: "sensor.*_battery"
+                state: "< 25"
+          show_empty: false
+    - type: "custom:weather-card"
+      current: true
+      details: true
+      entity: weather.openweathermap
+      forecast: true
+      tap_action:
+        action: none
+    - type: horizontal-stack
+      cards:
+        - type: "custom:mini-graph-card"
+          color_thresholds:
+            - value: 15
+              color: "#2facfa"
+            - value: 18
+              color: "#ffc72b"
+            - value: 25
+              color: "#c0392b"
+          decimals: 1
+          entities:
+            - entity: sensor.living_room_thermostat_temperature
+          font_size: 80
+          hours_to_show: 24
+          name: Living Room
+          points_per_hour: 0.5
+          show:
+            labels: false
+            labels_secondary: false
+            legend: false
+            points: false
+          style: |
+            div.header { padding-bottom: 0px; }
+            div.info { display: none; }
+        - type: "custom:mini-graph-card"
+          color_thresholds:
+            - value: 15
+              color: "#2facfa"
+            - value: 18
+              color: "#ffc72b"
+            - value: 25
+              color: "#c0392b"
+          decimals: 1
+          entities:
+            - entity: sensor.master_bedroom_thermostat_temperature
+          font_size: 80
+          hours_to_show: 24
+          name: Bedroom
+          points_per_hour: 0.5
+          show:
+            labels: false
+            labels_secondary: false
+            legend: false
+            points: false
+          style: |
+            div.header { padding-bottom: 0px; }
+            div.info { display: none; }
+        - type: "custom:mini-graph-card"
+          decimals: 1
+          entities:
+            - entity: sensor.living_room_thermostat_humidity
+              name: in
+            - entity: sensor.metoffice_humidity
+              name: out
+          font_size: 80
+          hours_to_show: 24
+          name: Humidity
+          points_per_hour: 0.5
+          show:
+            labels: false
+            labels_secondary: false
+            legend: true
+            points: false
+          style: |
+            div.header, div.states { padding-bottom: 0px; }
+            div.info { display: none; overflow: hidden; }
+    - type: horizontal-stack
+      cards:
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: binary_sensor.people_home
+            hold_action:
+              action: none
+            name_template: '{{ "Occupied" if is_state("binary_sensor.people_home", "on") else "Unoccupied" }}'
+            show_state: false
+            tap_action:
+              action: none
+          entities:
+            - binary_sensor.people_home
+        - type: entity-button
+          double_tap_action:
+            action: none
+          entity: input_boolean.house_lighting_toggle
+          hold_action:
+            action: call-service
+            confirmation: Toggle all lights?
+            service: light.turn_off
+            service_data:
+              entity_id: all
+          icon: mdi:lightbulb-multiple
+          name: All Lights
+          tap_action:
+            action: none
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: input_boolean.motion_lighting_toggle
+            hold_action:
+              action: toggle
+              confirmation: Toggle motion sensing?
+            icon: mdi:access-point
+            name_template: '{{ "Sensors enabled" if is_state("input_boolean.motion_lighting_toggle", "on") else "Sensors disabled" }}'
+            tap_action:
+              action: none
+          entities:
+            - input_boolean.motion_lighting_toggle
+- type: picture-glance
+  entities:
+    - binary_sensor.0x00158d0002b7f000_occupancy
+    - entity: group.lounge_hues
+      icon: mdi:lightbulb-multiple
+  hold_action:
+    action: navigate
+    navigation_path: /lovelace/5/
+  image: /local/images/living_room.jpg
+  # darken entity row background
+  style: |
+    div.box {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  title: Living Room
+- type: picture-glance
+  entities:
+    - input_boolean.house_option_alarmclock
+    - input_boolean.night_mode_toggle
+  hold_action:
+    action: navigate
+    navigation_path: /lovelace/5/
+  image: /local/images/bedroom.jpg
+  # darken entity row background
+  style: |
+    div.box {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  title: Bedroom
+- type: picture-glance
+  entities:
+    - entity: group.kitchen_hues
+      icon: mdi:lightbulb-multiple
+    - binary_sensor.motion_sensor_158d000237acbc
+  hold_action:
+    action: navigate
+    navigation_path: /lovelace/5/
+  image: /local/images/kitchen.jpg
+  # darken entity row background
+  style: |
+    div.box {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  title: Kitchen
+- type: picture-glance
+  entities:
+    - light.office_uplighter
+    - light.office_lamp
+    - switch.desk_power_2
+  hold_action:
+    action: navigate
+    navigation_path: /lovelace/5/
+  image: /local/images/office.jpg
+  # darken entity row background
+  style: |
+    div.box {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  title: Office

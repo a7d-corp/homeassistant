@@ -1,0 +1,27 @@
+title: Hall
+icon: mdi:stairs
+cards:
+- type: horizontal-stack
+  cards:
+    - type: entity-button
+      entity: light.gateway_light_7811dcb1f766
+      name: Understairs light
+      tap_action:
+        action: toggle
+    - type: entity-button
+      entity: switch.loft_lighting
+      name: Loft lights
+      tap_action:
+        action: toggle
+- type: "custom:auto-entities"
+  card:
+    type: entities
+    title: Open Doors
+  filter:
+    include:
+      - entity_id: "sensor.door_loft_hatch"
+        state: "open"
+      - entity_id: "binary_sensor.door_window_sensor_158d000346b47f"
+        state: "on"
+  show_empty: false
+
