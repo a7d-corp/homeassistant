@@ -1,5 +1,6 @@
 title: Home new
 icon: mdi:home-variant
+path: home
 cards:
 - type: vertical-stack
   layout: vertical
