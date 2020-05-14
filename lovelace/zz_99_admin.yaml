@@ -21,6 +21,15 @@ cards:
           name: "Away: all automations"
         - switch.flux_adjustment
         - input_boolean.party_mode
+- type: custom:auto-entities
+  show_empty: false
+  card:
+    type: glance
+    title: Lights on
+  filter:
+    include:
+      - domain: light
+        state: "on" # Remember that "on" and "off" are magic in yaml, and must always be quoted
 - type: entities
   title: Zigbee2mqtt
   show_header_toggle: false
