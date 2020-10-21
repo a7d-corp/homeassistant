@@ -18,7 +18,7 @@ jobs:
       - name: 'yamllint'
         uses: ibiqlik/action-yamllint@v1
         with:
-          config_file: .yamllint.yml
+          config_file: ci/yamllint.yml
       - name: 'install python'
         uses: actions/setup-python@v2
         with:
@@ -33,9 +33,8 @@ jobs:
           packages: homeassistant==0.115.6
           pre: true
           upgrade: true
-      - run: mv .circleci/secrets.yaml secrets.yaml
-      - run: mv secrets secrets.old
+      - run: mv ci/secrets.yaml secrets.yaml
       - run: mkdir secrets
-      - run: mv .circleci/google-cloud-tts.json secrets/google-cloud-tts.json
+      - run: mv ci/google-cloud-tts.json secrets/google-cloud-tts.json
       - name: 'check_config'
         run: hass -c . --script check_config --info all
