@@ -15,5 +15,5 @@ jobs:
             mv .circleci/google-cloud-tts.json secrets/google-cloud-tts.json
             python3.7 -m venv .
             source bin/activate
-            pip3 install --pre --upgrade homeassistant==0.110.5
+            pip3 install --pre --upgrade homeassistant==0.111.4
             hass -c . --script check_config --info all
