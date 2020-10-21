@@ -5,7 +5,7 @@
   enable_websocket: true
 - platform: samsungtv
   host: !secret ip_samsung
-- platform: denonavr
-  host: !secret ip_denon
-  name: Denon AVRX2100W
-  show_all_sources: true
+#- platform: denonavr
+#  host: !secret ip_denon
+#  name: Denon AVRX2100W
+#  show_all_sources: true
