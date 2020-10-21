@@ -99,11 +99,11 @@ hue:
       allow_unreachable: true
       allow_hue_groups: false
 
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    - mac: 78:11:dc:b1:f7:66
-      key: !secret aqara_gateway_key
+#xiaomi_aqara:
+#  discovery_retry: 5
+#  gateways:
+#    - mac: 78:11:dc:b1:f7:66
+#      key: !secret aqara_gateway_key
 
 #tplink:
 #  discovery: false
