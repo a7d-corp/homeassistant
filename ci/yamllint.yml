@@ -1,0 +1,16 @@
+extends: default
+
+ignore: |
+  .yamllint.yml
+
+rules:
+  line-length:
+    max: 80
+    level: warning
+  trailing-spaces:
+    level: warning
+  indentation:
+    level: warning
+  empty-lines:
+    level: warning
+  document-start: disable
