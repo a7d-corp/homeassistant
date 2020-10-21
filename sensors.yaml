@@ -1,7 +1,7 @@
-- platform: yr
-  name: Weather
-  monitored_conditions:
-    - symbol
+#- platform: yr
+#  name: Weather
+#  monitored_conditions:
+#    - symbol
 #- platform: command_line
 #  command: curl -s http://10.101.0.47:5000/api/envirophat/weather/temperature
 #  name: Loft temperature
