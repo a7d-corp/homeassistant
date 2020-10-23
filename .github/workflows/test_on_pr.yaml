@@ -13,25 +13,11 @@ jobs:
           fi
       - name: 'checkout'
         uses: actions/checkout@v2
+      - run: mv ci/secrets.yaml secrets.yaml
+      - run: mv ci/google-cloud-tts.json secrets/google-cloud-tts.json
       - name: 'yamllint'
         uses: ibiqlik/action-yamllint@v1
         with:
           config_file: ci/yamllint.yml
-      - name: 'install python'
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8.5'
-      - name: 'update apt'
-        run: sudo apt-get update
-      - name: 'install dependencies'
-        run: sudo apt-get install -y --no-install-recommends gcc build-essential autoconf
-      - name: 'install hass'
-        uses: BSFishy/pip-action@v1
-        with:
-          packages: homeassistant==0.115.6
-          pre: true
-          upgrade: true
-      - run: mv ci/secrets.yaml secrets.yaml
-      - run: mv ci/google-cloud-tts.json secrets/google-cloud-tts.json
-      - name: 'check_config'
-        run: hass -c . --script check_config --info all
+      - name: Run Config Check
+        uses: ludeeus/action-ha-config-check@master
