@@ -22,9 +22,9 @@ jobs:
         with:
           python-version: '3.8.5'
       - name: 'update apt'
-        run: apt-get update
+        run: sudo apt-get update
       - name: 'install dependencies'
-        run: apt-get install -y --no-install-recommends gcc build-essential autoconf
+        run: sudo apt-get install -y --no-install-recommends gcc build-essential autoconf
       - name: 'install hass'
         uses: BSFishy/pip-action@v1
         with:
