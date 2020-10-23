@@ -32,7 +32,6 @@ jobs:
           pre: true
           upgrade: true
       - run: mv ci/secrets.yaml secrets.yaml
-      - run: mkdir secrets
       - run: mv ci/google-cloud-tts.json secrets/google-cloud-tts.json
       - name: 'check_config'
         run: hass -c . --script check_config --info all
