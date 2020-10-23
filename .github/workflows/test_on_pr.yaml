@@ -1,8 +1,6 @@
 name: 'check configuration'
-on:
-  pull_request:
-    branches-ignore:
-      - master
+on: pull_request
+
 jobs:
   plan:
     name: 'test'
