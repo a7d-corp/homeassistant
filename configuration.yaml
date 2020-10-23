@@ -7,6 +7,8 @@ homeassistant:
   temperature_unit: C
   time_zone: Europe/London
   customize: !include customise.yaml
+  external_url: !secret base_url_with_scheme
+  internal_url: !secret base_url_with_scheme
   auth_providers:
     - type: homeassistant
     - type: legacy_api_password
