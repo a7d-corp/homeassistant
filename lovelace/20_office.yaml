@@ -27,6 +27,11 @@ cards:
           tap_action:
             action: toggle
         - type: entity-button
+          entity: light.office_ceiling_lamp
+          name: Ceiling lamp
+          tap_action:
+            action: toggle
+        - type: entity-button
           entity: light.office_uplighter
           name: Uplighter
           tap_action:
