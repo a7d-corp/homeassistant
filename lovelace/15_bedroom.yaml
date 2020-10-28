@@ -37,6 +37,18 @@ cards:
        name: false
       style: |
         div.time-picker-header { border-radius: 15px 15px 0px 0px; }
+#- type: vertical-stack
+#  cards:
+#    - type: button
+#      name: Play rain sounds
+#      tap_action:
+#        action: call-service
+#        service: spotcast.start
+#        service_data:
+#          entity_id: media_player.living_room_speaker
+#          uri: "spotify:track:0tFT1PFYKfjBGDTZlivRfY"
+#          repeat: "track"
+#          account: "nikki"
 - type: vertical-stack
   cards:
     - type: thermostat

@@ -1,8 +1,6 @@
 name: 'check configuration'
-on:
-  pull_request:
-    branches-ignore:
-      - master
+on: pull_request
+
 jobs:
   plan:
     name: 'test'
@@ -15,26 +13,14 @@ jobs:
           fi
       - name: 'checkout'
         uses: actions/checkout@v2
+      - run: mv secrets secrets.old
+      - run: mkdir secrets
+      - run: mv ci/secrets.yaml secrets.yaml
+      - run: mv ci/google-cloud-tts.json secrets/google-cloud-tts.json
       - name: 'yamllint'
         uses: ibiqlik/action-yamllint@v1
         with:
           config_file: ci/yamllint.yml
-      - name: 'install python'
-        uses: actions/setup-python@v2
+      - uses: kpucynski/action-ha-config-check@master
         with:
-          python-version: '3.8.5'
-      - name: 'update apt'
-        run: apt-get update
-      - name: 'install dependencies'
-        run: apt-get install -y --no-install-recommends gcc build-essential autoconf
-      - name: 'install hass'
-        uses: BSFishy/pip-action@v1
-        with:
-          packages: homeassistant==0.115.6
-          pre: true
-          upgrade: true
-      - run: mv ci/secrets.yaml secrets.yaml
-      - run: mkdir secrets
-      - run: mv ci/google-cloud-tts.json secrets/google-cloud-tts.json
-      - name: 'check_config'
-        run: hass -c . --script check_config --info all
+          ha_version: "0.115.6"

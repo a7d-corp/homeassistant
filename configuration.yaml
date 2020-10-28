@@ -7,6 +7,8 @@ homeassistant:
   temperature_unit: C
   time_zone: Europe/London
   customize: !include customise.yaml
+  external_url: !secret base_url_with_scheme
+  internal_url: !secret base_url_with_scheme
   auth_providers:
     - type: homeassistant
     - type: legacy_api_password
@@ -166,6 +168,17 @@ weather:
     api_key: !secret metoffice_key
   - platform: openweathermap
     api_key: !secret openweathermap_api_key
+
+#spotcast:
+#  sp_dc: !secret spotcast_dc_simon
+#  sp_key: !secret spotcast_key_simon
+#  accounts:
+#    simon:
+#      sp_dc: !secret spotcast_dc_simon
+#      sp_key: !secret spotcast_key_simon
+#    nikki:
+#      sp_dc: !secret spotcast_dc_nikki
+#      sp_key: !secret spotcast_key_nikki
 
 input_boolean: !include inputs/boolean.yaml
 input_number: !include inputs/numbers.yaml

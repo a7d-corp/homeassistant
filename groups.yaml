@@ -128,6 +128,7 @@ office_lights:
   entities:
     - light.office_lamp
     - light.office_uplighter
+    - light.office_ceiling_lamp
 
 lighting_tools:
   name: Lighting Control
