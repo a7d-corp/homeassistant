@@ -13,6 +13,7 @@ jobs:
           fi
       - name: 'checkout'
         uses: actions/checkout@v2
+      - run: mv secrets secrets.old
       - run: mkdir secrets
       - run: mv ci/secrets.yaml secrets.yaml
       - run: mv ci/google-cloud-tts.json secrets/google-cloud-tts.json
