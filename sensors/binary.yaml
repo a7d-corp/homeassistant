@@ -39,10 +39,6 @@
   name: Galaxy S8 ping
   scan_interval: 15
 - platform: ping
-  host: !secret ip_samsung
-  name: Samsung ping
-  scan_interval: 15
-- platform: ping
   host: !secret ip_phoenix
   name: Phoenix ping
   scan_interval: 15
