@@ -9,3 +9,5 @@
 #  host: !secret ip_denon
 #  name: Denon AVRX2100W
 #  show_all_sources: true
+- platform: philips_js
+  host: !secret ip_philips_tv
