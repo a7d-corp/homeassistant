@@ -3,9 +3,5 @@
   port: 8080
   tcp_port: 9090
   enable_websocket: true
-- platform: samsungtv
-  host: !secret ip_samsung
-#- platform: denonavr
-#  host: !secret ip_denon
-#  name: Denon AVRX2100W
-#  show_all_sources: true
+- platform: philips_js
+  host: !secret ip_philips_tv
