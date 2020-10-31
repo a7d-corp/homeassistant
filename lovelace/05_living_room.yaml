@@ -19,12 +19,9 @@ cards:
       info: scroll
       volume_stateless: true
     - type: media-control
-      entity: media_player.kodi
-    - type: media-control
       entity: media_player.living_room_chromecast
     - type: media-control
-      entity: media_player.denon_avrx2100w
-#media_player.samsung_tv_remote
+      entity: media_player.denon_avr_x2100w
 - type: vertical-stack
   cards:
     - type: "custom:card-templater"
@@ -45,7 +42,7 @@ cards:
     - type: horizontal-stack
       cards:
         - type: entity-button
-          entity: light.standard_lamp_left 
+          entity: light.standard_lamp_left
           name: Left uplighter
           tap_action:
             action: toggle

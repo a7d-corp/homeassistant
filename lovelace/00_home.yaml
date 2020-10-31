@@ -106,7 +106,7 @@ cards:
           entities:
             - entity: sensor.living_room_thermostat_humidity
               name: in
-            - entity: sensor.metoffice_humidity
+            - entity: sensor.openweathermap_humidity
               name: out
           font_size: 80
           hours_to_show: 24
