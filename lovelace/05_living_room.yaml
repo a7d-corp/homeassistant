@@ -44,7 +44,7 @@ cards:
     - type: horizontal-stack
       cards:
         - type: entity-button
-          entity: light.standard_lamp_left 
+          entity: light.standard_lamp_left
           name: Left uplighter
           tap_action:
             action: toggle
