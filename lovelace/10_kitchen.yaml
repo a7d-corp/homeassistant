@@ -43,6 +43,10 @@ cards:
             action: toggle
 - type: vertical-stack
   cards:
+    - type: thermostat
+      entity: climate.living_room
+- type: vertical-stack
+  cards:
     - type: "custom:mini-graph-card"
       aggregate_func: max
       entities:
