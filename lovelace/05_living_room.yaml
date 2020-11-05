@@ -106,10 +106,6 @@ cards:
   cards:
     - type: thermostat
       entity: climate.living_room
-    - type: entities
-      show_header_toggle: false
-      entities:
-        - climate.living_room
     - type: "custom:mini-graph-card"
       color_thresholds:
         - value: 15
