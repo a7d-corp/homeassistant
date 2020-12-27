@@ -33,7 +33,6 @@ house_lighting_toggle:
 # Switch to Enable Alarm Clock
 house_option_alarmclock:
   name: Alarm Clock
-  initial: off
   icon: mdi:alarm
 # Used by Automation to enable Snooze
 house_alarmclock_snooze:
