@@ -36,6 +36,40 @@ cards:
           name: Uplighter
           tap_action:
             action: toggle
+    - type: horizontal-stack
+      cards:
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: switch.0x086bd7fffe19c5dd_switch
+            hold_action:
+              action: none
+            icon: "mdi:power"
+            name_template: '{{ "Turn PC power off" if is_state("switch.0x086bd7fffe19c5dd_switch", "on") else "Turn PC power on" }}'
+            show_icon: false
+            show_state: false
+            tap_action:
+              action: toggle
+          entities:
+            - switch.0x086bd7fffe19c5dd_switch
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: switch.0x086bd7fffe19c5dd_switch
+            hold_action:
+              action: none
+            icon: "mdi:power"
+            name_template: '{{ "Shut PC down" if is_state("switch.0x086bd7fffe19c5dd_switch", "on") else "Shut PC down" }}'
+            show_icon: false
+            show_state: false
+            tap_action:
+              action: toggle
+          entities:
+            - switch.0x086bd7fffe19c5dd_switch
 - type: "custom:mini-graph-card"
   decimals: 1
   entities:

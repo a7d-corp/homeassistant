@@ -51,12 +51,11 @@ cards:
 #          account: "nikki"
 - type: vertical-stack
   cards:
-    - type: thermostat
-      entity: climate.master_bedroom 
-    - type: entities
-      show_header_toggle: false
-      entities:
-        - climate.master_bedroom
+    - type: custom:simple-thermostat
+      entity: climate.master_bedroom
+      hide_header: true
+      control:
+        - hvac
 - type: vertical-stack
   cards:
     - type: "custom:mini-graph-card"
@@ -69,7 +68,7 @@ cards:
           color: "#c0392b"
       decimals: 1
       entities:
-        - entity: sensor.living_room_thermostat_temperature
+        - entity: sensor.master_bedroom_thermostat_temperature
           name: bedroom
         - entity: sensor.0x00158d0001fa5c1b_temperature
           name: ensuite

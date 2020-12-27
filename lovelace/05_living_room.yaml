@@ -19,6 +19,8 @@ cards:
       info: scroll
       volume_stateless: true
     - type: media-control
+      entity: media_player.philips_65oled805
+    - type: media-control
       entity: media_player.living_room_chromecast
     - type: media-control
       entity: media_player.denon_avr_x2100w
@@ -102,10 +104,29 @@ cards:
               action: toggle
           entities:
             - input_boolean.kodi_amp_trigger
+    - type: "custom:card-templater"
+      card:
+        type: entity-button
+        double_tap_action:
+          action: none
+        entity: switch.0x000d6ffffe2a5801
+        hold_action:
+          action: none
+        icon_template: >
+          {{ "mdi:pine-tree-box" if is_state("switch.0x000d6ffffe2a5801", "on") else "mdi:pine-tree" }}
+        name_template: >
+          {{ "Turn \ud83c\udf84 christmas tree off" if is_state("switch.0x000d6ffffe2a5801", "on") else "Turn \ud83c\udf84 christmas tree on" }}
+        tap_action:
+          action: toggle
+      entities:
+        - switch.0x000d6ffffe2a5801
 - type: vertical-stack
   cards:
-    - type: thermostat
+    - type: custom:simple-thermostat
       entity: climate.living_room
+      hide_header: true
+      control:
+        - hvac
     - type: "custom:mini-graph-card"
       color_thresholds:
         - value: 15

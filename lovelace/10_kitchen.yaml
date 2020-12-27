@@ -41,10 +41,30 @@ cards:
           name: Floor lighting
           tap_action:
             action: toggle
+    - type: "custom:card-templater"
+      card:
+        type: entity-button
+        double_tap_action:
+          action: none
+        entity: switch.0x000b3cfffef7c52a_switch
+        hold_action:
+          action: none
+        icon_template: >
+          {{ "mdi:string-lights" if is_state("switch.0x000b3cfffef7c52a_switch", "on") else "mdi:string-lights-off" }}
+        name_template: '{{ "Turn christmas lights off" if is_state("switch.0x000b3cfffef7c52a_switch", "on") else "Turn christmas lights on" }}'
+        show_icon: false
+        show_state: false
+        tap_action:
+          action: toggle
+      entities:
+        - switch.0x000b3cfffef7c52a_switch
 - type: vertical-stack
   cards:
-    - type: thermostat
+    - type: custom:simple-thermostat
       entity: climate.living_room
+      hide_header: true
+      control:
+        - hvac
 - type: vertical-stack
   cards:
     - type: "custom:mini-graph-card"
