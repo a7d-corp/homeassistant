@@ -120,8 +120,11 @@ cards:
         - switch.0x000d6ffffe2a5801
 - type: vertical-stack
   cards:
-    - type: thermostat
+    - type: custom:simple-thermostat
       entity: climate.living_room
+      hide_header: true
+      control:
+        - hvac
     - type: "custom:mini-graph-card"
       color_thresholds:
         - value: 15
