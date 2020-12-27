@@ -49,3 +49,7 @@ house_alarmclock_active:
 #  name: Alarm Radio
 #  initial: on
 #  icon: mdi:radio
+
+kitchen_motion_detected:
+  name: "Kitchen motion (detected)"
+  icon: "mdi:motion-sensor"
