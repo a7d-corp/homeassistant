@@ -21,6 +21,14 @@ google_calendars.yaml
 .config_entries.json
 .storage
 *.swp
-custom_components
+
+# ignore custom_components dir
+custom_components/*
+# include these custom components
+!custom_components/philips_android_tv
+
+# ignore pycache dirs
+**/__pycache__
+
 themes/
 secrets.yaml
