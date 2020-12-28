@@ -33,7 +33,6 @@ house_lighting_toggle:
 # Switch to Enable Alarm Clock
 house_option_alarmclock:
   name: Alarm Clock
-  initial: off
   icon: mdi:alarm
 # Used by Automation to enable Snooze
 house_alarmclock_snooze:
@@ -50,3 +49,7 @@ house_alarmclock_active:
 #  name: Alarm Radio
 #  initial: on
 #  icon: mdi:radio
+
+kitchen_motion_detected:
+  name: "Kitchen motion (detected)"
+  icon: "mdi:motion-sensor"
