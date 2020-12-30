@@ -13,14 +13,14 @@ jobs:
           fi
       - name: 'checkout'
         uses: actions/checkout@v2
-      - run: mv secrets secrets.old
+      - run: mv secrets secrets.old || true
       - run: mkdir secrets
-      - run: mv ci/secrets.yaml secrets.yaml
-      - run: mv ci/google-cloud-tts.json secrets/google-cloud-tts.json
+      - run: cp -v ci/secrets.yaml secrets.yaml
+      - run: cp -v ci/google-cloud-tts.json secrets/google-cloud-tts.json
       - name: 'yamllint'
         uses: ibiqlik/action-yamllint@v1
         with:
           config_file: ci/yamllint.yml
-      - uses: kpucynski/action-ha-config-check@master
+      - uses: glitchcrab/action-hass-check-config@v0.0.1
         with:
-          ha_version: "0.115.6"
+          version: "0.115.6"
