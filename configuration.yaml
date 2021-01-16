@@ -160,12 +160,6 @@ telegram_bot:
 #      site: !secret unifi_site
 #      detection_time: 600
 
-weather:
-  - platform: metoffice
-    api_key: !secret metoffice_key
-  - platform: openweathermap
-    api_key: !secret openweathermap_api_key
-
 #spotcast:
 #  sp_dc: !secret spotcast_dc_simon
 #  sp_key: !secret spotcast_key_simon
