@@ -1,21 +1,3 @@
-#- platform: yr
-#  name: Weather
-#  monitored_conditions:
-#    - symbol
-#- platform: command_line
-#  command: curl -s http://10.101.0.47:5000/api/envirophat/weather/temperature
-#  name: Loft temperature
-#  unit_of_measurement: "C"
-#- platform: command_line
-#  command: curl -s http://10.101.0.47:5000/api/envirophat/light/light
-#  name: Loft light status
-#- platform: rest
-#  resource: http://10.101.0.47:5000/api/envirophat/weather/temperature
-#  name: Loft temperature
-#  unit_of_measurement: "C"
-#- platform: rest
-#  resource: http://10.101.0.47:5000/api/envirophat/light/light
-#  name: Loft light status
 - platform: metoffice
   name: metoffice
   api_key: !secret metoffice_key
@@ -44,10 +26,6 @@
       value_template: '{{ states.input_select.nikki_status.state }}'
       friendly_name: 'Nikki'
       entity_id: input_select.nikki_status
-- platform: template
-  sensors:
-    aqara_last_change:
-      value_template: "{% if as_timestamp(states.sensor.date__time.last_updated) - as_timestamp(states.sensor.illumination_7811dcb1f766.last_updated) > 5*60 %}true{% endif %}"
 - platform: template
   sensors:
     door_loft_hatch:
