@@ -98,17 +98,6 @@ hue:
       allow_unreachable: true
       allow_hue_groups: false
 
-#xiaomi_aqara:
-#  discovery_retry: 5
-#  gateways:
-#    - mac: 78:11:dc:b1:f7:66
-#      key: !secret aqara_gateway_key
-
-#tplink:
-#  discovery: false
-#  switch:
-#    - host: !secret ip_desk_switch
-
 google_assistant:
   project_id: !secret google_assistant_project_id
   # api_key: !secret google_assistant_api_key
@@ -153,12 +142,6 @@ telegram_bot:
     api_key: !secret telegram_api_key
     allowed_chat_ids:
       - !secret telegram_chat_id
-
-#uniifi:
-#  controllers:
-#    - host: !secret unifi_host
-#      site: !secret unifi_site
-#      detection_time: 600
 
 #spotcast:
 #  sp_dc: !secret spotcast_dc_simon
