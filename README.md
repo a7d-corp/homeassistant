@@ -25,6 +25,6 @@ Config checking is performed on each PR using this action: [home-assistant confi
 
 ### Meta
 
-![check configuration](https://github.com/glitchcrab/homeassistant/workflows/test%20on%20merge/badge.svg)
+![check configuration](https://github.com/glitchcrab/homeassistant/workflows/check%20on%20merge/badge.svg)
 
 [![GitHub issues](https://img.shields.io/github/issues/glitchcrab/homeassistant?style=for-the-badge&logo=appveyor)](https://github.com/glitchcrab/homeassistant/issues)
