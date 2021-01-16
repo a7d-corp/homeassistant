@@ -23,4 +23,4 @@ jobs:
           config_file: ci/yamllint.yml
       - uses: glitchcrab/action-hass-check-config@v0.0.1
         with:
-          version: "0.117.6"
+          version: "0.118.5"
