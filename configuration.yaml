@@ -18,7 +18,6 @@ lovelace:
   mode: yaml
 
 http:
-  base_url: !secret base_url
   use_x_forwarded_for: true
   trusted_proxies:
     - 10.101.0.30
@@ -42,7 +41,6 @@ mobile_app:
 
 recorder:
   # Delete events and states older than 2 weeks
-  purge_interval: 2
   purge_keep_days: 7
   exclude:
     domains:
