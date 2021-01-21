@@ -23,16 +23,19 @@ cards:
       cards:
         - type: entity-button
           entity: light.office_lamp
+          icon: mdi:desk-lamp
           name: Lamp
           tap_action:
             action: toggle
         - type: entity-button
           entity: light.office_ceiling_lamp
+          icon: mdi:ceiling-light
           name: Ceiling lamp
           tap_action:
             action: toggle
         - type: entity-button
           entity: light.office_standard_lamp
+          icon: mdi:floor-lamp-torchiere
           name: Uplighter
           tap_action:
             action: toggle
