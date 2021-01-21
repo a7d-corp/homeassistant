@@ -53,6 +53,11 @@ cards:
           name: Right uplighter
           tap_action:
             action: toggle
+        - type: entity-button
+          entity: light.garden_room_standard_lamp
+          name: Gardon room uplighter
+          tap_action:
+            action: toggle
     - type: horizontal-stack
       cards:
         - type: entity-button
