@@ -127,7 +127,7 @@ office_lights:
   icon: mdi:desk
   entities:
     - light.office_lamp
-    - light.office_uplighter
+    - light.office_standard_lamp
     - light.office_ceiling_lamp
 
 lighting_tools:
