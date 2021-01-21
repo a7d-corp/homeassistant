@@ -32,7 +32,7 @@ cards:
           tap_action:
             action: toggle
         - type: entity-button
-          entity: light.office_uplighter
+          entity: light.office_standard_lamp
           name: Uplighter
           tap_action:
             action: toggle

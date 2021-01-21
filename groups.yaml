@@ -127,7 +127,7 @@ office_lights:
   icon: mdi:desk
   entities:
     - light.office_lamp
-    - light.office_uplighter
+    - light.office_standard_lamp
     - light.office_ceiling_lamp
 
 lighting_tools:
@@ -194,6 +194,7 @@ lounge_hues:
   entities:
     - light.standard_lamp_left
     - light.standard_lamp_right
+    - light.garden_room_standard_lamp
     - light.sideboard_bloom
     - light.sideboard_bloom_2
 
@@ -202,6 +203,7 @@ living_room_lights:
   entities:
     - light.standard_lamp_left
     - light.standard_lamp_right
+    - light.garden_room_standard_lamp
     - light.sideboard_bloom
     - light.sideboard_bloom_2
 
