@@ -35,7 +35,7 @@ cards:
             action: toggle
         - type: entity-button
           entity: light.office_standard_lamp
-          icon: mdi:floor-lamp-torchiere
+          icon: mdi:floor-lamp
           name: Uplighter
           tap_action:
             action: toggle

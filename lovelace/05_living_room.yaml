@@ -45,19 +45,19 @@ cards:
       cards:
         - type: entity-button
           entity: light.standard_lamp_left
-          icon: mdi:floor-lamp-torchiere-variant
+          icon: mdi:floor-lamp
           name: Left uplighter
           tap_action:
             action: toggle
         - type: entity-button
           entity: light.standard_lamp_right
-          icon: mdi:floor-lamp-torchiere-variant
+          icon: mdi:floor-lamp
           name: Right uplighter
           tap_action:
             action: toggle
         - type: entity-button
           entity: light.garden_room_standard_lamp
-          icon: mdi:floor-lamp-torchiere-variant
+          icon: mdi:floor-lamp
           name: Garden room uplighter
           tap_action:
             action: toggle
