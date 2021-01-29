@@ -100,10 +100,16 @@ hue:
 
 google_assistant:
   project_id: !secret google_assistant_project_id
-  # api_key: !secret google_assistant_api_key
-  expose_by_default: true
-  exposed_domains:
-    - media_player
+  report_state: true
+  expose_by_default: false
+  service_account: !include secrets/google-assistant.json
+  entity_config:
+    # tradfri pc power outlet
+    switch.0x086bd7fffe19c5dd_switch:
+      name: PC power
+    # night mode toggle
+    input_boolean.night_mode_toggle:
+      name: night mode
 
 #prometheus:
 #  namespace: hass

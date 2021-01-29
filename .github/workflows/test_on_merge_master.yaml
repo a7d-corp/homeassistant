@@ -22,6 +22,7 @@ jobs:
       - run: mkdir secrets
       - run: cp -v ci/secrets.yaml secrets.yaml
       - run: cp -v ci/google-cloud-tts.json secrets/google-cloud-tts.json
+      - run: cp -v ci/google-assistant.json secrets/google-assistant.json
       - name: 'yamllint'
         uses: ibiqlik/action-yamllint@v1
         with:
