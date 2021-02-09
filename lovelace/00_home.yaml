@@ -211,9 +211,10 @@ cards:
   title: Kitchen
 - type: picture-glance
   entities:
-    - light.office_uplighter
     - light.office_lamp
-    - switch.desk_power_2
+    - light.office_standard_lamp
+    - light.office_ceiling_lamp
+    - switch.0x000d6ffffe2a5801
   hold_action:
     action: navigate
     navigation_path: /lovelace/office/
