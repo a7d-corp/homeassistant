@@ -6,3 +6,24 @@
 - platform: generic
   name: Europe rain map
   still_image_url: "https://api.sat24.com/animated/EU/rainTMC/1/GMT%20Standard%20Time/544909"
+# re-streamed cameras from Frigate
+- platform: generic
+  name: frigate_rtmp_front
+  still_image_url: http://10.101.0.50:5000/api/front/latest.jpg?h=400&motion=1 
+  stream_source: rtmp://10.101.0.50/live/front
+- platform: generic
+  name: frigate_rtmp_back
+  still_image_url: http://10.101.0.50:5000/api/back/latest.jpg?h=400&motion=1
+  stream_source: rtmp://10.101.0.50/live/back
+- platform: generic
+  name: frigate_rtmp_door
+  still_image_url: http://10.101.0.50:5000/api/door/latest.jpg?h=400&motion=1
+  stream_source: rtmp://10.101.0.50/live/door
+- platform: generic
+  name: frigate_rtmp_kitchen
+  still_image_url: http://10.101.0.50:5000/api/kitchen/latest.jpg?h=400&motion=1
+  stream_source: rtmp://10.101.0.50/live/kitchen
+- platform: generic
+  name: frigate_rtmp_lounge
+  still_image_url: http://10.101.0.50:5000/api/lounge/latest.jpg?h=400&motion=1
+  stream_source: rtmp://10.101.0.50/live/lounge
