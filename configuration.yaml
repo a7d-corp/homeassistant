@@ -107,6 +107,11 @@ google_assistant:
     # tradfri pc power outlet
     switch.0x086bd7fffe19c5dd_switch:
       name: PC power
+    # tradfri desk power outlet
+    switch.0x000d6ffffe2a5801:
+      name: desk
+      aliases: desk power
+      room: office
     # night mode toggle
     input_boolean.night_mode_toggle:
       name: night mode
