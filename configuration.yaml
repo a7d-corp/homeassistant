@@ -14,6 +14,9 @@ homeassistant:
     - type: legacy_api_password
       api_password: !secret http_password
 
+frontend:
+  themes: !include_dir_merge_named themes
+
 lovelace:
   mode: yaml
 
@@ -40,32 +43,12 @@ ffmpeg:
 mobile_app:
 
 recorder:
-  # Delete events and states older than 2 weeks
-  purge_keep_days: 7
-  exclude:
+  purge_keep_days: 2
+  include:
     domains:
-      - automation
-    entities:
-      - sun.sun
-      - sensor.date
-      - sensor.time
-
-frontend:
-  themes: !include_dir_merge_named themes
-
-zone:
-  name: Home
-  latitude: !secret home_lat
-  longitude: !secret home_long
-  radius: 70
-  icon: mdi:home
-
-zone 2:
-  name: Simon (Work)
-  latitude: !secret simon_work_lat
-  longitude: !secret simon_work_long
-  radius: 250
-  icon: mdi:laptop
+      - sensor
+      - switch
+      - media_player
 
 zone 3:
   name: Nikki (Work)
