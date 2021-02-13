@@ -53,3 +53,20 @@ house_alarmclock_active:
 kitchen_motion_detected:
   name: "Kitchen motion (detected)"
   icon: "mdi:motion-sensor"
+
+# frigate state controls
+frigate_front_detect_state:
+  name: "Front camera motion detection"
+  icon: "mdi:motion-sensor"
+frigate_back_detect_state:
+  name: "Back camera motion detection"
+  icon: "mdi:motion-sensor"
+frigate_door_detect_state:
+  name: "Door camera motion detection"
+  icon: "mdi:motion-sensor"
+frigate_kitchen_detect_state:
+  name: "Kitchen camera motion detection"
+  icon: "mdi:motion-sensor"
+frigate_lounge_detect_state:
+  name: "Lounge camera motion detection"
+  icon: "mdi:motion-sensor"
