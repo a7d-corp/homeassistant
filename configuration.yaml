@@ -136,11 +136,6 @@ nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
 
-zoneminder:
-  host: !secret zoneminder_host
-  username: !secret zoneminder_user
-  password: !secret zoneminder_pass
-
 spotify:
   client_id: !secret spotify_id
   client_secret: !secret spotify_secret
