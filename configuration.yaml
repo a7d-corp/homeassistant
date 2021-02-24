@@ -41,6 +41,7 @@ logbook:
 sun:
 ffmpeg:
 mobile_app:
+media_source:
 
 recorder:
   purge_keep_days: 2
