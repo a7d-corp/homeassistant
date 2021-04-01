@@ -1,18 +1,23 @@
+# zigbee2mqtt: rename/remove devices
 zigbee2mqtt_rename:
-  alias: Zigbee2mqtt rename
+  alias: Zigbee2MQTT Rename
   sequence:
     service: mqtt.publish
     data_template:
-      topic: zigbee2mqtt/bridge/config/rename
+      topic: zigbee2mqtt/bridge/request/device/rename
       payload_template: >-
         {
-          "old": "{{ states.input_text.zigbee2mqtt_old_name.state | string }}",
-          "new": "{{ states.input_text.zigbee2mqtt_new_name.state | string }}"
+          "from": "{{ states.input_text.zigbee2mqtt_old_name.state | string }}",
+          "to": "{{ states.input_text.zigbee2mqtt_new_name.state | string }}"
         }
 zigbee2mqtt_remove:
-  alias: Zigbee2mqtt remove
+  alias: Zigbee2MQTT Remove
   sequence:
     service: mqtt.publish
     data_template:
-      topic: zigbee2mqtt/bridge/config/remove
-      payload_template: "{{ states.input_text.zigbee2mqtt_remove.state | string }}"
+      topic: zigbee2mqtt/bridge/request/device/remove
+      payload_template: >-
+        {
+          "id": "{{ states.input_text.zigbee2mqtt_remove.state | string }}",
+          "force": {% if states.input_boolean.zigbee2mqtt_force_remove.state == "off" %}false{% else %}true{% endif %}
+        }
