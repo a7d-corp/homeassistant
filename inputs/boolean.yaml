@@ -70,3 +70,9 @@ frigate_kitchen_detect_state:
 frigate_lounge_detect_state:
   name: "Lounge camera motion detection"
   icon: "mdi:motion-sensor"
+
+# zigbee2mqtt: set force remove flag for devices
+zigbee2mqtt_force_remove:
+  name: Zigbee2MQTT force remove
+  initial: false
+  icon: mdi:alert-remove

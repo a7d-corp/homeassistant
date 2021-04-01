@@ -1,6 +1,9 @@
 zigbee2mqtt_old_name:
   name: Zigbee2mqtt old name
+  #intial: ""
 zigbee2mqtt_new_name:
   name: Zigbee2mqtt new name
+  #intial: ""
 zigbee2mqtt_remove:
   name: Zigbee2mqtt remove
+  #intial: ""

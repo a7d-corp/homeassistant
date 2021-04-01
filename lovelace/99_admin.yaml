@@ -62,6 +62,7 @@ cards:
         - entity: input_select.zigbee2mqtt_log_level
         - type: divider
         - entity: switch.zigbee2mqtt_main_join
+        - entity: input_number.zigbee2mqtt_join_minutes
         - entity: timer.zigbee_permit_join
         - type: divider
         - entity: input_text.zigbee2mqtt_old_name
@@ -69,4 +70,5 @@ cards:
         - entity: script.zigbee2mqtt_rename
         - type: divider
         - entity: input_text.zigbee2mqtt_remove
+        - entity: input_boolean.zigbee2mqtt_force_remove
         - entity: script.zigbee2mqtt_remove

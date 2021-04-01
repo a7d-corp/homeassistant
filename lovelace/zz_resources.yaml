@@ -18,7 +18,5 @@
   type: module
 - url: /local/community/spotify-card/spotify-card.js
   type: module
-- url: /local/community/zigbee2mqtt-networkmap/zigbee2mqtt-networkmap.js
-  type: module
 - url: /local/community/lovelace-card-templater/lovelace-card-templater.js
   type: js
