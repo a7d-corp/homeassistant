@@ -19,6 +19,7 @@ frontend:
 
 lovelace:
   mode: yaml
+  resources: !include lovelace/zz_resources.yaml
 
 http:
   use_x_forwarded_for: true
