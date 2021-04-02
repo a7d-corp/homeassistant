@@ -97,6 +97,10 @@ google_assistant:
       name: desk
       aliases: desk power
       room: office
+    light.0x000d6ffffe07b722:
+      name: office desk lamp
+      aliases: office desk light
+      room: office
     # night mode toggle
     input_boolean.night_mode_toggle:
       name: night mode
