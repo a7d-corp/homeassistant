@@ -211,7 +211,7 @@ cards:
   title: Kitchen
 - type: picture-glance
   entities:
-    - light.office_lamp
+    - light.0x000d6ffffe07b722
     - light.office_standard_lamp
     - light.office_ceiling_lamp
     - switch.0x000d6ffffe2a5801

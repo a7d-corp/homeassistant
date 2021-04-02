@@ -107,6 +107,7 @@ all_home_lights:
   entities:
     - group.lounge_lights
     - group.kitchen_lights
+    - group.office_lights
 
 lounge_lights:
   name: Lounge Lights
@@ -126,7 +127,7 @@ office_lights:
   name: Office Lights
   icon: mdi:desk
   entities:
-    - light.office_lamp
+    - light.0x000d6ffffe07b722
     - light.office_standard_lamp
     - light.office_ceiling_lamp
 
