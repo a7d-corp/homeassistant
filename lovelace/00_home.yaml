@@ -172,7 +172,6 @@ cards:
             - input_boolean.motion_lighting_toggle
 - type: picture-glance
   entities:
-    - binary_sensor.0x00158d0002b7f000_occupancy
     - entity: group.lounge_hues
       icon: mdi:lightbulb-multiple
   hold_action:
