@@ -72,7 +72,7 @@ cards:
     - type: "custom:mini-graph-card"
       aggregate_func: max
       entities:
-        - entity: binary_sensor.motion_sensor_158d000237acbc
+        - entity: input_boolean.kitchen_motion_detected
           name: Kitchen
       hours_to_show: 1
       line_color: "#bd3535"
@@ -91,7 +91,7 @@ cards:
       update_interval: 30
     - type: "custom:mini-graph-card"
       entities:
-        - entity: sensor.illumination_158d000237acbc
+        - entity: sensor.0x00158d0002b7f000_illuminance_lux
           name: Kitchen
       hours_to_show: 12
       line_color: "#fff53d"

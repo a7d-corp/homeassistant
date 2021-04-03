@@ -15,10 +15,12 @@ cards:
               ha-card { background-color: #de6674; }
           filter:
             include:
-              - entity_id: "sensor.door_front_door"
-                state: "open"
-              - entity_id: "sensor.door_patio_door"
-                state: "open"
+              # front door
+              - entity_id: "binary_sensor.0x00158d0001de662f_contact"
+                state: "on"
+              # patio door
+              - entity_id: "binary_sensor.0x00158d0001a3e090_contact"
+                state: "on"
           show_empty: false
         - type: "custom:auto-entities"
           card:
@@ -28,12 +30,15 @@ cards:
               ha-card { background-color: #de6674; }
           filter:
             include:
-              - entity_id: "sensor.window_kitchen_left"
-                state: "open"
-              - entity_id: "sensor.window_kitchen_right"
-                state: "open"
-              - entity_id: "sensor.window_living_room"
-                state: "open"
+              # kitchen window left
+              - entity_id: "binary_sensor.0x00158d0001e4820c_contact"
+                state: "on"
+              # kitchen window right
+              - entity_id: "binary_sensor.0x00158d0001a1f6b9_contact"
+                state: "on"
+              # living room window
+              - entity_id: "binary_sensor.0x00158d0001b70752_contact"
+                state: "on"
           show_empty: false
         - type: custom:auto-entities
           card:
@@ -167,7 +172,6 @@ cards:
             - input_boolean.motion_lighting_toggle
 - type: picture-glance
   entities:
-    - binary_sensor.0x00158d0002b7f000_occupancy
     - entity: group.lounge_hues
       icon: mdi:lightbulb-multiple
   hold_action:
@@ -198,7 +202,8 @@ cards:
   entities:
     - entity: group.kitchen_hues
       icon: mdi:lightbulb-multiple
-    - binary_sensor.motion_sensor_158d000237acbc
+    - entity: input_boolean.kitchen_motion_detected
+      icon: mdi:walk
   hold_action:
     action: navigate
     navigation_path: /lovelace/kitchen/
