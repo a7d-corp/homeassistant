@@ -202,7 +202,8 @@ cards:
   entities:
     - entity: group.kitchen_hues
       icon: mdi:lightbulb-multiple
-    - binary_sensor.motion_sensor_158d000237acbc
+    - entity: input_boolean.kitchen_motion_detected
+      icon: mdi:walk
   hold_action:
     action: navigate
     navigation_path: /lovelace/kitchen/
