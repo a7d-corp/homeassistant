@@ -22,7 +22,7 @@ cards:
     - type: horizontal-stack
       cards:
         - type: entity-button
-          entity: light.office_lamp
+          entity: light.0x000d6ffffe07b722
           icon: mdi:desk-lamp
           name: Lamp
           tap_action:

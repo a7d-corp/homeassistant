@@ -5,7 +5,8 @@ cards:
 - type: horizontal-stack
   cards:
     - type: entity-button
-      entity: light.gateway_light_7811dcb1f766
+      entity: switch.0x804b50fffea7f978
+      icon: "mdi:ceiling-light"
       name: Understairs light
       tap_action:
         action: toggle
