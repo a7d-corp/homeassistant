@@ -101,6 +101,10 @@ google_assistant:
       name: office desk lamp
       aliases: office desk light
       room: office
+    switch.0x804b50fffea7f978:
+      name: understairs cupboard
+      aliases: understairs cupboard light
+      room: "Understairs cupboard"
     # night mode toggle
     input_boolean.night_mode_toggle:
       name: night mode
