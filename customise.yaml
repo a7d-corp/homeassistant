@@ -28,12 +28,6 @@ switch.flux_adjustment:
   aliases:
     - living room redshift
     - living room flux
-switch.loft_lighting:
-  # sonoff switch
-  icon: mdi:lightbulb
-  google_assistant: true
-  google_assistant_name: loft lights
-  google_assistant_type: light
 
 input_boolean.lounge_media_dim_enable:
   google_assistant: true
