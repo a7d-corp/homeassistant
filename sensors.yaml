@@ -13,20 +13,6 @@
       entity_id: input_select.nikki_status
 - platform: template
   sensors:
-    door_loft_hatch:
-      friendly_name: 'Loft hatch'
-      value_template: >-
-        {% if is_state('binary_sensor.door_window_sensor_158d0001bf6277', 'on') %}
-          open
-        {% else %}
-          closed
-        {% endif %}
-      icon_template: >
-        {% if is_state('binary_sensor.door_window_sensor_158d0001bf6277', 'on') %}
-          mdi:door-open
-        {% else %}
-          mdi:door-closed
-        {% endif %}
     door_front_door:
       friendly_name: 'Front door'
       value_template: >-
@@ -133,12 +119,6 @@
       value_template: '{{ states.binary_sensor.door_window_sensor_158d0001b70752.attributes.battery_level }}'
       unit_of_measurement: '%'
       entity_id: binary_sensor.door_window_sensor_158d0001b70752
-      device_class: battery
-    loft_hatch_sensor_battery:
-      friendly_name: 'Loft hatch sensor battery'
-      value_template: '{{ states.binary_sensor.door_window_sensor_158d0001bf6277.attributes.battery_level }}'
-      unit_of_measurement: '%'
-      entity_id: binary_sensor.door_window_sensor_158d0001bf6277
       device_class: battery
     kitchen_window_right_sensor_battery:
       friendly_name: 'Kitchen window (right) sensor battery'
