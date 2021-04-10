@@ -13,14 +13,6 @@
   disable_brightness_adjust: True
   mode: xy
 - platform: mqtt
-  name: "Loft Lighting"
-  state_topic: "home/sonoff/loft/1/stat"
-  command_topic: "home/sonoff/loft/1"
-  qos: 0
-  payload_on: "on"
-  payload_off: "off"
-  retain: true
-- platform: mqtt
   name: "Zigbee2mqtt main join"
   state_topic: "zigbee2mqtt/bridge/info"
   value_template: '{{ value_json.permit_join | lower }}'
