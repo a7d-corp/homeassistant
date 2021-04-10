@@ -10,8 +10,23 @@ cards:
       name: Understairs light
       tap_action:
         action: toggle
+    - type: "custom:card-templater"
+      card:
+        type: entity-button
+        double_tap_action:
+          action: none
+        entity: binary_sensor.0x00158d0001bf6277_contact
+        hold_action:
+          action: none
+        name_template: '{{ "Loft open" if is_state("binary_sensor.0x00158d0001bf6277_contact", "on") else "Loft closed" }}'
+        show_icon: false
+        show_state: false
+        tap_action:
+          action: none
+      entities:
+        - binary_sensor.0x00158d0001bf6277_contact
     - type: entity-button
-      entity: switch.loft_lighting
+      entity: switch.0x804b50fffeab6eea
       name: Loft lights
       tap_action:
         action: toggle
@@ -21,9 +36,9 @@ cards:
     title: Open Doors
   filter:
     include:
-      - entity_id: "sensor.door_loft_hatch"
+      - entity_id: "binary_sensor.0x00158d0001bf6277_contact" # loft hatch
         state: "open"
-      - entity_id: "binary_sensor.door_window_sensor_158d000346b47f"
+      - entity_id: "binary_sensor.0x00158d000232ab79_contact" # understairs cupboard
         state: "on"
   show_empty: false
 
