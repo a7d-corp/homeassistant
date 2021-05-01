@@ -35,19 +35,18 @@ jobs:
         with:
           version: "2021.3.4"
         continue-on-error: true
-      - uses: actions/github-script@0.9.0
+      - uses: actions/github-script@v4.0.2
         if: github.event_name == 'pull_request'
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const output = `yamllint: ${{ steps.lint.outcome }}
+            const commentContent = `yamllint: ${{ steps.lint.outcome }}
             config check: ${{ steps.check.outcome }}`;
 
-            github.issues.createComment({
+            await github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: output
+              body: commentContent
             })
       - name: 'fail if lint or check fails'
         if: steps.lint.outcome == 'failure' || steps.check.outcome == 'failure'
