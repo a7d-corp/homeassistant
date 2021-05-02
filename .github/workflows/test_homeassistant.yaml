@@ -31,7 +31,7 @@ jobs:
         continue-on-error: true
       - name: 'check config'
         id: check
-        uses: glitchcrab/action-hass-check-config@v0.2.0
+        uses: glitchcrab/action-hass-check-config@v0.2.1
         with:
           version: "2021.3.4"
         continue-on-error: true
@@ -75,6 +75,6 @@ jobs:
           config_file: ci/yamllint.yml
       - name: 'check config'
         id: check
-        uses: glitchcrab/action-hass-check-config@v0.2.0
+        uses: glitchcrab/action-hass-check-config@v0.2.1
         with:
           version: "2021.3.4"
