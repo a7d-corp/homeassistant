@@ -82,7 +82,7 @@ door_sensors:
   entities:
     - sensor.door_front_door
     - sensor.door_patio_door
-    - sensor.door_loft_hatch
+    - binary_sensor.0x00158d0001bf6277_contact
     - sensor.window_living_room
     - sensor.window_kitchen_left
     - sensor.window_kitchen_right
@@ -141,9 +141,8 @@ loft_lighting:
   name: Loft Lighting
   icon: mdi:lightbulb-outline
   entities:
-    - switch.loft_lighting
-    - sensor.loft_light_status
-    - sensor.door_loft_hatch
+    - switch.0x804b50fffeab6eea
+    - binary_sensor.0x00158d0001bf6277_contact
 
 understairs_lighting:
   name: Understairs Cupboard
@@ -188,7 +187,7 @@ automation_all_lights:
   entities:
     - group.lounge_lights
     - group.kitchen_lights
-    - switch.loft_lighting
+    - switch.0x804b50fffeab6eea
 
 lounge_hues:
   name: Lounge Hues
