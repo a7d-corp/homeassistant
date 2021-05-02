@@ -29,11 +29,13 @@ jobs:
         with:
           config_file: ci/yamllint.yml
         continue-on-error: true
+      - name: 'Load .env file'
+        uses: xom9ikk/dotenv@v1.0.2
       - name: 'check config'
         id: check
         uses: glitchcrab/action-hass-check-config@v0.2.1
         with:
-          version: "2021.3.4"
+          version: "${{ env.HASS_VERSION}}"
         continue-on-error: true
       - uses: actions/github-script@v4.0.2
         if: github.event_name == 'pull_request'
@@ -73,8 +75,10 @@ jobs:
         uses: ibiqlik/action-yamllint@v3.0.1
         with:
           config_file: ci/yamllint.yml
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v1.0.2
       - name: 'check config'
         id: check
         uses: glitchcrab/action-hass-check-config@v0.2.1
         with:
-          version: "2021.3.4"
+          version: "${{ env.HASS_VERSION }}"
