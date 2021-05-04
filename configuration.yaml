@@ -163,6 +163,7 @@ media_player: !include media_players.yaml
 light: !include lights.yaml
 device_tracker: !include device_trackers.yaml
 camera: !include cameras.yaml
+calendar: !include calendars.yaml
 sensor: !include sensors.yaml
 binary_sensor: !include sensors/binary.yaml
 switch: !include switches.yaml

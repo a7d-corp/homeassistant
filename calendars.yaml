@@ -1,0 +1,9 @@
+- platform: todoist
+  token: !secret todoist_api_token
+  custom_projects:
+    - name: 'Next three days'
+      due_date_days: 3
+      labels:
+        - housework
+      include_projects:
+        - Home
