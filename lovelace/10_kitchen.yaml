@@ -38,7 +38,7 @@ cards:
           tap_action:
             action: toggle
         - type: entity-button
-          entity: light.kicking_strip_lights
+          entity: light.hue_lightstrip_plus_1
           icon: mdi:led-strip-variant
           name: Floor lighting
           tap_action:
