@@ -120,7 +120,7 @@ kitchen_lights:
   icon: mdi:lightbulb-outline
   entities:
     - light.kitchen_cabinets
-    - light.kicking_strip_lights
+    - light.hue_lightstrip_plus_1
 
 # office lights
 office_lights:
