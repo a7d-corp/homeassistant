@@ -1,0 +1,51 @@
+name: 'check configuration'
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+  workflow_dispatch:
+jobs:
+  pullrequest:
+    name: 'check PRs'
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: 'workaround for nektos/act'
+        run: |
+          if [ ! -f "/etc/lsb-release" ] ; then
+            echo "DISTRIB_RELEASE=18.04" > /etc/lsb-release
+          fi
+      - name: 'checkout'
+        uses: actions/checkout@v2
+      - run: mv secrets secrets.old || true
+      - run: mkdir secrets
+      - run: cp -v ci/secrets.yaml secrets.yaml
+      - run: cp -v ci/google-cloud-tts.json secrets/google-cloud-tts.json
+      - run: cp -v ci/google-assistant.json secrets/google-assistant.json
+      - name: 'yamllint'
+        id: lint
+        uses: ibiqlik/action-yamllint@v3.0.1
+        with:
+          config_file: ci/yamllint.yml
+        continue-on-error: true
+      - name: 'check homeassistant config'
+        id: check
+        uses: frenck/action-home-assistant@v1
+        continue-on-error: true
+      - uses: actions/github-script@v4.0.2
+        if: github.event_name == 'pull_request'
+        with:
+          script: |
+            const commentContent = `yamllint: ${{ steps.lint.outcome }}
+            config check: ${{ steps.check.outcome }}`;
+
+            await github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentContent
+            })
+      - name: 'fail if lint or check fails'
+        if: steps.lint.outcome == 'failure' || steps.check.outcome == 'failure'
+        run: exit 1

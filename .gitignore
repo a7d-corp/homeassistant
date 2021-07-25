@@ -1,7 +1,6 @@
 deps
 tts
 .uuid
-.HA_VERSION
 *.log
 *.db
 *.db-*
