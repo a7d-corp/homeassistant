@@ -1,15 +1,11 @@
 name: 'check configuration'
 on:
-  push:
-    branches:
-      - 'master'
-  pull_request:
+  pull_request_target:
   workflow_dispatch:
 jobs:
   pullrequest:
     name: 'check PRs'
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     steps:
       - name: 'workaround for nektos/act'
         run: |
