@@ -29,7 +29,7 @@ jobs:
         id: check
         uses: frenck/action-home-assistant@v1
         continue-on-error: true
-      - uses: actions/github-script@v4.0.2
+      - uses: actions/github-script@v4.1
         if: github.event_name == 'pull_request_target'
         with:
           script: |
