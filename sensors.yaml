@@ -173,3 +173,11 @@
   state_topic: "zigbee2mqtt/bridge/config"
   value_template: "{{ value_json.coordinator }}"
   icon: mdi:chip
+# average kitchen illuminance
+- platform: min_max
+  entity_ids:
+    - sensor.0x00158d000237acbc_illuminance_lux
+    - sensor.0x00158d0002b7f000_illuminance_lux
+  type: mean
+  name: 'Kitchen brightness'
+  round_digits: 1
