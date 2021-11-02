@@ -22,6 +22,24 @@ cards:
           name: "Away: all automations"
         - switch.flux_adjustment
         - input_boolean.party_mode
+    - type: entities
+      title: Occupancy
+      show_header_toggle: false
+      entities:
+        - entity: binary_sensor.people_home
+          name: binary_sensor.people_home
+        - entity: person.simon
+          name: person.simon
+        - entity: input_select.simon_status
+          name: input_select.simon_status
+        - entity: device_tracker.houston_2
+          name: device_tracker.houston_2
+        - entity: person.nikki
+          name: person.nikki
+        - entity: input_select.nikki_status
+          name: input_select.nikki_status
+        - entity: device_tracker.galaxy_s10
+          name: device_tracker.galaxy_s10
 - type: vertical-stack
   cards:
     - type: custom:auto-entities
