@@ -33,9 +33,6 @@ jobs:
         if: github.event_name == 'pull_request_target'
         with:
           script: |
-            const commentContent = `yamllint: ${{ steps.lint.outcome }}
-            config check: ${{ steps.check.outcome }}`;
-
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
