@@ -36,7 +36,7 @@ jobs:
             const commentContent = `yamllint: ${{ steps.lint.outcome }}
             config check: ${{ steps.check.outcome }}`;
 
-            await github.issues.createComment({
+            await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
