@@ -6,6 +6,8 @@
   type: module
 - url: /local/community/weather-card/weather-card.js
   type: module
+- url: /hacsfiles/light-popup-card/light-popup-card.js
+  type: module
 - url: /local/community/lovelace-card-mod/card-mod.js
   type: module
 - url: /local/community/lovelace-layout-card/layout-card.js
