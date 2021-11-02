@@ -142,6 +142,9 @@ telegram_bot:
     allowed_chat_ids:
       - !secret telegram_chat_id
 
+# enable thomasloven/hass-browser_mod
+browser_mod:
+
 #spotcast:
 #  sp_dc: !secret spotcast_dc_simon
 #  sp_key: !secret spotcast_key_simon
