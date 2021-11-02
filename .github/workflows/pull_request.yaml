@@ -29,19 +29,13 @@ jobs:
         id: check
         uses: frenck/action-home-assistant@v1
         continue-on-error: true
-      - uses: actions/github-script@v5
+      - name: 'comment on PR'
         if: github.event_name == 'pull_request_target'
+        uses: unsplash/comment-on-pr@v1.3.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          script: |
-            const commentContent = `yamllint: ${{ steps.lint.outcome }}
-            config check: ${{ steps.check.outcome }}`;
-
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: commentContent
-            })
+          msg: "yamllint: ${{ steps.lint.outcome }} config check: ${{ steps.check.outcome }}"
       - name: 'fail if lint or check fails'
         if: steps.lint.outcome == 'failure' || steps.check.outcome == 'failure'
         run: exit 1
