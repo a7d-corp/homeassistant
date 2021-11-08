@@ -181,3 +181,6 @@
   type: mean
   name: 'Kitchen brightness'
   round_digits: 1
+
+# enable octopus agile
+- platform: "octopusagile"

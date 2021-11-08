@@ -145,6 +145,13 @@ telegram_bot:
 # enable thomasloven/hass-browser_mod
 browser_mod:
 
+octopusagile:
+  region_code: "J"
+  mpan: 2000056101249
+  serial: 19L3668546
+  auth: sk_live_dGdfiDmDwfxtLLHotSh123Et
+  startdate: "2021-02-18"
+
 #spotcast:
 #  sp_dc: !secret spotcast_dc_simon
 #  sp_key: !secret spotcast_key_simon
