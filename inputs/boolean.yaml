@@ -1,12 +1,6 @@
 holiday_mode:
   initial: off
   icon: 'mdi:beach'
-lounge_media_dim_enable:
-  name: Enable dimming
-  icon: 'mdi:checkbox-marked-outline'
-kodi_amp_trigger:
-  name: Enable amp trigger
-  icon: mdi:checkbox-marked-outline
 global_away_mode_toggle:
   name: Enable away mode
   icon: 'mdi:home-map-marker'

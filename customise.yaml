@@ -29,14 +29,6 @@ switch.flux_adjustment:
     - living room redshift
     - living room flux
 
-input_boolean.lounge_media_dim_enable:
-  google_assistant: true
-  google_assistant_name: media dimming
-  google_assistant_type: switch
-input_boolean.kodi_amp_trigger:
-  google_assistant: true
-  google_assistant_name: amp trigger
-  google_assistant_type: switch
 input_boolean.global_away_mode_toggle:
   google_assistant: true
   google_assistant_name: away mode
@@ -53,10 +45,6 @@ input_boolean.night_mode_toggle:
   google_assistant: true
   google_assistant_name: night mode
   google_assistant_type: switch
-
-## inputs
-input_slider.kodi_dimmer_slider:
-  icon: mdi:brightness-6
 
 ## sensors
 sensor.living_room_thermostat_operation_mode:
@@ -148,11 +136,6 @@ binary_sensor.people_home:
   icon: mdi:account-multiple
 
 ## media players
-media_player.kodi:
-  friendly_name: kodi
-  google_assistant: false
-  google_assistant_type: media_player
-  google_assistant_name: kodi
 media_player.garden_room:
   google_assistant: false
   google_assistant_type: media_player
