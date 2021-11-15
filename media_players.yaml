@@ -1,5 +1,0 @@
-- platform: kodi
-  host: !secret ip_kodi
-  port: 8080
-  tcp_port: 9090
-  enable_websocket: true
