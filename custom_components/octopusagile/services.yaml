@@ -6,3 +6,4 @@ update_timers:
 
 half_hour:
   description: Update rates entity, switch entities on/off based on the timers entity.
+
