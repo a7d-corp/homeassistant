@@ -113,26 +113,10 @@ cards:
           name: Right Bloom
           tap_action:
             action: toggle
-#    - type: "custom:card-templater"
-#      card:
-#        type: entity-button
-#        double_tap_action:
-#          action: none
-#        entity: switch.0x000d6ffffe2a5801
-#        hold_action:
-#          action: none
-#        icon_template: >
-#          {{ "mdi:pine-tree-box" if is_state("switch.0x000d6ffffe2a5801", "on") else "mdi:pine-tree" }}
-#        name_template: >
-#          {{ "Turn \ud83c\udf84 christmas tree off" if is_state("switch.0x000d6ffffe2a5801", "on") else "Turn \ud83c\udf84 christmas tree on" }}
-#        tap_action:
-#          action: toggle
-#      entities:
-#        - switch.0x000d6ffffe2a5801
 - type: vertical-stack
   cards:
     - type: custom:simple-thermostat
-      entity: climate.living_room
+      entity: climate.living_room_thermostat
       hide_header: true
       control:
         - hvac
@@ -146,7 +130,7 @@ cards:
           color: "#c0392b"
       decimals: 1
       entities:
-        - entity: sensor.living_room_thermostat_temperature
+        - entity: sensor.living_room_thermostat_current_temperature
       font_size: 80
       hours_to_show: 24
       name: Temperature
@@ -158,7 +142,7 @@ cards:
     - type: "custom:mini-graph-card"
       decimals: 1
       entities:
-        - entity: sensor.living_room_thermostat_humidity
+        - entity: sensor.living_room_thermostat_current_humidity
       font_size: 80
       hours_to_show: 24
       line_color: "#45bf4b"

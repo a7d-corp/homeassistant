@@ -70,7 +70,7 @@ cards:
               color: "#c0392b"
           decimals: 1
           entities:
-            - entity: sensor.living_room_thermostat_temperature
+            - entity: sensor.living_room_thermostat_current_temperature
           font_size: 80
           hours_to_show: 24
           name: Living Room
@@ -93,7 +93,7 @@ cards:
               color: "#c0392b"
           decimals: 1
           entities:
-            - entity: sensor.master_bedroom_thermostat_temperature
+            - entity: sensor.master_bedroom_thermostat_current_temperature
           font_size: 80
           hours_to_show: 24
           name: Bedroom
@@ -109,7 +109,7 @@ cards:
         - type: "custom:mini-graph-card"
           decimals: 1
           entities:
-            - entity: sensor.living_room_thermostat_humidity
+            - entity: sensor.living_room_thermostat_current_humidity
               name: in
             - entity: sensor.openweathermap_humidity
               name: out
