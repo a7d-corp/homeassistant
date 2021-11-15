@@ -125,10 +125,6 @@ mqtt:
     topic: 'hass/status'
     payload: 'offline'
 
-nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
-
 spotify:
   client_id: !secret spotify_id
   client_secret: !secret spotify_secret
