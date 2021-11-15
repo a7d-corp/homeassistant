@@ -1,11 +1,3 @@
-kodi_dimmer_slider:
-  name: "Dim level"
-  min: 0
-  max: 40
-  step: 2
-  mode: slider
-  unit_of_measurement: '%'
-  icon: 'mdi:toggle-switch'
 saved_lounge_brightness:
   name: Previous lounge brightness (for automation use)
   min: 0
