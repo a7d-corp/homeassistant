@@ -63,7 +63,7 @@ cards:
 - type: vertical-stack
   cards:
     - type: custom:simple-thermostat
-      entity: climate.living_room
+      entity: climate.living_room_thermostat
       hide_header: true
       control:
         - hvac
