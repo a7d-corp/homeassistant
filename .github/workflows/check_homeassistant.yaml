@@ -1,0 +1,50 @@
+name: 'check home-assistant configuration'
+on:
+  pull_request_target:
+  workflow_dispatch:
+jobs:
+  debug_info:
+    name: 'print debug info'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print github context JSON
+        run: |
+          cat <<EOF
+          ${{ toJson(github) }}
+          EOF
+  homeassistant:
+    name: 'validate home-assistant configuration'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'workaround for nektos/act'
+        run: |
+          if [ ! -f "/etc/lsb-release" ] ; then
+            echo "DISTRIB_RELEASE=18.04" > /etc/lsb-release
+          fi
+      - name: 'checkout'
+        uses: actions/checkout@v2
+      - run: mv secrets secrets.old || true
+      - run: mkdir secrets
+      - run: cp -v ci/secrets.yaml secrets.yaml
+      - run: cp -v ci/google-cloud-tts.json secrets/google-cloud-tts.json
+      - run: cp -v ci/google-assistant.json secrets/google-assistant.json
+      - name: 'check homeassistant config'
+        id: check
+        uses: frenck/action-home-assistant@v1
+        continue-on-error: true
+      - name: 'comment on PR'
+        if: github.event_name == 'pull_request_target'
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const commentContent = `config check: ${{ steps.check.outcome }}`;
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentContent
+            })
+      - name: 'fail if config validation fails'
+        if: steps.check.outcome == 'failure'
+        run: exit 1
