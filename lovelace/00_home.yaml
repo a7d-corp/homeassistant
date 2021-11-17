@@ -40,17 +40,6 @@ cards:
               - entity_id: "binary_sensor.0x00158d0001b70752_contact"
                 state: "on"
           show_empty: false
-        - type: custom:auto-entities
-          card:
-            type: entities
-            title: Low Batteries
-            style: |
-              ha-card { background-color: #de6674; }
-          filter:
-            include:
-              - entity_id: "sensor.*_battery"
-                state: "< 25"
-          show_empty: false
     - type: "custom:weather-card"
       current: true
       details: true
