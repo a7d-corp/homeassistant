@@ -51,23 +51,6 @@ cards:
         include:
           - domain: light
             state: "on" # Remember that "on" and "off" are magic in yaml, and must always be quoted
-    - type: custom:battery-state-card
-      title: "Battery levels"
-      color_thresholds: []
-      sort_by_level: "asc"
-      entities:
-        - binary_sensor.0x00158d0002b7f000_occupancy # living room motion
-        - binary_sensor.motion_sensor_158d000237acbc # kitchen motion sensor
-        - binary_sensor.door_window_sensor_158d0001a1f6b9 # front door
-        - binary_sensor.door_window_sensor_158d0001a3e090 # patio door
-        - binary_sensor.door_window_sensor_158d000232ab79 # understairs cupboard
-        - binary_sensor.door_window_sensor_158d000346b47f # living room door
-        - binary_sensor.door_window_sensor_158d0001b70752 # living room window
-        - binary_sensor.door_window_sensor_158d0001de662f # kitchen window (right)
-        - binary_sensor.door_window_sensor_158d0001e4820c # kitchen window (left)
-        - sensor.0x00158d0001bf6277_battery # loft hatch
-        - binary_sensor.switch_158d0001ef3aaa # landing switch
-        - sensor.0x00158d0001fa5c1b_battery # ensuite environment sensor
 - type: vertical-stack
   cards:
     - type: entities

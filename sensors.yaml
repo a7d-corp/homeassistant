@@ -95,56 +95,6 @@
         {% else %}
           mdi:window-closed
         {% endif %}
-###                ###
-### battery levels ###
-###                ###
-- platform: template
-  sensors:
-    front_door_sensor_battery:
-      friendly_name: 'Front door sensor battery'
-      value_template: '{{ states.binary_sensor.door_window_sensor_158d0001a1f6b9.attributes.battery_level }}'
-      unit_of_measurement: '%'
-      device_class: battery
-    patio_door_sensor_battery:
-      friendly_name: 'Patio door sensor battery'
-      value_template: '{{ states.binary_sensor.door_window_sensor_158d0001a3e090.attributes.battery_level }}'
-      unit_of_measurement: '%'
-      device_class: battery
-    living_room_window_sensor_battery:
-      friendly_name: 'Living room window sensor battery'
-      value_template: '{{ states.binary_sensor.door_window_sensor_158d0001b70752.attributes.battery_level }}'
-      unit_of_measurement: '%'
-      device_class: battery
-    kitchen_window_right_sensor_battery:
-      friendly_name: 'Kitchen window (right) sensor battery'
-      value_template: '{{ states.binary_sensor.door_window_sensor_158d0001de662f.attributes.battery_level }}'
-      unit_of_measurement: '%'
-      device_class: battery
-    kitchen_window_left_sensor_battery:
-      friendly_name: 'Kitchen window (left) sensor battery'
-      value_template: '{{ states.binary_sensor.door_window_sensor_158d0001e4820c.attributes.battery_level }}'
-      unit_of_measurement: '%'
-      device_class: battery
-    understairs_cupboard_door_sensor_battery:
-      friendly_name: 'Understairs cupboard door sensor battery'
-      value_template: '{{ states.binary_sensor.door_window_sensor_158d000232ab79.attributes.battery_level }}'
-      unit_of_measurement: '%'
-      device_class: battery
-    kitchen_motion_sensor_battery:
-      friendly_name: 'Kitchen motion sensor battery'
-      value_template: '{{ states.binary_sensor.motion_sensor_158d000237acbc.attributes.battery_level }}'
-      unit_of_measurement: '%'
-      device_class: battery
-    landing_switch_sensor_battery:
-      friendly_name: 'Landing switch sensor battery'
-      value_template: '{{ states.binary_sensor.switch_158d0001ef3aaa.attributes.battery_level }}'
-      unit_of_measurement: '%'
-      device_class: battery
-    ensuite_humidity_sensor_battery:
-      friendly_name: 'Ensuite humidity sensor battery'
-      value_template: '{{ states.sensor.humidity_158d0001fa5c1b.attributes.battery_level }}'
-      unit_of_measurement: '%'
-      device_class: battery
 # zigbee2mqtt: monitor the bridge state
 - platform: mqtt
   name: Zigbee2MQTT bridge state
