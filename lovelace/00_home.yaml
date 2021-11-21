@@ -159,63 +159,9 @@ cards:
               action: none
           entities:
             - input_boolean.motion_lighting_toggle
-- type: picture-glance
+- type: "custom:atomic-calendar-revive"
+  name: Shared calendar
+  refreshInterval: 600
   entities:
-    - entity: group.lounge_hues
-      icon: mdi:lightbulb-multiple
-  hold_action:
-    action: navigate
-    navigation_path: /lovelace/livingroom/
-  image: /local/images/living_room.jpg
-  # darken entity row background
-  style: |
-    div.box {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-  title: Living Room
-- type: picture-glance
-  entities:
-    - input_boolean.house_option_alarmclock
-    - input_boolean.night_mode_toggle
-  hold_action:
-    action: navigate
-    navigation_path: /lovelace/bedroom/
-  image: /local/images/bedroom.jpg
-  # darken entity row background
-  style: |
-    div.box {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-  title: Bedroom
-- type: picture-glance
-  entities:
-    - entity: group.kitchen_hues
-      icon: mdi:lightbulb-multiple
-    - entity: input_boolean.kitchen_motion_detected
-      icon: mdi:walk
-  hold_action:
-    action: navigate
-    navigation_path: /lovelace/kitchen/
-  image: /local/images/kitchen.jpg
-  # darken entity row background
-  style: |
-    div.box {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-  title: Kitchen
-- type: picture-glance
-  entities:
-    - light.0x000d6ffffe07b722
-    - light.office_standard_lamp
-    - light.office_ceiling_lamp
-    - switch.0x000d6ffffe2a5801
-  hold_action:
-    action: navigate
-    navigation_path: /lovelace/office/
-  image: /local/images/office.jpg
-  # darken entity row background
-  style: |
-    div.box {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-  title: Office
+  - entity: calendar.nikkiannewoodsgmailcom
+    titleColor: red
