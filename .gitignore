@@ -32,3 +32,5 @@ custom_components/*
 themes/
 secrets.yaml
 !ci/secrets.yaml
+home-assistant.log*
+octopusagile.json
