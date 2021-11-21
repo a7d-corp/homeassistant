@@ -149,6 +149,11 @@ octopusagile:
   auth: sk_live_dGdfiDmDwfxtLLHotSh123Et
   startdate: "2021-02-18"
 
+google:
+  client_id: !secret gcal_client_id
+  client_secret: !secret gcal_client_secret
+  track_new_calendar: false
+
 #spotcast:
 #  sp_dc: !secret spotcast_dc_simon
 #  sp_key: !secret spotcast_key_simon
