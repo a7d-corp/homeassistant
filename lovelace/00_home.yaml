@@ -160,8 +160,12 @@ cards:
           entities:
             - input_boolean.motion_lighting_toggle
 - type: "custom:atomic-calendar-revive"
-  name: Shared calendar
-  refreshInterval: 600
   entities:
   - entity: calendar.nikkiannewoodsgmailcom
-    titleColor: red
+    icon: 'mdi:account'
+  refreshInterval: 600
+  showLoader: false
+  showNoEventsForToday: true
+  showWeekDay: true
+  style: |
+    .cal-card { margin-top: 10px; }
