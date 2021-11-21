@@ -51,6 +51,22 @@ cards:
         include:
           - domain: light
             state: "on" # Remember that "on" and "off" are magic in yaml, and must always be quoted
+    - type: 'custom:battery-state-card'
+      title: Low batteries
+      sort_by_level: "asc"
+      bulk_rename:
+        - from: "Battery Level" # simple string replace (note: "to" is not required if you want to remove string)
+          to: "sensor"
+        - from: "/\\s(temperature|temp)\\s/" # regular expression
+          to: " temp. "
+      filter:
+        include: # filters for auto-adding
+          - name: entity_id # entities which id ends with "_battery_level"
+            value: "*_battery"
+        exclude: # filters for removing
+          - name: state # exclude entities above 99% of battery level
+            value: 50
+            operator: ">"
 - type: vertical-stack
   cards:
     - type: entities
