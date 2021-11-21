@@ -7,4 +7,5 @@ views:
   - !include lovelace/20_office.yaml
   - !include lovelace/25_hall.yaml
   - !include lovelace/50_security.yaml
+  - !include lovelace/98_christmas.yaml
   - !include lovelace/99_admin.yaml
