@@ -1,6 +1,8 @@
 title: Admin
 icon: mdi:tools
 path: admin
+visible:
+  - user: 05ade721deaa47eab2772ca82d2a3621
 cards:
 - type: vertical-stack
   cards:
