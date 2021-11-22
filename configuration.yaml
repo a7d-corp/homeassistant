@@ -146,9 +146,9 @@ browser_mod:
 
 octopusagile:
   region_code: "J"
-  mpan: 2000056101249
-  serial: 19L3668546
-  auth: sk_live_dGdfiDmDwfxtLLHotSh123Et
+  mpan: !secret octopus_mpan
+  serial: !secret octopus_serial
+  auth: !secret octopus_auth
   startdate: "2021-02-18"
 
 google:
