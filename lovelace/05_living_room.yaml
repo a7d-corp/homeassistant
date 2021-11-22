@@ -1,6 +1,9 @@
 title: Living Room
 icon: mdi:sofa
 path: livingroom
+visible:
+  - user: 05ade721deaa47eab2772ca82d2a3621
+  - user: 29fbf77c2a654691a6d6df245b96850c
 popup_cards:
   group.living_room_lights:
     title: Living room lights
