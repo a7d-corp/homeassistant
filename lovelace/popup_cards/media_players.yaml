@@ -1,0 +1,42 @@
+action: fire-dom-event
+browser_mod:
+  command: call-service
+  service: browser_mod.popup
+  service_data:
+    deviceID: this
+    title: Media players
+    card:
+      type: 'custom:layout-card'
+      view_layout: vertical
+      max_columns: 1
+      cards:
+      - type: vertical-stack
+        cards:
+          - type: "custom:mini-media-player"
+            artwork: cover
+            entity: media_player.kitchen
+            hide:
+              power_state: true
+            info: scroll
+            volume_stateless: true
+          - type: "custom:mini-media-player"
+            artwork: cover
+            entity: media_player.living_room
+            hide:
+              power_state: true
+            info: scroll
+            volume_stateless: true
+          - type: "custom:mini-media-player"
+            artwork: cover
+            entity: media_player.garden_room
+            hide:
+              power_state: true
+            info: scroll
+            volume_stateless: true
+          - type: "custom:mini-media-player"
+            artwork: cover
+            entity: media_player.bedroom
+            hide:
+              power_state: true
+            info: scroll
+            volume_stateless: true
