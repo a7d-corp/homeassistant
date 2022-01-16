@@ -78,10 +78,6 @@ cards:
       style: |
         div.header { padding-bottom: 0px; }
         div.info { display: none; }
-      tap_action:
-        action: call-service
-        service: browser_mod.popup
-        service_data: !include popup_cards/person_nikki.yaml
     - type: "custom:mini-graph-card"
       color_thresholds:
         - value: 15
