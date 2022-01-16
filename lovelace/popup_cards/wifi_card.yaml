@@ -1,0 +1,18 @@
+action: fire-dom-event
+browser_mod:
+  command: call-service
+  service: browser_mod.popup
+  service_data:
+    deviceID: this
+    title: Guest WiFi credentials
+    card:
+      type: 'custom:layout-card'
+      view_layout: vertical
+      max_columns: 1
+      cards:
+        - type: picture-entity
+          entity: sensor.hacs
+          image: /local/wifi-credentials.png
+          name: "Guest WiFi credentials"
+          show_name: false
+          show_state: false

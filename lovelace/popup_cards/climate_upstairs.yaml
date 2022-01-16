@@ -1,0 +1,11 @@
+title: Upstairs heating
+card:
+  type: 'custom:layout-card'
+  view_layout: vertical
+  max_columns: 1
+  cards:
+    - type: custom:simple-thermostat
+      entity: climate.master_bedroom_thermostat
+      header: false
+      control:
+        - hvac

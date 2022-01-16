@@ -1,0 +1,229 @@
+title: Dashboard
+type: custom:grid-layout
+icon: mdi:tablet-android
+path: tablet
+visible:
+  - user: 05ade721deaa47eab2772ca82d2a3621
+  - user: 4c94a5a0ae584bbbb4991d324b66f64a
+layout:
+  grid-template-columns: 20% 40% 40%
+  grid-template-rows: auto
+  grid-template-areas: |
+    "left middle right"
+popup_cards:
+  sensor.living_room_thermostat_current_temperature: !include popup_cards/climate_downstairs.yaml
+  sensor.master_bedroom_thermostat_current_temperature: !include popup_cards/climate_upstairs.yaml
+cards:
+##
+## column 1
+##
+- type: vertical-stack
+  view_layout:
+    grid-area: left
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: picture-elements
+          image: /local/nikki-face.png
+          elements:
+            - type: state-label
+              entity: person.nikki
+              style:
+                left: 0
+                bottom: 0
+                pointer-events: none
+                line-height: 1.1em
+                font-size: 1.1em
+                background-color: rgba(0, 0, 0, 0.4)
+                color: "#ffffff"
+                width: 100%
+                transform: initial
+                padding: 0 2px
+        - type: picture-elements
+          image: /local/simon-face.png
+          elements:
+            - type: state-label
+              entity: person.simon
+              style:
+                left: 0
+                bottom: 0
+                pointer-events: none
+                line-height: 1.1em
+                font-size: 1.1em
+                background-color: rgba(0, 0, 0, 0.4)
+                color: "#ffffff"
+                width: 100%
+                transform: initial
+                padding: 0 2px
+    - type: "custom:mini-graph-card"
+      color_thresholds:
+        - value: 15
+          color: "#2facfa"
+        - value: 18
+          color: "#ffc72b"
+        - value: 25
+          color: "#c0392b"
+      decimals: 1
+      entities:
+        - entity: sensor.living_room_thermostat_current_temperature
+      font_size: 80
+      hours_to_show: 24
+      name: Downstairs
+      points_per_hour: 0.5
+      show:
+        labels: false
+        labels_secondary: false
+        legend: false
+        points: false
+      style: |
+        div.header { padding-bottom: 0px; }
+        div.info { display: none; }
+    - type: "custom:mini-graph-card"
+      color_thresholds:
+        - value: 15
+          color: "#2facfa"
+        - value: 18
+          color: "#ffc72b"
+        - value: 25
+          color: "#c0392b"
+      decimals: 1
+      entities:
+        - entity: sensor.master_bedroom_thermostat_current_temperature
+      font_size: 80
+      hours_to_show: 24
+      name: Upstairs
+      points_per_hour: 0.5
+      show:
+        labels: false
+        labels_secondary: false
+        legend: false
+        points: false
+      style: |
+        div.header { padding-bottom: 0px; }
+        div.info { display: none; }
+    - type: horizontal-stack
+      cards:
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: input_boolean.house_lighting_toggle
+            hold_action:
+              action: call-service
+              confirmation: Toggle all lights?
+              service: light.turn_off
+              service_data:
+                entity_id: all
+            icon: mdi:lightbulb-multiple
+            name_template: >-
+              {{ "Turn lights off" if states.light | selectattr('state','eq','on')| rejectattr('attributes.type','eq','browser_mod') | list | count > 0 else "All lights off" }}
+            state_color_template: >-
+              {{ "true" if states.light | selectattr('state','eq','on')| rejectattr('attributes.type','eq','browser_mod') | list | count > 0 else "false" }}
+            tap_action:
+              action: none
+          entities:
+            - input_boolean.house_lighting_toggle
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: input_boolean.motion_lighting_toggle
+            hold_action:
+              action: toggle
+              confirmation: Toggle motion sensing?
+            icon: mdi:access-point
+            name_template: '{{ "Turn motion off" if is_state("input_boolean.motion_lighting_toggle", "on") else "Turn motion on" }}'
+            tap_action:
+              action: none
+          entities:
+            - input_boolean.motion_lighting_toggle
+    - type: button
+      name: "WiFi details"
+      icon: "mdi:wifi-lock"
+      state_color: false
+      tap_action:
+        !include popup_cards/wifi_card.yaml
+##
+## column 2
+##
+- type: vertical-stack
+  view_layout:
+    grid-area: middle
+  cards:
+    - type: "custom:weather-card"
+      current: true
+      details: true
+      entity: weather.openweathermap
+      forecast: true
+      tap_action:
+        action: none
+    - type: "custom:atomic-calendar-revive"
+      entities:
+      - entity: calendar.nikkiannewoodsgmailcom
+        icon: 'mdi:account'
+      maxDaysToShow: 2
+      refreshInterval: 600
+      showLoader: false
+      showNoEventsForToday: true
+      showWeekDay: true
+    - type: button
+      name: Media players
+      show_state: false
+      tap_action:
+        !include popup_cards/media_players.yaml
+##
+## column 3
+##
+- type: vertical-stack
+  view_layout:
+    grid-area: right
+  cards:
+    - type: picture-entity
+      title: Front door
+      show_name: false
+      show_state: false
+      entity: camera.frigate_rtmp_door
+      camera_view: live
+    - type: picture-entity
+      title: Front door
+      show_name: false
+      show_state: false
+      entity: camera.frigate_rtmp_front
+      camera_view: live
+    - type: vertical-stack
+      cards:
+        - type: "custom:auto-entities"
+          card:
+            type: entities
+            title: Open Doors
+            style: |
+              .ha-card { background-color: #de6674; }
+          filter:
+            include:
+              # front door
+              - entity_id: "binary_sensor.0x00158d0001de662f_contact"
+                state: "on"
+              # patio door
+              - entity_id: "binary_sensor.0x00158d0001a3e090_contact"
+                state: "on"
+          show_empty: false
+        - type: "custom:auto-entities"
+          card:
+            type: entities
+            title: Open Windows
+            style: |
+              ha-card { background-color: #de6674; }
+          filter:
+            include:
+              # kitchen window left
+              - entity_id: "binary_sensor.0x00158d0001e4820c_contact"
+                state: "on"
+              # kitchen window right
+              - entity_id: "binary_sensor.0x00158d0001a1f6b9_contact"
+                state: "on"
+              # living room window
+              - entity_id: "binary_sensor.0x00158d0001b70752_contact"
+                state: "on"
+          show_empty: false
