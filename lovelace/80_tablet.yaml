@@ -146,7 +146,7 @@ cards:
             entity: group.living_room_lights
             hold_action:
               !include popup_cards/light_control_living_room.yaml
-            icon: 'mdi:ceiling-bulb'
+            icon: 'mdi:ceiling-light'
             name_template: 'Turn living room lights {{ "off" if is_state("group.living_room_lights", "on") else "on" }}'
             tap_action:
               action: toggle
@@ -160,7 +160,7 @@ cards:
             entity: group.kitchen_lights
             hold_action:
               !include popup_cards/light_control_kitchen.yaml
-            icon: 'mdi:ceiling-bulb'
+            icon: 'mdi:led-strip'
             name_template: 'Turn kitchen lights {{ "off" if is_state("group.kitchen_lights", "on") else "on" }}'
             tap_action:
               action: toggle
@@ -176,7 +176,7 @@ cards:
             entity: group.office_lights
             hold_action:
               !include popup_cards/light_control_office.yaml
-            icon: 'mdi:ceiling-bulb'
+            icon: 'mdi:ceiling-light'
             name_template: 'Turn office lights {{ "off" if is_state("group.office_lights", "on") else "on" }}'
             tap_action:
               action: toggle
