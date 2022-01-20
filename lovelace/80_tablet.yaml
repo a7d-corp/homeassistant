@@ -6,10 +6,10 @@ visible:
   - user: 05ade721deaa47eab2772ca82d2a3621
   - user: 4c94a5a0ae584bbbb4991d324b66f64a
 layout:
-  grid-template-columns: 20% 40% 40%
+  grid-template-columns: 10% 20% 35% 35%
   grid-template-rows: auto
   grid-template-areas: |
-    "left middle right"
+    "left middle-left middle-right right"
 popup_cards:
   sensor.living_room_thermostat_current_temperature: !include popup_cards/climate_downstairs.yaml
   sensor.master_bedroom_thermostat_current_temperature: !include popup_cards/climate_upstairs.yaml
@@ -21,40 +21,65 @@ cards:
   view_layout:
     grid-area: left
   cards:
-    - type: horizontal-stack
-      cards:
-        - type: picture-elements
-          image: /local/nikki-face.png
-          elements:
-            - type: state-label
-              entity: person.nikki
-              style:
-                left: 0
-                bottom: 0
-                pointer-events: none
-                line-height: 1.1em
-                font-size: 1.1em
-                background-color: rgba(0, 0, 0, 0.4)
-                color: "#ffffff"
-                width: 100%
-                transform: initial
-                padding: 0 2px
-        - type: picture-elements
-          image: /local/simon-face.png
-          elements:
-            - type: state-label
-              entity: person.simon
-              style:
-                left: 0
-                bottom: 0
-                pointer-events: none
-                line-height: 1.1em
-                font-size: 1.1em
-                background-color: rgba(0, 0, 0, 0.4)
-                color: "#ffffff"
-                width: 100%
-                transform: initial
-                padding: 0 2px
+    - type: picture-elements
+      image: /local/nikki-face.png
+      elements:
+        - type: state-label
+          entity: person.nikki
+          style:
+            left: 0
+            bottom: 0
+            pointer-events: none
+            line-height: 1.1em
+            font-size: 1.1em
+            background-color: rgba(0, 0, 0, 0.4)
+            color: "#ffffff"
+            width: 100%
+            transform: initial
+            padding: 0 2px
+    - type: picture-elements
+      image: /local/simon-face.png
+      elements:
+        - type: state-label
+          entity: person.simon
+          style:
+            left: 0
+            bottom: 0
+            pointer-events: none
+            line-height: 1.1em
+            font-size: 1.1em
+            background-color: rgba(0, 0, 0, 0.4)
+            color: "#ffffff"
+            width: 100%
+            transform: initial
+            padding: 0 2px
+    - type: button
+      name: "Audio"
+      icon: "mdi:speaker"
+      show_state: false
+      tap_action:
+        !include popup_cards/media_players.yaml
+    - type: button
+      name: "Guest WiFi details"
+      icon: "mdi:wifi-lock"
+      state_color: false
+      tap_action:
+        !include popup_cards/wifi_card.yaml
+##
+## column 2
+##
+- type: vertical-stack
+  view_layout:
+    grid-area: middle-left
+  cards:
+    - type: markdown
+      content:  |
+        ## Heating
+        (tap graph for controls)
+      style: |
+        ha-card { text-align: center; }
+    - type: "custom:gap-card"
+      height: 0
     - type: "custom:mini-graph-card"
       color_thresholds:
         - value: 15
@@ -101,6 +126,16 @@ cards:
       style: |
         div.header { padding-bottom: 0px; }
         div.info { display: none; }
+    - type: "custom:gap-card"
+      height: 0
+    - type: markdown
+      content:  |
+        ## Lighting
+        (tap buttons to toggle, long press to control)
+      style: |
+        ha-card { text-align: center; }
+    - type: "custom:gap-card"
+      height: 0
     - type: horizontal-stack
       cards:
         - type: "custom:card-templater"
@@ -108,49 +143,75 @@ cards:
             type: entity-button
             double_tap_action:
               action: none
-            entity: input_boolean.house_lighting_toggle
+            entity: group.living_room_lights
             hold_action:
-              action: call-service
-              confirmation: Toggle all lights?
-              service: light.turn_off
-              service_data:
-                entity_id: all
-            icon: mdi:lightbulb-multiple
-            name_template: >-
-              {{ "Turn lights off" if states.light | selectattr('state','eq','on')| rejectattr('attributes.type','eq','browser_mod') | list | count > 0 else "All lights off" }}
-            state_color_template: >-
-              {{ "true" if states.light | selectattr('state','eq','on')| rejectattr('attributes.type','eq','browser_mod') | list | count > 0 else "false" }}
+              !include popup_cards/light_control_living_room.yaml
+            icon: 'mdi:ceiling-light'
+            name_template: 'Turn living room lights {{ "off" if is_state("group.living_room_lights", "on") else "on" }}'
             tap_action:
-              action: none
+              action: toggle
           entities:
-            - input_boolean.house_lighting_toggle
+            - group.living_room_lights
         - type: "custom:card-templater"
           card:
             type: entity-button
             double_tap_action:
               action: none
-            entity: input_boolean.motion_lighting_toggle
+            entity: group.kitchen_lights
             hold_action:
-              action: toggle
-              confirmation: Toggle motion sensing?
-            icon: mdi:access-point
-            name_template: '{{ "Turn motion off" if is_state("input_boolean.motion_lighting_toggle", "on") else "Turn motion on" }}'
+              !include popup_cards/light_control_kitchen.yaml
+            icon: 'mdi:led-strip'
+            name_template: 'Turn kitchen lights {{ "off" if is_state("group.kitchen_lights", "on") else "on" }}'
             tap_action:
-              action: none
+              action: toggle
           entities:
-            - input_boolean.motion_lighting_toggle
-    - type: button
-      name: "WiFi details"
-      icon: "mdi:wifi-lock"
-      state_color: false
-      tap_action:
-        !include popup_cards/wifi_card.yaml
+            - group.kitchen_lights
+    - type: horizontal-stack
+      cards:
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: group.office_lights
+            hold_action:
+              !include popup_cards/light_control_office.yaml
+            icon: 'mdi:ceiling-light'
+            name_template: 'Turn office lights {{ "off" if is_state("group.office_lights", "on") else "on" }}'
+            tap_action:
+              action: toggle
+          entities:
+            - group.office_lights
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: input_boolean.house_lighting_toggle
+            hold_action:
+              action: none
+            icon: mdi:lightbulb-multiple
+            name_template: >-
+              {{ "Turn all lights off" if states.light | selectattr('state','eq','on')| rejectattr('attributes.type','eq','browser_mod') | list | count > 0 else "All lights are off" }}
+            state_color_template: >-
+              {{ "true" if states.light | selectattr('state','eq','on')| rejectattr('attributes.type','eq','browser_mod') | list | count > 0 else "false" }}
+            style: |
+              ha-card { min-height: 93px; }
+            tap_action:
+              action: call-service
+              confirmation:
+                text: Selecting ok will turn off all lights in the house
+              service: light.turn_off
+              service_data:
+                entity_id: all
+          entities:
+            - input_boolean.house_lighting_toggle
 ##
-## column 2
+## column 3
 ##
 - type: vertical-stack
   view_layout:
-    grid-area: middle
+    grid-area: middle-right
   cards:
     - type: "custom:weather-card"
       current: true
@@ -159,6 +220,27 @@ cards:
       forecast: true
       tap_action:
         action: none
+
+
+#    - type: conditional
+#      conditions:
+#        - entity: binary_sensor.recycling_bin_offset
+#          state: "on"
+#      card:
+#        type: markdown
+#        title: Next bin collection
+#        content: |
+#          Recycling bin <ha-icon icon="mdi:recycle" />
+#    - type: conditional
+#      conditions:
+#        - entity: binary_sensor.waste_bin_offset
+#          state: "on"
+#      card:
+#        type: markdown
+#        title: Next bin collection
+#        content: |
+#          <ha-icon icon="mdi:trash-can-outline" /> Waste bin
+
     - type: "custom:atomic-calendar-revive"
       entities:
       - entity: calendar.nikkiannewoodsgmailcom
@@ -168,13 +250,10 @@ cards:
       showLoader: false
       showNoEventsForToday: true
       showWeekDay: true
-    - type: button
-      name: Media players
-      show_state: false
-      tap_action:
-        !include popup_cards/media_players.yaml
+      style: |
+        .cal-card { height: auto; }
 ##
-## column 3
+## column 4
 ##
 - type: vertical-stack
   view_layout:
@@ -192,6 +271,24 @@ cards:
       show_state: false
       entity: camera.frigate_rtmp_front
       camera_view: live
+    - type: "custom:state-switch"
+      entity: "{% if is_state('binary_sensor.recycling_bin_offset', 'on') %} recycling {% elif is_state('binary_sensor.waste_bin_offset', 'on') %} waste {% elif is_state('binary_sensor.people_home', 'on') %} test {% else %} noevents {% endif %}"
+      states:
+        recycling:
+          type: markdown
+          content: |
+            Recycling bin <ha-icon icon="mdi:recycle" />
+        waste:
+          type: markdown
+          content: |
+            Waste bin <ha-icon icon="mdi:trash-can-outline" />
+        noevents:
+          type: markdown
+          content: |
+            No collection pending <ha-icon icon="mdi:calendar-check" />
+        test:
+          type: markdown
+          content: testy
     - type: vertical-stack
       cards:
         - type: "custom:auto-entities"
