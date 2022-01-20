@@ -22,5 +22,7 @@
   type: module
 - url: /hacsfiles/kiosk-mode/kiosk-mode.js
   type: module
+- url: /local/community/lovelace-state-switch/state-switch.js
+  type: module
 - url: /local/community/lovelace-card-templater/lovelace-card-templater.js
   type: js
