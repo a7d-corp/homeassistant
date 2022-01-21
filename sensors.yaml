@@ -95,6 +95,45 @@
         {% else %}
           mdi:window-closed
         {% endif %}
+- platform: template
+  - sensor:
+    - unique_id: sidebar_greeting
+      state: template
+      attributes:
+        time: >
+          {% set hours = now().strftime('%H') %}
+          {% set minutes = now().strftime('%M') %}
+          <span class="time">
+            {{ hours }}<span class="time-colon">:</span>{{ minutes }}
+          </span>
+        date: |
+          <font color='#6a7377'><b>
+          {%- if strptime(states('sensor.date'), '%Y-%m-%d').day != null %}
+          {%- set days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+          {%- set months = ['January', 'February', 'March', 'April', 'May', 'June', 
+          'July', 'August', 'September', 'October', 'November', 'December'] %}
+            {{- days[now().weekday()] }}<br>
+            {{- strptime(states('sensor.date'), '%Y-%m-%d').day }} {{ months[now().month-1] }}
+          {%- endif -%}
+          </b></font>
+        greeting: |
+          <b>
+          {%- set time = now().hour %}
+          {%- if time <= 1 -%} Good night {{'\U0001F611'}}
+          {%- elif time <= 3 -%} Good night {{'\U0001F62A'}}
+          {%- elif time <= 5 -%} Good night {{'\U0001F634'}}
+          {%- elif time <= 7 -%} Good morning {{'\U0001F4A9'}}
+          {%- elif time <= 9 -%} Good morning {{'\u2615\uFE0F'}}
+          {%- elif time <= 10 -%} Good morning {{'\U0001F642'}}
+          {%- elif time <= 13 -%} Good day {{'\U0001F60A'}}
+          {%- elif time <= 15 -%} Good day {{'\U0001F60E'}}
+          {%- elif time <= 17 -%} Good day {{'\U0001F44B\U0001F3FB'}}
+          {%- elif time <= 19 -%} Good evening {{'\U0001F44B\U0001F3FB'}}
+          {%- elif time <= 22 -%} Good evening {{'\U0001F60C'}}
+          {%- elif time <= 23 -%} Good night {{'\U0001F974'}}
+          {%- else %} Good night {{'\U0001F974'}}
+          {%- endif -%}
+          </b>
 # zigbee2mqtt: monitor the bridge state
 - platform: mqtt
   name: Zigbee2MQTT bridge state
