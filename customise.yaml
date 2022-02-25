@@ -1,3 +1,9 @@
+## people
+person.nikki:
+  entity_picture: "/local/nikki-face.png"
+person.simon:
+  entity_picture: "/local/simon-face.png"
+
 ## lights
 group.lounge_lights:
   icon: mdi:lightbulb
