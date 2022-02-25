@@ -10,33 +10,33 @@ browser_mod:
       view_layout: vertical
       max_columns: 1
       cards:
-      - type: vertical-stack
-        cards:
-          - type: "custom:mini-media-player"
-            artwork: cover
-            entity: media_player.kitchen
-            hide:
-              power_state: true
-            info: scroll
-            volume_stateless: true
-          - type: "custom:mini-media-player"
-            artwork: cover
-            entity: media_player.living_room
-            hide:
-              power_state: true
-            info: scroll
-            volume_stateless: true
-          - type: "custom:mini-media-player"
-            artwork: cover
-            entity: media_player.garden_room
-            hide:
-              power_state: true
-            info: scroll
-            volume_stateless: true
-          - type: "custom:mini-media-player"
-            artwork: cover
-            entity: media_player.bedroom
-            hide:
-              power_state: true
-            info: scroll
-            volume_stateless: true
+        - type: vertical-stack
+          cards:
+            - type: "custom:mini-media-player"
+              artwork: cover
+              entity: media_player.kitchen
+              hide:
+                power_state: true
+              info: scroll
+              volume_stateless: true
+            - type: "custom:mini-media-player"
+              artwork: cover
+              entity: media_player.living_room
+              hide:
+                power_state: true
+              info: scroll
+              volume_stateless: true
+            - type: "custom:mini-media-player"
+              artwork: cover
+              entity: media_player.garden_room
+              hide:
+                power_state: true
+              info: scroll
+              volume_stateless: true
+            - type: "custom:mini-media-player"
+              artwork: cover
+              entity: media_player.bedroom
+              hide:
+                power_state: true
+              info: scroll
+              volume_stateless: true
