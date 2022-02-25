@@ -3,15 +3,6 @@ on:
   pull_request_target:
   workflow_dispatch:
 jobs:
-  debug_info:
-    name: 'print debug info'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print github context JSON
-        run: |
-          cat <<EOF
-          ${{ toJson(github) }}
-          EOF
   yamllint:
     name: 'lint yamls'
     runs-on: ubuntu-latest
