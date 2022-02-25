@@ -16,13 +16,13 @@
   type: module
 - url: /local/community/simple-thermostat/simple-thermostat.js?v=1
   type: module
-- url: /local/community/spotify-card/spotify-card.js
-  type: module
 - url: /local/community/atomic-calendar-revive/atomic-calendar-revive.js
   type: module
 - url: /hacsfiles/kiosk-mode/kiosk-mode.js
   type: module
 - url: /local/community/lovelace-state-switch/state-switch.js
+  type: module
+- url: /hacsfiles/simple-clock-card/simple-clock-card.js
   type: module
 - url: /local/community/lovelace-card-templater/lovelace-card-templater.js
   type: js
