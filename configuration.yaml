@@ -112,6 +112,11 @@ google_assistant:
     # night mode toggle
     input_boolean.night_mode_toggle:
       name: night mode
+    # kitchen under-cabinet lights
+    switch.0x00124b0024c04605:
+      name: "under cabinet lights"
+      aliases: "under cabinets"
+      room: kitchen
 
 #prometheus:
 #  namespace: hass
