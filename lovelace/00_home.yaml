@@ -5,170 +5,170 @@ visible:
   - user: 05ade721deaa47eab2772ca82d2a3621
   - user: 29fbf77c2a654691a6d6df245b96850c
 cards:
-- type: vertical-stack
-  layout: vertical
-  cards:
-    - type: vertical-stack
-      cards:
-        - type: "custom:auto-entities"
-          card:
-            type: entities
-            title: Open Doors
+  - type: vertical-stack
+    layout: vertical
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: "custom:auto-entities"
+            card:
+              type: entities
+              title: Open Doors
+              style: |
+                ha-card { background-color: #de6674; }
+            filter:
+              include:
+                # front door
+                - entity_id: "binary_sensor.0x00158d0001de662f_contact"
+                  state: "on"
+                # patio door
+                - entity_id: "binary_sensor.0x00158d0001a3e090_contact"
+                  state: "on"
+            show_empty: false
+          - type: "custom:auto-entities"
+            card:
+              type: entities
+              title: Open Windows
+              style: |
+                ha-card { background-color: #de6674; }
+            filter:
+              include:
+                # kitchen window left
+                - entity_id: "binary_sensor.0x00158d0001e4820c_contact"
+                  state: "on"
+                # kitchen window right
+                - entity_id: "binary_sensor.0x00158d0001a1f6b9_contact"
+                  state: "on"
+                # living room window
+                - entity_id: "binary_sensor.0x00158d0001b70752_contact"
+                  state: "on"
+            show_empty: false
+      - type: "custom:weather-card"
+        current: true
+        details: true
+        entity: weather.openweathermap
+        forecast: true
+        tap_action:
+          action: none
+      - type: horizontal-stack
+        cards:
+          - type: "custom:mini-graph-card"
+            color_thresholds:
+              - value: 15
+                color: "#2facfa"
+              - value: 18
+                color: "#ffc72b"
+              - value: 25
+                color: "#c0392b"
+            decimals: 1
+            entities:
+              - entity: sensor.living_room_thermostat_current_temperature
+            font_size: 80
+            hours_to_show: 24
+            name: Living Room
+            points_per_hour: 0.5
+            show:
+              labels: false
+              labels_secondary: false
+              legend: false
+              points: false
             style: |
-              ha-card { background-color: #de6674; }
-          filter:
-            include:
-              # front door
-              - entity_id: "binary_sensor.0x00158d0001de662f_contact"
-                state: "on"
-              # patio door
-              - entity_id: "binary_sensor.0x00158d0001a3e090_contact"
-                state: "on"
-          show_empty: false
-        - type: "custom:auto-entities"
-          card:
-            type: entities
-            title: Open Windows
+              div.header { padding-bottom: 0px; }
+              div.info { display: none; }
+          - type: "custom:mini-graph-card"
+            color_thresholds:
+              - value: 15
+                color: "#2facfa"
+              - value: 18
+                color: "#ffc72b"
+              - value: 25
+                color: "#c0392b"
+            decimals: 1
+            entities:
+              - entity: sensor.master_bedroom_thermostat_current_temperature
+            font_size: 80
+            hours_to_show: 24
+            name: Bedroom
+            points_per_hour: 0.5
+            show:
+              labels: false
+              labels_secondary: false
+              legend: false
+              points: false
             style: |
-              ha-card { background-color: #de6674; }
-          filter:
-            include:
-              # kitchen window left
-              - entity_id: "binary_sensor.0x00158d0001e4820c_contact"
-                state: "on"
-              # kitchen window right
-              - entity_id: "binary_sensor.0x00158d0001a1f6b9_contact"
-                state: "on"
-              # living room window
-              - entity_id: "binary_sensor.0x00158d0001b70752_contact"
-                state: "on"
-          show_empty: false
-    - type: "custom:weather-card"
-      current: true
-      details: true
-      entity: weather.openweathermap
-      forecast: true
-      tap_action:
-        action: none
-    - type: horizontal-stack
-      cards:
-        - type: "custom:mini-graph-card"
-          color_thresholds:
-            - value: 15
-              color: "#2facfa"
-            - value: 18
-              color: "#ffc72b"
-            - value: 25
-              color: "#c0392b"
-          decimals: 1
-          entities:
-            - entity: sensor.living_room_thermostat_current_temperature
-          font_size: 80
-          hours_to_show: 24
-          name: Living Room
-          points_per_hour: 0.5
-          show:
-            labels: false
-            labels_secondary: false
-            legend: false
-            points: false
-          style: |
-            div.header { padding-bottom: 0px; }
-            div.info { display: none; }
-        - type: "custom:mini-graph-card"
-          color_thresholds:
-            - value: 15
-              color: "#2facfa"
-            - value: 18
-              color: "#ffc72b"
-            - value: 25
-              color: "#c0392b"
-          decimals: 1
-          entities:
-            - entity: sensor.master_bedroom_thermostat_current_temperature
-          font_size: 80
-          hours_to_show: 24
-          name: Bedroom
-          points_per_hour: 0.5
-          show:
-            labels: false
-            labels_secondary: false
-            legend: false
-            points: false
-          style: |
-            div.header { padding-bottom: 0px; }
-            div.info { display: none; }
-        - type: "custom:mini-graph-card"
-          decimals: 1
-          entities:
-            - entity: sensor.living_room_thermostat_current_humidity
-              name: in
-            - entity: sensor.openweathermap_humidity
-              name: out
-          font_size: 80
-          hours_to_show: 24
-          name: Humidity
-          points_per_hour: 0.5
-          show:
-            labels: false
-            labels_secondary: false
-            legend: true
-            points: false
-          style: |
-            div.header, div.states { padding-bottom: 0px; }
-            div.info { display: none; overflow: hidden; }
-    - type: horizontal-stack
-      cards:
-        - type: "custom:card-templater"
-          card:
-            type: entity-button
+              div.header { padding-bottom: 0px; }
+              div.info { display: none; }
+          - type: "custom:mini-graph-card"
+            decimals: 1
+            entities:
+              - entity: sensor.living_room_thermostat_current_humidity
+                name: in
+              - entity: sensor.openweathermap_humidity
+                name: out
+            font_size: 80
+            hours_to_show: 24
+            name: Humidity
+            points_per_hour: 0.5
+            show:
+              labels: false
+              labels_secondary: false
+              legend: true
+              points: false
+            style: |
+              div.header, div.states { padding-bottom: 0px; }
+              div.info { display: none; overflow: hidden; }
+      - type: horizontal-stack
+        cards:
+          - type: "custom:card-templater"
+            card:
+              type: entity-button
+              double_tap_action:
+                action: none
+              entity: binary_sensor.people_home
+              hold_action:
+                action: none
+              name_template: '{{ "Occupied" if is_state("binary_sensor.people_home", "on") else "Unoccupied" }}'
+              show_state: false
+              tap_action:
+                action: none
+            entities:
+              - binary_sensor.people_home
+          - type: entity-button
             double_tap_action:
               action: none
-            entity: binary_sensor.people_home
+            entity: input_boolean.house_lighting_toggle
             hold_action:
-              action: none
-            name_template: '{{ "Occupied" if is_state("binary_sensor.people_home", "on") else "Unoccupied" }}'
-            show_state: false
+              action: call-service
+              confirmation: Toggle all lights?
+              service: light.turn_off
+              service_data:
+                entity_id: all
+            icon: mdi:lightbulb-multiple
+            name: All Lights
             tap_action:
               action: none
-          entities:
-            - binary_sensor.people_home
-        - type: entity-button
-          double_tap_action:
-            action: none
-          entity: input_boolean.house_lighting_toggle
-          hold_action:
-            action: call-service
-            confirmation: Toggle all lights?
-            service: light.turn_off
-            service_data:
-              entity_id: all
-          icon: mdi:lightbulb-multiple
-          name: All Lights
-          tap_action:
-            action: none
-        - type: "custom:card-templater"
-          card:
-            type: entity-button
-            double_tap_action:
-              action: none
-            entity: input_boolean.motion_lighting_toggle
-            hold_action:
-              action: toggle
-              confirmation: Toggle motion sensing?
-            icon: mdi:access-point
-            name_template: '{{ "Sensors enabled" if is_state("input_boolean.motion_lighting_toggle", "on") else "Sensors disabled" }}'
-            tap_action:
-              action: none
-          entities:
-            - input_boolean.motion_lighting_toggle
-- type: "custom:atomic-calendar-revive"
-  entities:
-  - entity: calendar.nikkiannewoodsgmailcom
-    icon: 'mdi:account'
-  refreshInterval: 600
-  showLoader: false
-  showNoEventsForToday: true
-  showWeekDay: true
-  style: |
-    .cal-card { margin-top: 10px; }
+          - type: "custom:card-templater"
+            card:
+              type: entity-button
+              double_tap_action:
+                action: none
+              entity: input_boolean.motion_lighting_toggle
+              hold_action:
+                action: toggle
+                confirmation: Toggle motion sensing?
+              icon: mdi:access-point
+              name_template: '{{ "Sensors enabled" if is_state("input_boolean.motion_lighting_toggle", "on") else "Sensors disabled" }}'
+              tap_action:
+                action: none
+            entities:
+              - input_boolean.motion_lighting_toggle
+  - type: "custom:atomic-calendar-revive"
+    entities:
+      - entity: calendar.nikkiannewoodsgmailcom
+        icon: 'mdi:account'
+    refreshInterval: 600
+    showLoader: false
+    showNoEventsForToday: true
+    showWeekDay: true
+    style: |
+      .cal-card { margin-top: 10px; }

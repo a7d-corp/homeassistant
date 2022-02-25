@@ -39,3 +39,12 @@
   host: !secret ip_phoenix
   name: Phoenix ping
   scan_interval: 15
+# template sensors for calendar event offsets - used for conditional lovelace templating
+- platform: template
+  sensors:
+    recycling_bin_offset:
+      entity_id: calendar.recycling_bin
+      value_template: "{{ state_attr('calendar.recycling_bin','offset_reached') }}"
+    waste_bin_offset:
+      entity_id: calendar.waste_bin
+      value_template: "{{ state_attr('calendar.waste_bin','offset_reached') }}"

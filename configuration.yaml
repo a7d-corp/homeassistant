@@ -9,6 +9,7 @@ homeassistant:
   customize: !include customise.yaml
   external_url: !secret base_url_with_scheme
   internal_url: !secret base_url_with_scheme
+  packages: !include_dir_named packages
   auth_providers:
     - type: homeassistant
     - type: legacy_api_password
@@ -26,8 +27,8 @@ lovelace:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 10.101.0.30
     - 10.101.0.60
+    - 172.25.0.64/27
 
 logger:
   default: warning
@@ -111,8 +112,13 @@ google_assistant:
     # night mode toggle
     input_boolean.night_mode_toggle:
       name: night mode
+    # kitchen under-cabinet lights
+    switch.0x00124b0024c04605:
+      name: "under cabinet lights"
+      aliases: "under cabinets"
+      room: kitchen
 
-#prometheus:
+# prometheus:
 #  namespace: hass
 
 mqtt:
@@ -156,7 +162,7 @@ google:
   client_secret: !secret gcal_client_secret
   track_new_calendar: false
 
-#spotcast:
+# spotcast:
 #  sp_dc: !secret spotcast_dc_simon
 #  sp_key: !secret spotcast_key_simon
 #  accounts:

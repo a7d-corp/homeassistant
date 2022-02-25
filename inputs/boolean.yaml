@@ -1,5 +1,5 @@
 holiday_mode:
-  initial: off
+  initial: false
   icon: 'mdi:beach'
 global_away_mode_toggle:
   name: Enable away mode
@@ -31,18 +31,13 @@ house_option_alarmclock:
 # Used by Automation to enable Snooze
 house_alarmclock_snooze:
   name: Snoozing
-  initial: off
+  initial: false
   icon: mdi:alarm-snooze
 # Used by Automation to track if alarm clock is running
 house_alarmclock_active:
   name: Snoozing
-  initial: off
+  initial: false
   icon: mdi:alarm-snooze
-# Optional: Enable radio for sequence
-#  house_alarmclock_radio:
-#  name: Alarm Radio
-#  initial: on
-#  icon: mdi:radio
 
 kitchen_motion_detected:
   name: "Kitchen motion (detected)"

@@ -36,122 +36,118 @@ popup_cards:
           color: #FFF;
         }
 cards:
-- type: vertical-stack
-  cards:
-    - type: "custom:mini-media-player"
-      artwork: cover
-      entity: media_player.living_room
-      hide:
-        power_state: true
-      info: scroll
-      volume_stateless: true
-    - type: "custom:mini-media-player"
-      artwork: cover
-      entity: media_player.garden_room
-      hide:
-        power_state: true
-      info: scroll
-      volume_stateless: true
-#    - type: media-control
-#      entity: media_player.philips_65oled805
-    - type: media-control
-      entity: media_player.living_room_chromecast
-    - type: media-control
-      entity: media_player.denon_avr_x2100w
-- type: vertical-stack
-  cards:
-    - type: horizontal-stack
-      cards:
-        - type: "custom:card-templater"
-          card:
-            type: entity-button
-            double_tap_action:
-              action: none
+  - type: vertical-stack
+    cards:
+      - type: "custom:mini-media-player"
+        artwork: cover
+        entity: media_player.living_room
+        hide:
+          power_state: true
+        info: scroll
+        volume_stateless: true
+      - type: "custom:mini-media-player"
+        artwork: cover
+        entity: media_player.garden_room
+        hide:
+          power_state: true
+        info: scroll
+        volume_stateless: true
+      - type: media-control
+        entity: media_player.living_room_chromecast
+      - type: media-control
+        entity: media_player.denon_avr_x2100w
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: "custom:card-templater"
+            card:
+              type: entity-button
+              double_tap_action:
+                action: none
+              entity: group.living_room_lights
+              hold_action:
+                action: none
+              name_template: '{{ "Turn lights off" if is_state("group.living_room_lights", "on") else "Turn lights on" }}'
+              show_icon: false
+              show_state: false
+              tap_action:
+                action: toggle
+            entities:
+              - group.living_room_lights
+          - type: entity
             entity: group.living_room_lights
-            hold_action:
-              action: none
-            name_template: '{{ "Turn lights off" if is_state("group.living_room_lights", "on") else "Turn lights on" }}'
-            show_icon: false
-            show_state: false
+            icon: mdi:ceiling-bulb
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: light.standard_lamp_left
+            icon: mdi:floor-lamp
+            name: Left uplighter
             tap_action:
               action: toggle
-          entities:
-            - group.living_room_lights
-        - type: entity
-          entity: group.living_room_lights
-          #attribute: brightness
-          #unit: "%"
-          icon: mdi:ceiling-bulb
-    - type: horizontal-stack
-      cards:
-        - type: entity-button
-          entity: light.standard_lamp_left
-          icon: mdi:floor-lamp
-          name: Left uplighter
-          tap_action:
-            action: toggle
-        - type: entity-button
-          entity: light.standard_lamp_right
-          icon: mdi:floor-lamp
-          name: Right uplighter
-          tap_action:
-            action: toggle
-        - type: entity-button
-          entity: light.garden_room_standard_lamp
-          icon: mdi:floor-lamp
-          name: Garden room uplighter
-          tap_action:
-            action: toggle
-    - type: horizontal-stack
-      cards:
-        - type: entity-button
-          entity: light.sideboard_bloom
-          icon: mdi:wall-sconce-round-variant
-          name: Left Bloom
-          tap_action:
-            action: toggle
-        - type: entity-button
-          entity: light.sideboard_bloom_2
-          icon: mdi:wall-sconce-round-variant
-          name: Right Bloom
-          tap_action:
-            action: toggle
-- type: vertical-stack
-  cards:
-    - type: custom:simple-thermostat
-      entity: climate.living_room_thermostat
-      hide_header: true
-      control:
-        - hvac
-    - type: "custom:mini-graph-card"
-      color_thresholds:
-        - value: 15
-          color: "#2facfa"
-        - value: 18
-          color: "#ffc72b"
-        - value: 25
-          color: "#c0392b"
-      decimals: 1
-      entities:
-        - entity: sensor.living_room_thermostat_current_temperature
-      font_size: 80
-      hours_to_show: 24
-      name: Temperature
-      points_per_hour: 0.5
-      show:
-        labels: false
-        labels_secondary: false
-        points: false
-    - type: "custom:mini-graph-card"
-      decimals: 1
-      entities:
-        - entity: sensor.living_room_thermostat_current_humidity
-      font_size: 80
-      hours_to_show: 24
-      line_color: "#45bf4b"
-      name: Humidity
-      points_per_hour: 0.5
-      show:
-        labels: false
-        labels_secondary: false
-        points: false
+          - type: entity-button
+            entity: light.standard_lamp_right
+            icon: mdi:floor-lamp
+            name: Right uplighter
+            tap_action:
+              action: toggle
+          - type: entity-button
+            entity: light.garden_room_standard_lamp
+            icon: mdi:floor-lamp
+            name: Garden room uplighter
+            tap_action:
+              action: toggle
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: light.sideboard_bloom
+            icon: mdi:wall-sconce-round-variant
+            name: Left Bloom
+            tap_action:
+              action: toggle
+          - type: entity-button
+            entity: light.sideboard_bloom_2
+            icon: mdi:wall-sconce-round-variant
+            name: Right Bloom
+            tap_action:
+              action: toggle
+  - type: vertical-stack
+    cards:
+      - type: custom:simple-thermostat
+        entity: climate.living_room_thermostat
+        hide_header: true
+        control:
+          - hvac
+      - type: "custom:mini-graph-card"
+        color_thresholds:
+          - value: 15
+            color: "#2facfa"
+          - value: 18
+            color: "#ffc72b"
+          - value: 25
+            color: "#c0392b"
+        decimals: 1
+        entities:
+          - entity: sensor.living_room_thermostat_current_temperature
+        font_size: 80
+        hours_to_show: 24
+        name: Temperature
+        points_per_hour: 0.5
+        show:
+          labels: false
+          labels_secondary: false
+          points: false
+      - type: "custom:mini-graph-card"
+        decimals: 1
+        entities:
+          - entity: sensor.living_room_thermostat_current_humidity
+        font_size: 80
+        hours_to_show: 24
+        line_color: "#45bf4b"
+        name: Humidity
+        points_per_hour: 0.5
+        show:
+          labels: false
+          labels_secondary: false
+          points: false

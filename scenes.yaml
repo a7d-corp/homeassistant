@@ -1,15 +1,15 @@
 - name: Kitchen away mode on
   entities:
-    light.kitchen_cabinets: on
+    light.kitchen_cabinets: "on"
 
 - name: Kitchen away mode off
   entities:
-    light.kitchen_cabinets: off
+    light.kitchen_cabinets: "off"
 
 - name: Lounge away mode on
   entities:
-    group.lounge_hues: on
+    group.lounge_hues: "on"
 
 - name: Lounge away mode off
   entities:
-    group.lounge_hues: off
+    group.lounge_hues: "off"

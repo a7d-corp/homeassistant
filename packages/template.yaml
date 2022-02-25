@@ -1,0 +1,27 @@
+template:
+  - sensor:
+      - unique_id: sidebar_greeting
+        state: template
+        attributes:
+          time: >
+            {% set hours = now().strftime('%H') %}
+            {% set minutes = now().strftime('%M') %}
+            <span class="time">
+              {{ hours }}<span class="time-colon">:</span>{{ minutes }}
+            </span>
+          date: |
+            {%- if strptime(states('sensor.date'), '%Y-%m-%d').day != null %}
+            {%- set days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+            {%- set months = ['January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'] %}
+              {{- days[now().weekday()] }}  {{- strptime(states('sensor.date'), '%Y-%m-%d').day }} {{ months[now().month-1] }}
+            {%- endif -%}
+          greeting: |
+            {%- set time = now().hour %}
+            {%- if time <= 5 -%} Good night
+            {%- elif time <= 10 -%} Good morning
+            {%- elif time <= 17 -%} Good day
+            {%- elif time <= 22 -%} Good evening
+            {%- elif time <= 23 -%} Good night
+            {%- else %} Good night
+            {%- endif -%}

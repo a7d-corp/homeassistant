@@ -5,103 +5,111 @@ visible:
   - user: 05ade721deaa47eab2772ca82d2a3621
   - user: 29fbf77c2a654691a6d6df245b96850c
 cards:
-- type: vertical-stack
-  cards:
-    - type: "custom:mini-media-player"
-      artwork: cover
-      entity: media_player.kitchen
-      hide:
-        power_state: true
-      info: scroll
-      volume_stateless: true
-- type: vertical-stack
-  cards:
-    - type: "custom:card-templater"
-      card:
-        type: entity-button
-        double_tap_action:
-          action: none
-        entity: group.kitchen_lights
-        hold_action:
-          action: none
-        name_template: '{{ "Turn lights off" if is_state("group.kitchen_lights", "on") else "Turn lights on" }}'
-        show_icon: false
-        show_state: false
-        tap_action:
-          action: toggle
-      entities:
-        - group.kitchen_lights
-    - type: horizontal-stack
-      name: Lighting
-      cards:
-        - type: entity-button
-          entity: light.kitchen_cabinets
-          icon: mdi:led-strip-variant
-          name: Cabinets
-          tap_action:
-            action: toggle
-        - type: entity-button
-          entity: light.hue_lightstrip_plus_1
-          icon: mdi:led-strip-variant
-          name: Floor lighting
-          tap_action:
-            action: toggle
-#    - type: "custom:card-templater"
-#      card:
-#        type: entity-button
-#        double_tap_action:
-#          action: none
-#        entity: switch.0x000b3cfffef7c52a_switch
-#        hold_action:
-#          action: none
-#        icon_template: >
-#          {{ "mdi:string-lights" if is_state("switch.0x000b3cfffef7c52a_switch", "on") else "mdi:string-lights-off" }}
-#        name_template: '{{ "Turn christmas lights off" if is_state("switch.0x000b3cfffef7c52a_switch", "on") else "Turn christmas lights on" }}'
-#        show_icon: false
-#        show_state: false
-#        tap_action:
-#          action: toggle
-#      entities:
-#        - switch.0x000b3cfffef7c52a_switch
-- type: vertical-stack
-  cards:
-    - type: custom:simple-thermostat
-      entity: climate.living_room_thermostat
-      hide_header: true
-      control:
-        - hvac
-- type: vertical-stack
-  cards:
-    - type: "custom:mini-graph-card"
-      aggregate_func: max
-      entities:
-        - entity: input_boolean.kitchen_motion_detected
-          name: Kitchen
-      hours_to_show: 1
-      line_color: "#bd3535"
-      name: Motion (previous hour)
-      points_per_hour: 30
-      show:
-        labels: false
-        labels_secondary: false
-        legend: false
-      smoothing: false
-      state_map:
-        - value: "off"
-          label: Clear
-        - value: "on"
-          label: Detected
-      update_interval: 30
-    - type: "custom:mini-graph-card"
-      entities:
-        - entity: sensor.0x00158d0002b7f000_illuminance_lux
-          name: Kitchen
-      hours_to_show: 12
-      line_color: "#fff53d"
-      name: Brightness (last 12 hours)
-      points_per_hour: 20
-      show:
-        labels: false
-        labels_secondary: false
-        legend: false
-        points: false
+  - type: vertical-stack
+    cards:
+      - type: "custom:mini-media-player"
+        artwork: cover
+        entity: media_player.kitchen
+        hide:
+          power_state: true
+        info: scroll
+        volume_stateless: true
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        name: Lighting
+        cards:
+          - type: entity-button
+            entity: light.kitchen_cabinets
+            icon: mdi:led-strip-variant
+            name: Cabinets
+            tap_action:
+              action: toggle
+          - type: entity-button
+            entity: light.hue_lightstrip_plus_1
+            icon: mdi:led-strip-variant
+            name: Floor lighting
+            tap_action:
+              action: toggle
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: switch.0x00124b0024c04605
+            icon: mdi:wall-sconce-flat
+            name: Under cabinet lights
+            tap_action:
+              action: toggle
+          - type: "custom:card-templater"
+            card:
+              type: entity-button
+              double_tap_action:
+                action: none
+              entity: group.kitchen_lights
+              hold_action:
+                action: none
+              name_template: '{{ "Turn lights off" if is_state("group.kitchen_lights", "on") else "Turn lights on" }}'
+              show_icon: false
+              show_state: false
+              tap_action:
+                action: toggle
+            entities:
+              - group.kitchen_lights
+  #    - type: "custom:card-templater"
+  #      card:
+  #        type: entity-button
+  #        double_tap_action:
+  #          action: none
+  #        entity: switch.0x000b3cfffef7c52a_switch
+  #        hold_action:
+  #          action: none
+  #        icon_template: >
+  #          {{ "mdi:string-lights" if is_state("switch.0x000b3cfffef7c52a_switch", "on") else "mdi:string-lights-off" }}
+  #        name_template: '{{ "Turn christmas lights off" if is_state("switch.0x000b3cfffef7c52a_switch", "on") else "Turn christmas lights on" }}'
+  #        show_icon: false
+  #        show_state: false
+  #        tap_action:
+  #          action: toggle
+  #      entities:
+  #        - switch.0x000b3cfffef7c52a_switch
+  - type: vertical-stack
+    cards:
+      - type: custom:simple-thermostat
+        entity: climate.living_room_thermostat
+        hide_header: true
+        control:
+          - hvac
+  - type: vertical-stack
+    cards:
+      - type: "custom:mini-graph-card"
+        aggregate_func: max
+        entities:
+          - entity: input_boolean.kitchen_motion_detected
+            name: Kitchen
+        hours_to_show: 1
+        line_color: "#bd3535"
+        name: Motion (previous hour)
+        points_per_hour: 30
+        show:
+          labels: false
+          labels_secondary: false
+          legend: false
+        smoothing: false
+        state_map:
+          - value: "off"
+            label: Clear
+          - value: "on"
+            label: Detected
+        update_interval: 30
+      - type: "custom:mini-graph-card"
+        entities:
+          - entity: sensor.0x00158d0002b7f000_illuminance_lux
+            name: Kitchen
+        hours_to_show: 12
+        line_color: "#fff53d"
+        name: Brightness (last 12 hours)
+        points_per_hour: 20
+        show:
+          labels: false
+          labels_secondary: false
+          legend: false
+          points: false

@@ -36,117 +36,115 @@ popup_cards:
           color: #FFF;
         }
 cards:
-- type: vertical-stack
-  cards:
-    - type: horizontal-stack
-      cards:
-        - type: "custom:card-templater"
-          card:
-            type: entity-button
-            double_tap_action:
-              action: none
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: "custom:card-templater"
+            card:
+              type: entity-button
+              double_tap_action:
+                action: none
+              entity: group.office_lights
+              hold_action:
+                action: none
+              name_template: '{{ "Turn lights off" if is_state("group.office_lights", "on") else "Turn lights on" }}'
+              show_icon: false
+              show_state: false
+              tap_action:
+                action: toggle
+            entities:
+              - group.office_lights
+          - type: entity
             entity: group.office_lights
-            hold_action:
-              action: none
-            name_template: '{{ "Turn lights off" if is_state("group.office_lights", "on") else "Turn lights on" }}'
-            show_icon: false
-            show_state: false
+            icon: mdi:ceiling-bulb
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: light.0x000d6ffffe07b722
+            icon: mdi:desk-lamp
+            name: Lamp
             tap_action:
               action: toggle
-          entities:
-            - group.office_lights
-        - type: entity
-          entity: group.office_lights
-          #attribute: brightness
-          #unit: "%"
-          icon: mdi:ceiling-bulb
-    - type: horizontal-stack
-      cards:
-        - type: entity-button
-          entity: light.0x000d6ffffe07b722
-          icon: mdi:desk-lamp
-          name: Lamp
-          tap_action:
-            action: toggle
-        - type: entity-button
-          entity: light.office_ceiling_lamp
-          icon: mdi:ceiling-light
-          name: Ceiling lamp
-          tap_action:
-            action: toggle
-        - type: entity-button
-          entity: light.office_standard_lamp
-          icon: mdi:floor-lamp
-          name: Uplighter
-          tap_action:
-            action: toggle
-    - type: horizontal-stack
-      cards:
-        - type: "custom:card-templater"
-          card:
-            type: entity-button
-            double_tap_action:
-              action: none
-            entity: switch.0x000d6ffffe2a5801
-            hold_action:
-              action: none
-            icon: "mdi:power"
-            name_template: '{{ "Turn desk off" if is_state("switch.0x000d6ffffe2a5801", "on") else "Turn desk power on" }}'
-            show_icon: false
-            show_state: false
+          - type: entity-button
+            entity: light.office_ceiling_lamp
+            icon: mdi:ceiling-light
+            name: Ceiling lamp
             tap_action:
               action: toggle
-          entities:
-            - switch.0x000d6ffffe2a5801
-        - type: "custom:card-templater"
-          card:
-            type: entity-button
-            double_tap_action:
-              action: none
-            entity: switch.0x086bd7fffe19c5dd
-            hold_action:
-              action: none
-            icon: "mdi:power"
-            name_template: '{{ "Turn PC power off" if is_state("switch.0x086bd7fffe19c5dd", "on") else "Turn PC power on" }}'
-            show_icon: false
-            show_state: false
+          - type: entity-button
+            entity: light.office_standard_lamp
+            icon: mdi:floor-lamp
+            name: Uplighter
             tap_action:
               action: toggle
-          entities:
-            - switch.0x086bd7fffe19c5dd
-        - type: "custom:card-templater"
-          card:
-            type: entity-button
-            double_tap_action:
-              action: none
-            entity: switch.0x086bd7fffe19c5dd
-            hold_action:
-              action: none
-            icon: "mdi:power"
-            name_template: '{{ "Shut PC down" if is_state("switch.0x086bd7fffe19c5dd", "on") else "Shut PC down" }}'
-            show_icon: false
-            show_state: false
-            tap_action:
-              action: toggle
-          entities:
-            - switch.0x086bd7fffe19c5dd
-- type: "custom:mini-graph-card"
-  decimals: 1
-  entities:
-    - entity: binary_sensor.phoenix_ping
-      name: phoenix
-  font_size: 80
-  hours_to_show: 24
-  name: Work Laptop
-  points_per_hour: 1
-  show:
-    icon: false
-    labels: false
-    labels_secondary: false
-    points: false
-  smoothing: false
-  state_map:
-    - value: "off"
-      label: Offline
-    - value: "on"
-      label: Online
+      - type: horizontal-stack
+        cards:
+          - type: "custom:card-templater"
+            card:
+              type: entity-button
+              double_tap_action:
+                action: none
+              entity: switch.0x000d6ffffe2a5801
+              hold_action:
+                action: none
+              icon: "mdi:power"
+              name_template: '{{ "Turn desk off" if is_state("switch.0x000d6ffffe2a5801", "on") else "Turn desk power on" }}'
+              show_icon: false
+              show_state: false
+              tap_action:
+                action: toggle
+            entities:
+              - switch.0x000d6ffffe2a5801
+          - type: "custom:card-templater"
+            card:
+              type: entity-button
+              double_tap_action:
+                action: none
+              entity: switch.0x086bd7fffe19c5dd
+              hold_action:
+                action: none
+              icon: "mdi:power"
+              name_template: '{{ "Turn PC power off" if is_state("switch.0x086bd7fffe19c5dd", "on") else "Turn PC power on" }}'
+              show_icon: false
+              show_state: false
+              tap_action:
+                action: toggle
+            entities:
+              - switch.0x086bd7fffe19c5dd
+          - type: "custom:card-templater"
+            card:
+              type: entity-button
+              double_tap_action:
+                action: none
+              entity: switch.0x086bd7fffe19c5dd
+              hold_action:
+                action: none
+              icon: "mdi:power"
+              name_template: '{{ "Shut PC down" if is_state("switch.0x086bd7fffe19c5dd", "on") else "Shut PC down" }}'
+              show_icon: false
+              show_state: false
+              tap_action:
+                action: toggle
+            entities:
+              - switch.0x086bd7fffe19c5dd
+  - type: "custom:mini-graph-card"
+    decimals: 1
+    entities:
+      - entity: binary_sensor.phoenix_ping
+        name: phoenix
+    font_size: 80
+    hours_to_show: 24
+    name: Work Laptop
+    points_per_hour: 1
+    show:
+      icon: false
+      labels: false
+      labels_secondary: false
+      points: false
+    smoothing: false
+    state_map:
+      - value: "off"
+        label: Offline
+      - value: "on"
+        label: Online
