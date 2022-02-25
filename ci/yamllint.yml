@@ -3,6 +3,7 @@ extends: default
 ignore: |
   .yamllint.yml
   .github
+  custom_components
 
 rules:
   line-length: disable
