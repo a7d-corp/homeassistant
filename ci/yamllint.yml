@@ -2,11 +2,10 @@ extends: default
 
 ignore: |
   .yamllint.yml
+  .github
 
 rules:
-  line-length:
-    max: 80
-    level: warning
+  line-length: disable
   trailing-spaces:
     level: warning
   indentation:
