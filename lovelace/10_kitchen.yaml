@@ -16,21 +16,6 @@ cards:
       volume_stateless: true
 - type: vertical-stack
   cards:
-    - type: "custom:card-templater"
-      card:
-        type: entity-button
-        double_tap_action:
-          action: none
-        entity: group.kitchen_lights
-        hold_action:
-          action: none
-        name_template: '{{ "Turn lights off" if is_state("group.kitchen_lights", "on") else "Turn lights on" }}'
-        show_icon: false
-        show_state: false
-        tap_action:
-          action: toggle
-      entities:
-        - group.kitchen_lights
     - type: horizontal-stack
       name: Lighting
       cards:
@@ -46,6 +31,29 @@ cards:
           name: Floor lighting
           tap_action:
             action: toggle
+    - type: horizontal-stack
+      cards:
+        - type: entity-button
+          entity: switch.0x00124b0024c04605
+          icon: mdi:wall-sconce-flat
+          name: Under cabinet lights
+          tap_action:
+            action: toggle
+        - type: "custom:card-templater"
+          card:
+            type: entity-button
+            double_tap_action:
+              action: none
+            entity: group.kitchen_lights
+            hold_action:
+              action: none
+            name_template: '{{ "Turn lights off" if is_state("group.kitchen_lights", "on") else "Turn lights on" }}'
+            show_icon: false
+            show_state: false
+            tap_action:
+              action: toggle
+          entities:
+            - group.kitchen_lights
 #    - type: "custom:card-templater"
 #      card:
 #        type: entity-button
