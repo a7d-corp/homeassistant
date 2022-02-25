@@ -4,90 +4,90 @@ path: admin
 visible:
   - user: 05ade721deaa47eab2772ca82d2a3621
 cards:
-- type: vertical-stack
-  cards:
-    - type: entities
-      title: Holiday Mode
-      show_header_toggle: false
-      entities:
-        - entity: input_boolean.holiday_mode
-          icon: mdi:airplane-takeoff
-    - type: entities
-      title: Home Controls
-      show_header_toggle: false
-      entities:
-        - input_boolean.house_lighting_toggle
-        - input_boolean.night_mode_toggle
-        - input_boolean.motion_lighting_toggle
-        - entity: input_boolean.global_away_mode_toggle
-          icon: mdi:account-off
-          name: "Away: all automations"
-        - switch.flux_adjustment
-        - input_boolean.party_mode
-    - type: entities
-      title: Occupancy
-      show_header_toggle: false
-      entities:
-        - entity: binary_sensor.people_home
-          name: binary_sensor.people_home
-        - entity: person.simon
-          name: person.simon
-        - entity: input_select.simon_status
-          name: input_select.simon_status
-        - entity: device_tracker.houston_2
-          name: device_tracker.houston_2
-        - entity: person.nikki
-          name: person.nikki
-        - entity: input_select.nikki_status
-          name: input_select.nikki_status
-        - entity: device_tracker.galaxy_s10
-          name: device_tracker.galaxy_s10
-- type: vertical-stack
-  cards:
-    - type: custom:auto-entities
-      show_empty: false
-      card:
-        type: glance
-        title: Lights on
-      filter:
-        include:
-          - domain: light
-            state: "on" # Remember that "on" and "off" are magic in yaml, and must always be quoted
-    - type: 'custom:battery-state-card'
-      title: Low batteries
-      sort_by_level: "asc"
-      bulk_rename:
-        - from: "Battery Level" # simple string replace (note: "to" is not required if you want to remove string)
-          to: "sensor"
-        - from: "/\\s(temperature|temp)\\s/" # regular expression
-          to: " temp. "
-      filter:
-        include: # filters for auto-adding
-          - name: entity_id # entities which id ends with "_battery_level"
-            value: "*_battery"
-        exclude: # filters for removing
-          - name: state # exclude entities above 99% of battery level
-            value: 50
-            operator: ">"
-- type: vertical-stack
-  cards:
-    - type: entities
-      title: Zigbee2mqtt
-      show_header_toggle: false
-      entities:
-        - entity: sensor.zigbee2mqtt_bridge_state
-        - entity: sensor.zigbee2mqtt_version
-        - entity: sensor.coordinator_version
-        - entity: input_select.zigbee2mqtt_log_level
-        - type: divider
-        - entity: switch.zigbee2mqtt_main_join
-        - entity: input_number.zigbee2mqtt_join_minutes
-        - entity: timer.zigbee_permit_join
-        - type: divider
-        - entity: input_text.zigbee2mqtt_old_name
-        - entity: input_text.zigbee2mqtt_new_name
-        - entity: script.zigbee2mqtt_rename
-        - type: divider
-        - entity: input_text.zigbee2mqtt_remove
-        - entity: input_boolean.zigbee2mqtt_force_remove
-        - entity: script.zigbee2mqtt_remove
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: Holiday Mode
+        show_header_toggle: false
+        entities:
+          - entity: input_boolean.holiday_mode
+            icon: mdi:airplane-takeoff
+      - type: entities
+        title: Home Controls
+        show_header_toggle: false
+        entities:
+          - input_boolean.house_lighting_toggle
+          - input_boolean.night_mode_toggle
+          - input_boolean.motion_lighting_toggle
+          - entity: input_boolean.global_away_mode_toggle
+            icon: mdi:account-off
+            name: "Away: all automations"
+          - switch.flux_adjustment
+          - input_boolean.party_mode
+      - type: entities
+        title: Occupancy
+        show_header_toggle: false
+        entities:
+          - entity: binary_sensor.people_home
+            name: binary_sensor.people_home
+          - entity: person.simon
+            name: person.simon
+          - entity: input_select.simon_status
+            name: input_select.simon_status
+          - entity: device_tracker.houston_2
+            name: device_tracker.houston_2
+          - entity: person.nikki
+            name: person.nikki
+          - entity: input_select.nikki_status
+            name: input_select.nikki_status
+          - entity: device_tracker.galaxy_s10
+            name: device_tracker.galaxy_s10
+  - type: vertical-stack
+    cards:
+      - type: custom:auto-entities
+        show_empty: false
+        card:
+          type: glance
+          title: Lights on
+        filter:
+          include:
+            - domain: light
+              state: "on"  # Remember that "on" and "off" are magic in yaml, and must always be quoted
+      - type: 'custom:battery-state-card'
+        title: Low batteries
+        sort_by_level: "asc"
+        bulk_rename:
+          - from: "Battery Level"  # simple string replace (note: "to" is not required if you want to remove string)
+            to: "sensor"
+          - from: "/\\s(temperature|temp)\\s/"  # regular expression
+            to: " temp. "
+        filter:
+          include:  # filters for auto-adding
+            - name: entity_id  # entities which id ends with "_battery_level"
+              value: "*_battery"
+          exclude:  # filters for removing
+            - name: state  # exclude entities above 99% of battery level
+              value: 50
+              operator: ">"
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: Zigbee2mqtt
+        show_header_toggle: false
+        entities:
+          - entity: sensor.zigbee2mqtt_bridge_state
+          - entity: sensor.zigbee2mqtt_version
+          - entity: sensor.coordinator_version
+          - entity: input_select.zigbee2mqtt_log_level
+          - type: divider
+          - entity: switch.zigbee2mqtt_main_join
+          - entity: input_number.zigbee2mqtt_join_minutes
+          - entity: timer.zigbee_permit_join
+          - type: divider
+          - entity: input_text.zigbee2mqtt_old_name
+          - entity: input_text.zigbee2mqtt_new_name
+          - entity: script.zigbee2mqtt_rename
+          - type: divider
+          - entity: input_text.zigbee2mqtt_remove
+          - entity: input_boolean.zigbee2mqtt_force_remove
+          - entity: script.zigbee2mqtt_remove

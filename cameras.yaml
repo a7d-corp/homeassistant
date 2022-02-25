@@ -8,7 +8,7 @@
 # re-streamed cameras from Frigate
 - platform: generic
   name: frigate_rtmp_front
-  still_image_url: http://10.101.0.50:5000/api/front/latest.jpg?h=400&motion=1 
+  still_image_url: http://10.101.0.50:5000/api/front/latest.jpg?h=400&motion=1
   stream_source: rtmp://10.101.0.50/live/front
 - platform: generic
   name: frigate_rtmp_back

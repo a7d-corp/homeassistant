@@ -35,43 +35,40 @@ popup_cards:
           color: #FFF;
         }
 cards:
-- type: vertical-stack
-  cards:
-    - type: horizontal-stack
-      cards:
-        - type: "custom:card-templater"
-          card:
-            type: entity-button
-            double_tap_action:
-              action: none
-            entity: light.twinkly_22b5b5
-            hold_action:
-              action: none
-            icon_template: >
-              {{ "mdi:string-lights" if is_state("light.twinkly_22b5b5", "on") else "mdi:string-lights-off" }}
-            name_template: '{{ "Turn external lights off" if is_state("light.twinkly_22b5b5", "on") else "Turn external lights on" }}'
-            show_icon: false
-            show_state: false
-            tap_action:
-              action: toggle
-          entities:
-            - light.twinkly_22b5b5
-        - type: "custom:card-templater"
-          card:
-            type: entity-button
-            double_tap_action:
-              action: none
-            entity: light.twinkly_22b5b5
-            hold_action:
-              action: none
-            icon_template: >
-              {{ "mdi:pine-tree-box" if is_state("light.twinkly_22b5b5", "on") else "mdi:pine-tree" }}
-            name_template: >
-              {{ "Turn \ud83c\udf84 christmas tree off" if is_state("light.twinkly_22b5b5", "on") else "Turn \ud83c\udf84 christmas tree on" }}
-            tap_action:
-              action: toggle
-          entities:
-            - light.twinkly_22b5b5
-
-
-
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: "custom:card-templater"
+            card:
+              type: entity-button
+              double_tap_action:
+                action: none
+              entity: light.twinkly_22b5b5
+              hold_action:
+                action: none
+              icon_template: >
+                {{ "mdi:string-lights" if is_state("light.twinkly_22b5b5", "on") else "mdi:string-lights-off" }}
+              name_template: '{{ "Turn external lights off" if is_state("light.twinkly_22b5b5", "on") else "Turn external lights on" }}'
+              show_icon: false
+              show_state: false
+              tap_action:
+                action: toggle
+            entities:
+              - light.twinkly_22b5b5
+          - type: "custom:card-templater"
+            card:
+              type: entity-button
+              double_tap_action:
+                action: none
+              entity: light.twinkly_22b5b5
+              hold_action:
+                action: none
+              icon_template: >
+                {{ "mdi:pine-tree-box" if is_state("light.twinkly_22b5b5", "on") else "mdi:pine-tree" }}
+              name_template: >
+                {{ "Turn \ud83c\udf84 christmas tree off" if is_state("light.twinkly_22b5b5", "on") else "Turn \ud83c\udf84 christmas tree on" }}
+              tap_action:
+                action: toggle
+            entities:
+              - light.twinkly_22b5b5

@@ -5,43 +5,42 @@ visible:
   - user: 05ade721deaa47eab2772ca82d2a3621
   - user: 29fbf77c2a654691a6d6df245b96850c
 cards:
-- type: horizontal-stack
-  cards:
-    - type: entity-button
-      entity: switch.0x804b50fffea7f978
-      icon: "mdi:ceiling-light"
-      name: Understairs light
-      tap_action:
-        action: toggle
-    - type: "custom:card-templater"
-      card:
-        type: entity-button
-        double_tap_action:
-          action: none
-        entity: binary_sensor.0x00158d0001bf6277_contact
-        hold_action:
-          action: none
-        name_template: '{{ "Loft open" if is_state("binary_sensor.0x00158d0001bf6277_contact", "on") else "Loft closed" }}'
-        show_icon: false
-        show_state: false
+  - type: horizontal-stack
+    cards:
+      - type: entity-button
+        entity: switch.0x804b50fffea7f978
+        icon: "mdi:ceiling-light"
+        name: Understairs light
         tap_action:
-          action: none
-      entities:
-        - binary_sensor.0x00158d0001bf6277_contact
-    - type: entity-button
-      entity: switch.0x804b50fffeab6eea
-      name: Loft lights
-      tap_action:
-        action: toggle
-- type: "custom:auto-entities"
-  card:
-    type: entities
-    title: Open Doors
-  filter:
-    include:
-      - entity_id: "binary_sensor.0x00158d0001bf6277_contact" # loft hatch
-        state: "open"
-      - entity_id: "binary_sensor.0x00158d000232ab79_contact" # understairs cupboard
-        state: "on"
-  show_empty: false
-
+          action: toggle
+      - type: "custom:card-templater"
+        card:
+          type: entity-button
+          double_tap_action:
+            action: none
+          entity: binary_sensor.0x00158d0001bf6277_contact
+          hold_action:
+            action: none
+          name_template: '{{ "Loft open" if is_state("binary_sensor.0x00158d0001bf6277_contact", "on") else "Loft closed" }}'
+          show_icon: false
+          show_state: false
+          tap_action:
+            action: none
+        entities:
+          - binary_sensor.0x00158d0001bf6277_contact
+      - type: entity-button
+        entity: switch.0x804b50fffeab6eea
+        name: Loft lights
+        tap_action:
+          action: toggle
+  - type: "custom:auto-entities"
+    card:
+      type: entities
+      title: Open Doors
+    filter:
+      include:
+        - entity_id: "binary_sensor.0x00158d0001bf6277_contact"  # loft hatch
+          state: "open"
+        - entity_id: "binary_sensor.0x00158d000232ab79_contact"  # understairs cupboard
+          state: "on"
+    show_empty: false

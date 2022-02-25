@@ -5,98 +5,86 @@ visible:
   - user: 05ade721deaa47eab2772ca82d2a3621
   - user: 29fbf77c2a654691a6d6df245b96850c
 cards:
-- type: vertical-stack
-  cards:
-    - type: "custom:mini-media-player"
-      artwork: cover
-      entity: media_player.bedroom
-      hide:
-        power_state: true
-      info: scroll
-      volume_stateless: true
-- type: horizontal-stack
-  cards:
-    - type: "custom:card-templater"
-      card:
-        type: entity-button
-        double_tap_action:
-          action: none
-        entity: input_boolean.house_option_alarmclock
-        hold_action:
-          action: none
-        name_template: '{{ "Alarm enabled" if is_state("input_boolean.house_option_alarmclock", "on") else "Alarm disabled" }}'
-        show_state: false
-        tap_action:
-          action: toggle
-      entities:
-        - input_boolean.house_option_alarmclock
-    - type: "custom:time-picker-card"
-      entity: input_datetime.alarmclock_time
-      name: Alarm time
-      hour_mode: 24
-      hour_step: 1
-      minute_step: 5
-      hide:
-       name: false
-      style: |
-        div.time-picker-header { border-radius: 15px 15px 0px 0px; }
-#- type: vertical-stack
-#  cards:
-#    - type: button
-#      name: Play rain sounds
-#      tap_action:
-#        action: call-service
-#        service: spotcast.start
-#        service_data:
-#          entity_id: media_player.living_room_speaker
-#          uri: "spotify:track:0tFT1PFYKfjBGDTZlivRfY"
-#          repeat: "track"
-#          account: "nikki"
-- type: vertical-stack
-  cards:
-    - type: custom:simple-thermostat
-      entity: climate.master_bedroom_thermostat
-      hide_header: true
-      control:
-        - hvac
-- type: vertical-stack
-  cards:
-    - type: "custom:mini-graph-card"
-      color_thresholds:
-        - value: 15
-          color: "#2facfa"
-        - value: 18
-          color: "#ffc72b"
-        - value: 25
-          color: "#c0392b"
-      decimals: 1
-      entities:
-        - entity: sensor.master_bedroom_thermostat_current_temperature
-          name: bedroom
-        - entity: sensor.0x00158d0001fa5c1b_temperature
-          name: ensuite
-      font_size: 80
-      hours_to_show: 24
-      name: Temperature
-      points_per_hour: 0.5
-      show:
-        labels: false
-        labels_secondary: false
-        points: false
-    - type: "custom:mini-graph-card"
-      decimals: 1
-      entities:
-        - entity: sensor.master_bedroom_thermostat_current_humidity
-          color: "#45bf4b"
-          name: bedroom
-        - entity: sensor.0x00158d0001fa5c1b_humidity
-          color: "#7dafff"
-          name: ensuite
-      font_size: 80
-      hours_to_show: 24
-      name: Humidity
-      points_per_hour: 0.5
-      show:
-        labels: false
-        labels_secondary: false
-        points: false
+  - type: vertical-stack
+    cards:
+      - type: "custom:mini-media-player"
+        artwork: cover
+        entity: media_player.bedroom
+        hide:
+          power_state: true
+        info: scroll
+        volume_stateless: true
+  - type: horizontal-stack
+    cards:
+      - type: "custom:card-templater"
+        card:
+          type: entity-button
+          double_tap_action:
+            action: none
+          entity: input_boolean.house_option_alarmclock
+          hold_action:
+            action: none
+          name_template: '{{ "Alarm enabled" if is_state("input_boolean.house_option_alarmclock", "on") else "Alarm disabled" }}'
+          show_state: false
+          tap_action:
+            action: toggle
+        entities:
+          - input_boolean.house_option_alarmclock
+      - type: "custom:time-picker-card"
+        entity: input_datetime.alarmclock_time
+        name: Alarm time
+        hour_mode: 24
+        hour_step: 1
+        minute_step: 5
+        hide:
+          name: false
+        style: |
+          div.time-picker-header { border-radius: 15px 15px 0px 0px; }
+  - type: vertical-stack
+    cards:
+      - type: custom:simple-thermostat
+        entity: climate.master_bedroom_thermostat
+        hide_header: true
+        control:
+          - hvac
+  - type: vertical-stack
+    cards:
+      - type: "custom:mini-graph-card"
+        color_thresholds:
+          - value: 15
+            color: "#2facfa"
+          - value: 18
+            color: "#ffc72b"
+          - value: 25
+            color: "#c0392b"
+        decimals: 1
+        entities:
+          - entity: sensor.master_bedroom_thermostat_current_temperature
+            name: bedroom
+          - entity: sensor.0x00158d0001fa5c1b_temperature
+            name: ensuite
+        font_size: 80
+        hours_to_show: 24
+        name: Temperature
+        points_per_hour: 0.5
+        show:
+          labels: false
+          labels_secondary: false
+          points: false
+      - type: "custom:mini-graph-card"
+        decimals: 1
+        entities:
+          - entity: sensor.master_bedroom_thermostat_current_humidity
+            color: "#45bf4b"
+            name: bedroom
+          - entity: sensor.0x00158d0001fa5c1b_humidity
+            color: "#7dafff"
+            name: ensuite
+        font_size: 80
+        hours_to_show: 24
+        name: Humidity
+        points_per_hour: 0.5
+        show:
+          labels: false
+          labels_secondary: false
+          points: false

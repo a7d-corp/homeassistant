@@ -10,7 +10,7 @@
   sunset_colortemp: 3000
   stop_colortemp: 1900
   brightness: 200
-  disable_brightness_adjust: True
+  disable_brightness_adjust: true
   mode: xy
 - platform: mqtt
   name: "Zigbee2mqtt main join"

@@ -12,7 +12,6 @@ people:
 global_controls:
   name: Home Controls
   icon: 'mdi:home-variant'
-  #control: hidden
   entities:
     - input_boolean.night_mode_toggle
     - input_boolean.motion_lighting_toggle
@@ -52,7 +51,7 @@ plex_devices:
     - media_player.plex_6ckun1j8g0we34orzv4n9v7l
     - sensor.plex
 
-#groups for security_view
+# groups for security_view
 kitchen_cameras:
   name: Kitchen Cameras
   icon: mdi:cctv
@@ -92,7 +91,6 @@ holiday_mode_toggle:
 # groups for lighting_view
 all_home_lights:
   name: All Lights
-  #control: hidden
   icon: mdi:lightbulb-outline
   entities:
     - group.lounge_lights
