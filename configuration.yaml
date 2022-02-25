@@ -27,8 +27,8 @@ lovelace:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 10.101.0.30
     - 10.101.0.60
+    - 172.25.0.64/27
 
 logger:
   default: warning
