@@ -4,31 +4,9 @@ path: security
 visible:
   - user: 05ade721deaa47eab2772ca82d2a3621
   - user: 29fbf77c2a654691a6d6df245b96850c
+popup_cards:
+  sensor.hacs: !include popup_cards/wifi_card.yaml
 cards:
-- type: vertical-stack
-  cards:
-    - type: entities
-      title: External motion detection
-      show_header_toggle: true
-      entities:
-        - type: buttons
-          entities:
-            - entity: input_boolean.frigate_front_detect_state
-              name: Front camera
-            - entity: input_boolean.frigate_back_detect_state
-              name: Rear camera
-            - entity: input_boolean.frigate_door_detect_state
-              name: Door camera
-    - type: entities
-      title: Internal motion detection
-      show_header_toggle: true
-      entities:
-        - type: buttons
-          entities:
-            - entity: input_boolean.frigate_kitchen_detect_state
-              name: Kitchen camera
-            - entity: input_boolean.frigate_lounge_detect_state
-              name: Lounge camera
 - type: vertical-stack
   cards:
     - type: picture-entity
@@ -63,3 +41,38 @@ cards:
       show_name: false
       show_state: false
       entity: camera.frigate_rtmp_lounge
+- type: vertical-stack
+  cards:
+    - type: entities
+      title: External motion detection
+      show_header_toggle: true
+      entities:
+        - type: buttons
+          entities:
+            - entity: input_boolean.frigate_front_detect_state
+              name: Front camera
+            - entity: input_boolean.frigate_back_detect_state
+              name: Rear camera
+            - entity: input_boolean.frigate_door_detect_state
+              name: Door camera
+    - type: entities
+      title: Internal motion detection
+      show_header_toggle: true
+      entities:
+        - type: buttons
+          entities:
+            - entity: input_boolean.frigate_kitchen_detect_state
+              name: Kitchen camera
+            - entity: input_boolean.frigate_lounge_detect_state
+              name: Lounge camera
+    - type: "custom:card-templater"
+      card:
+        type: button
+        entity: sensor.hacs
+        name: "WiFi details"
+        icon: "mdi:wifi-lock"
+        state_color: false
+        double_tap_action:
+          action: none
+        hold_action:
+          action: none
