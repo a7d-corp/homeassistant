@@ -31,10 +31,7 @@ http:
     - 172.25.0.64/27
 
 logger:
-  default: warning
-  logs:
-    hacs: debug
-#    homeassistant.components.device_tracker: debug
+  default: info
 
 config:
 map:
@@ -161,6 +158,11 @@ google:
   client_id: !secret gcal_client_id
   client_secret: !secret gcal_client_secret
   track_new_calendar: false
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+  project_id: !secret nest_project_id
 
 # spotcast:
 #  sp_dc: !secret spotcast_dc_simon

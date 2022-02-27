@@ -26,7 +26,7 @@ cards:
             tap_action:
               action: toggle
           - type: entity-button
-            entity: light.hue_lightstrip_plus_1
+            entity: light.kitchen_floor
             icon: mdi:led-strip-variant
             name: Floor lighting
             tap_action:
@@ -74,7 +74,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: custom:simple-thermostat
-        entity: climate.living_room_thermostat
+        entity: climate.living_room
         hide_header: true
         control:
           - hvac
