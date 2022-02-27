@@ -31,7 +31,7 @@ http:
     - 172.25.0.64/27
 
 logger:
-  default: info
+  default: warn
 
 config:
 map:
