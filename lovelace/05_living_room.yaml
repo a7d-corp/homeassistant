@@ -93,7 +93,7 @@ cards:
             tap_action:
               action: toggle
           - type: entity-button
-            entity: light.garden_room_standard_lamp
+            entity: light.garden_room_lamp
             icon: mdi:floor-lamp
             name: Garden room uplighter
             tap_action:
@@ -101,13 +101,13 @@ cards:
       - type: horizontal-stack
         cards:
           - type: entity-button
-            entity: light.sideboard_bloom
+            entity: light.sideboard_bloom_left
             icon: mdi:wall-sconce-round-variant
             name: Left Bloom
             tap_action:
               action: toggle
           - type: entity-button
-            entity: light.sideboard_bloom_2
+            entity: light.sideboard_bloom_right
             icon: mdi:wall-sconce-round-variant
             name: Right Bloom
             tap_action:
@@ -115,7 +115,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: custom:simple-thermostat
-        entity: climate.living_room_thermostat
+        entity: climate.living_room
         hide_header: true
         control:
           - hvac
@@ -129,7 +129,7 @@ cards:
             color: "#c0392b"
         decimals: 1
         entities:
-          - entity: sensor.living_room_thermostat_current_temperature
+          - entity: sensor.living_room_temperature
         font_size: 80
         hours_to_show: 24
         name: Temperature
@@ -141,7 +141,7 @@ cards:
       - type: "custom:mini-graph-card"
         decimals: 1
         entities:
-          - entity: sensor.living_room_thermostat_current_humidity
+          - entity: sensor.living_room_humidity
         font_size: 80
         hours_to_show: 24
         line_color: "#45bf4b"
