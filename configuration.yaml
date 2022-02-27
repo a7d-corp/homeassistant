@@ -31,10 +31,7 @@ http:
     - 172.25.0.64/27
 
 logger:
-  default: warning
-  logs:
-    hacs: debug
-#    homeassistant.components.device_tracker: debug
+  default: info
 
 config:
 map:
