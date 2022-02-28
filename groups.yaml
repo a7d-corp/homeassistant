@@ -116,7 +116,7 @@ office_lights:
   icon: mdi:desk
   entities:
     - light.0x000d6ffffe07b722
-    - light.office_standard_lamp
+    - light.office_lamp
     - light.office_ceiling_lamp
 
 lighting_tools:
@@ -182,23 +182,24 @@ lounge_hues:
   entities:
     - light.standard_lamp_left
     - light.standard_lamp_right
-    - light.garden_room_standard_lamp
-    - light.sideboard_bloom
-    - light.sideboard_bloom_2
+    - light.garden_room_lamp
+    - light.sideboard_bloom_left
+    - light.sideboard_bloom_right
 
 living_room_lights:
   name: Living room lights
   entities:
     - light.standard_lamp_left
     - light.standard_lamp_right
-    - light.garden_room_standard_lamp
-    - light.sideboard_bloom
-    - light.sideboard_bloom_2
+    - light.garden_room_lamp
+    - light.sideboard_bloom_left
+    - light.sideboard_bloom_right
 
 kitchen_hues:
   name: Kitchen Hues
   entities:
     - light.kitchen_cabinets
+    - light.kitchen_floor
 
 automation_people_status:
   name: People status
