@@ -29,6 +29,9 @@ jobs:
         id: check
         uses: frenck/action-home-assistant@v1
         continue-on-error: true
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 5
       - name: 'comment on PR'
         if: github.event_name == 'pull_request_target'
         uses: actions/github-script@v5
