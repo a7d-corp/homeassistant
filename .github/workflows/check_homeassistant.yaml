@@ -19,6 +19,9 @@ jobs:
       - run: cp -v ci/secrets.yaml secrets.yaml
       - run: cp -v ci/google-cloud-tts.json secrets/google-cloud-tts.json
       - run: cp -v ci/google-assistant.json secrets/google-assistant.json
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 5
       - name: 'ensure custom_components are populated'
         run: |
           mkdir custom_components/browser_mod/ || true
