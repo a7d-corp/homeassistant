@@ -31,7 +31,7 @@ jobs:
         continue-on-error: true
       - name: 'comment on PR'
         if: github.event_name == 'pull_request_target'
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             const commentContent = `config check: ${{ steps.check.outcome }}`;
