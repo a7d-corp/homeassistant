@@ -13,7 +13,7 @@ jobs:
             echo "DISTRIB_RELEASE=18.04" > /etc/lsb-release
           fi
       - name: 'checkout'
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: 'yamllint'
         id: lint
         uses: ibiqlik/action-yamllint@v3.1
