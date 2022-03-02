@@ -3,15 +3,6 @@ on:
   pull_request_target:
   workflow_dispatch:
 jobs:
-  debug_info:
-    name: 'print debug info'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print github context JSON
-        run: |
-          cat <<EOF
-          ${{ toJson(github) }}
-          EOF
   homeassistant:
     name: 'validate home-assistant configuration'
     runs-on: ubuntu-latest
@@ -28,6 +19,12 @@ jobs:
       - run: cp -v ci/secrets.yaml secrets.yaml
       - run: cp -v ci/google-cloud-tts.json secrets/google-cloud-tts.json
       - run: cp -v ci/google-assistant.json secrets/google-assistant.json
+      - name: 'ensure custom_components are populated'
+        run: |
+          mkdir custom_components/browser_mod || true
+          wget $(curl --silent "https://api.github.com/repos/thomasloven/hass-browser_mod/releases/latest" | jq .tarball_url -r) -O browser_mod_latest.tar.gz
+          tar_dir=$(tar -tf browser_mod_latest.tar.gz | grep -E 'custom_components/browser_mod/$')
+          tar -zxvf browser_mod_latest.tar.gz --strip-components=3 -C tmp/browser_mod/ $tar_dir
       - name: 'check homeassistant config'
         id: check
         uses: frenck/action-home-assistant@v1
