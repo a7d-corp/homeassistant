@@ -1,4 +1,4 @@
-name: 'check home-assistant configuration'
+name: 'print workflow context'
 on:
   pull_request_target:
   workflow_dispatch:
