@@ -26,3 +26,7 @@
   name: frigate_rtmp_lounge
   still_image_url: http://10.101.0.50:5000/api/lounge/latest.jpg?h=400&motion=1
   stream_source: rtmp://10.101.0.50/live/lounge
+- platform: generic
+  name: frigate_rtmp_nursery
+  still_image_url: http://10.101.0.50:5000/api/nursery/latest.jpg?h=400&motion=1
+  stream_source: rtmp://10.101.0.50/live/nursery
