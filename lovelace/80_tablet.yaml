@@ -6,13 +6,13 @@ visible:
   - user: de9bffd1c5bb4136bdf12e68766b0c2c
   - user: d3c2791b49304057a17223401668093a
 layout:
-  grid-template-columns: 15% 10% 20% 30% 25%
+  grid-template-columns: 25% 20% 30% 25%
   grid-template-rows: auto
   grid-template-areas: |
-    "left middle-left middle middle-right right"
+    "left middle-left middle-right right"
 popup_cards:
-  sensor.living_room_thermostat_current_temperature: !include popup_cards/climate_downstairs.yaml
-  sensor.master_bedroom_thermostat_current_temperature: !include popup_cards/climate_upstairs.yaml
+  sensor.living_room_temperature: !include popup_cards/climate_downstairs.yaml
+  sensor.master_bedroom_temperature: !include popup_cards/climate_upstairs.yaml
 cards:
   ##
   ## column 1
@@ -21,22 +21,68 @@ cards:
     view_layout:
       grid-area: left
     cards:
-      - type: picture-elements
-        image: /local/nikki-face.png
-        elements:
-          - type: state-label
-            entity: person.nikki
-            style:
-              left: 0
-              bottom: 0
-              pointer-events: none
-              line-height: 1.1em
-              font-size: 1.1em
-              background-color: rgba(0, 0, 0, 0.4)
-              color: "#ffffff"
-              width: 100%
-              transform: initial
-              padding: 0 2px
+      - type: horizontal-stack
+        cards:
+          - type: picture-elements
+            image: /local/nikki-face.png
+            elements:
+              - type: state-label
+                entity: person.nikki
+                style:
+                  left: 0
+                  bottom: 0
+                  pointer-events: none
+                  line-height: 1.1em
+                  font-size: 1.1em
+                  background-color: rgba(0, 0, 0, 0.4)
+                  color: "#ffffff"
+                  width: 100%
+                  transform: initial
+                  padding: 0 2px
+          - type: picture-elements
+            image: /local/simon-face.png
+            elements:
+              - type: state-label
+                entity: person.simon
+                style:
+                  left: 0
+                  bottom: 0
+                  pointer-events: none
+                  line-height: 1.1em
+                  font-size: 1.1em
+                  background-color: rgba(0, 0, 0, 0.4)
+                  color: "#ffffff"
+                  width: 100%
+                  transform: initial
+                  padding: 0 2px
+      - type: "custom:weather-card"
+        current: true
+        details: true
+        entity: weather.openweathermap
+        forecast: true
+        tap_action:
+          action: none
+      - type: horizontal-stack
+        cards:
+          - type: button
+            name: "Guest WiFi"
+            icon: "mdi:wifi-lock"
+            state_color: false
+            tap_action:
+              !include popup_cards/wifi_card.yaml
+          - type: button
+            name: "Audio controls"
+            icon: "mdi:speaker"
+            show_state: false
+            tap_action:
+              !include popup_cards/media_players.yaml
+          - type: button
+            entity: input_boolean.night_mode_toggle
+            name: "Night mode"
+            icon: "mdi:sleep"
+            show_state: true
+            hold_action:
+              action: toggle
   ##
   ## column 2
   ##
@@ -44,61 +90,10 @@ cards:
     view_layout:
       grid-area: middle-left
     cards:
-      - type: picture-elements
-        image: /local/nikki-face.png
-        elements:
-          - type: state-label
-            entity: person.nikki
-            style:
-              left: 0
-              bottom: 0
-              pointer-events: none
-              line-height: 1.1em
-              font-size: 1.1em
-              background-color: rgba(0, 0, 0, 0.4)
-              color: "#ffffff"
-              width: 100%
-              transform: initial
-              padding: 0 2px
-      - type: picture-elements
-        image: /local/simon-face.png
-        elements:
-          - type: state-label
-            entity: person.simon
-            style:
-              left: 0
-              bottom: 0
-              pointer-events: none
-              line-height: 1.1em
-              font-size: 1.1em
-              background-color: rgba(0, 0, 0, 0.4)
-              color: "#ffffff"
-              width: 100%
-              transform: initial
-              padding: 0 2px
-      - type: button
-        name: "Audio"
-        icon: "mdi:speaker"
-        show_state: false
-        tap_action:
-          !include popup_cards/media_players.yaml
-      - type: button
-        name: "Guest WiFi details"
-        icon: "mdi:wifi-lock"
-        state_color: false
-        tap_action:
-          !include popup_cards/wifi_card.yaml
-  ##
-  ## column 3
-  ##
-  - type: vertical-stack
-    view_layout:
-      grid-area: middle
-    cards:
       - type: markdown
         content: |
           ## Heating
-          (tap graph for controls)
+          tap graph for controls
         style: |
           ha-card { text-align: center; }
       - type: "custom:gap-card"
@@ -113,7 +108,7 @@ cards:
             color: "#c0392b"
         decimals: 1
         entities:
-          - entity: sensor.living_room_thermostat_current_temperature
+          - entity: sensor.living_room_temperature
         font_size: 80
         hours_to_show: 24
         name: Downstairs
@@ -136,7 +131,7 @@ cards:
             color: "#c0392b"
         decimals: 1
         entities:
-          - entity: sensor.master_bedroom_thermostat_current_temperature
+          - entity: sensor.master_bedroom_temperature
         font_size: 80
         hours_to_show: 24
         name: Upstairs
@@ -154,7 +149,8 @@ cards:
       - type: markdown
         content: |
           ## Lighting
-          (tap buttons to control, long press to toggle)
+          tap buttons to control
+          long press to toggle on/off
         style: |
           ha-card { text-align: center; }
       - type: "custom:gap-card"
@@ -230,19 +226,12 @@ cards:
             entities:
               - input_boolean.house_lighting_toggle
   ##
-  ## column 4
+  ## column 3
   ##
   - type: vertical-stack
     view_layout:
       grid-area: middle-right
     cards:
-      - type: "custom:weather-card"
-        current: true
-        details: true
-        entity: weather.openweathermap
-        forecast: true
-        tap_action:
-          action: none
       - type: "custom:atomic-calendar-revive"
         entities:
           - entity: calendar.nikkiannewoodsgmailcom
@@ -254,25 +243,6 @@ cards:
         showWeekDay: true
         style: |
           .cal-card { height: auto; }
-  ##
-  ## column 5
-  ##
-  - type: vertical-stack
-    view_layout:
-      grid-area: right
-    cards:
-      - type: picture-entity
-        title: Front door
-        show_name: false
-        show_state: false
-        entity: camera.frigate_rtmp_door
-        camera_view: live
-      - type: picture-entity
-        title: Front door
-        show_name: false
-        show_state: false
-        entity: camera.frigate_rtmp_front
-        camera_view: live
       - type: "custom:state-switch"
         entity: "{% if is_state('binary_sensor.recycling_bin_offset', 'on') %} recycling {% elif is_state('binary_sensor.waste_bin_offset', 'on') %} waste {% elif is_state('binary_sensor.people_home', 'on') %} test {% else %} noevents {% endif %}"
         states:
@@ -326,3 +296,28 @@ cards:
                 - entity_id: "binary_sensor.0x00158d0001b70752_contact"
                   state: "on"
             show_empty: false
+  ##
+  ## column 4
+  ##
+  - type: vertical-stack
+    view_layout:
+      grid-area: right
+    cards:
+      - type: picture-entity
+        title: Front door
+        show_name: false
+        show_state: false
+        entity: camera.frigate_rtmp_door
+        camera_view: live
+      - type: picture-entity
+        title: Front door
+        show_name: false
+        show_state: false
+        entity: camera.frigate_rtmp_front
+        camera_view: live
+      - type: picture-entity
+        title: Back
+        show_name: false
+        show_state: false
+        entity: camera.frigate_rtmp_back
+        camera_view: live
