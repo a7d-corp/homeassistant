@@ -25,15 +25,6 @@ light.gateway_light_7811dcb1f766:
 switch.tv_power:
   icon: mdi:toggle-switch
   google_assistant: false
-switch.flux_adjustment:
-  # redshift/flux adjustment via living room hues
-  icon: mdi:weather-night
-  google_assistant: true
-  google_assistant_name: living room colour adjustment
-  google_assistant_type: switch
-  aliases:
-    - living room redshift
-    - living room flux
 
 input_boolean.global_away_mode_toggle:
   google_assistant: true
