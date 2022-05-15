@@ -14,26 +14,6 @@ group.living_room_lights:
 group.kitchen_lights:
   # hue lightstrip
   icon: mdi:lightbulb
-light.gateway_light_7811dcb1f766:
-  friendly_name: Aqara gateway light
-  icon: mdi:lightbulb
-  google_assistant: true
-  google_assistant_name: understairs cupboard
-  google_assistant_type: light
-
-## switches
-switch.tv_power:
-  icon: mdi:toggle-switch
-  google_assistant: false
-switch.flux_adjustment:
-  # redshift/flux adjustment via living room hues
-  icon: mdi:weather-night
-  google_assistant: true
-  google_assistant_name: living room colour adjustment
-  google_assistant_type: switch
-  aliases:
-    - living room redshift
-    - living room flux
 
 input_boolean.global_away_mode_toggle:
   google_assistant: true
@@ -52,35 +32,6 @@ input_boolean.night_mode_toggle:
   google_assistant_name: night mode
   google_assistant_type: switch
 
-## sensors
-sensor.living_room_thermostat_operation_mode:
-  friendly_name: Operation mode
-sensor.living_room_thermostat_humidity:
-  friendly_name: Living room humidity
-## binary sensors
-binary_sensor.living_room_thermostat_has_leaf:
-  friendly_name: Eco leaf
-binary_sensor.living_room_thermostat_online:
-  friendly_name: Nest online
-binary_sensor.living_room_thermostat_is_locked:
-  friendly_name: Nest locked
-binary_sensor.living_room_thermostat_is_using_emergency_heat:
-  friendly_name: Emergency heat
-## sensors
-sensor.master_bedroom_thermostat_operation_mode:
-  friendly_name: Operation mode
-sensor.master_bedroom_thermostat_humidity:
-  friendly_name: Master bedroom humidity
-## binary sensors
-binary_sensor.master_bedroom_thermostat_has_leaf:
-  friendly_name: Eco leaf
-binary_sensor.master_bedroom_thermostat_online:
-  friendly_name: Nest online
-binary_sensor.master_bedroom_thermostat_is_locked:
-  friendly_name: Nest locked
-binary_sensor.master_bedroom_thermostat_is_using_emergency_heat:
-  friendly_name: Emergency heat
-
 binary_sensor.door_window_sensor_158d0001bf6277:
   friendly_name: Loft hatch sensor
 binary_sensor.door_window_sensor_158d0001a1f6b9:
@@ -97,32 +48,6 @@ binary_sensor.door_window_sensor_158d000232ab79:
   friendly_name: Understairs cupboard door
 binary_sensor.door_window_sensor_158d000346b47f:
   friendly_name: Living room internal door
-sensor.humidity_158d0001fa5c1b:
-  friendly_name: Ensuite humidity
-  icon: mdi:water
-  google_assistant: true
-  google_assistant_name: humidity
-  google_assistant_type: climate
-sensor.pressure_158d0001fa5c1b:
-  friendly_name: Ensuite air pressure
-sensor.temperature_158d0001fa5c1b:
-  friendly_name: Ensuite temperature
-  icon: mdi:thermometer
-  google_assistant: true
-  google_assistant_name: temperature
-  google_assistant_type: climate
-binary_sensor.motion_sensor_158d000237acbc:
-  friendly_name: Kitchen motion sensor
-binary_sensor.motion_sensor_158d0002b7f000:
-  friendly_name: Living room motion sensor
-sensor.illumination_158d000237acbc:
-  friendly_name: Kitchen brightness
-sensor.illumination_7811dcb1f766:
-  friendly_name: Understairs cupboard brightneess
-binary_sensor.switch_158d0001ef3aaa:
-  friendly_name: Landing switch
-binary_sensor.vibration_158d0002b5f6f1:
-  friendly_name: Doorbell
 
 ## device trackers
 device_tracker.nikki:
@@ -134,27 +59,6 @@ device_tracker.simon:
 device_tracker.houston:
   friendly_name: Simon's phone
   entity_picture: /local/simon.jpg
-device_tracker.galaxys8:
-  friendly_name: Nikki's phone
-  entity_picture: /local/nikki.jpg
 binary_sensor.people_home:
   friendly_name: Presence sensor
   icon: mdi:account-multiple
-
-## media players
-media_player.garden_room:
-  google_assistant: false
-  google_assistant_type: media_player
-  google_assistant_name: garden room sonos
-media_player.living_room:
-  google_assistant: false
-  google_assistant_type: media_player
-  google_assistant_name: living room sonos
-media_player.kitchen:
-  google_assistant: false
-  google_assistant_type: media_player
-  google_assistant_name: kitchen sonos
-media_player.denon_avrx2100w:
-  google_assistant: false
-  google_assistant_type: media_player
-  google_assistant_name: living room amp

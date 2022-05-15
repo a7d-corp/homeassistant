@@ -1,17 +1,3 @@
-- platform: flux
-  lights:
-    - light.standard_lamp_left
-    - light.standard_lamp_right
-    - light.sideboard_bloom
-  name: Flux Adjustment
-  start_time: '18:00'
-  stop_time: '23:00'
-  start_colortemp: 4000
-  sunset_colortemp: 3000
-  stop_colortemp: 1900
-  brightness: 200
-  disable_brightness_adjust: true
-  mode: xy
 - platform: mqtt
   name: "Zigbee2mqtt main join"
   state_topic: "zigbee2mqtt/bridge/info"

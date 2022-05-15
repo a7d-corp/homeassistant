@@ -8,21 +8,6 @@
            or is_state('sensor.nikki_status', 'home')
            or is_state('sensor.nikki_status', 'just arrived')
            or is_state('sensor.nikki_status', 'just left') }}
-- platform: bayesian
-  prior: 0.5
-  name: simon bayesian presence
-  probability_threshold: 0.8
-  observations:
-    - entity_id: device_tracker.simon
-      prob_given_true: 0.9
-      prob_given_false: 0.1
-      platform: 'state'
-      to_state: 'home'
-    - entity_id: device_tracker.simon_houston
-      prob_given_true: 0.8
-      prob_given_false: 0.2
-      platform: 'state'
-      to_state: 'home'
 - platform: ping
   host: !secret ip_xbox
   name: Xbox One
@@ -30,10 +15,6 @@
 - platform: ping
   host: !secret ip_houston
   name: Houston ping
-  scan_interval: 15
-- platform: ping
-  host: !secret ip_galaxys8
-  name: Galaxy S8 ping
   scan_interval: 15
 - platform: ping
   host: !secret ip_phoenix
