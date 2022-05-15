@@ -101,14 +101,18 @@ lounge_lights:
   name: Lounge Lights
   icon: mdi:lightbulb-outline
   entities:
-    - group.lounge_hues
+    - light.standard_lamp_left
+    - light.standard_lamp_right
+    - light.sideboard_bloom_left
+    - light.sideboard_bloom_right
+    - light.garden_room_lamp
 
 kitchen_lights:
   name: Kitchen Lights
   icon: mdi:lightbulb-outline
   entities:
     - light.kitchen_cabinets
-    - light.hue_lightstrip_plus_1
+    - light.kitchen_floor
 
 # office lights
 office_lights:

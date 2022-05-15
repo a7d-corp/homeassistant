@@ -13,3 +13,14 @@
 - name: Lounge away mode off
   entities:
     group.lounge_hues: "off"
+
+- name: overnight
+  icon: "mdi:weather-night"
+  entities:
+    group.kitchen_lights: "off"
+    group.lounge_lights: "off"
+    switch.0x00124b0024c04605: "off"
+    input_boolean.motion_lighting_toggle: "off"
+    media_player.living_room: "paused"
+    media_player.sonos_roam: "paused"
+    media_player.kitchen: "paused"

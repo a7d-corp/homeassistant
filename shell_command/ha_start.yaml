@@ -1,1 +1,1 @@
-ha_start: curl http://10.101.0.45:1880/harestart/delay
+ha_start: curl http://10.101.0.55:1880/harestart/delay
