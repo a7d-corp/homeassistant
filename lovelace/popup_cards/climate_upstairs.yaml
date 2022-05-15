@@ -5,7 +5,7 @@ card:
   max_columns: 1
   cards:
     - type: custom:simple-thermostat
-      entity: climate.master_bedroom_thermostat
+      entity: climate.master_bedroom
       header: false
       control:
         - hvac
