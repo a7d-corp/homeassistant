@@ -27,7 +27,6 @@ lovelace:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 10.101.0.60
     - 172.25.0.64/27
 
 logger:
@@ -53,12 +52,6 @@ recorder:
       - switch
       - media_player
 
-zone 3:
-  name: Nikki (Work)
-  latitude: !secret nikki_work_lat
-  longitude: !secret nikki_work_long
-  icon: mdi:laptop
-
 person:
   - name: Simon
     id: simon0000
@@ -77,12 +70,6 @@ tts:
     voice: en-GB-Standard-A
     profiles:
       - small-bluetooth-speaker-class-device
-
-hue:
-  bridges:
-    - host: 10.101.0.178
-      allow_unreachable: true
-      allow_hue_groups: false
 
 google_assistant:
   project_id: !secret google_assistant_project_id
@@ -115,9 +102,6 @@ google_assistant:
       aliases: "under cabinets"
       room: kitchen
 
-# prometheus:
-#  namespace: hass
-
 mqtt:
   broker: !secret ip_mqtt_broker
   port: 1883
@@ -134,9 +118,6 @@ mqtt:
 spotify:
   client_id: !secret spotify_id
   client_secret: !secret spotify_secret
-
-tradfri:
-  host: !secret ip_tradfri
 
 telegram_bot:
   - platform: broadcast
@@ -163,17 +144,6 @@ nest:
   client_id: !secret nest_client_id
   client_secret: !secret nest_client_secret
   project_id: !secret nest_project_id
-
-# spotcast:
-#  sp_dc: !secret spotcast_dc_simon
-#  sp_key: !secret spotcast_key_simon
-#  accounts:
-#    simon:
-#      sp_dc: !secret spotcast_dc_simon
-#      sp_key: !secret spotcast_key_simon
-#    nikki:
-#      sp_dc: !secret spotcast_dc_nikki
-#      sp_key: !secret spotcast_key_nikki
 
 input_boolean: !include inputs/boolean.yaml
 input_number: !include inputs/numbers.yaml
