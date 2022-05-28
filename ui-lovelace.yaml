@@ -1,11 +1,4 @@
 title: Room 101
-kiosk_mode:
-  user_settings:
-    - users:
-        - "fully kiosk"
-      hide_sidebar: true
-      hide_menubutton: true
-      hide_overflow: true
 views:
   - !include lovelace/00_home.yaml
   - !include lovelace/05_living_room.yaml

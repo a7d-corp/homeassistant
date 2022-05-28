@@ -45,12 +45,15 @@ media_source:
 zeroconf:
 
 recorder:
-  purge_keep_days: 2
+  purge_keep_days: 10
   include:
     domains:
+      - binary_sensor
+      - input_boolean
+      - light
+      - person
       - sensor
       - switch
-      - media_player
 
 person:
   - name: Simon
