@@ -18,8 +18,6 @@
   type: module
 - url: /local/community/atomic-calendar-revive/atomic-calendar-revive.js
   type: module
-- url: /hacsfiles/kiosk-mode/kiosk-mode.js
-  type: module
 - url: /local/community/lovelace-state-switch/state-switch.js
   type: module
 - url: /hacsfiles/simple-clock-card/simple-clock-card.js
