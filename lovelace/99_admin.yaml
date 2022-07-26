@@ -33,8 +33,8 @@ cards:
             name: person.simon
           - entity: input_select.simon_status
             name: input_select.simon_status
-          - entity: device_tracker.houston_2
-            name: device_tracker.houston_2
+          - entity: device_tracker.houston_3
+            name: device_tracker.houston_3
           - entity: person.nikki
             name: person.nikki
           - entity: input_select.nikki_status

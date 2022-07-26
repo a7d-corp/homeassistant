@@ -16,7 +16,7 @@ nikki_status:
     - away
     - extended away
   icon: 'mdi:human-female'
-houston_2:
+houston_3:
   name: Simon
   options:
     - home
