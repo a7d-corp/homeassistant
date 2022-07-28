@@ -48,12 +48,17 @@ recorder:
   purge_keep_days: 10
   include:
     domains:
-      - binary_sensor
-      - input_boolean
       - light
+      - media_player
       - person
       - sensor
       - switch
+
+zone 3:
+  name: Nikki (Work)
+  latitude: !secret nikki_work_lat
+  longitude: !secret nikki_work_long
+  icon: mdi:laptop
 
 person:
   - name: Simon
