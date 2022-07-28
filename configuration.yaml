@@ -46,12 +46,14 @@ media_source:
 zeroconf:
 
 recorder:
-  purge_keep_days: 2
+  purge_keep_days: 10
   include:
     domains:
+      - light
+      - media_player
+      - person
       - sensor
       - switch
-      - media_player
 
 zone 3:
   name: Nikki (Work)
