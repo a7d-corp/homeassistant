@@ -54,12 +54,6 @@ recorder:
       - sensor
       - switch
 
-zone 3:
-  name: Nikki (Work)
-  latitude: !secret nikki_work_lat
-  longitude: !secret nikki_work_long
-  icon: mdi:laptop
-
 person:
   - name: Simon
     id: simon0000
