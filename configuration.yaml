@@ -58,11 +58,11 @@ person:
   - name: Simon
     id: simon0000
     device_trackers:
-      - device_tracker.houston_3
+      - device_tracker.houston_2
   - name: Nikki
     id: niki0000
     device_trackers:
-      - device_tracker.galaxy_s10
+      - device_tracker.galaxy_s22
 
 tts:
   - platform: google_translate
