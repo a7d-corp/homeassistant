@@ -62,3 +62,16 @@ automation_people_status:
   entities:
     - sensor.simon_status
     - sensor.nikki_status
+
+automation_presence_simulation:
+  name: Presence simulation
+  entities:
+    - light.hue_color_lamp_1
+    - light.bedroom
+    - light.kitchen_cabinets
+    - light.kitchen_floor
+    - light.sideboard_bloom_left
+    - light.sideboard_bloom_right
+    - light.standard_lamp_left
+    - light.standard_lamp_right
+    - light.garden_room_lamp
