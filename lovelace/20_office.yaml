@@ -128,23 +128,44 @@ cards:
                 action: toggle
             entities:
               - switch.0x086bd7fffe19c5dd
-  - type: "custom:mini-graph-card"
-    decimals: 1
-    entities:
-      - entity: binary_sensor.phoenix_ping
-        name: phoenix
-    font_size: 80
-    hours_to_show: 24
-    name: Work Laptop
-    points_per_hour: 1
-    show:
-      icon: false
-      labels: false
-      labels_secondary: false
-      points: false
-    smoothing: false
-    state_map:
-      - value: "off"
-        label: Offline
-      - value: "on"
-        label: Online
+  - type: vertical-stack
+    cards:
+      - type: "custom:mini-graph-card"
+        decimals: 1
+        entities:
+          - entity: binary_sensor.phoenix_ping
+            name: phoenix
+        font_size: 80
+        hours_to_show: 24
+        name: Work Laptop
+        points_per_hour: 1
+        show:
+          icon: false
+          labels: false
+          labels_secondary: false
+          points: false
+        smoothing: false
+        state_map:
+          - value: "off"
+            label: Offline
+          - value: "on"
+            label: Online
+      - type: "custom:mini-graph-card"
+        color_thresholds:
+          - value: 15
+            color: "#2facfa"
+          - value: 18
+            color: "#ffc72b"
+          - value: 25
+            color: "#c0392b"
+        decimals: 1
+        entities:
+          - entity: sensor.0x00158d0007ed78c4_temperature
+        font_size: 80
+        hours_to_show: 24
+        name: Office temperature
+        points_per_hour: 0.5
+        show:
+          labels: false
+          labels_secondary: false
+          points: false
