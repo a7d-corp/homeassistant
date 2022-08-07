@@ -116,10 +116,6 @@ mqtt:
     topic: 'hass/status'
     payload: 'offline'
 
-spotify:
-  client_id: !secret spotify_id
-  client_secret: !secret spotify_secret
-
 telegram_bot:
   - platform: broadcast
     api_key: !secret telegram_api_key
