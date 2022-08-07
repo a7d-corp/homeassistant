@@ -34,7 +34,6 @@ logger:
 
 config:
 map:
-updater:
 conversation:
 history:
 logbook:
