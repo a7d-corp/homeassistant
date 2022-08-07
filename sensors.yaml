@@ -115,9 +115,9 @@
 # enable octopus agile
 - platform: "octopusagile"
 - platform: template
-    sensors:
-      m3_remaining_range_fuel_miles:
-        friendly_name: "M3 remaining range fuel (miles)"
-        unit_of_measurement: 'miles'
-        value_template: "{{ states('sensor.m3_remaining_range_fuel') | float / 1.609 | round(0) }}"
-        icon_template: mdi:gas-station
+  sensors:
+    m3_remaining_range_fuel_miles:
+      friendly_name: "M3 remaining range fuel (miles)"
+      unit_of_measurement: 'miles'
+      value_template: "{{ states('sensor.m3_remaining_range_fuel') | float / 1.609 | round(0) }}"
+      icon_template: "mdi:gas-station"
