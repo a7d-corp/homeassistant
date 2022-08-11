@@ -5,7 +5,9 @@ views:
   - !include lovelace/10_kitchen.yaml
   - !include lovelace/15_bedroom.yaml
   - !include lovelace/20_office.yaml
+  - !include lovelace/30_nursery.yaml
   - !include lovelace/25_hall.yaml
   - !include lovelace/50_security.yaml
+  - !include lovelace/51_cctv.yaml
   - !include lovelace/80_tablet.yaml
   - !include lovelace/99_admin.yaml
