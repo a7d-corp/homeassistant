@@ -1,0 +1,73 @@
+title: Nursery
+icon: mdi:cradle
+path: nursery
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+  - user: ded1dc2c5ea24fffae588287678b3172
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: entity-button
+            entity: light.hue_color_lamp_1_2
+            icon: mdi:ceiling-light
+            name: Ceiling lamp
+            tap_action:
+              action: toggle
+          - type: entity-button
+            entity: light.hue_color_lamp_1_3
+            icon: mdi:floor-lamp
+            name: Floor lamp
+            tap_action:
+              action: toggle
+      - type: "custom:card-templater"
+        card:
+          type: entity-button
+          double_tap_action:
+            action: none
+          entity: group.nursery_lights
+          hold_action:
+            action: none
+          name_template: '{{ "Turn lights off" if is_state("group.nursery_lights", "on") else "Turn lights on" }}'
+          show_icon: false
+          show_state: false
+          tap_action:
+            action: toggle
+        entities:
+          - group.nursery_lights
+      - type: "custom:mini-graph-card"
+        color_thresholds:
+          - value: 15
+            color: "#2facfa"
+          - value: 18
+            color: "#ffc72b"
+          - value: 25
+            color: "#c0392b"
+        decimals: 1
+        entities:
+          - entity: sensor.0x00158d0007e2074f_temperature
+        font_size: 80
+        hours_to_show: 24
+        name: Nursery temperature
+        points_per_hour: 0.5
+        show:
+          labels: false
+          labels_secondary: false
+          legend: false
+          points: false
+        style: |
+          div.header { padding-bottom: 0px; }
+          div.info { display: none; }
+  - type: vertical-stack
+    cards:
+      - type: picture-entity
+        title: Nursery
+        show_name: false
+        show_state: false
+        entity: camera.frigate_rtmp_nursery
+      - type: picture-entity
+        title: Bedroom
+        show_name: false
+        show_state: false
+        entity: camera.nursery2

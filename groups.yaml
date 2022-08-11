@@ -25,6 +25,14 @@ office_lights:
     - light.office_lamp
     - light.office_ceiling_lamp
 
+# nursery lights
+nursery_lights:
+  name: Nursery Lights
+  icon: mdi:cradle
+  entities:
+    - light.hue_color_lamp_1_3
+    - light.hue_color_lamp_1_3
+
 # automation groups
 automation_all_lights:
   name: All lights (automation only)
