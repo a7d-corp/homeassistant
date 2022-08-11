@@ -162,6 +162,36 @@ cards:
                 action: none
             entities:
               - input_boolean.motion_lighting_toggle
+      - type: horizontal-stack
+        cards:
+          - type: "custom:mini-graph-card"
+            decimals: 1
+            entities:
+              - entity: sensor.m3_remaining_range_fuel_miles
+            font_size: 80
+            hours_to_show: 72
+            name: M3 range
+            points_per_hour: 0.5
+            show:
+              labels: false
+              labels_secondary: false
+              points: false
+          - type: "custom:card-templater"
+            card:
+              type: entity-button
+              double_tap_action:
+                action: none
+              entity: lock.m3_lock
+              hold_action:
+                action: none
+              icon_template: '{{ "mdi:lock" if is_state("lock.m3_lock", "locked") else "mdi:lock-open-alert" }}'
+              name_template: '{{ "Tap to unlock M3" if is_state("lock.m3_lock", "locked") else "Tap to lock M3" }}'
+              show_icon: true
+              show_state: false
+              tap_action:
+                action: toggle
+            entities:
+              - lock.m3_lock
   - type: "custom:atomic-calendar-revive"
     entities:
       - entity: calendar.nikkiannewoodsgmailcom
