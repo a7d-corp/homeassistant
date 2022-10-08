@@ -57,7 +57,7 @@ person:
   - name: Simon
     id: simon0000
     device_trackers:
-      - device_tracker.houston_2
+      - device_tracker.houston
   - name: Nikki
     id: niki0000
     device_trackers:
