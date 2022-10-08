@@ -54,6 +54,31 @@ cards:
                 action: toggle
             entities:
               - group.kitchen_lights
+      - type: history-graph
+        entities:
+          - entity: binary_sensor.0x00158d00084816ec_contact
+            name: Catflap
+        hours_to_show: 12
+      - type: "custom:mini-graph-card"
+        aggregate_func: max
+        entities:
+          - entity: binary_sensor.0x00158d00084816ec_contact
+            name: Catflap
+        hours_to_show: 1
+        line_color: "#bd3535"
+        name: Catflap status
+        points_per_hour: 30
+        show:
+          labels: false
+          labels_secondary: false
+          legend: false
+        smoothing: false
+        state_map:
+          - value: "off"
+            label: Closed
+          - value: "on"
+            label: Open
+        update_interval: 15
   #    - type: "custom:card-templater"
   #      card:
   #        type: entity-button
@@ -83,7 +108,7 @@ cards:
       - type: "custom:mini-graph-card"
         aggregate_func: max
         entities:
-          - entity: input_boolean.kitchen_motion_detected
+          - entity: binary_sensor.kitchen_person_motion
             name: Kitchen
         hours_to_show: 1
         line_color: "#bd3535"
