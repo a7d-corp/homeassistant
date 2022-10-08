@@ -42,6 +42,7 @@ ffmpeg:
 mobile_app:
 media_source:
 zeroconf:
+stream:
 
 recorder:
   purge_keep_days: 10
