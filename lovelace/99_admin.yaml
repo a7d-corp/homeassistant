@@ -92,3 +92,13 @@ cards:
           - entity: input_text.zigbee2mqtt_remove
           - entity: input_boolean.zigbee2mqtt_force_remove
           - entity: script.zigbee2mqtt_remove
+      - type: entities
+        title: Dashboard
+        show_header_toggle: false
+        entities:
+          - entity: sensor.fire_tablet_battery_level
+          - entity: switch.0x000d6ffffef03037
+          - entity: switch.fire_tablet_motion_detection
+          - entity: button.fire_tablet_reboot_device
+          - entity: button.fire_tablet_restart_browser
+          - entity: binary_sensor.fire_tablet_plugged_in
