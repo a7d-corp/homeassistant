@@ -53,6 +53,7 @@ recorder:
       - person
       - sensor
       - switch
+      - binary_sensor
 
 person:
   - name: Simon
