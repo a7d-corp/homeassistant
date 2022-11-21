@@ -1,4 +1,3 @@
-- platform: uvc
-  nvr: 10.101.0.50
-  key: !secret nvr_key
-  password: !secret nvr_camera_pass
+- platform: ffmpeg
+  name: nursery2_cast
+  input: rtsp://stream:bUFayMaEWn8GUetjE4bj4iGpmzTqrT@192.168.20.33/stream1
