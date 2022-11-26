@@ -55,6 +55,11 @@ cards:
                   width: 100%
                   transform: initial
                   padding: 0 2px
+      - type: markdown
+        content: |
+          ### Horsham's weather
+        style: |
+          ha-card { text-align: center; }
       - type: "custom:weather-card"
         current: true
         details: true
@@ -96,8 +101,6 @@ cards:
           tap graph for controls
         style: |
           ha-card { text-align: center; }
-      - type: "custom:gap-card"
-        height: 0
       - type: "custom:mini-graph-card"
         color_thresholds:
           - value: 15
@@ -153,8 +156,6 @@ cards:
           long press to toggle on/off
         style: |
           ha-card { text-align: center; }
-      - type: "custom:gap-card"
-        height: 0
       - type: horizontal-stack
         cards:
           - type: "custom:card-templater"
