@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Button for desk power to office view.
 - Cameras from Frigate streams.
 - This changelog.
+- Initial Apple Watch automations.
 
 ### Changed
 
