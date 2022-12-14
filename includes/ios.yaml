@@ -1,0 +1,41 @@
+actions:
+  - name: "Temperature report"
+    background_color: "#ffffff"
+    label:
+      text: Report
+      color: "#000000"
+    icon:
+      icon: temperature-celsius
+      color: "#000000"
+  - name: "Downstairs temperature"
+    background_color: "#ffffff"
+    label:
+      text: "Downstairs temperature"
+      color: "#000000"
+    icon:
+      icon: radiator
+      color: "#000000"
+  - name: "Upstairs temperature"
+    background_color: "#ffffff"
+    label:
+      text: "Upstairs temperature"
+      color: "#000000"
+    icon:
+      icon: radiator
+      color: "#000000"
+  - name: "Nursery (dim)"
+    background_color: "#ffffff"
+    label:
+      text: "Nursery (dim)"
+      color: "#000000"
+    icon:
+      icon: cradle
+      color: "#000000"
+  - name: "Nursery (off)"
+    background_color: "#ffffff"
+    label:
+      text: "Nursery (off)"
+      color: "#000000"
+    icon:
+      icon: cradle
+      color: "#828385"
