@@ -134,11 +134,6 @@ octopusagile:
   auth: !secret octopus_auth
   startdate: "2021-02-18"
 
-google:
-  client_id: !secret gcal_client_id
-  client_secret: !secret gcal_client_secret
-  track_new_calendar: false
-
 input_boolean: !include inputs/boolean.yaml
 input_number: !include inputs/numbers.yaml
 input_select: !include inputs/select.yaml

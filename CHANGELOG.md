@@ -19,4 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Exposed desk power switch to Google Assistant.
 - Use the Frigate in Lovelace instead of direct streams from the cameras.
 
+### Removed
+
+- Remove GCal configuration after migration to UI method.
+
 [Unreleased]: https://github.com/a7d-corp/homeassistant/tree/main
