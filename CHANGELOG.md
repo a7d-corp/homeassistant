@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Cameras from Frigate streams.
 - This changelog.
 - Initial Apple Watch automations.
+- Change desk power switch entity.
 
 ### Changed
 

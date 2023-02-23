@@ -83,8 +83,8 @@ google_assistant:
     # tradfri pc power outlet
     switch.0x086bd7fffe19c5dd_switch:
       name: PC power
-    # tradfri desk power outlet
-    switch.0x000d6ffffe2a5801:
+    # tuya-plug-1 desk power outlet
+    switch.0x70b3d52b6001b292:
       name: desk
       aliases: desk power
       room: office
