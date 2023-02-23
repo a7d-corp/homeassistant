@@ -85,11 +85,11 @@ cards:
               type: entity-button
               double_tap_action:
                 action: none
-              entity: switch.0x000d6ffffe2a5801
+              entity: switch.0x70b3d52b6001b292
               hold_action:
                 action: none
               icon: "mdi:power"
-              name_template: '{{ "Turn desk off" if is_state("switch.0x000d6ffffe2a5801", "on") else "Turn desk power on" }}'
+              name_template: '{{ "Turn desk off" if is_state("switch.0x70b3d52b6001b292", "on") else "Turn desk power on" }}'
               show_icon: false
               show_state: false
               tap_action:
