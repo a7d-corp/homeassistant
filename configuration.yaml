@@ -105,18 +105,32 @@ google_assistant:
       aliases: "under cabinets"
       room: kitchen
 
+#mqtt:
+#  broker: !secret ip_mqtt_broker
+#  port: 1883
+#  username: !secret mqtt_user
+#  password: !secret mqtt_pass
+#  discovery: true
+#  birth_message:
+#    topic: 'hass/status'
+#    payload: 'online'
+#  will_message:
+#    topic: 'hass/status'
+#    payload: 'offline'
+
 mqtt:
-  broker: !secret ip_mqtt_broker
-  port: 1883
-  username: !secret mqtt_user
-  password: !secret mqtt_pass
-  discovery: true
-  birth_message:
-    topic: 'hass/status'
-    payload: 'online'
-  will_message:
-    topic: 'hass/status'
-    payload: 'offline'
+  sensor:
+    - name: "Zigbee2MQTT bridge state"
+      state_topic: "zigbee2mqtt/bridge/state"
+      icon: mdi:router-wireless
+    - name: "Zigbee2MQTT version"
+      state_topic: "zigbee2mqtt/bridge/config"
+      value_template: "{{ value_json.version }}"
+      icon: mdi:zigbee
+    - name: "Coordinator version"
+      state_topic: "zigbee2mqtt/bridge/config"
+      value_template: "{{ value_json.coordinator }}"
+      icon: mdi:chip
 
 telegram_bot:
   - platform: broadcast
