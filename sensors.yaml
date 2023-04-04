@@ -95,23 +95,6 @@
         {% else %}
           mdi:window-closed
         {% endif %}
-# zigbee2mqtt: monitor the bridge state
-- platform: mqtt
-  name: Zigbee2MQTT bridge state
-  state_topic: "zigbee2mqtt/bridge/state"
-  icon: mdi:router-wireless
-# zigbee2mqtt: show version
-- platform: mqtt
-  name: Zigbee2MQTT version
-  state_topic: "zigbee2mqtt/bridge/config"
-  value_template: "{{ value_json.version }}"
-  icon: mdi:zigbee
-# zigbee2mqtt: coordinator version
-- platform: mqtt
-  name: Coordinator version
-  state_topic: "zigbee2mqtt/bridge/config"
-  value_template: "{{ value_json.coordinator }}"
-  icon: mdi:chip
 # enable octopus agile
 - platform: "octopusagile"
 - platform: template
