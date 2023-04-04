@@ -1,6 +1,6 @@
 title: Dashboard
 type: custom:grid-layout
-icon: mdi:tablet-android
+icon: mdi:tablet
 path: tablet
 visible:
   - user: de9bffd1c5bb4136bdf12e68766b0c2c
