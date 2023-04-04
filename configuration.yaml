@@ -131,6 +131,13 @@ mqtt:
       state_topic: "zigbee2mqtt/bridge/config"
       value_template: "{{ value_json.coordinator }}"
       icon: mdi:chip
+  switch:
+    - name: "Zigbee2mqtt main join"
+      command_topic: "zigbee2mqtt/bridge/request/permit_join"
+      state_topic: "zigbee2mqtt/bridge/info"
+      value_template: '{{ value_json.permit_join | lower }}'
+      payload_on: "true"
+      payload_off: "false"
 
 telegram_bot:
   - platform: broadcast
@@ -161,7 +168,6 @@ camera: !include cameras.yaml
 calendar: !include calendars.yaml
 sensor: !include sensors.yaml
 binary_sensor: !include sensors/binary.yaml
-switch: !include switches.yaml
 group: !include groups.yaml
 automation: !include_dir_merge_list automations
 scene: !include scenes.yaml
