@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Use the Frigate in Lovelace instead of direct streams from the cameras.
 - Migrate MQTT config to the new format.
 - Migrate more MQTT config to the new format.
+- Update HASS to 2022.11.5.
 
 ### Removed
 
