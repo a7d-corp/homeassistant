@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Exposed desk power switch to Google Assistant.
 - Use the Frigate in Lovelace instead of direct streams from the cameras.
 - Migrate MQTT config to the new format.
+- Migrate more MQTT config to the new format.
 
 ### Removed
 
