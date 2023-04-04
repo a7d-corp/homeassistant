@@ -4,7 +4,7 @@
     platform: event
     event_type: ios.action_fired
     event_data:
-      actionName: Temperature report
+      actionName: Current temps
   action:
     - variables:
         iphone: "notify.mobile_app_{{ trigger.event.data.sourceDeviceName.replace('-', '_') }}"
@@ -21,7 +21,7 @@
     platform: event
     event_type: ios.action_fired
     event_data:
-      actionName: Downstairs temperature
+      actionName: Set downstairs temp
   action:
     - variables:
         iphone: "notify.mobile_app_{{ trigger.event.data.sourceDeviceName.replace('-', '_') }}"
@@ -69,7 +69,7 @@
     platform: event
     event_type: ios.action_fired
     event_data:
-      actionName: Upstairs temperature
+      actionName: Set upstairs temp
   action:
     - variables:
         iphone: "notify.mobile_app_{{ trigger.event.data.sourceDeviceName.replace('-', '_') }}"
@@ -133,3 +133,125 @@
       entity_id:
         - light.hue_color_lamp_1_3
         - light.hue_color_lamp_1_2
+
+## living room
+- alias: "Apple watch: living room lights dim"
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: "Lounge (dim)"
+  action:
+    service: scene.turn_on
+    target:
+      entity_id: scene.living_room_relax
+- alias: "Apple watch: living room lights bright"
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: "Lounge (bright)"
+  action:
+    service: scene.turn_on
+    target:
+      entity_id: scene.living_room_champagne
+- alias: "Apple watch: living roomlights off"
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: "Lounge (off)"
+  action:
+    service: light.turn_off
+    data:
+      entity_id:
+        - light.standard_lamp_left
+        - light.standard_lamp_right
+        - light.garden_room_lamp
+        - light.sideboard_bloom_left
+        - light.sideboard_bloom_right
+
+## kitchen
+- alias: "Apple watch: kitchen daytime lights"
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: "Kitchen (day)"
+  action:
+    service: scene.turn_on
+    target:
+      entity_id: scene.kitchen_concentrate
+- alias: "Apple watch: kitchen nightime lights"
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: "Kitchen (night)"
+  action:
+    service: scene.turn_on
+    target:
+      entity_id: scene.kitchen_tropical_twilight
+- alias: "Apple watch: kitchen undercabinet lights on"
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: "Undercabinet lights on"
+  action:
+    service: switch.turn_on
+    data:
+      entity_id:
+        - switch.0x00124b0024c04605
+- alias: "Apple watch: kitchen undercabinet lights off"
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: "Undercabinet lights off"
+  action:
+    service: switch.turn_off
+    data:
+      entity_id:
+        - switch.0x00124b0024c04605
+
+## office lighting
+- alias: "Apple watch: office lights bright"
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: "Office (bright)"
+  action:
+    service: light.turn_on
+    data:
+      entity_id:
+        - light.office_standard_lamp
+        - light.0x000d6ffffe07b722
+      brightness_pct: "100"
+- alias: "Apple watch: office lights work"
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: "Office (work)"
+  action:
+    service: light.turn_on
+    data:
+      entity_id:
+        - light.office_standard_lamp
+        - light.0x000d6ffffe07b722
+      brightness_pct: "100"
+- alias: "Apple watch: office lights off"
+  trigger:
+    platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: "Office lights off"
+  action:
+    service: light.turn_off
+    data:
+      entity_id:
+        - light.office_standard_lamp
+        - light.office_ceiling_lamp
+        - light.0x000d6ffffe07b722
