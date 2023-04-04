@@ -1,41 +1,169 @@
 actions:
-  - name: "Temperature report"
-    background_color: "#ffffff"
+  - name: "Climate"
+    background_color: "#01a9f4"
     label:
-      text: Report
+      text: Climate
+      color: "#ffffff"
+    icon:
+      icon: temperature-celsius
+      color: "#ffffff"
+  - name: "Current temps"
+    background_color: "#d4d4d4"
+    label:
+      text: Current temps
       color: "#000000"
     icon:
       icon: temperature-celsius
       color: "#000000"
-  - name: "Downstairs temperature"
-    background_color: "#ffffff"
+  - name: "Set downstairs temp"
+    background_color: "#d4d4d4"
     label:
-      text: "Downstairs temperature"
+      text: "Set downstairs"
       color: "#000000"
     icon:
       icon: radiator
       color: "#000000"
-  - name: "Upstairs temperature"
-    background_color: "#ffffff"
+  - name: "Set upstairs temp"
+    background_color: "#d4d4d4"
     label:
-      text: "Upstairs temperature"
+      text: "Set upstairs"
       color: "#000000"
     icon:
       icon: radiator
       color: "#000000"
-  - name: "Nursery (dim)"
-    background_color: "#ffffff"
+
+  ## nursery lighting
+  - name: "Nursery lighting"
+    background_color: "#01a9f4"
     label:
-      text: "Nursery (dim)"
-      color: "#000000"
+      text: Nursery lighting
+      color: "#ffffff"
     icon:
       icon: cradle
+      color: "#ffffff"
+  - name: "Nursery (dim)"
+    background_color: "#d4d4d4"
+    label:
+      text: "Dim lighting"
+      color: "#000000"
+    icon:
+      icon: lightbulb-multiple
       color: "#000000"
   - name: "Nursery (off)"
-    background_color: "#ffffff"
+    background_color: "#d4d4d4"
     label:
-      text: "Nursery (off)"
+      text: "Lights off"
       color: "#000000"
     icon:
-      icon: cradle
-      color: "#828385"
+      icon: lightbulb-multiple-off
+      color: "#8a8a8a"
+
+  ## lounge lighting
+  - name: "Lounge lighting"
+    background_color: "#01a9f4"
+    label:
+      text: Lounge lighting
+      color: "#ffffff"
+    icon:
+      icon: sofa
+      color: "#ffffff"
+  - name: "Lounge (dim)"
+    background_color: "#d4d4d4"
+    label:
+      text: "Dim lighting"
+      color: "#000000"
+    icon:
+      icon: lightbulb-multiple
+      color: "#000000"
+  - name: "Lounge (bright)"
+    background_color: "#d4d4d4"
+    label:
+      text: "Bright lighting"
+      color: "#000000"
+    icon:
+      icon: lightbulb-multiple
+      color: "#000000"
+  - name: "Lounge (off)"
+    background_color: "#d4d4d4"
+    label:
+      text: "Lights off"
+      color: "#000000"
+    icon:
+      icon: lightbulb-multiple-off
+      color: "#8a8a8a"
+
+  ## kitchen lighting
+  - name: "Kitchen lighting"
+    background_color: "#01a9f4"
+    label:
+      text: Kitchen lighting
+      color: "#ffffff"
+    icon:
+      icon: stove
+      color: "#ffffff"
+  - name: "Kitchen (day)"
+    background_color: "#d4d4d4"
+    label:
+      text: "Bright lighting"
+      color: "#000000"
+    icon:
+      icon: lightbulb-multiple
+      color: "#000000"
+  - name: "Kitchen (night)"
+    background_color: "#d4d4d4"
+    label:
+      text: "Dim lighting"
+      color: "#000000"
+    icon:
+      icon: lightbulb-multiple
+      color: "#000000"
+  - name: "Undercabinet lights on"
+    background_color: "#d4d4d4"
+    label:
+      text: "Cabinet lights on"
+      color: "#000000"
+    icon:
+      icon: lightbulb
+      color: "#000000"
+  - name: "Undercabinet lights off"
+    background_color: "#d4d4d4"
+    label:
+      text: "Cabinet lights off"
+      color: "#000000"
+    icon:
+      icon: lightbulb-off
+      color: "#8a8a8a"
+
+  ## office lighting
+  - name: "Office lighting"
+    background_color: "#01a9f4"
+    label:
+      text: Office lighting
+      color: "#ffffff"
+    icon:
+      icon: desk
+      color: "#ffffff"
+  - name: "Office (bright)"
+    background_color: "#d4d4d4"
+    label:
+      text: "Bright lighting"
+      color: "#000000"
+    icon:
+      icon: lightbulb-multiple
+      color: "#000000"
+  - name: "Office (work)"
+    background_color: "#d4d4d4"
+    label:
+      text: "Work lighting"
+      color: "#000000"
+    icon:
+      icon: lightbulb-multiple
+      color: "#000000"
+  - name: "Office lights off"
+    background_color: "#d4d4d4"
+    label:
+      text: "Office lights off"
+      color: "#000000"
+    icon:
+      icon: lightbulb-off
+      color: "#8a8a8a"

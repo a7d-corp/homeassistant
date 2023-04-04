@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - This changelog.
 - Initial Apple Watch automations.
 - Change desk power switch entity.
+- More Apple watch automations.
 
 ### Changed
 
