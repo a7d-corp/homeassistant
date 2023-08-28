@@ -21,7 +21,7 @@ jobs:
       - run: cp -v ci/google-assistant.json secrets/google-assistant.json
       - name: 'ensure custom_components are populated'
         run: |
-          mkdir custom_components/browser_mod/ || true
+          mkdir -p custom_components/browser_mod/ || true
           wget $(curl --silent "https://api.github.com/repos/thomasloven/hass-browser_mod/releases/latest" | jq .tarball_url -r) -O browser_mod_latest.tar.gz
           tar_dir=$(tar -tf browser_mod_latest.tar.gz | grep -E 'custom_components/browser_mod/$')
           tar -zxvf browser_mod_latest.tar.gz --strip-components=3 -C custom_components/browser_mod/ $tar_dir
