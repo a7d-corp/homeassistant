@@ -1,0 +1,68 @@
+title: scratchpad
+icon: mdi:note-text
+path: downstairs-tablet
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+cards:
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: custom:mushroom-template-card
+        entity: group.living_room_lights
+        icon: mdi:sofa
+        icon_color: |
+          {% if is_state(entity, 'on') %}
+            #03A9F4
+          {% else %}
+            grey
+          {% endif %}
+        primary: Living room
+        secondary: '{{ states(''sensor.living_room_temperature'') }}°C'
+        layout: horizontal
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/downstairs-tablet-livingroom
+        double_tap_action:
+          action: navigate
+          navigation_path: /lovelace-smartphone/salon
+        hold_action:
+          action: toggle
+        badge_icon: |
+          {% if is_state('binary_sensor.lounge_all_occupancy', 'on') %}
+            mdi:motion-sensor
+          {% else %}
+            mdi:motion-sensor-off
+          {% endif %}
+        badge_color: |
+          {% if is_state('binary_sensor.lounge_all_occupancy', 'on') %}
+            orange
+          {% else %}
+            grey
+          {% endif %}
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: template
+            entity: media_player.sonos_roam
+            icon: mdi:play-pause
+            icon_color: |-
+              {% if is_state(entity, 'playing') %}
+                #03A9F4
+              {% else %}
+               grey
+              {% endif %}
+            hold_action:
+              action: navigate
+              navigation_path: /lovelace-smartphone/echo
+          - type: template
+            entity: group.living_room_lights
+            icon: mdi:lightbulb
+            hold_action:
+              action: toggle
+            icon_color: |-
+              {% if is_state(entity, 'on') %}
+               orange
+              {% elif is_state(entity, 'off') %}
+               grey
+              {% else %}
+               grey
+              {% endif %}
+        alignment: end

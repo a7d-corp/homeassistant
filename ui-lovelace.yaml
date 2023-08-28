@@ -1,13 +1,20 @@
 title: Room 101
 views:
-  - !include lovelace/00_home.yaml
-  - !include lovelace/05_living_room.yaml
-  - !include lovelace/10_kitchen.yaml
-  - !include lovelace/15_bedroom.yaml
-  - !include lovelace/20_office.yaml
-  - !include lovelace/30_nursery.yaml
-  - !include lovelace/25_hall.yaml
-  - !include lovelace/50_security.yaml
-  - !include lovelace/51_cctv.yaml
-  - !include lovelace/80_tablet.yaml
-  - !include lovelace/99_admin.yaml
+  - !include lovelace/01-general/00_home.yaml
+  - !include lovelace/01-general/05_living_room.yaml
+  - !include lovelace/01-general/10_kitchen.yaml
+  - !include lovelace/01-general/15_bedroom.yaml
+  - !include lovelace/01-general/20_office.yaml
+  - !include lovelace/01-general/30_nursery.yaml
+  - !include lovelace/01-general/25_hall.yaml
+  - !include lovelace/01-general/50_security.yaml
+  - !include lovelace/01-general/51_cctv.yaml
+  - !include lovelace/01-general/60_scratchpad.yaml
+  - !include lovelace/01-general/99_admin.yaml
+# office tablet views
+  - !include lovelace/10-office-tablet/01_main.yaml
+# picture frame tablet views
+  - !include lovelace/20-downstairs-tablet/01_main.yaml
+  - !include lovelace/20-downstairs-tablet/60_scratchpad.yaml
+  - !include lovelace/20-downstairs-tablet/80_tablet.yaml
+  - !include lovelace/20-downstairs-tablet/81_tablet_new.yaml

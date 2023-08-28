@@ -1,0 +1,372 @@
+title: Office tablet
+icon: mdi:tablet-dashboard
+path: office-tablet
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+  - user: ded1dc2c5ea24fffae588287678b3172
+  - user: 23ae52aa9001487d9a2d59e51f102ed5 # tablet
+type: custom:grid-layout
+layout:
+  grid-template-columns: 33% 33% 33%
+  grid-template-rows: auto
+  grid-template-areas: |
+    "left centre right"
+background: >-
+  center / cover no-repeat
+  url("/local/images/monterey-bg.jpg")
+  fixed
+cards:
+#
+# column 1
+#
+  - type: vertical-stack
+    view_layout:
+      grid-area: left
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:mushroom-person-card
+            entity: person.nikki
+            use_entity_picture: true
+            name: Nikki
+            layout: horizontal
+            hide_state: false
+          - type: custom:mushroom-person-card
+            entity: person.simon
+            use_entity_picture: true
+            name: Simon
+            layout: horizontal
+            hide_state: false
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: custom:clock-weather-card
+            entity: weather.openweathermap
+            tap_action:
+              action: none
+            style: |
+              .card-content { padding: 0px 16px 16px 16px; }
+          - type: custom:hourly-weather
+            entity: weather.openweathermap
+            name: null 
+            tap_action:
+              action: none
+      - type: picture-entity
+        title: Front door
+        show_name: false
+        show_state: false
+        entity: camera.door
+        camera_view: live
+#
+# column 2
+#
+  - type: vertical-stack
+    view_layout:
+      grid-area: centre
+    cards:
+      #
+      # living room
+      #
+      - type: 'custom:vertical-stack-in-card'
+        cards:
+          - type: custom:mod-card
+            card:
+              type: custom:mushroom-title-card
+              title: Living room
+              alignment: justify
+            card_mod:
+              style:
+                mushroom-title-card$: |
+                  .header {
+                    --title-padding: 10px 12px 2px 12px;
+                  }
+          - type: custom:mushroom-chips-card
+            chips:
+              - type: entity
+                entity: sensor.living_room_temperature
+                icon_color: orange
+              - type: entity
+                entity: sensor.living_room_humidity
+                icon_color: indigo
+              - type: template
+                content: |-
+                  {% set total = 0 %}
+                  {% set total = expand('group.living_room_lights') | selectattr('state','eq','on') | list | count %}
+                  {{total}} light(s) on
+                icon: mdi:lightbulb-group
+                icon_color: |-
+                  {% if is_state('light.standard_lamp_left', 'on') %}
+                    orange
+                  {% else %}
+                    grey
+                  {% endif %}
+                tap_action:
+                  action: more-info
+                entity: group.living_room_lights
+          - type: custom:mushroom-climate-card
+            entity: climate.living_room
+            fill_container: false
+            hvac_modes:
+              - 'heat_cool'
+              - 'off'
+            show_temperature_control: true
+          - type: custom:mushroom-media-player-card
+            entity: media_player.living_room
+            name: Living room speaker
+            use_media_info: true
+            media_controls:
+              - on_off
+              - play_pause_stop
+            volume_controls:
+              - volume_set
+              - volume_buttons
+              - volume_mute
+            show_volume_level: true
+            layout: horizontal
+          - type: custom:mushroom-media-player-card
+            entity: media_player.sonos_roam
+            name: Sonos Roam
+            use_media_info: true
+            media_controls:
+              - on_off
+              - play_pause_stop
+            volume_controls:
+              - volume_set
+              - volume_buttons
+              - volume_mute
+            show_volume_level: true
+            layout: horizontal
+      #
+      # kitchen
+      #
+      - type: 'custom:vertical-stack-in-card'
+        cards:
+          - type: custom:mod-card
+            card:
+              type: custom:mushroom-title-card
+              title: Kitchen
+              alignment: justify
+            card_mod:
+              style:
+                mushroom-title-card$: |
+                  .header {
+                    --title-padding: 10px 12px 2px 12px;
+                  }
+          - type: custom:mushroom-chips-card
+            chips:
+              - type: template
+                content: |-
+                  {% set total = 0 %}
+                  {% set total = expand('group.kitchen_lights') | selectattr('state','eq','on') | list | count %}
+                  {{total}} light(s) on
+                icon: mdi:lightbulb-group
+                icon_color: |-
+                  {% if is_state('light.kitchen_floor', 'on') %}
+                    orange
+                  {% else %}
+                    grey
+                  {% endif %}
+                tap_action:
+                  action: more-info
+                entity: group.kitchen_lights
+          - type: custom:mushroom-media-player-card
+            entity: media_player.kitchen
+            name: Nursery speaker
+            use_media_info: true
+            media_controls:
+              - on_off
+              - play_pause_stop
+            volume_controls:
+              - volume_set
+              - volume_buttons
+              - volume_mute
+            show_volume_level: true
+            layout: horizontal
+      #
+      # master bedroom
+      #
+      - type: 'custom:vertical-stack-in-card'
+        cards:
+          - type: custom:mod-card
+            card:
+              type: custom:mushroom-title-card
+              title: Master bedroom
+              alignment: justify
+            card_mod:
+              style:
+                mushroom-title-card$: |
+                  .header {
+                    --title-padding: 10px 12px 2px 12px;
+                  }
+          - type: custom:mushroom-chips-card
+            chips:
+              - type: entity
+                entity: sensor.master_bedroom_temperature
+                icon_color: orange
+              - type: entity
+                entity: sensor.master_bedroom_humidity
+                icon_color: indigo
+              - type: template
+                content: |-
+                  {% set total = 0 %}
+                  {% if is_state('light.hue_color_lamp_1', 'on') %}
+                    {% set total = total + 1 %}
+                  {% endif %}
+                  {{total}} light(s) on
+                icon: mdi:lightbulb-group
+                icon_color: |-
+                  {% if is_state('light.hue_color_lamp_1', 'on') %}
+                    orange
+                  {% else %}
+                    grey
+                  {% endif %}
+                tap_action:
+                  action: more-info
+                entity: light.hue_color_lamp_1
+          - type: 'custom:vertical-stack-in-card'
+            cards:
+              - type: custom:mushroom-climate-card
+                entity: climate.master_bedroom
+                fill_container: false
+                hvac_modes:
+                  - 'heat_cool'
+                  - 'off'
+                show_temperature_control: true
+              - type: custom:mushroom-media-player-card
+                entity: media_player.bedroom
+                name: Bedroom speaker
+                use_media_info: true
+                media_controls:
+                  - on_off
+                  - play_pause_stop
+                volume_controls:
+                  - volume_set
+                  - volume_buttons
+                  - volume_mute
+                show_volume_level: true
+                layout: horizontal
+#
+# column 3
+#
+  - type: vertical-stack
+    view_layout:
+      grid-area: right
+    cards:
+      - type: 'custom:vertical-stack-in-card'
+        cards:
+          - type: custom:mod-card
+            card:
+              type: custom:mushroom-title-card
+              title: Nursery
+              alignment: justify
+            card_mod:
+              style:
+                mushroom-title-card$: |
+                  .header {
+                    --title-padding: 10px 12px 2px 12px;
+                  }
+          - type: custom:mushroom-chips-card
+            chips:
+              - type: entity
+                entity: sensor.0x00158d0007e2074f_temperature
+                icon_color: orange
+              - type: entity
+                entity: sensor.0x00158d0007e2074f_humidity
+                icon_color: indigo
+              - type: template
+                content: |-
+                  {% set total = 0 %}
+                  {% if is_state('light.hue_color_lamp_1_2', 'on') %}
+                    {% set total = total + 1 %}
+                  {% endif %}
+                  {% if is_state('light.hue_color_lamp_1_3', 'on') %}
+                    {% set total = total + 1 %}
+                  {% endif %}
+                  {{total}} light(s) on
+                icon: mdi:lightbulb-group
+                icon_color: |-
+                  {% if is_state('light.hue_color_lamp_1_2', 'on') %}
+                    orange
+                  {% else %}
+                    grey
+                  {% endif %}
+                tap_action:
+                  action: more-info
+                entity: light.hue_color_lamp_1_2
+              - type: spacer
+              - type: conditional
+                conditions:
+                  - entity: binary_sensor.nursery2_person_occupancy
+                    state: 'on'
+                chip:
+                  type: template
+                  content: James is asleep
+                  icon: mdi:sleep
+                  icon_color: red
+          - type: picture-entity
+            title: Nursery
+            show_name: false
+            show_state: false
+            entity: camera.nursery2
+            camera_view: live
+          - type: custom:mushroom-media-player-card
+            entity: media_player.nursery
+            name: Nursery speaker
+            use_media_info: true
+            media_controls:
+              - on_off
+              - play_pause_stop
+            volume_controls:
+              - volume_set
+              - volume_buttons
+              - volume_mute
+            show_volume_level: true
+            layout: horizontal
+      #
+      # office
+      #
+      - type: 'custom:vertical-stack-in-card'
+        cards:
+          - type: custom:mod-card
+            card:
+              type: custom:mushroom-title-card
+              title: Office
+              alignment: justify
+            card_mod:
+              style:
+                mushroom-title-card$: |
+                  .header {
+                    --title-padding: 10px 12px 10px 12px;
+                  }
+          - type: custom:mushroom-chips-card
+            chips:
+              - type: entity
+                entity: sensor.0x00158d0007ed78c4_temperature
+                icon_color: orange
+              - type: entity
+                entity: sensor.0x00158d0007ed78c4_humidity
+                icon_color: indigo
+              - type: template
+                content: |-
+                  {% set total = 0 %}
+                  {% set total = expand('group.office_lights') | selectattr('state','eq','on') | list | count %}
+                  {{total}} light(s) on
+                icon: mdi:lightbulb-group
+                icon_color: |-
+                  {% if is_state('light.office_lamp', 'on') %}
+                    orange
+                  {% else %}
+                    grey
+                  {% endif %}
+                tap_action:
+                  action: more-info
+                entity: group.office_lights
+          - type: custom:mushroom-template-card
+            icon: mdi:desk
+            primary: Standing desk
+            secondary: |-
+              {% if is_state('binary_sensor.0x00158d0007007630_contact', 'on') %}
+                Standing
+              {% else %}
+                Seated
+              {% endif %}
+            entity_id: binary_sensor.0x00158d0007007630_contact

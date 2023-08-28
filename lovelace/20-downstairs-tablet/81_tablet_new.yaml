@@ -1,0 +1,75 @@
+title: Dashboard
+type: custom:grid-layout
+icon: mdi:tablet-dashboard
+path: tabletnew
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+  - user: 23ae52aa9001487d9a2d59e51f102ed5 # tablet
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: picture-elements
+        image: /local/nikki-face.png
+        elements:
+          - type: state-label
+            entity: person.nikki
+            style:
+              left: 0
+              bottom: 0
+              pointer-events: none
+              line-height: 1.1em
+              font-size: 1.1em
+              background-color: rgba(0, 0, 0, 0.4)
+              color: "#ffffff"
+              width: 100%
+              transform: initial
+              padding: 0 2px
+      - type: picture-elements
+        image: /local/simon-face.png
+        elements:
+          - type: state-label
+            entity: person.simon
+            style:
+              left: 0
+              bottom: 0
+              pointer-events: none
+              line-height: 1.1em
+              font-size: 1.1em
+              background-color: rgba(0, 0, 0, 0.4)
+              color: "#ffffff"
+              width: 100%
+              transform: initial
+              padding: 0 2px
+  - type: markdown
+    content: |
+      ### Horsham's weather
+    style: |
+      ha-card { text-align: center; }
+  - type: "custom:weather-card"
+    current: true
+    details: true
+    entity: weather.openweathermap
+    forecast: true
+    tap_action:
+      action: none
+  - type: horizontal-stack
+    cards:
+      - type: button
+        name: "Guest WiFi"
+        icon: "mdi:wifi-lock"
+        state_color: false
+        tap_action:
+          !include ../popup_cards/wifi_card.yaml
+      - type: button
+        name: "Audio controls"
+        icon: "mdi:speaker"
+        show_state: false
+        tap_action:
+          !include ../popup_cards/media_players.yaml
+      - type: button
+        entity: input_boolean.night_mode_toggle
+        name: "Night mode"
+        icon: "mdi:sleep"
+        show_state: true
+        hold_action:
+          action: toggle

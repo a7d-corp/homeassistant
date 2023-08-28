@@ -1,0 +1,51 @@
+title: CCTV
+icon: mdi:cctv
+path: cctv
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+  - user: ded1dc2c5ea24fffae588287678b3172
+cards:
+  - type: vertical-stack
+    cards:
+      - type: picture-entity
+        title: Front CCTV
+        show_name: false
+        show_state: false
+        entity: camera.frigate_rtmp_front
+      - type: picture-entity
+        title: Rear CCTV
+        show_name: false
+        show_state: false
+        entity: camera.frigate_rtmp_back
+      - type: picture-entity
+        title: Front door
+        show_name: false
+        show_state: false
+        entity: camera.frigate_rtmp_door
+      - type: picture-entity
+        title: Kitchen
+        show_name: false
+        show_state: false
+        entity: camera.frigate_rtmp_kitchen
+  - type: vertical-stack
+    cards:
+      - type: picture-entity
+        title: Lounge
+        show_name: false
+        show_state: false
+        entity: camera.frigate_rtmp_lounge
+      - type: picture-entity
+        title: Nursery
+        show_name: false
+        show_state: false
+        entity: camera.frigate_rtmp_nursery
+      - type: picture-entity
+        title: Bedroom
+        show_name: false
+        show_state: false
+        entity: camera.nursery2
+      - type: picture-entity
+        title: "Cot 2"
+        show_name: false
+        show_state: false
+        entity: camera.nursery3

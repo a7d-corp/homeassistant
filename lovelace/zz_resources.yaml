@@ -6,8 +6,6 @@
   type: module
 - url: /local/community/weather-card/weather-card.js
   type: module
-- url: /hacsfiles/light-popup-card/light-popup-card.js
-  type: module
 - url: /local/community/lovelace-layout-card/layout-card.js
   type: module
 - url: /local/community/mini-graph-card/mini-graph-card-bundle.js
@@ -24,5 +22,14 @@
   type: module
 - url: /hacsfiles/kiosk-mode/kiosk-mode.js
   type: module
+- url: /hacsfiles/lovelace-mushroom-better-sliders/mushroom.js
+  type: module
+- url: /hacsfiles/lovelace-hourly-weather/hourly-weather.js
+  type: module
+- url: /hacsfiles/clock-weather-card/clock-weather-card.js
+  type: module
+- url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js
+  type: module              
 - url: /local/community/lovelace-card-templater/lovelace-card-templater.js
   type: js
+              

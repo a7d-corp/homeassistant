@@ -3,7 +3,7 @@ browser_mod:
   command: call-service
   service: browser_mod.popup
   service_data:
-    deviceID: this
+    browser_id: this
     title: Office lights
     card:
       type: custom:light-popup-card

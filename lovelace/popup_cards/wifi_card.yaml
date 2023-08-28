@@ -1,11 +1,10 @@
 action: fire-dom-event
 browser_mod:
-  command: call-service
   service: browser_mod.popup
-  service_data:
-    deviceID: this
+  data:
+    #browser_id: this
     title: Guest WiFi credentials
-    card:
+    content:
       type: 'custom:layout-card'
       view_layout: vertical
       max_columns: 1
