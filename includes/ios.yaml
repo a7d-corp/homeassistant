@@ -167,3 +167,29 @@ actions:
     icon:
       icon: lightbulb-off
       color: "#8a8a8a"
+
+  ## camera streams
+  - name: "Camera streams"
+    background_color: "#01a9f4"
+    label:
+      text: Camera streams
+      color: "#ffffff"
+    icon:
+      icon: camera
+      color: "#ffffff"
+  - name: "Front door camera"
+    background_color: "#d4d4d4"
+    label:
+      text: "Front door"
+      color: "#000000"
+    icon:
+      icon: camera
+      color: "#000000"
+  - name: "Nursery camera"
+    background_color: "#d4d4d4"
+    label:
+      text: "Nursery"
+      color: "#000000"
+    icon:
+      icon: camera
+      color: "#000000"

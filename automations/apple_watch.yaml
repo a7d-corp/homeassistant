@@ -255,3 +255,36 @@
         - light.office_standard_lamp
         - light.office_ceiling_lamp
         - light.0x000d6ffffe07b722
+- alias: Apple watch camera stream
+  trigger:
+    - platform: event
+      event_type: ios.action_fired
+      event_data:
+        actionName: "Nursery camera"
+      id: nursery
+    - platform: event
+      event_type: ios.action_fired
+      event_data:
+        actionName: "Front door camera"
+      id: frontdoor
+  condition: []
+  action:
+    - service: notify.mobile_app_houston
+      data:
+        data:
+          entity_id: |
+            {% if trigger.id == 'nursery' %}
+              camera.nursery2
+            {% elif trigger.id == 'frontdoor' %}
+              camera.door
+            {% endif %}
+          push:
+            sound: none
+          tag: livestream
+        message: |
+          {% if trigger.id == 'nursery' %}
+            Nursery
+          {% elif trigger.id == 'frontdoor' %}
+            Front door
+          {% endif %}
+  mode: single
