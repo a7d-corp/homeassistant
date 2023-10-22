@@ -95,8 +95,6 @@
         {% else %}
           mdi:window-closed
         {% endif %}
-# enable octopus agile
-- platform: "octopusagile"
 - platform: template
   sensors:
     m3_remaining_range_fuel_miles:
