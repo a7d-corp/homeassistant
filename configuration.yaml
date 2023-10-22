@@ -66,8 +66,6 @@ person:
       - device_tracker.galaxy_s22
 
 tts:
-  - platform: google_translate
-    base_url: http://10.101.0.55:8123
   - platform: google_cloud
     key_file: secrets/google-cloud-tts.json
     voice: en-GB-Standard-A
@@ -146,14 +144,7 @@ telegram_bot:
       - !secret telegram_chat_id
 
 # enable thomasloven/hass-browser_mod
-browser_mod:
-
-octopusagile:
-  region_code: "J"
-  mpan: !secret octopus_mpan
-  serial: !secret octopus_serial
-  auth: !secret octopus_auth
-  startdate: "2021-02-18"
+#browser_mod:
 
 input_boolean: !include inputs/boolean.yaml
 input_number: !include inputs/numbers.yaml
