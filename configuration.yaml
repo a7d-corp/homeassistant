@@ -66,8 +66,6 @@ person:
       - device_tracker.galaxy_s22
 
 tts:
-  - platform: google_translate
-    base_url: http://10.101.0.55:8123
   - platform: google_cloud
     key_file: secrets/google-cloud-tts.json
     voice: en-GB-Standard-A
