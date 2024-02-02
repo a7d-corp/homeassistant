@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update HASS to 2022.11.5.
 - Rename deprecated MDI icon.
 - Update HASS to 2023.10.5.
-- Update HASS to 2023.11.3.
+- Update HASS to 2023.12.4.
 
 ### Removed
 
