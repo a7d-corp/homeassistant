@@ -32,5 +32,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Remove GCal configuration after migration to UI method.
 - Remove octopus agile component.
+- Delete m3 remaining mileage sensor.
 
 [Unreleased]: https://github.com/a7d-corp/homeassistant/tree/main
