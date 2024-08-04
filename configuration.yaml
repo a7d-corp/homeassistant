@@ -14,8 +14,6 @@ homeassistant:
   packages: !include_dir_named packages
   auth_providers:
     - type: homeassistant
-    - type: legacy_api_password
-      api_password: !secret http_password
 
 frontend:
   themes: !include_dir_merge_named themes
