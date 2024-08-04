@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update HASS to 2024.3.3.
 - Update HASS to 2024.4.3.
 - Update HASS to 2024.6.4.
+- Update HASS to 2024.7.4.
 
 ### Removed
 
