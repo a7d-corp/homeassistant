@@ -1,0 +1,246 @@
+title: Lighting
+icon: mdi:lightbulb
+path: mushroom-mobile-lighting
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+  - user: ded1dc2c5ea24fffae588287678b3172 # nikki
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: back
+          - type: template
+            content: Main
+            icon: mdi:restart
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-main
+          - type: template
+            content: House
+            icon: mdi:home-circle
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-house
+          - type: template
+            content: Lights
+            icon: mdi:lightbulb-group-outline
+            icon_color: green
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-lighting
+          - type: template
+            content: CCTV
+            icon: mdi:cctv
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-cctv
+      - type: custom:mushroom-title-card
+        title: Living room
+        card_mod:
+          style: |
+            ha-card { padding-top: 10px !important; padding-bottom: 0px !important; }
+      - type: horizontal-stack
+        cards:
+          - type: custom:mushroom-template-card
+            primary: Living room lights
+            secondary: tap to toggle
+            icon: mdi:floor-lamp-torchiere-variant
+            icon_color: |-
+              {% if is_state('light.lounge_hues', 'on') %}
+              amber
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: call-service
+              service: light.toggle
+              data:
+                entity_id: light.lounge_hues
+          - type: custom:mushroom-template-card
+            primary: Scenes
+            secondary: tap to choose
+            icon: mdi:palette
+            icon_color: grey
+            tap_action:
+              !include includes/scenes-lighting-lounge.yaml
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.lounge_hues
+            name: Living room hues
+            icon: mdi:lightbulb-group
+            layout: horizontal
+            show_brightness_control: true
+            use_light_color: true
+      - type: custom:mushroom-title-card
+        title: Kitchen
+        card_mod:
+          style: |
+            ha-card { padding-top: 10px !important; padding-bottom: 0px !important; }
+      - type: horizontal-stack
+        cards:
+          - type: custom:mushroom-template-card
+            primary: Cabinet lights
+            secondary: tap to toggle
+            icon: mdi:led-strip-variant
+            icon_color: |-
+              {% if is_state('light.kitchen_hues', 'on') %}
+              amber
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: call-service
+              service: light.toggle
+              data:
+                entity_id: light.kitchen_hues
+          - type: custom:mushroom-template-card
+            primary: Undercabinet lights
+            secondary: tap to toggle
+            icon: mdi:light-recessed
+            icon_color: |-
+              {% if is_state('switch.0x00124b0024c04605', 'on') %}
+              amber
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: call-service
+              service: switch.toggle
+              data:
+                entity_id: switch.0x00124b0024c04605
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.kitchen_hues
+            name: Kitchen hues
+            icon: mdi:lightbulb-group
+            layout: horizontal
+            show_brightness_control: true
+            use_light_color: true
+      - type: custom:mushroom-title-card
+        title: Bedroom
+        card_mod:
+          style: |
+            ha-card { padding-top: 10px !important; padding-bottom: 0px !important; }
+      - type: horizontal-stack
+        cards:
+          - type: custom:mushroom-template-card
+            primary: Bedroom lights
+            secondary: tap to toggle
+            icon: mdi:ceiling-lamp
+            icon_color: |-
+              {% if is_state('light.bedroom_hues', 'on') %}
+              amber
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: call-service
+              service: light.toggle
+              data:
+                entity_id: light.bedroom_hues
+          - type: custom:mushroom-template-card
+            primary: Scenes
+            secondary: tap to choose
+            icon: mdi:palette
+            icon_color: grey
+            tap_action:
+              action: call-service
+              service:
+              data:
+                entity_id: light.test
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.all_bedroom_lights
+            name: Bedroom hues
+            icon: mdi:lightbulb-group
+            layout: horizontal
+            show_brightness_control: true
+            use_light_color: true
+      - type: custom:mushroom-title-card
+        title: Nursery
+        card_mod:
+          style: |
+            ha-card { padding-top: 10px !important; padding-bottom: 0px !important; }
+      - type: horizontal-stack
+        cards:
+          - type: custom:mushroom-template-card
+            primary: Nursery lights
+            secondary: tap to toggle
+            icon: mdi:ceiling-lamp
+            icon_color: |-
+              {% if is_state('light.nursery_hues', 'on') %}
+              amber
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: call-service
+              service: light.toggle
+              data:
+                entity_id: light.nursery_hues
+          - type: custom:mushroom-template-card
+            primary: Scenes
+            secondary: tap to choose
+            icon: mdi:palette
+            icon_color: grey
+            tap_action:
+              action: call-service
+              service:
+              data:
+                entity_id: light.test
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.all_nursery_lights
+            name: Nursery hues
+            icon: mdi:lightbulb-group
+            layout: horizontal
+            show_brightness_control: true
+            use_light_color: true
+      - type: custom:mushroom-title-card
+        title: Office
+        card_mod:
+          style: |
+            ha-card { padding-top: 10px !important; padding-bottom: 0px !important; }
+      - type: horizontal-stack
+        cards:
+          - type: custom:mushroom-template-card
+            primary: Office hues
+            secondary: tap to toggle
+            icon: mdi:ceiling-lamp
+            icon_color: |-
+              {% if is_state('light.office_hues', 'on') %}
+              amber
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: call-service
+              service: light.toggle
+              data:
+                entity_id: light.office_hues
+          - type: custom:mushroom-template-card
+            primary: Work lights
+            secondary: tap to toggle
+            icon: mdi:laptop
+            icon_color: grey
+            tap_action:
+              action: scene.turn_on
+              target:
+                entity_id: scene.office_work_lights
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.all_office_lights
+            name: Office hues
+            icon: mdi:lightbulb-group
+            layout: horizontal
+            show_brightness_control: true
+            use_light_color: true

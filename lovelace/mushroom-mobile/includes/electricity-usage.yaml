@@ -1,0 +1,55 @@
+type: 'custom:vertical-stack-in-card'
+cards:
+  - type: grid
+    square: false
+    columns: 3
+    cards:
+      - type: custom:mod-card
+        card:
+          type: custom:mushroom-title-card
+          title: Energy
+          alignment: justify
+        card_mod:
+          style:
+            mushroom-title-card$: |
+              .header {
+                --title-padding: 10px 12px 2px 12px;
+              }
+      - type: custom:mushroom-entity-card
+        entity: sensor.octopus_energy_electricity_19l3668546_2000056101249_current_demand
+        primary_info: name
+        secondary_info: state
+        name: Live
+        icon_color: green
+        icon: mdi:lightning-bolt
+      - type: custom:mushroom-entity-card
+        entity: sensor.octopus_energy_electricity_19l3668546_2000056101249_current_accumulative_cost
+        primary_info: name
+        secondary_info: state
+        name: Today
+        icon_color: blue
+        icon: mdi:currency-gbp
+  - type: custom:mini-graph-card
+    entities:
+      - entity: sensor.octopus_energy_electricity_19l3668546_2000056101249_current_consumption
+    hours_to_show: 1
+    line_width: 3
+    font_size: 50
+    animate: true
+    points_per_hour: 60
+    tap_action: none
+    show:
+      name: false
+      icon: false
+      state: true
+      legend: false
+      fill: fade
+      labels: true
+      points: false
+    color_thresholds:
+      - value: 0.02
+        color: "#218201"
+      - value: 0.05
+        color: "#d35400"
+      - value: 0.07
+        color: "#c0392b"

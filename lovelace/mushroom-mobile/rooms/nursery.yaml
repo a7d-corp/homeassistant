@@ -1,0 +1,40 @@
+title: Nursery
+icon: mdi:cradle
+path: mushroom-mobile-nursery
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+  - user: ded1dc2c5ea24fffae588287678b3172 # nikki
+cards:
+  - type: vertical-stack
+    cards:
+      - !include ../includes/rooms-nav-chips.yaml
+      - !include ../includes/rooms-nav-dropdown.yaml
+      - type: custom:mushroom-title-card
+        title: Nursery
+        card_mod:
+          style: |
+            ha-card { padding-top: 0px !important; padding-bottom: 0px !important; }
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.all_nursery_lights
+            name: Nursery hues
+            icon: mdi:lightbulb-group
+            layout: horizontal
+            show_brightness_control: true
+            use_light_color: true
+      - type: custom:mushroom-title-card
+        title: Cameras
+        card_mod:
+          style: |
+            ha-card { padding-top: 5px !important; padding-bottom: 0px !important; }
+      - type: picture-entity
+        title: Nursery
+        show_name: false
+        show_state: false
+        entity: camera.nursery
+      - type: picture-entity
+        title: Nursery 2
+        show_name: false
+        show_state: false
+        entity: camera.nursery2

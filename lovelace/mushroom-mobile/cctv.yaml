@@ -1,0 +1,110 @@
+title: CCTV
+icon: mdi:cctv
+path: mushroom-mobile-cctv
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+  - user: ded1dc2c5ea24fffae588287678b3172 # nikki
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: back
+          - type: template
+            content: Main
+            icon: mdi:restart
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-main
+          - type: template
+            content: House
+            icon: mdi:home-circle
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-house
+          - type: template
+            content: Lights
+            icon: mdi:lightbulb-group-outline
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-lighting
+          - type: template
+            content: CCTV
+            icon: mdi:cctv
+            icon_color: green
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-cctv
+      - type: custom:mushroom-title-card
+        title: External
+        card_mod:
+          style: |
+            ha-card { padding-top: 10px !important; padding-bottom: 0px !important; }
+      - type: picture-entity
+        title: Doorbell
+        show_name: false
+        show_state: false
+        entity: camera.doorbell
+      - type: picture-entity
+        title: Front door
+        show_name: false
+        show_state: false
+        entity: camera.door
+      - type: picture-entity
+        title: Front CCTV
+        show_name: false
+        show_state: false
+        entity: camera.front
+      - type: picture-entity
+        title: Rear CCTV
+        show_name: false
+        show_state: false
+        entity: camera.back
+      - type: custom:mushroom-title-card
+        title: Kitchen
+        card_mod:
+          style: |
+            ha-card { padding-top: 10px !important; padding-bottom: 0px !important; }
+      - type: picture-entity
+        title: Kitchen
+        show_name: false
+        show_state: false
+        entity: camera.kitchen
+      - type: custom:mushroom-title-card
+        title: Lounge
+        card_mod:
+          style: |
+            ha-card { padding-top: 10px !important; padding-bottom: 0px !important; }
+      - type: picture-entity
+        title: Lounge
+        show_name: false
+        show_state: false
+        entity: camera.lounge
+      - type: picture-entity
+        title: Lounge 2
+        show_name: false
+        show_state: false
+        entity: camera.lounge2
+      - type: picture-entity
+        title: Garden room
+        show_name: false
+        show_state: false
+        entity: camera.gardenroom
+      - type: custom:mushroom-title-card
+        title: Nursery
+        card_mod:
+          style: |
+            ha-card { padding-top: 10px !important; padding-bottom: 0px !important; }
+      - type: picture-entity
+        title: Nursery
+        show_name: false
+        show_state: false
+        entity: camera.nursery
+      - type: picture-entity
+        title: Nursery 2
+        show_name: false
+        show_state: false
+        entity: camera.nursery2

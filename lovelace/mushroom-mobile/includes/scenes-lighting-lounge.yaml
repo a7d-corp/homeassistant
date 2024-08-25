@@ -1,0 +1,25 @@
+action: fire-dom-event
+browser_mod:
+  service: browser_mod.popup
+  data:
+    #browser_id: this
+    title: Living room scenes
+    content:
+      type: vertical-stack
+      cards:
+        - type: custom:mushroom-template-card
+          primary: Concentrate
+          icon: mdi:lightbulb-group-outline
+          icon_color: white
+          tap_action:
+            call-service: hue.activate_scene
+            target:
+              entity_id: scene.living_room_concentrate
+        - type: custom:mushroom-template-card
+          primary: Relax
+          icon: mdi:lightbulb-group-outline
+          icon_color: orange
+          tap_action:
+            call-service: hue.activate_scene
+            target:
+              entity_id: scene.living_room_relax

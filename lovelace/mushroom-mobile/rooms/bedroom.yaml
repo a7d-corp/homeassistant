@@ -1,0 +1,26 @@
+title: Bedroom
+icon: mdi:bed-king
+path: mushroom-mobile-bedroom
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+  - user: ded1dc2c5ea24fffae588287678b3172 # nikki
+cards:
+  - type: vertical-stack
+    cards:
+      - !include ../includes/rooms-nav-chips.yaml
+      - !include ../includes/rooms-nav-dropdown.yaml
+      - type: custom:mushroom-title-card
+        title: Bedroom
+        card_mod:
+          style: |
+            ha-card { padding-top: 0px !important; padding-bottom: 0px !important; }
+      - !include ../includes/climate-upstairs.yaml
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.all_bedroom_lights
+            name: Bedroom hues
+            icon: mdi:lightbulb-group
+            layout: horizontal
+            show_brightness_control: true
+            use_light_color: true

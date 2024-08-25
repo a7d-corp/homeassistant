@@ -1,0 +1,330 @@
+title: Dashboard
+icon: mdi:mushroom-outline
+path: mushroom-mobile-main
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c # simon
+  - user: ded1dc2c5ea24fffae588287678b3172 # nikki
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: back
+          - type: template
+            content: |-
+              {% set days = states('sensor.bin_collection_days_to') %}
+              {% if days == "0" %}
+              today
+              {% elif days == "1" %}
+              tomorrow
+              {% else %}
+              {{ days }} days
+              {% endif %}
+            icon: |-
+              {% if 'Recycling' in states('sensor.bin_collections') %}
+                mdi:recycle
+              {% else %}
+                mdi:trash-can
+              {% endif %}
+            icon_color: |-
+              {% if 'Recycling' in states('sensor.bin_collections') %}
+                blue
+              {% else %}
+                green
+              {% endif %}
+            tap_action:
+              action: none
+          - type: template
+            content: |-
+              £{{ states('sensor.octopus_energy_electricity_19l3668546_2000056101249_current_accumulative_cost') }}
+            icon: mdi:lightning-bolt
+            icon_color: yellow
+            tap_action:
+              action: none
+          - type: conditional
+            conditions:
+              - condition: state
+                entity: sensor.count_included_lights_on
+                state_not: "0"
+            chip:
+              type: template
+              content: |-
+                {{ states('sensor.count_included_lights_on') }}
+              icon: mdi:lightbulb-group
+              icon_color: |-
+                {% set lights_count = states('sensor.count_included_lights_on') %}
+                {% if lights_count == "0" %}
+                grey
+                {% else %}
+                orange
+                {% endif %}
+              tap_action:
+                action: navigate
+                navigation_path: /lovelace/mushroom-mobile-lighting
+          - type: conditional
+            conditions:
+              - condition: state
+                entity: sensor.external_doors_open
+                state_not: "0"
+            chip:
+              type: template
+              content: |-
+                {# front door, patio door #}
+                {{ states('sensor.external_doors_open') }}
+              icon: mdi:door-open
+              icon_color: red
+          - type: conditional
+            conditions:
+              - condition: state
+                entity: sensor.windows_open
+                state_not: "0"
+            chip:
+              type: template
+              content: |-
+                {{ states('sensor.windows_open') }}
+              icon: mdi:window-open-variant
+              icon_color: red
+          - type: conditional
+            conditions:
+              - condition: state
+                entity: input_boolean.litter_tray_needs_cleaning
+                state: "on"
+            chip:
+              type: template
+              content: Dirty
+              icon: mdi:emoticon-poop
+              icon_color: red
+              tap_action:
+                action: call-service
+                service: input_boolean.turn_off
+                data:
+                  entity_id: input_boolean.litter_tray_needs_cleaning
+                confirmation:
+                  text: Set tray as cleaned?
+          - type: template
+            content: |-
+              {{ states('input_number.litter_tray_use_count') }}
+            icon: mdi:cat
+            icon_color: |-
+              {% set total = 0 %}
+              {% set total = states('input_number.litter_tray_use_count') | int %}
+              {% if total <= 15 %}
+              grey
+              {% else %}
+              red
+              {% endif %}
+            tap_action:
+              action: call-service
+              service: input_number.set_value
+              data:
+                entity_id: input_number.litter_tray_use_count
+                value: 0
+              confirmation:
+                text: Reset tray use count?
+      - type: horizontal-stack
+        cards:
+          - type: custom:mushroom-person-card
+            entity: person.nikki
+            use_entity_picture: true
+            name: Nikki
+            layout: horizontal
+            hide_state: false
+            tap_action: none
+          - type: custom:mushroom-person-card
+            entity: person.simon
+            use_entity_picture: true
+            name: Simon
+            layout: horizontal
+            hide_state: false
+            tap_action: none
+      - type: horizontal-stack
+        cards:
+          - type: custom:mushroom-template-card
+            primary: House
+            icon: mdi:home-circle
+            icon_color: green
+            layout: vertical
+            badge_icon: |-
+              {% set total = 0 %}
+              {% set total = states.climate | selectattr('attributes.hvac_action', 'eq', 'heating') | list | count %}
+              {% if total == 0 %}
+              mdi:radiator-off
+              {% else %}
+              mdi:radiator
+              {% endif %}
+            badge_color: |-
+              {% set total = 0 %}
+              {% set total = states.climate | selectattr('attributes.hvac_action', 'eq', 'heating') | list | count %}
+              {% if total == 0 %}
+              grey
+              {% else %}
+              red
+              {% endif %}
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-house
+          - type: custom:mushroom-template-card
+            primary: Lights
+            icon: mdi:lightbulb-group-outline
+            icon_color: yellow
+            layout: vertical
+            badge_icon: mdi:lightbulb-group-outline
+            badge_color: |-
+              {% set lights_count = states('sensor.count_included_lights_on') %}
+              {% if lights_count == "0" %}
+              grey
+              {% else %}
+              orange
+              {% endif %}
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-lighting
+          - type: custom:mushroom-template-card
+            primary: CCTV
+            icon: mdi:cctv
+            icon_color: red
+            layout: vertical
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-cctv
+          # only show admin nav card for Simon
+          - type: conditional
+            conditions:
+              - condition: user
+                users:
+                  - de9bffd1c5bb4136bdf12e68766b0c2c
+            card:
+              type: custom:mushroom-template-card
+              primary: Admin
+              icon: mdi:cog
+              icon_color: grey
+              layout: vertical
+              tap_action:
+                action: navigate
+                navigation_path: /lovelace/mushroom-mobile-admin
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: input_boolean.litter_tray_needs_cleaning
+            state: "on"
+        card:
+          type: custom:mushroom-template-card
+          primary: Litter tray needs cleaning
+          secondary: tap to reset
+          icon: mdi:emoticon-poop
+          icon_color: red
+          badge_icon: mdi:exclamation-thick
+          badge_color: orange
+          layout: horizontal
+          tap_action:
+            action: call-service
+            service: input_boolean.turn_off
+            data:
+              entity_id: input_boolean.litter_tray_needs_cleaning
+            confirmation:
+              text: Set tray as cleaned?
+      - type: custom:clock-weather-card
+        entity: weather.openweathermap
+        tap_action:
+          action: none
+        card_mod:
+          style: |
+            .card-content { padding: 0px 16px 16px 16px; }
+      - type: custom:mushroom-title-card
+        title: Rooms
+        card_mod:
+          style: |
+            ha-card { padding-top: 10px !important; padding-bottom: 0px !important; }
+      - type: horizontal-stack
+        cards:
+          - type: custom:mushroom-template-card
+            primary: Living room
+            secondary: |-
+              {{ states('sensor.living_room_temperature') }}°C°
+            icon: mdi:sofa
+            icon_color: green
+            badge_icon: mdi:lightbulb-group-outline
+            badge_color: |-
+              {% if states('light.all_living_room_lights') == 'on' %}
+              orange
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-living-room
+          - type: custom:mushroom-template-card
+            primary: Kitchen
+            secondary: |-
+              {{ states('sensor.living_room_temperature') }}°C°
+            icon: mdi:fridge
+            icon_color: teal
+            badge_icon: mdi:lightbulb-group-outline
+            badge_color: |-
+              {% if states('light.all_kitchen_lights') == 'on' %}
+              orange
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-kitchen
+      - type: horizontal-stack
+        cards:
+          - type: custom:mushroom-template-card
+            primary: Bedroom
+            secondary: |-
+              {{ states('sensor.master_bedroom_temperature') }}°C°
+            icon: mdi:bed-king
+            icon_color: red
+            badge_icon: mdi:lightbulb-group-outline
+            badge_color: |-
+              {% if states('light.all_bedroom_lights') == 'on' %}
+              orange
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-bedroom
+          - type: custom:mushroom-template-card
+            primary: Nursery
+            secondary: |-
+              {{ states('sensor.0x00158d0007e2074f_temperature') }}°C°
+            icon: mdi:cradle
+            icon_color: grey
+            badge_icon: mdi:lightbulb-group-outline
+            badge_color: |-
+              {% if states('light.all_nursery_lights') == 'on' %}
+              orange
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-nursery
+      - type: horizontal-stack
+        cards:
+          - type: custom:mushroom-template-card
+            primary: Office
+            secondary: |-
+              {{ states('sensor.0x00158d0007ed78c4_temperature') }}°C°
+            icon: mdi:chair-rolling
+            icon_color: blue
+            badge_icon: mdi:lightbulb-group-outline
+            badge_color: |-
+              {% if states('light.all_office_lights') == 'on' %}
+              orange
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-office
+          - type: custom:mushroom-template-card
+            primary: Misc
+            icon: mdi:shower
+            icon_color: orange
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-misc

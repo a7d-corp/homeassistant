@@ -1,0 +1,165 @@
+title: Admin
+icon: mdi:cog
+path: mushroom-mobile-admin
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: back
+          - type: template
+            content: Main
+            icon: mdi:restart
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-main
+          - type: template
+            content: House
+            icon: mdi:home-circle
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-house
+          - type: template
+            content: Lights
+            icon: mdi:lightbulb-group-outline
+            icon_color: green
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-lighting
+          - type: template
+            content: CCTV
+            icon: mdi:cctv
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-cctv
+
+  - type: vertical-stack
+    cards:
+      - type: custom:yet-another-expander-card
+        title: Low batteries
+        expanded: false
+        padding: 0.5em
+        clear: true
+        card_mod:
+          debug: true
+          style:
+            .: |
+              ha-card > button.header > div.title {
+                border-radius: 20px;
+                font-weight: bolder !important;
+              }
+        cards:
+          - type: 'custom:battery-state-card'
+            sort_by_level: "asc"
+            bulk_rename:
+              - from: "Battery Level"  # simple string replace (note: "to" is not required if you want to remove string)
+                to: "sensor"
+              - from: "/\\s(temperature|temp)\\s/"  # regular expression
+                to: " temp. "
+            filter:
+              include:  # filters for auto-adding
+                - name: entity_id  # entities which id ends with "_battery_level"
+                  value: "*_battery"
+              exclude:  # filters for removing
+                - name: state  # exclude entities above 99% of battery level
+                  value: 50
+                  operator: ">"
+      - type: custom:yet-another-expander-card
+        title: Zigbee2mqtt
+        expanded: false
+        padding: 0.5em
+        clear: true
+        card_mod:
+          debug: true
+          style:
+            .: |
+              ha-card > button.header > div.title {
+                border-radius: 20px;
+                font-weight: bolder !important;
+              }
+        cards:
+          - type: entities
+            #title: Controls
+            show_header_toggle: false
+            entities:
+              - entity: sensor.zigbee2mqtt_bridge_state
+                name: Bridge state
+              - entity: input_select.zigbee2mqtt_log_level
+              - type: divider
+              - entity: switch.zigbee2mqtt_main_join
+                name: Enable joining
+              - entity: input_number.zigbee2mqtt_join_minutes
+                name: Join period
+              - entity: timer.zigbee_permit_join
+              - type: divider
+              - entity: input_text.zigbee2mqtt_remove
+              - entity: input_boolean.zigbee2mqtt_force_remove
+                name: Force removal
+              - entity: script.zigbee2mqtt_remove
+                name: Remove
+      - type: custom:yet-another-expander-card
+        title: Fire tablet
+        expanded: false
+        padding: 0.5em
+        clear: true
+        card_mod:
+          debug: true
+          style:
+            .: |
+              ha-card > button.header > div.title {
+                border-radius: 20px;
+                font-weight: bolder !important;
+              }
+        cards:
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - entity: sensor.fire_tablet_battery_level
+              - entity: switch.0x000d6ffffef03037
+              - entity: switch.fire_tablet_motion_detection
+              - entity: button.fire_tablet_reboot_device
+              - entity: button.fire_tablet_restart_browser
+              - entity: binary_sensor.fire_tablet_plugged_in
+      - type: custom:yet-another-expander-card
+        title: Litter tray
+        expanded: false
+        padding: 0.5em
+        clear: true
+        card_mod:
+          debug: true
+          style:
+            .: |
+              ha-card > button.header > div.title {
+                border-radius: 20px;
+                font-weight: bolder !important;
+              }
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-template-card
+                primary: Decrement use by 1
+                icon: mdi:minus-box
+                icon_color: red
+                tap_action:
+                  action: call-service
+                  service: input_number.decrement
+                  data:
+                    entity_id: input_number.litter_tray_use_count
+                  confirmation:
+                    text: Decrement tray use count?
+              - type: custom:mushroom-template-card
+                primary: Increment use by 1
+                icon: mdi:plus-box
+                icon_color: green
+                tap_action:
+                  action: call-service
+                  service: input_number.increment
+                  data:
+                    entity_id: input_number.litter_tray_use_count
+                  confirmation:
+                    text: Increment tray use count?

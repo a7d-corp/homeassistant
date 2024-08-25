@@ -1,0 +1,62 @@
+type: custom:yet-another-expander-card
+title: Room list
+expanded: false
+padding: 0.5em
+clear: true
+card_mod:
+  debug: true
+  style:
+    .: |
+      ha-card > button.header > div.title { 
+        border-radius: 20px; 
+        font-weight: bolder !important;
+      }
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: custom:mushroom-template-card
+        primary: Living room
+        icon: mdi:sofa
+        icon_color: green
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/mushroom-mobile-living-room
+      - type: custom:mushroom-template-card
+        primary: Kitchen
+        icon: mdi:fridge
+        icon_color: teal
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/mushroom-mobile-kitchen
+  - type: horizontal-stack
+    cards:
+      - type: custom:mushroom-template-card
+        primary: Bedroom
+        icon: mdi:bed-king
+        icon_color: red
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/mushroom-mobile-bedroom
+      - type: custom:mushroom-template-card
+        primary: Nursery
+        icon: mdi:cradle
+        icon_color: grey
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/mushroom-mobile-nursery
+  - type: horizontal-stack
+    cards:
+      - type: custom:mushroom-template-card
+        primary: Office
+        icon: mdi:chair-rolling
+        icon_color: blue
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/mushroom-mobile-office
+      - type: custom:mushroom-template-card
+        primary: Misc
+        icon: mdi:shower
+        icon_color: orange
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/mushroom-mobile-misc
