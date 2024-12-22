@@ -9,7 +9,6 @@ cards:
     cards:
       - !include ../includes/rooms-nav-chips.yaml
       - !include ../includes/rooms-nav-dropdown.yaml
-cards:
   - type: vertical-stack
     cards:
       - type: custom:mushroom-chips-card
