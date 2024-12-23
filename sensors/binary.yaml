@@ -8,18 +8,6 @@
            or is_state('sensor.nikki_status', 'home')
            or is_state('sensor.nikki_status', 'just arrived')
            or is_state('sensor.nikki_status', 'just left') }}
-- platform: ping
-  host: !secret ip_xbox
-  name: Xbox One
-  scan_interval: 30
-- platform: ping
-  host: !secret ip_houston
-  name: Houston ping
-  scan_interval: 15
-- platform: ping
-  host: !secret ip_phoenix
-  name: Phoenix ping
-  scan_interval: 15
 # template sensors for calendar event offsets - used for conditional lovelace templating
 - platform: template
   sensors:
