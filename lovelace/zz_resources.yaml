@@ -29,7 +29,10 @@
 - url: /hacsfiles/clock-weather-card/clock-weather-card.js
   type: module
 - url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js
-  type: module              
+  type: module
+- url: /hacsfiles/lovelace-yet-another-expander-card/yet-another-expander-card.js
+  type: module
+- url: /hacsfiles/lovelace-battery-entity-row/battery-entity-row.js
+  type: module
 - url: /local/community/lovelace-card-templater/lovelace-card-templater.js
   type: js
-              

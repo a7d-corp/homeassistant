@@ -59,7 +59,7 @@ person:
   - name: Simon
     id: simon0000
     device_trackers:
-      - device_tracker.houston
+      - device_tracker.iphone
   - name: Nikki
     id: niki0000
     device_trackers:
@@ -145,6 +145,19 @@ telegram_bot:
 
 # enable thomasloven/hass-browser_mod
 #browser_mod:
+
+waste_collection_schedule:
+  sources:
+    - name: horsham_gov_uk
+      args:
+        uprn: !secret waste_collection_uprn
+      customize:
+        - type: "Blue-Top Bin for Recycling"
+          alias: Recycling
+          icon: mdi:recycle
+        - type: "Refuse Bin for Non-Recycling"
+          alias: Waste
+          icon: mdi:trash-can-outline
 
 input_boolean: !include inputs/boolean.yaml
 input_number: !include inputs/numbers.yaml

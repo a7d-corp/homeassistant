@@ -1,0 +1,66 @@
+- platform: group
+  name: "All living room lights"
+  unique_id: c8764e89-518e-4fb7-8d0d-37f362e738ef
+  entities:
+    - light.standard_lamp_left
+    - light.standard_lamp_right
+    - light.sideboard_bloom_left
+    - light.sideboard_bloom_right
+    - light.garden_room_lamp
+- platform: group
+  name: "All kitchen lights"
+  unique_id: 98fececa-01eb-40b8-aa18-c723156497b5
+  entities:
+    - light.kitchen_cabinets
+    - light.kitchen_floor
+    - light.0x00124b0024c04605
+- platform: group
+  name: "All office lights"
+  unique_id: 35675215-68fa-404f-aa9f-8b6b383a085b
+  entities:
+    - light.0x000d6ffffe07b722
+    - light.office_lamp
+    - light.office_ceiling_lamp
+- platform: group
+  name: "All nursery lights"
+  unique_id: 3383500f-fb2e-44a0-a601-d726c5102480
+  entities:
+    - light.hue_color_lamp_1_2
+    - light.hue_color_lamp_1_3
+- platform: group
+  name: "All bedroom lights"
+  unique_id: 134dc467-a02e-484b-a0cc-fe23cb20c3ac
+  entities:
+    - light.hue_color_lamp_1
+
+## hue groups only
+
+- platform: group
+  name: "Bedroom hues"
+  unique_id: 5ba2ec07-5f32-447a-b088-8d96e0b0fbd4
+  entities:
+    - light.hue_color_lamp_1
+
+- platform: group
+  name: "Lounge hues"
+  unique_id: 405b48c9-a151-4f6e-ab0e-19ba5cd2a09b
+  entities:
+    - light.standard_lamp_left
+    - light.standard_lamp_right
+    - light.garden_room_lamp
+    - light.sideboard_bloom_left
+    - light.sideboard_bloom_right
+
+- platform: group
+  name: "Kitchen hues"
+  unique_id: cc1ddd6d-847c-4d01-8f99-36dfa9817c07
+  entities:
+    - light.kitchen_cabinets
+    - light.kitchen_floor
+
+- platform: group
+  name: "Office hues"
+  unique_id: 1a6acfac-93bf-4523-908e-e875c296ca6e
+  entities:
+    - light.office_lamp
+    - light.office_ceiling_lamp

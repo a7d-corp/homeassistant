@@ -65,3 +65,9 @@ zigbee2mqtt_force_remove:
   name: Zigbee2MQTT force remove
   initial: false
   icon: mdi:alert-remove
+
+# litter tray alerts
+litter_tray_needs_cleaning:
+  name: Litter tray clean
+  icon: 'mdi:emoticon-poop'
+

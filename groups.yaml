@@ -15,6 +15,7 @@ kitchen_lights:
   entities:
     - light.kitchen_cabinets
     - light.kitchen_floor
+    - switch.0x00124b0024c04605
 
 # office lights
 office_lights:
@@ -30,8 +31,15 @@ nursery_lights:
   name: Nursery Lights
   icon: mdi:cradle
   entities:
+    - light.hue_color_lamp_1_2
     - light.hue_color_lamp_1_3
-    - light.hue_color_lamp_1_3
+
+# master bedroom lights
+master_bedroom_lights:
+  name: Master bedroom lights
+  icon: mdi:bed-king
+  entities:
+    - light.hue_color_lamp_1
 
 # automation groups
 automation_all_lights:
@@ -41,15 +49,6 @@ automation_all_lights:
     - group.kitchen_lights
     - switch.0x804b50fffeab6eea
 
-lounge_hues:
-  name: Lounge Hues
-  entities:
-    - light.standard_lamp_left
-    - light.standard_lamp_right
-    - light.garden_room_lamp
-    - light.sideboard_bloom_left
-    - light.sideboard_bloom_right
-
 living_room_lights:
   name: Living room lights
   entities:
@@ -58,12 +57,6 @@ living_room_lights:
     - light.garden_room_lamp
     - light.sideboard_bloom_left
     - light.sideboard_bloom_right
-
-kitchen_hues:
-  name: Kitchen Hues
-  entities:
-    - light.kitchen_cabinets
-    - light.kitchen_floor
 
 automation_people_status:
   name: People status

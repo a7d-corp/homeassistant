@@ -2,8 +2,9 @@ title: Kitchen
 icon: mdi:stove
 path: kitchen
 visible:
-  - user: de9bffd1c5bb4136bdf12e68766b0c2c
-  - user: ded1dc2c5ea24fffae588287678b3172
+  - user: de9bffd1c5bb4136bdf12e68766b0c2d
+#  - user: de9bffd1c5bb4136bdf12e68766b0c2c # simon
+#  - user: ded1dc2c5ea24fffae588287678b3172
 cards:
   - type: vertical-stack
     cards:

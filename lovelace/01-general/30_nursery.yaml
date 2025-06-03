@@ -2,8 +2,9 @@ title: Nursery
 icon: mdi:cradle
 path: nursery
 visible:
-  - user: de9bffd1c5bb4136bdf12e68766b0c2c
-  - user: ded1dc2c5ea24fffae588287678b3172
+  - user: de9bffd1c5bb4136bdf12e68766b0c2d
+#  - user: de9bffd1c5bb4136bdf12e68766b0c2c # simon
+#  - user: ded1dc2c5ea24fffae588287678b3172
 cards:
   - type: vertical-stack
     cards:
@@ -61,11 +62,6 @@ cards:
           div.info { display: none; }
   - type: vertical-stack
     cards:
-      - type: picture-entity
-        title: Nursery
-        show_name: false
-        show_state: false
-        entity: camera.frigate_rtmp_nursery
       - type: picture-entity
         title: Bedroom
         show_name: false

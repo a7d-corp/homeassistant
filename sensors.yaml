@@ -1,6 +1,9 @@
 - platform: time_date
   display_options:
     - time
+- platform: waste_collection_schedule
+  name: "Bin collections"
+  leadtime: 20
 - platform: template
   sensors:
     simon_status:
@@ -9,6 +12,41 @@
     nikki_status:
       value_template: '{{ states.input_select.nikki_status.state }}'
       friendly_name: 'Nikki'
+- platform: template
+  sensors:
+    external_doors_open:
+      friendly_name: 'External doors open'
+      value_template: >-
+        {{ ['binary_sensor.0x00158d0001de662f_contact', 'binary_sensor.0x00158d0001a3e090_contact'] | select('is_state', 'on') | list | count }}
+    windows_open:
+      friendly_name: 'Windows open'
+      value_template: >-
+        {{ states.binary_sensor | selectattr('state', 'eq', 'on') | selectattr('attributes.friendly_name', 'match', '.*window.*') | list | count }}
+- platform: template
+  sensors:
+    count_included_lights_on:
+      friendly_name: 'Count included lights on'
+      value_template: >-
+        {% set data = namespace(lights_on=[]) %}
+        {% set all_lights = states.light | rejectattr('attributes.entity_id', 'defined') | map(attribute='entity_id') | list %}
+        {% set excluded_lights = label_entities('exclude_from_templates') %}
+        {% for light in all_lights %}
+        {% if is_state(light, 'on') %}
+        {% if light not in excluded_lights %}
+        {% set data.lights_on = data.lights_on + [light] %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        {{ data.lights_on | count }}
+- platform: template
+  sensors:
+    bin_collection_days_to:
+      friendly_name: 'Days to next bin collection'
+      value_template: >
+        {% set now = today_at() %}
+        {% set bin_day = state_attr('calendar.horsham_district_council', 'start_time') | as_datetime | as_local %}
+        {% set delta = bin_day - now %}
+        {{delta.days}}
 - platform: template
   sensors:
     door_front_door:

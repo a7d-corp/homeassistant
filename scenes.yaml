@@ -24,3 +24,12 @@
     media_player.living_room: "paused"
     media_player.sonos_roam: "paused"
     media_player.kitchen: "paused"
+
+- name: office work lights
+  entities:
+    light.office_lamp:
+      state: "on"
+      brightness_pct: 100
+    light.0x000d6ffffe07b722:
+      state: "on"
+      brightness_pct: 100

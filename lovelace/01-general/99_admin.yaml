@@ -2,7 +2,8 @@ title: Admin
 icon: mdi:tools
 path: admin
 visible:
-  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+  - user: de9bffd1c5bb4136bdf12e68766b0c2d
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c # simon
 cards:
   - type: vertical-stack
     cards:
@@ -35,8 +36,8 @@ cards:
             name: person.simon
           - entity: input_select.simon_status
             name: input_select.simon_status
-          - entity: device_tracker.houston
-            name: device_tracker.houston
+          - entity: device_tracker.iphone
+            name: device_tracker.iphone
           - entity: person.nikki
             name: person.nikki
           - entity: input_select.nikki_status

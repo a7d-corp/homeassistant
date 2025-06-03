@@ -7,14 +7,26 @@ views:
   - !include lovelace/01-general/20_office.yaml
   - !include lovelace/01-general/30_nursery.yaml
   - !include lovelace/01-general/25_hall.yaml
-  - !include lovelace/01-general/50_security.yaml
+#  - !include lovelace/01-general/50_security.yaml
   - !include lovelace/01-general/51_cctv.yaml
-  - !include lovelace/01-general/60_scratchpad.yaml
   - !include lovelace/01-general/99_admin.yaml
 # office tablet views
   - !include lovelace/10-office-tablet/01_main.yaml
 # picture frame tablet views
-  - !include lovelace/20-downstairs-tablet/01_main.yaml
-  - !include lovelace/20-downstairs-tablet/60_scratchpad.yaml
-  - !include lovelace/20-downstairs-tablet/80_tablet.yaml
-  - !include lovelace/20-downstairs-tablet/81_tablet_new.yaml
+  - !include lovelace/picture-frame/01_main.yaml
+#  - !include lovelace/20-downstairs-tablet/01_main.yaml
+#  - !include lovelace/20-downstairs-tablet/60_scratchpad.yaml
+#  - !include lovelace/20-downstairs-tablet/80_tablet.yaml
+#  - !include lovelace/20-downstairs-tablet/81_tablet_new.yaml
+# mushroom experimentation
+  - !include lovelace/mushroom-mobile/main.yaml
+  - !include lovelace/mushroom-mobile/house.yaml
+  - !include lovelace/mushroom-mobile/lighting.yaml
+  - !include lovelace/mushroom-mobile/cctv.yaml
+  - !include lovelace/mushroom-mobile/admin.yaml
+  - !include lovelace/mushroom-mobile/rooms/living-room.yaml
+  - !include lovelace/mushroom-mobile/rooms/kitchen.yaml
+  - !include lovelace/mushroom-mobile/rooms/bedroom.yaml
+  - !include lovelace/mushroom-mobile/rooms/nursery.yaml
+  - !include lovelace/mushroom-mobile/rooms/office.yaml
+  - !include lovelace/mushroom-mobile/rooms/misc.yaml

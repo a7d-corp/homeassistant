@@ -11,3 +11,10 @@ zigbee2mqtt_join_minutes:
   max: 5
   step: 1
   mode: slider
+
+# litter tray counter
+litter_tray_use_count:
+  name: Litter tray usage
+  min: 0
+  max: 50
+  mode: box

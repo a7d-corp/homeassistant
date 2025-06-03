@@ -2,11 +2,17 @@ title: CCTV
 icon: mdi:cctv
 path: cctv
 visible:
-  - user: de9bffd1c5bb4136bdf12e68766b0c2c
-  - user: ded1dc2c5ea24fffae588287678b3172
+  - user: de9bffd1c5bb4136bdf12e68766b0c2d
+#  - user: de9bffd1c5bb4136bdf12e68766b0c2c # simon
+#  - user: ded1dc2c5ea24fffae588287678b3172
 cards:
   - type: vertical-stack
     cards:
+      - type: picture-entity
+        title: Doorbell
+        show_name: false
+        show_state: false
+        entity: camera.doorbell
       - type: picture-entity
         title: Front CCTV
         show_name: false
@@ -34,6 +40,11 @@ cards:
         show_name: false
         show_state: false
         entity: camera.frigate_rtmp_lounge
+      - type: picture-entity
+        title: Lounge 2
+        show_name: false
+        show_state: false
+        entity: camera.lounge2
       - type: picture-entity
         title: Nursery
         show_name: false
