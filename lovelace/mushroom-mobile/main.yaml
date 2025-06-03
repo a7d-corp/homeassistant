@@ -224,7 +224,7 @@ cards:
             confirmation:
               text: Set tray as cleaned?
       - type: custom:clock-weather-card
-        entity: weather.openweathermap
+        entity: weather.room101
         tap_action:
           action: none
         card_mod:
