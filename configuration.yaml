@@ -27,7 +27,7 @@ lovelace:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 172.25.0.64/27
+    - 172.31.0.0/27 # docker network 'traefik'
 
 logger:
   default: warn
