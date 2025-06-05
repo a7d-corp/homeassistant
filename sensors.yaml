@@ -56,6 +56,22 @@
         {{ data.devices_playing | count }}
 - platform: template
   sensors:
+    count_occupancy_sensors_on:
+      friendly_name: 'Count active occupancy sensors'
+      value_template: >-
+        {% set data = namespace(sensors_on=[]) %}
+        {% set all_sensors = integration_entities('frigate') | list %}
+        {% set included_sensors = label_entities('indoor_person_occupancy') %}
+        {% for sensor in all_sensors %}
+        {% if is_state(sensor, 'on') %}
+        {% if sensor in included_sensors %}
+        {% set data.sensors_on = data.sensors_on + [sensor] %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        {{ data.sensors_on | count }}
+- platform: template
+  sensors:
     bin_collection_days_to:
       friendly_name: 'Days to next bin collection'
       value_template: >
