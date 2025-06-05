@@ -34,5 +34,7 @@
   type: module
 - url: /hacsfiles/lovelace-battery-entity-row/battery-entity-row.js
   type: module
+- url: /hacsfiles/custom-sonos-card/custom-sonos-card.js
+  type: module
 - url: /local/community/lovelace-card-templater/lovelace-card-templater.js
   type: js
