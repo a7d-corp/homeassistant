@@ -2,7 +2,6 @@ title: Home new
 icon: mdi:home-variant
 path: home
 visible:
-visible:
   - user: de9bffd1c5bb4136bdf12e68766b0c2d
 #  - user: de9bffd1c5bb4136bdf12e68766b0c2c # simon
 #  - user: ded1dc2c5ea24fffae588287678b3172
