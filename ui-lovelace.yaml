@@ -23,6 +23,7 @@ views:
   - !include lovelace/mushroom-mobile/house.yaml
   - !include lovelace/mushroom-mobile/lighting.yaml
   - !include lovelace/mushroom-mobile/cctv.yaml
+  - !include lovelace/mushroom-mobile/music.yaml
   - !include lovelace/mushroom-mobile/admin.yaml
   - !include lovelace/mushroom-mobile/rooms/living-room.yaml
   - !include lovelace/mushroom-mobile/rooms/kitchen.yaml

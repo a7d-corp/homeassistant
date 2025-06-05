@@ -1,0 +1,58 @@
+title: Sonos
+icon: mdi:speaker-wireless
+path: mushroom-mobile-music
+visible:
+  - user: de9bffd1c5bb4136bdf12e68766b0c2c
+  - user: ded1dc2c5ea24fffae588287678b3172 # nikki
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: back
+          - type: template
+            content: Main
+            icon: mdi:restart
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-main
+          - type: template
+            content: House
+            icon: mdi:home-circle
+            icon_color: green
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-house
+          - type: template
+            content: Lights
+            icon: mdi:lightbulb-group-outline
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-lighting
+          - type: template
+            content: CCTV
+            icon: mdi:cctv
+            icon_color: grey
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-cctv
+      - type: custom:mushroom-title-card
+        title: Sonos
+        card_mod:
+          style: |
+            ha-card { padding-top: 10px !important; padding-bottom: 0px !important; }
+      - type: custom:sonos-card
+        sections:
+        - volumes
+        - groups
+        - grouping
+        - media browser
+        - player
+        heightPercentage: auto
+        adjustVolumeRelativeToMainPlayer: true
+        sectionButtonIcons:
+          grouping: mdi:ungroup
+          volumes: mdi:cog-outline
+        sortFavoritesByType: true

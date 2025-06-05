@@ -187,6 +187,28 @@ cards:
             tap_action:
               action: navigate
               navigation_path: /lovelace/mushroom-mobile-cctv
+          - type: custom:mushroom-template-card
+            primary: Music
+            icon: mdi:speaker-wireless
+            icon_color: blue
+            layout: vertical
+            badge_icon: |-
+              {% set devices_count = states('sensor.count_sonoses_playing') %}
+              {% if devices_count == "0" %}
+              mdi:stop-circle-outline
+              {% else %}
+              mdi:play-circle-outline
+              {% endif %}
+            badge_color: |-
+              {% set devices_count = states('sensor.count_sonoses_playing') %}
+              {% if devices_count == "0" %}
+              grey
+              {% else %}
+              orange
+              {% endif %}
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/mushroom-mobile-music
           # only show admin nav card for Simon
           - type: conditional
             conditions:
