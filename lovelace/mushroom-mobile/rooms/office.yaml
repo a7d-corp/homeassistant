@@ -15,8 +15,28 @@ cards:
           style: |
             ha-card { padding-top: 0px !important; padding-bottom: 0px !important; }
       - !include ../includes/climate-office.yaml
-      - type: custom:vertical-stack-in-card
+      - type: horizontal-stack
         cards:
+          - type: custom:mushroom-template-card
+            primary: Office power + lights
+            secondary: Tap to toggle
+            icon: |-
+              {% if states('switch.0x70b3d52b6001b292') == 'on' %}
+              mdi:light-switch
+              {% else %}
+              mdi:light-switch-off
+              {% endif %}
+            icon_color: |-
+              {% if states('switch.0x70b3d52b6001b292') == 'on' %}
+              orange
+              {% else %}
+              grey
+              {% endif %}
+            tap_action:
+              action: call-service
+              service: switch.toggle
+              data:
+                entity_id: switch.office_power_toggle
           - type: custom:mushroom-light-card
             entity: light.all_office_lights
             name: Office hues
