@@ -1,5 +1,0 @@
-- platform: slack
-  name: Slack connector
-  api_key: !secret slack_api_key
-  default_channel: '#home-assistant'
-  icon: ':house:'

@@ -33,7 +33,6 @@ logger:
   default: warn
 
 config:
-map:
 conversation:
 history:
 logbook:
@@ -103,19 +102,6 @@ google_assistant:
       aliases: "under cabinets"
       room: kitchen
 
-#mqtt:
-#  broker: !secret ip_mqtt_broker
-#  port: 1883
-#  username: !secret mqtt_user
-#  password: !secret mqtt_pass
-#  discovery: true
-#  birth_message:
-#    topic: 'hass/status'
-#    payload: 'online'
-#  will_message:
-#    topic: 'hass/status'
-#    payload: 'offline'
-
 mqtt:
   sensor:
     - name: "Zigbee2MQTT bridge state"
@@ -165,9 +151,7 @@ input_select: !include inputs/select.yaml
 input_datetime: !include inputs/datetime.yaml
 input_text: !include inputs/text.yaml
 ios: !include includes/ios.yaml
-notify: !include_dir_merge_list notify
 light: !include lights.yaml
-device_tracker: !include device_trackers.yaml
 camera: !include cameras.yaml
 calendar: !include calendars.yaml
 sensor: !include sensors.yaml
