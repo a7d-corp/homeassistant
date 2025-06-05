@@ -40,6 +40,22 @@
         {{ data.lights_on | count }}
 - platform: template
   sensors:
+    count_sonoses_playing:
+      friendly_name: 'Count Sonos devices currently playing'
+      value_template: >-
+        {% set data = namespace(devices_playing=[]) %}
+        {% set all_devices = states.media_player | rejectattr('attributes.entity_id', 'defined') | map(attribute='entity_id') | list %}
+        {% set included_devices = label_entities('is_sonos') %}
+        {% for device in all_devices %}
+        {% if is_state(device, 'playing') %}
+        {% if device in included_devices %}
+        {% set data.devices_playing = data.devices_playing + [device] %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        {{ data.devices_playing | count }}
+- platform: template
+  sensors:
     bin_collection_days_to:
       friendly_name: 'Days to next bin collection'
       value_template: >
