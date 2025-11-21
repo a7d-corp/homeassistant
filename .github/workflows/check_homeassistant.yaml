@@ -13,7 +13,7 @@ jobs:
             echo "DISTRIB_RELEASE=18.04" > /etc/lsb-release
           fi
       - name: 'checkout'
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - run: mv secrets secrets.old || true
       - run: mkdir secrets
       - run: cp -v ci/secrets.yaml secrets.yaml
